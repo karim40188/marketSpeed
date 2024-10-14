@@ -9,6 +9,7 @@ import twitter from "../assets/twitter.png";
 import instagram from "../assets/instagram.png";
 import sms from "../assets/sms.png";
 import email from "../assets/email.png";
+import share from "../assets/share.png";
 
 function Icons() {
   let [icons] = useState([
@@ -20,30 +21,33 @@ function Icons() {
     facebook,
     sms,
     email,
+    share
   ]);
   return (
-    <Box sx={{ p: "40px" }}>
+    <Box sx={{ p: "60px",display:'flex',flexDirection:'column'}}>
       <Typography
         sx={{
           background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           mb: "30px",
+          display:'flex',
+        //  justifyContent:'start'
         }}
       >
         بنارات المنصات
       </Typography>
 
-      <Box sx={{ p: "40px" }}>
+      <Box sx={{  width:'60%',mx:'auto'}}>
         <Grid2
           container
-          spacing={4}
-          sx={{ display: "flex", justifyContent: "end",flexWrap:'wrap' }}
+          spacing={5}
+          sx={{ display: "flex", justifyContent: "",flexWrap:'wrap'}}
         >
           {icons.map((icon, index) => {
             return (
-              <Grid2 key={index} sx={{ width: "375px" }}>
-                <Box component="img" src={icon} sx={{ width: "100%" }} />
+              <Grid2 key={index} sx={{ width: "375px" ,height:'160px'}}>
+                <Box component="img" src={icon} sx={{ width: "100%",height:'100%' }} />
               </Grid2>
             );
           })}

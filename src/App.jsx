@@ -3,14 +3,17 @@ import Layout from "./components/Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
 import Videos from "./components/Videos";
+import Login from "./components/Login";
 
 function App() {
   let router = createBrowserRouter([
+    { path: "/login", element: <Login /> },
     {
       path: "/",
       element: <Layout />,
-      children: [{ path: "/", element: <Home /> },
-        {path:'/videos',element:<Videos/>}
+      children: [
+        { path: "/", element: <Home /> },
+        { path: "/videos", element: <Videos /> },
       ],
     },
   ]);
@@ -27,13 +30,13 @@ function App() {
       },
     },
 
-    direction:'rtl'
+    direction: "rtl",
   });
 
   return (
     <Box>
       <ThemeProvider theme={theme}>
-      <CssBaseline />
+        <CssBaseline />
         <RouterProvider router={router}>
           <Layout />
         </RouterProvider>
