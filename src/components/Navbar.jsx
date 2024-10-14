@@ -13,44 +13,41 @@ function Navbar() {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        pl: "20px",
+        pl: { xs: "10px", md: "20px" }, 
+        pr: { xs: "10px", md: "80px" },
+        flexDirection: { xs: "column", md: "row" },
+        gap: { xs: "10px", md: "0" }, 
       }}
     >
-      <Box sx={{ pr: "80px" }}>
+      <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
         <Typography>أهلاً فيصل</Typography>
         <Typography
           sx={{
             background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
+            fontSize: { xs: "16px", md: "20px" },
           }}
         >
           مسئول عام
         </Typography>
       </Box>
-      <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-        <Link to={'/login'}>
-        <Button
-          variant="contained"
-          sx={{
-            width: "207px",
-            height: "54px",
-            borderRadius: "8px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-around",
-            textTransform:'capitalize'
-          }}
-        >
-          
-          Login
-        </Button>
-        </Link>
-     
+
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: { xs: "5px", md: "10px" }, 
+          flexDirection: { xs: "column", md: "row" }, 
+          width: { xs: "100%", md: "auto" },
+        }}
+      >
+    
+
         <Box
           sx={{
             backgroundColor: "#114F80",
-            width: "207px",
+            width: { xs: "100%", md: "207px" },
             height: "54px",
             borderRadius: "8px",
             display: "flex",
@@ -58,7 +55,7 @@ function Navbar() {
             justifyContent: "space-around",
           }}
         >
-          <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Box sx={{ display: "flex", alignItems: "center", gap: "10px", }}>
             <Box
               sx={{
                 fontSize: "30px",
@@ -76,6 +73,7 @@ function Navbar() {
             style={{ width: "10.81px", height: "20.6px", color: "#fff" }}
           />
         </Box>
+
         <Box
           sx={{
             width: "56px",

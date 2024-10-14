@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import logo from "../assets/logo.svg";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Sidebar() {
   let [activeLink, setActiveLink] = useState(false);
@@ -9,7 +9,7 @@ function Sidebar() {
   let [statsDropDown, setStatsDropDown] = useState(false);
 
   let [dropDownLinks] = useState([
-    { name: "بنرات التطبيق", path: "/" },
+    { name: "بنرات التطبيق", path: "/home" },
     { name: "المقاطع الفديو", path: "/videos" },
     { name: "المنصات", path: "/Platforms" },
     { name: "الشاشه الترحيب", path: "/Welcome" },
@@ -17,6 +17,7 @@ function Sidebar() {
   ]);
 
 
+  let navigate=useNavigate()
 
 
   return (
@@ -133,12 +134,15 @@ function Sidebar() {
             }}
           >
             <Link
+                 to={"/profitstats"}
+       
               onClick={(e) => {
                 if (activeLink) {
                   activeLink.classList.remove("active");
                 }
                 e.target.classList.add("active");
                 setActiveLink(e.target);
+                navigate('/profitstats')
               }}
             >
               احصائيات مكسب التطبيق

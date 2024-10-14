@@ -30,7 +30,7 @@ a {
 }
 
 .active {
-  background-color: #114f80;
+  background-color: #114f80 !important;
   color: #fff !important;
   border-radius: 8px;
 }

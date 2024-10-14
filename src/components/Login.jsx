@@ -2,8 +2,12 @@ import { Box, Button, Grid2, Typography } from "@mui/material";
 import logo from "../assets/logo.svg";
 import { FaArrowDown } from "react-icons/fa";
 import { BsTranslate } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+
+
+    let navigate= useNavigate()
   return (
     <Grid2 container justifyContent="space-between" sx={{ overflow: "hideen" }}>
       <Grid2
@@ -12,8 +16,8 @@ function Login() {
           background:
             "linear-gradient(162.24deg, #F9D053 0.72%, #796727 99.28%)",
           height: "100vh",
-          display:'flex',
-          alignItems:"center"
+          display: "flex",
+          alignItems: "center",
         }}
       >
         <Box
@@ -22,16 +26,14 @@ function Login() {
             justifyContent: "center",
             flexDirection: "column",
             gap: "20px",
-            width:'50%',
-            mx:'auto',
-            
-
+            width: "50%",
+            mx: "auto",
           }}
         >
           <input
             placeholder="اسم المستخدم"
             style={{
-              width: "342px",
+              maxWidth: "342px",
               height: "79px",
               color: "#000000",
               border: "3px solid #FFFFFF",
@@ -47,7 +49,7 @@ function Login() {
           <input
             placeholder="كلمة السر"
             style={{
-              width: "342px",
+              maxWidth: "342px",
               height: "79px",
               color: "#000",
               border: "3px solid #FFFFFF",
@@ -60,51 +62,79 @@ function Login() {
             }}
           />
 
-          <Typography sx={{ color: "#fff",position:'relative',width:'35%' ,"&::after":{
-            content:'""',
-            position:'absolute',
-            
-            top:"100%",
-            left:'0',
-            width:'100%',
-            height:'3px',
-            backgroundColor:"#fff"
-          } }}>
+          <Typography
+            sx={{
+              color: "#fff",
+              position: "relative",
+              width: "35%",
+              "&::after": {
+                content: '""',
+                position: "absolute",
+
+                top: "100%",
+                left: "0",
+                width: "100%",
+                height: "3px",
+                backgroundColor: "#fff",
+              },
+            }}
+          >
             نسيت كلمة السر
           </Typography>
+
+
+          <Button
+            sx={{
+              backgroundColor: "#114F80",
+              width: "207px",
+              height: "54px",
+              borderRadius: "8px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-around",
+              color:"#fff",
+              textTransform:'capitalize'
+            }}
+            onClick={()=>{
+                navigate('/home')
+                console.log('hello')
+            }}
+          >
+            Login
+          </Button>
           <Box
-          sx={{
-            backgroundColor: "#114F80",
-            width: "207px",
-            height: "54px",
-            borderRadius: "8px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-around",
-            mt:"10px"
-        
-          }}
-        >
-          <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Box
-              sx={{
-                fontSize: "30px",
-                color: "#F9D053",
-              }}
-            >
-              <BsTranslate />
+            sx={{
+              backgroundColor: "#114F80",
+              width: "207px",
+              height: "54px",
+              borderRadius: "8px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-around",
+              mt: "10px",
+            }}
+          >
+            <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <Box
+                sx={{
+                  fontSize: "30px",
+                  color: "#F9D053",
+                }}
+              >
+                <BsTranslate />
+              </Box>
+
+              <Typography sx={{ color: "#fff", fontSize: "14px" }}>
+                اللغة (العربية)
+              </Typography>
             </Box>
-            <Typography sx={{ color: "#fff", fontSize: "14px" }}>
-              اللغة (العربية)
-            </Typography>
+
+            <FaArrowDown
+              style={{ width: "10.81px", height: "20.6px", color: "#fff" }}
+            />
           </Box>
-
-          <FaArrowDown
-            style={{ width: "10.81px", height: "20.6px", color: "#fff" }}
-          />
+         
         </Box>
-        </Box>
-
       </Grid2>
 
       <Grid2
@@ -120,8 +150,8 @@ function Login() {
       >
         <Box
           sx={{
-            width: "350px",
-            height: "350px",
+            width: {xs:"250px",md:"350px"},
+            height:{xs:"250px",md:"350px"},
             backgroundColor: "#114F80",
             borderRadius: "50%",
             position: "absolute",
@@ -132,8 +162,8 @@ function Login() {
         ></Box>
         <Box
           sx={{
-            width: "350px",
-            height: "350px",
+            width: {xs:"250px",md:"350px"},
+            height:{xs:"250px",md:"350px"},
             backgroundColor: "#F9D053",
             borderRadius: "50%",
             position: "absolute",
@@ -142,19 +172,21 @@ function Login() {
           }}
         ></Box>
 
-        <Box sx={{ width: "260px", height: "331px", mx: "auto" }}>
+        <Box sx={{ width: {xs:"200px",md:"260px"}, height: {xs:"250px",md:"331px"}, mx: "auto" , }}>
           <Box
             component="img"
             src={logo}
-            sx={{ width: "100%", height: "100%" }}
+            sx={{ width: "100%", height: "100%" ,}}
           />
         </Box>
         <Typography
           sx={{
-            fontSize: "100px",
+            fontSize: {xs:"100px",md:"100px"},
             background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
+            mb:{xs:'100px',md:'0'}
+           
           }}
         >
           سرعة التسويق
@@ -162,8 +194,8 @@ function Login() {
 
         <Box
           sx={{
-            width: "350px",
-            height: "350px",
+            width: {xs:"250px",md:"350px"},
+            height:{xs:"250px",md:"350px"},
             backgroundColor: "#114F80",
             borderRadius: "50%",
             position: "absolute",
@@ -174,8 +206,8 @@ function Login() {
         ></Box>
         <Box
           sx={{
-            width: "350px",
-            height: "350px",
+            width: {xs:"250px",md:"350px"},
+            height:{xs:"250px",md:"350px"},
             backgroundColor: "#F9D053",
             borderRadius: "50%",
             position: "absolute",

@@ -4,18 +4,23 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
 import Videos from "./components/Videos";
 import Login from "./components/Login";
+import ProfitStats from "./components/ProfitStats";
 
 function App() {
   let router = createBrowserRouter([
-    { path: "/login", element: <Login /> },
+    { index: true, element: <Login /> },
+    { path:'/login', element: <Login /> },
+
     {
       path: "/",
       element: <Layout />,
       children: [
-        { path: "/", element: <Home /> },
+        { path: "/home", element: <Home /> },
         { path: "/videos", element: <Videos /> },
+        { path: "/profitstats", element: <ProfitStats /> },
       ],
     },
+
   ]);
   let theme = createTheme({
     typography: {

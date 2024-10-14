@@ -1,4 +1,4 @@
-import { Box, Button, Grid2, Typography } from "@mui/material";
+import { Box, Grid2, Typography } from "@mui/material";
 import { useState } from "react";
 
 import whatsapp from "../assets/whatsapp.png";
@@ -46,8 +46,8 @@ function Icons() {
         >
           {icons.map((icon, index) => {
             return (
-              <Grid2 key={index} sx={{ width: "375px" ,height:'160px'}}>
-                <Box component="img" src={icon} sx={{ width: "100%",height:'100%' }} />
+              <Grid2 key={index} sx={{ maxWidth: "375px" ,maxHeight:'160px'}}>
+                <Box component="img" src={icon} sx={{ width: "100%",height:'100%',  }}  />
               </Grid2>
             );
           })}
