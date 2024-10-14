@@ -1,4 +1,4 @@
-import { Box, createTheme, ThemeProvider } from "@mui/material";
+import { Box, createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import Layout from "./components/Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
@@ -26,11 +26,14 @@ function App() {
         default: "#EDE8E9",
       },
     },
+
+    direction:'rtl'
   });
 
   return (
     <Box>
       <ThemeProvider theme={theme}>
+      <CssBaseline />
         <RouterProvider router={router}>
           <Layout />
         </RouterProvider>

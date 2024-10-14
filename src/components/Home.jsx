@@ -127,7 +127,7 @@ function Home() {
       <Box
         sx={{
           border: " 8px solid #114F80",
-          width: "676.01px",
+          maxWidth: "676.01px",
           mx: "auto",
         }}
       ></Box>
