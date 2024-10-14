@@ -1,7 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { BsTranslate } from "react-icons/bs";
 import { FaArrowDown } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -28,6 +29,24 @@ function Navbar() {
         </Typography>
       </Box>
       <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <Link to={'/login'}>
+        <Button
+          variant="contained"
+          sx={{
+            width: "207px",
+            height: "54px",
+            borderRadius: "8px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-around",
+            textTransform:'capitalize'
+          }}
+        >
+          
+          Login
+        </Button>
+        </Link>
+     
         <Box
           sx={{
             backgroundColor: "#114F80",
