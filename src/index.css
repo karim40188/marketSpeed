@@ -10,3 +10,33 @@
 body{
   direction: rtl;
 }
+
+
+/* fonts */
+@font-face {
+  font-family: 'MyFont';
+  src: local('Tanseek Modern Pro Arabic'), url(./mbc-arabic-font.ttf) format('woff');
+}
+
+
+body{
+  background-color: #eee;
+}
+a{
+  text-decoration: none;
+  height: 51px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  color: #114F80;
+  font-size:25px;
+  font-family:Tanseek Modern Pro Arabic;
+}
+
+
+.active{
+  background-color:#114F80 ;
+  color:#fff !important;
+  border-radius: 8px;
+  
+}
