@@ -1,138 +1,61 @@
-import { Box, Button, Grid2, Typography } from "@mui/material";
+import { Box, Grid2, Typography } from "@mui/material";
 import { useState } from "react";
-import cardImg from "../assets/cardImg.png";
-import Icons from "./Icons";
+import ceos from "../assets/some_stats/ceos.png";
+import subscribers from "../assets/some_stats/subscribers.png";
+import users from "../assets/some_stats/users.png";
+import monthly_sub from "../assets/some_stats/monthly_sub.png";
+import yearly_sub from "../assets/some_stats/yearly_sub.png";
+import discounts from "../assets/some_stats/discount.png";
+import { motion } from "framer-motion";
 
 function Home() {
-  let [cardsAr] = useState([
-    { visitor: "أول بانر", upload: "أرفع صوره جديدة", img: cardImg },
-    { visitor: "ثانى زائر", upload: "أرفع صوره جديدة", img: cardImg },
-    { visitor: "ثالث زائر", upload: "أرفع صوره جديدة", img: cardImg },
-    { visitor: "رابع زائر", upload: "أرفع صوره جديدة", img: cardImg },
+  let [someStats] = useState([
+    ceos,
+    subscribers,
+    users,
+    monthly_sub,
+    yearly_sub,
+    discounts,
   ]);
-  let [cardsEn] = useState([
-    { visitor: "أول بانر", upload: "أرفع صوره جديدة", img: cardImg },
-    { visitor: "ثانى زائر", upload: "أرفع صوره جديدة", img: cardImg },
-    { visitor: "ثالث زائر", upload: "أرفع صوره جديدة", img: cardImg },
-    { visitor: "رابع زائر", upload: "أرفع صوره جديدة", img: cardImg },
-  ]);
+
   return (
-    <Box>
-      <Typography sx={{ fontSize: "40px", color: "#114F80" }}>
-        الصفحة الرئيسية
+    <Box sx={{ p: "40px" }}>
+      <Typography
+        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+      >
+        بعض الأحصائيات
       </Typography>
-      <Box sx={{ p: "40px" }}>
-        <Typography
-          sx={{
-            fontSize: "30px",
-            background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            mb: "30px",
-          }}
-        >
-          البنارات المتحركة عربى
-        </Typography>
-
-        <Grid2 container spacing={4}>
-          {cardsAr.map((card) => {
-            return (
-              <Grid2 size={{ xs: 12, md: 6 }} key={card.visitor}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <Typography> {card.visitor}</Typography>
-                  <Button
-                    sx={{
-                      width: "156px",
-                      height: "32px",
-                      background:
-                        "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-                      color: "#fff",
-                      borderRadius: "6px",
-                    }}
-                  >
-                    {card.upload}
-                  </Button>
-                </Box>
-
-                <Box sx={{ width: "100%", height: "auto", my: "10px" }}>
-                  <Box
-                    sx={{ width: "100%", height: "100%" }}
-                    component="img"
-                    src={card.img}
-                  />
-                </Box>
-              </Grid2>
-            );
-          })}
-        </Grid2>
-      </Box>
-      <Box sx={{ p: "40px" }}>
-        <Typography
-          sx={{
-            fontSize: "30px",
-            background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            mb: "30px",
-          }}
-        >
-          البنارات المتحركة إنجليزى
-        </Typography>
-
-        <Grid2 container spacing={4}>
-          {cardsEn.map((card) => {
-            return (
-              <Grid2 size={{ xs: 12, md: 6 }} key={card.visitor}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <Typography> {card.visitor}</Typography>
-                  <Button
-                    sx={{
-                      width: "156px",
-                      height: "32px",
-                      background:
-                        "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-                      color: "#fff",
-                      borderRadius: "6px",
-                    }}
-                  >
-                    {card.upload}
-                  </Button>
-                </Box>
-
-                <Box sx={{ width: "100%", height: "auto", my: "10px" }}>
-                  <Box
-                    sx={{ width: "100%", height: "100%" }}
-                    component="img"
-                    src={card.img}
-                  />
-                </Box>
-              </Grid2>
-            );
-          })}
-        </Grid2>
-      </Box>
-
-      <Box
+      <Grid2
+        container
         sx={{
-          border: " 8px solid #114F80",
-          maxWidth: "676.01px",
-          mx: "auto",
+          p: "40px",
+          width: { xs: "90%", sm: "80%" },
+          justifyContent: "end",
         }}
-      ></Box>
-
-      <Icons/>
+        spacing={5}
+      >
+        {someStats.map((status, index) => {
+          return (
+            <Grid2 size={{ xs: 6, sm: 4, md: 4 }} key={index}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Box
+                  component="img"
+                  src={status}
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: "10px",
+                    boxShadow: 2,
+                  }}
+                />
+              </motion.div>
+            </Grid2>
+          );
+        })}
+      </Grid2>
     </Box>
   );
 }

@@ -7,18 +7,18 @@ function Sidebar() {
   let [activeLink, setActiveLink] = useState(false);
   let [appDropDown, setAppDropDown] = useState(false);
   let [statsDropDown, setStatsDropDown] = useState(false);
+  let [prices, setPrices] = useState(false);
 
   let [dropDownLinks] = useState([
-    { name: "بنرات التطبيق", path: "/home" },
+    { name: "بنرات التطبيق", path: "/banners" },
     { name: "المقاطع الفديو", path: "/videos" },
-    { name: "المنصات", path: "/Platforms" },
+    { name: "حسابات تواصل", path: "/socials" },
+    { name: "المنصات", path: "/platforms" },
     { name: "الشاشه الترحيب", path: "/Welcome" },
-    { name: "سياسه التطبيق", path: "/Policy" },
+    { name: "سياسه التطبيق", path: "/policy" },
   ]);
 
-
-  let navigate=useNavigate()
-
+  let navigate = useNavigate();
 
   return (
     <Box
@@ -37,7 +37,12 @@ function Sidebar() {
         zIndex: "12",
       }}
     >
-      <Box sx={{ width: "260px", height: "331px", cursor: "pointer" }}>
+      <Box
+        sx={{ width: "260px", height: "331px", cursor: "pointer" }}
+        onClick={() => {
+          navigate("/home");
+        }}
+      >
         <Box
           sx={{ width: "100%", height: "100%" }}
           component="img"
@@ -73,7 +78,7 @@ function Sidebar() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              gap: "20px",
+              gap: "10px",
               color: "#114F80",
               px: "10px",
               py: "30px",
@@ -134,20 +139,20 @@ function Sidebar() {
             }}
           >
             <Link
-                 to={"/profitstats"}
-       
+              to={"/profitstats"}
               onClick={(e) => {
                 if (activeLink) {
                   activeLink.classList.remove("active");
                 }
                 e.target.classList.add("active");
                 setActiveLink(e.target);
-                navigate('/profitstats')
+                navigate("/profitstats");
               }}
             >
               احصائيات مكسب التطبيق
             </Link>
             <Link
+              to={"/userstats"}
               onClick={(e) => {
                 if (activeLink) {
                   activeLink.classList.remove("active");
@@ -157,6 +162,81 @@ function Sidebar() {
               }}
             >
               احصائيات مستخدمين التطبيق
+            </Link>
+          </Box>
+        )}
+      </Box>
+
+      {/* الاسعار */}
+      <Box>
+        <Typography
+          sx={{
+            color: "#fff",
+            textAlign: "center",
+            fontFamily: "Tanseek Modern Pro Arabic",
+            fontSize: "25px",
+            fontWeight: "400",
+            cursor: "pointer",
+            mb: "5px",
+          }}
+          onClick={() => {
+            setPrices(!prices);
+          }}
+        >
+          الاسعار
+        </Typography>
+        {prices && (
+          <Box
+            sx={{
+              backgroundColor: "#EDE8E9",
+              width: { xs: "90%", sm: "300px", md: "354px" },
+              height: "259px",
+              borderRadius: "20px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              gap: "20px",
+              color: "#114F80",
+              px: "10px",
+              py: "30px",
+            }}
+          >
+            <Link
+              to={"/packages"}
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              
+              }}
+            >
+              الباقات
+            </Link>
+            <Link
+              // to={"/userstats"}
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              المحفظه الماسية
+            </Link>
+            <Link
+              // to={"/userstats"}
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              أكواد الخصم
             </Link>
           </Box>
         )}

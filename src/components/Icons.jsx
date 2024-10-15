@@ -1,5 +1,6 @@
 import { Box, Grid2, Typography } from "@mui/material";
 import { useState } from "react";
+import { motion } from "framer-motion"; // استيراد motion من framer-motion
 
 import whatsapp from "../assets/whatsapp.png";
 import telegram from "../assets/telegram.png";
@@ -21,33 +22,35 @@ function Icons() {
     facebook,
     sms,
     email,
-    share
+    share,
   ]);
+
   return (
-    <Box sx={{ p: "60px",display:'flex',flexDirection:'column'}}>
+    <Box sx={{ p: "60px", display: 'flex', flexDirection: 'column' }}>
       <Typography
         sx={{
           background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           mb: "30px",
-          display:'flex',
-        //  justifyContent:'start'
+          display: 'flex',
         }}
       >
         بنارات المنصات
       </Typography>
 
-      <Box sx={{  width:'60%',mx:'auto'}}>
-        <Grid2
-          container
-          spacing={5}
-          sx={{ display: "flex", justifyContent: "",flexWrap:'wrap'}}
-        >
+      <Box sx={{ width: '60%', mx: 'auto' }}>
+        <Grid2 container spacing={5} sx={{ display: "flex", flexWrap: 'wrap' }}>
           {icons.map((icon, index) => {
             return (
-              <Grid2 key={index} sx={{ maxWidth: "375px" ,maxHeight:'160px'}}>
-                <Box component="img" src={icon} sx={{ width: "100%",height:'100%',  }}  />
+              <Grid2 key={index} sx={{ maxWidth: "375px", maxHeight: '160px' }}>
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.8 }} // الإعدادات الأولية
+                  whileInView={{ opacity: 1, scale: 1 }} // كيف تظهر العناصر
+                  transition={{ duration: 0.3 }} // مدة الانتقال
+                >
+                  <Box component="img" src={icon} sx={{ width: "100%", height: '100%' }} />
+                </motion.div>
               </Grid2>
             );
           })}

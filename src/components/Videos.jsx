@@ -1,112 +1,60 @@
-import { Box, Button, Grid2, Typography } from "@mui/material";
+import { Box, Grid2, Typography } from "@mui/material";
 import { useState } from "react";
-import { FaWhatsapp } from "react-icons/fa";
-import { FaTelegram } from "react-icons/fa6";
-import { FaInstagram } from "react-icons/fa6";
-import { FaTiktok } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaSms } from "react-icons/fa";
-import { MdOutlineEmail } from "react-icons/md";
+import { motion } from "framer-motion"; // استيراد motion من framer-motion
+
+import whatsapp from "../assets/whatsapp.png";
+import telegram from "../assets/telegram.png";
+import tiktok from "../assets/tiktok.png";
+import facebook from "../assets/facebook.png";
+import twitter from "../assets/twitter.png";
+import instagram from "../assets/instagram.png";
+import sms from "../assets/sms.png";
+import email from "../assets/email.png";
+import share from "../assets/share.png";
+
 function Videos() {
   let [icons] = useState([
-    { ar: "الواتس اب", en: "WhatsApp", icon: <FaWhatsapp />, bg: "#128C7F" },
-    { ar: "التليجرام", en: "Telegram", icon: <FaTelegram />, bg: "#1E77BD" },
-    {
-      ar: "الانستيجرام",
-      en: "Instagram",
-      icon: <FaInstagram />,
-      bg: "#49186FF9",
-    },
-    { ar: "التيك توك", en: "Tik Tok", icon: <FaTiktok />, bg: "#000000" },
-    { ar: "X", en: "X", icon: <FaXTwitter />, bg: "#fff" },
-    {
-      ar: "الفيس بوك",
-      en: "Facebook",
-      icon: <FaFacebookSquare />,
-      bg: "#163C92",
-    },
-    { ar: "الرسائل النصيه", en: "SMS", icon: <FaSms />, bg: "#C7A642" },
-    {
-      ar: "البريد الالكتروني",
-      en: "E-MAil",
-      icon: <MdOutlineEmail />,
-      bg: "#1D6671",
-    },
+    whatsapp,
+    telegram,
+    instagram,
+    tiktok,
+    twitter,
+    facebook,
+    sms,
+    email,
+    share,
   ]);
+
   return (
-    <Box>
-      <Typography sx={{ fontSize: "40px", color: "#114F80" }}>
-        الصفحة الرئيسية
+    <Box sx={{ p: "60px", display: 'flex', flexDirection: 'column' }}>
+      <Typography
+        sx={{
+          background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          mb: "30px",
+          display: 'flex',
+        }}
+      >
+        بنارات المنصات
       </Typography>
 
-      <Box sx={{ p: "40px" }}>
-        <Typography
-          sx={{
-            background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            mb: "30px",
-          }}
-        >
-          بنارات المنصات
-        </Typography>
-
-        <Box sx={{ p: "40px" }}>
-          <Grid2
-            container
-            spacing={4}
-            sx={{ display: "flex", justifyContent: "end" }}
-          >
-            {icons.map((icon) => {
-              return (
-                <Grid2 size={{ xs: 12, md: 5 }} key={icon.en}>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      width: "65%",
-                    }}
-                  >
-                    <Typography>{icon.ar}</Typography>
-                    <Button
-                      sx={{
-                        width: "156px",
-                        height: "32px",
-                        background:
-                          "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-                        color: "#fff",
-                        borderRadius: "6px",
-                      }}
-                    >
-                      ارفع صوره جديده
-                    </Button>
-                  </Box>
-
-                  <Box
-                    sx={{
-                      display: "flex",
-                      backgroundColor: `${icon.bg}`,
-                      justifyContent: "end",
-                      alignItems: "center",
-                      width: "339px",
-                      height: "116px",
-                      p: "20px",
-                      borderRadius: "15px",
-                      color: "#fff",
-                      gap: "20px",
-                      my: "10px",
-                    }}
-                  >
-                    <Typography sx={{ fontSize: "35px" }}>{icon.en}</Typography>
-                    <Box sx={{ fontSize: "35px" }}>{icon.icon}</Box>
-                  </Box>
-                </Grid2>
-              );
-            })}
-          </Grid2>
-        </Box>
+      <Box sx={{ width: '60%', mx: 'auto' }}>
+        <Grid2 container spacing={5} sx={{ display: "flex", flexWrap: 'wrap' }}>
+          {icons.map((icon, index) => {
+            return (
+              <Grid2 key={index} sx={{ maxWidth: "375px", maxHeight: '160px' }}>
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.8 }} // الإعدادات الأولية
+                  whileInView={{ opacity: 1, scale: 1 }} // كيف تظهر العناصر
+                  transition={{ duration: 0.3 }} // مدة الانتقال
+                >
+                  <Box component="img" src={icon} sx={{ width: "100%", height: '100%' }} />
+                </motion.div>
+              </Grid2>
+            );
+          })}
+        </Grid2>
       </Box>
     </Box>
   );
