@@ -8,6 +8,9 @@ function Sidebar() {
   let [appDropDown, setAppDropDown] = useState(false);
   let [statsDropDown, setStatsDropDown] = useState(false);
   let [prices, setPrices] = useState(false);
+  let [techSupport, setTechSupport] = useState(false);
+  let [marketers, setMarketers] = useState(false);
+  let [groups, setGroups] = useState(false);
 
   let [dropDownLinks] = useState([
     { name: "بنرات التطبيق", path: "/banners" },
@@ -25,20 +28,26 @@ function Sidebar() {
       sx={{
         backgroundColor: "#114F80",
         width: { xs: "200px", md: "400px", lg: "466px" },
-        position: "fixed",
+        position: "sticky",
         top: "0",
         right: "0",
         bottom: "0",
+        height: "auto",
         display: "flex",
         flexDirection: "column",
         // justifyContent: "center",
         alignItems: "center",
-        gap: "30px",
+        gap: "20px",
         zIndex: "12",
+        py: "50px",
       }}
     >
       <Box
-        sx={{ width: "260px", height: "331px", cursor: "pointer" }}
+        sx={{
+          width: { xs: "150px", md: "150px", xl: "260px" },
+          height: "auto",
+          cursor: "pointer",
+        }}
         onClick={() => {
           navigate("/home");
         }}
@@ -209,13 +218,12 @@ function Sidebar() {
                 }
                 e.target.classList.add("active");
                 setActiveLink(e.target);
-              
               }}
             >
               الباقات
             </Link>
             <Link
-              // to={"/userstats"}
+              to={"/diwallet"}
               onClick={(e) => {
                 if (activeLink) {
                   activeLink.classList.remove("active");
@@ -226,8 +234,9 @@ function Sidebar() {
             >
               المحفظه الماسية
             </Link>
+
             <Link
-              // to={"/userstats"}
+              to={"/discount"}
               onClick={(e) => {
                 if (activeLink) {
                   activeLink.classList.remove("active");
@@ -237,6 +246,263 @@ function Sidebar() {
               }}
             >
               أكواد الخصم
+            </Link>
+          </Box>
+        )}
+      </Box>
+      {/* المستخدمين  */}
+      <Box>
+        <Typography
+          sx={{
+            color: "#fff",
+            textAlign: "center",
+            fontFamily: "Tanseek Modern Pro Arabic",
+            fontSize: "25px",
+            fontWeight: "400",
+            cursor: "pointer",
+            mb: "5px",
+          }}
+        >
+          المستخدمين
+        </Typography>
+      </Box>
+
+      {/* الدعم الفني */}
+
+      <Box>
+        <Typography
+          sx={{
+            color: "#fff",
+            textAlign: "center",
+            fontFamily: "Tanseek Modern Pro Arabic",
+            fontSize: "25px",
+            fontWeight: "400",
+            cursor: "pointer",
+            mb: "5px",
+          }}
+          onClick={() => {
+            setTechSupport(!techSupport);
+          }}
+        >
+          الدعم الفني
+        </Typography>
+        {techSupport && (
+          <Box
+            sx={{
+              backgroundColor: "#EDE8E9",
+              width: { xs: "90%", sm: "300px", md: "354px" },
+              height: "auto",
+              borderRadius: "20px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              gap: "10px",
+              color: "#114F80",
+              px: "10px",
+              py: "30px",
+            }}
+          >
+            <Link
+              to="/techsupport"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              المحادثة الدعم الفني
+            </Link>
+            <Link
+              to="suggestion"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              الاقتراحات
+            </Link>
+          </Box>
+        )}
+      </Box>
+
+      {/* المجموعات */}
+      <Box>
+        <Typography
+          sx={{
+            color: "#fff",
+            textAlign: "center",
+            fontFamily: "Tanseek Modern Pro Arabic",
+            fontSize: "25px",
+            fontWeight: "400",
+            cursor: "pointer",
+            mb: "5px",
+          }}
+          onClick={() => {
+            setGroups(!groups);
+          }}
+        >
+          المجموعات
+        </Typography>
+        {groups && (
+          <Box
+            sx={{
+              backgroundColor: "#EDE8E9",
+              width: { xs: "90%", sm: "300px", md: "354px" },
+              height: "auto",
+              borderRadius: "20px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              gap: "10px",
+              color: "#114F80",
+              px: "10px",
+              py: "30px",
+            }}
+          >
+            <Link
+            to="create-groups"
+              className="link"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              انشاء مجموعات
+            </Link>
+            <Link
+           to="/add-links"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              اضافة روابط المجموعات
+            </Link>
+            <Link
+              className="link"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              اضافة مجموعات الدول
+            </Link>
+            <Link
+              className="link"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              جميع الارقام
+            </Link>
+          </Box>
+        )}
+      </Box>
+
+      {/* المسؤلين */}
+      <Box>
+        <Typography
+          sx={{
+            color: "#fff",
+            textAlign: "center",
+            fontFamily: "Tanseek Modern Pro Arabic",
+            fontSize: "25px",
+            fontWeight: "400",
+            cursor: "pointer",
+            mb: "5px",
+          }}
+        >
+          المسؤلين
+        </Typography>
+      </Box>
+
+      {/* المسوقين */}
+
+      <Box>
+        <Typography
+          sx={{
+            color: "#fff",
+            textAlign: "center",
+            fontFamily: "Tanseek Modern Pro Arabic",
+            fontSize: "25px",
+            fontWeight: "400",
+            cursor: "pointer",
+            mb: "5px",
+          }}
+          onClick={() => {
+            setMarketers(!marketers);
+          }}
+        >
+          المسوقين
+        </Typography>
+        {marketers && (
+          <Box
+            sx={{
+              backgroundColor: "#EDE8E9",
+              width: { xs: "90%", sm: "300px", md: "354px" },
+              height: "auto",
+              borderRadius: "20px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              gap: "10px",
+              color: "#114F80",
+              px: "10px",
+              py: "30px",
+            }}
+          >
+            <Link
+              to="supervisors"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              عرض المشرفين
+            </Link>
+            <Link
+              to="/add-supervisor"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              إضافة مشرفين
+            </Link>
+            <Link
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              محفظة المشرفين والمسوقين
             </Link>
           </Box>
         )}

@@ -6,11 +6,11 @@ import Navbar from "./Navbar";
 function Layout() {
 
   return (
-    <Box>
+    <Box sx={{display:'flex'}}>
       <Sidebar />
-      <Box sx={{mr:{md: "400px",lg:'466px'}  }}>
+      <Box sx={{width:'100%' }}>
         <Navbar />
-        <Box sx={{ p: "40px" }}>
+        <Box sx={{ px: "30px",pt:'40px' }}>
           <Outlet />
         </Box>
       </Box>
