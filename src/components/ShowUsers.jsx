@@ -65,7 +65,7 @@ function ShowUsers() {
           mr: "auto",
         }}
         onClick={() => {
-          navigate("/add-supervisor");
+          navigate("/add-user");
         }}
       >
         إضافه مستخدم

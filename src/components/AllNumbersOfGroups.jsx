@@ -1,6 +1,23 @@
 import { Box, Button, Typography } from "@mui/material";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function AllNumbersOfGroups() {
+
+  let navigate= useNavigate()
+  let [numbers] = useState([
+    "966 55443322",
+    "966 55443322",
+    "966 55443322",
+    "966 55443322",
+    "966 55443322",
+    "966 55443322",
+    "966 55443322",
+    "966 55443322",
+    "966 55443322",
+    "966 55443322",
+    "966 55443322",
+  ]);
   return (
     <Box>
       <Typography
@@ -9,7 +26,14 @@ function AllNumbersOfGroups() {
         جميع الأرقام مجموعات المملكة العربية السعودية
       </Typography>
       <Box sx={{ p: "25px", mt: "50px" }}>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "30px",width:'60%' }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "30px",
+            width: "60%",
+          }}
+        >
           <Box
             sx={{
               display: "flex",
@@ -76,240 +100,42 @@ function AllNumbersOfGroups() {
             mt: "30px",
           }}
         >
-          <Box
-            sx={{
-              width: "821px",
-              height: "77px",
-              backgroundColor: "#114F80",
-              display: "flex",
-              px: "20px",
-              justifyContent: "space-between",
-              alignItems: "center",
-              color: "#fff",
-              borderRadius: "16px",
-            }}
-          >
-            <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-              966 55443322
-            </Typography>
+          {numbers.map((_, index) => {
+            return (
+              <Box
 
-            <Box
-              sx={{
-                width: "37px",
-                height: "37px",
-                backgroundColor: "#fff",
-                borderRadius: "5px",
+              onClick={()=>{
+                navigate('/saudi-numbers')
               }}
-            ></Box>
-          </Box>
-          <Box
-            sx={{
-              width: "821px",
-              height: "77px",
-              backgroundColor: "#114F80",
-              display: "flex",
-              px: "20px",
-              justifyContent: "space-between",
-              alignItems: "center",
-              color: "#fff",
-              borderRadius: "16px",
-            }}
-          >
-            <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-              966 55443322
-            </Typography>
+                key={index}
+                sx={{
+                  width: "821px",
+                  height: "77px",
+                  backgroundColor: "#114F80",
+                  display: "flex",
+                  px: "20px",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  color: "#fff",
+                  borderRadius: "16px",
+                  cursor:'pointer',
+                }}
+              >
+                <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
+                  966 55443322
+                </Typography>
 
-            <Box
-              sx={{
-                width: "37px",
-                height: "37px",
-                backgroundColor: "#fff",
-                borderRadius: "5px",
-              }}
-            ></Box>
-          </Box>
-          <Box
-            sx={{
-              width: "821px",
-              height: "77px",
-              backgroundColor: "#114F80",
-              display: "flex",
-              px: "20px",
-              justifyContent: "space-between",
-              alignItems: "center",
-              color: "#fff",
-              borderRadius: "16px",
-            }}
-          >
-            <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-              966 55443322
-            </Typography>
-
-            <Box
-              sx={{
-                width: "37px",
-                height: "37px",
-                backgroundColor: "#fff",
-                borderRadius: "5px",
-              }}
-            ></Box>
-          </Box>
-          <Box
-            sx={{
-              width: "821px",
-              height: "77px",
-              backgroundColor: "#114F80",
-              display: "flex",
-              px: "20px",
-              justifyContent: "space-between",
-              alignItems: "center",
-              color: "#fff",
-              borderRadius: "16px",
-            }}
-          >
-            <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-              966 55443322
-            </Typography>
-
-            <Box
-              sx={{
-                width: "37px",
-                height: "37px",
-                backgroundColor: "#fff",
-                borderRadius: "5px",
-              }}
-            ></Box>
-          </Box>
-          <Box
-            sx={{
-              width: "821px",
-              height: "77px",
-              backgroundColor: "#114F80",
-              display: "flex",
-              px: "20px",
-              justifyContent: "space-between",
-              alignItems: "center",
-              color: "#fff",
-              borderRadius: "16px",
-            }}
-          >
-            <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-              966 55443322
-            </Typography>
-
-            <Box
-              sx={{
-                width: "37px",
-                height: "37px",
-                backgroundColor: "#fff",
-                borderRadius: "5px",
-              }}
-            ></Box>
-          </Box>
-          <Box
-            sx={{
-              width: "821px",
-              height: "77px",
-              backgroundColor: "#114F80",
-              display: "flex",
-              px: "20px",
-              justifyContent: "space-between",
-              alignItems: "center",
-              color: "#fff",
-              borderRadius: "16px",
-            }}
-          >
-            <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-              966 55443322
-            </Typography>
-
-            <Box
-              sx={{
-                width: "37px",
-                height: "37px",
-                backgroundColor: "#fff",
-                borderRadius: "5px",
-              }}
-            ></Box>
-          </Box>
-          <Box
-            sx={{
-              width: "821px",
-              height: "77px",
-              backgroundColor: "#114F80",
-              display: "flex",
-              px: "20px",
-              justifyContent: "space-between",
-              alignItems: "center",
-              color: "#fff",
-              borderRadius: "16px",
-            }}
-          >
-            <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-              966 55443322
-            </Typography>
-
-            <Box
-              sx={{
-                width: "37px",
-                height: "37px",
-                backgroundColor: "#fff",
-                borderRadius: "5px",
-              }}
-            ></Box>
-          </Box>
-          <Box
-            sx={{
-              width: "821px",
-              height: "77px",
-              backgroundColor: "#114F80",
-              display: "flex",
-              px: "20px",
-              justifyContent: "space-between",
-              alignItems: "center",
-              color: "#fff",
-              borderRadius: "16px",
-            }}
-          >
-            <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-              966 55443322
-            </Typography>
-
-            <Box
-              sx={{
-                width: "37px",
-                height: "37px",
-                backgroundColor: "#fff",
-                borderRadius: "5px",
-              }}
-            ></Box>
-          </Box>
-          <Box
-            sx={{
-              width: "821px",
-              height: "77px",
-              backgroundColor: "#114F80",
-              display: "flex",
-              px: "20px",
-              justifyContent: "space-between",
-              alignItems: "center",
-              color: "#fff",
-              borderRadius: "16px",
-            }}
-          >
-            <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-              966 55443322
-            </Typography>
-
-            <Box
-              sx={{
-                width: "37px",
-                height: "37px",
-                backgroundColor: "#fff",
-                borderRadius: "5px",
-              }}
-            ></Box>
-          </Box>
+                <Box
+                  sx={{
+                    width: "37px",
+                    height: "37px",
+                    backgroundColor: "#fff",
+                    borderRadius: "5px",
+                  }}
+                ></Box>
+              </Box>
+            );
+          })}
         </Box>
       </Box>
     </Box>

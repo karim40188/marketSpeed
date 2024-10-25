@@ -1,6 +1,10 @@
 import { Box, Button, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function SaudiNumbers() {
+
+
+  let navigate= useNavigate()
   return (
     <Box>
       <Typography
@@ -87,6 +91,10 @@ function SaudiNumbers() {
             display: "block",
             mr: "auto",
           }}
+
+        onClick={()=>{
+          navigate('/saudi-groups')
+        }}
         >
           إرسال
         </Button>

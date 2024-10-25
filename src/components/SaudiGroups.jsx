@@ -1,7 +1,9 @@
 import { Box, Button, Typography } from "@mui/material";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function SaudiGroups() {
+  let navigate = useNavigate();
   let [whatsApp] = useState([
     "جروب العائله",
     "جروب صحتي",
@@ -43,7 +45,7 @@ function SaudiGroups() {
     "جروب سيارات",
   ]);
   return (
-    <Box sx={{width:'100%'}}>
+    <Box sx={{ width: "100%" }}>
       <Box
         sx={{
           display: "flex",
@@ -114,6 +116,13 @@ function SaudiGroups() {
                       alignItems: "center",
                       justifyContent: "space-between",
                       p: "15px",
+                      cursor: "pointer",
+             
+                    }}
+
+
+                    onClick={() => {
+                      navigate("/all-numbers");
                     }}
                   >
                     <Typography
@@ -175,6 +184,10 @@ function SaudiGroups() {
                       alignItems: "center",
                       justifyContent: "space-between",
                       p: "15px",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => {
+                      navigate("/all-numbers");
                     }}
                   >
                     <Typography

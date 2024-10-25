@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
 
-function EditUserFile() {
+function AddUser() {
   return (
     <Box>
       <Typography
@@ -11,7 +11,7 @@ function EditUserFile() {
           mb: "20px",
         }}
       >
-      تعديل المستخدم
+      اضافه المستخدم
       </Typography>
 
       <Box
@@ -246,4 +246,4 @@ function EditUserFile() {
   );
 }
 
-export default EditUserFile;
+export default AddUser;

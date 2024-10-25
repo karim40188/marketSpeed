@@ -26,7 +26,7 @@ function CreateGroups() {
   let navigate= useNavigate()
 
   return (
-    <Box sx={{ width: "55%" }}>
+    <Box sx={{ width: "80%" }}>
       <Box
         sx={{
           display: "flex",
@@ -37,7 +37,7 @@ function CreateGroups() {
         <Typography
           sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
         >
-          أضف دولة فى مجموعة الدول
+         أرقام المجموعة الدول
         </Typography>
 
         <Button
@@ -65,7 +65,7 @@ function CreateGroups() {
       </Box>
       <Box
         sx={{
-          p: "25px",
+          p: "20px",
           display: "flex",
           justifyContent: "space-between",
           width: "100%",
@@ -77,6 +77,9 @@ function CreateGroups() {
           {whatsApp.map((country) => {
             return (
               <Box
+              onClick={()=>{
+                navigate('/saudi-groups')
+              }}
                 key={country}
                 sx={{
                   width: "336px",
@@ -89,6 +92,7 @@ function CreateGroups() {
                   alignItems: "center",
                   gap: "20px",
                   justifyContent: "center",
+                   cursor:'pointer'
                 }}
               >
                 <Box sx={{ width: "83.06px", height: "44.46px" }}>
@@ -121,6 +125,9 @@ function CreateGroups() {
           {telegram.map((country) => {
             return (
               <Box
+              onClick={()=>{
+                navigate('/saudi-groups')
+              }}
                 key={country}
                 sx={{
                   width: "336px",
@@ -133,6 +140,7 @@ function CreateGroups() {
                   alignItems: "center",
                   gap: "20px",
                   justifyContent: "center",
+                  cursor:'pointer'
                 }}
               >
                 <Box sx={{ width: "83.06px", height: "44.46px" }}>

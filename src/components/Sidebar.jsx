@@ -388,6 +388,7 @@ function Sidebar() {
               اضافة روابط المجموعات
             </Link>
             <Link
+              to="/add-country-numbers"
               className="link"
               onClick={(e) => {
                 if (activeLink) {
@@ -410,6 +411,35 @@ function Sidebar() {
               }}
             >
               جميع الارقام
+            </Link>
+
+
+            <Link
+              to="/clients-groups"
+              className="link"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              جروبات العملاء
+            </Link>
+
+            <Link
+              to="/clients-number"
+              className="link"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              ارقام العملاء
             </Link>
           </Box>
         )}

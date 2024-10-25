@@ -41,6 +41,9 @@ import ShowUsers from "./components/ShowUsers";
 import ShowUserFile from "./components/ShowUserFile";
 import AddPackage from "./components/AddPackage";
 import EditUserFile from "./components/EditUserFile";
+import AddUser from "./components/AddUser";
+import ClientsNumber from "./components/ClientsNumber";
+import ClientsGroups from "./components/ClientsGroups";
 
 function App() {
   let router = createBrowserRouter([
@@ -79,50 +82,56 @@ function App() {
         { path: "/supervisors", element: <Supervisors /> },
         { path: "/supervisor-profile", element: <SupervisorProfile /> },
         { path: "/add-supervisor", element: <AddSupervisor /> },
-        { path: "/create-groups", element: <CreateGroups /> },
         { path: "/add-group", element: <AddGroup /> },
         { path: "/add-links", element: <AddLinks /> },
-        { path: "/add-country-numbers", element: <AddCountryNum /> },
         // Desktop 42
         { path: "/marketers", element: <Marketers /> },
-          // Desktop 50
-          { path: "/Add-admin-file", element: <AddAdminFile /> },
-
+        // Desktop 50
+        { path: "/Add-admin-file", element: <AddAdminFile /> },
 
         // -----------------------
 
-          // Desktop 48
-          { path: "/show-admin-file", element: <ShowAdminFile /> },
+        // Desktop 48
+        { path: "/show-admin-file", element: <ShowAdminFile /> },
 
-
-          // Destop 49
-          { path: "/edit-admin-file", element: <EditAdminFile /> },
-
-
-
-          // Destop 61
-          { path: "/saudi-groups", element: <SaudiGroups /> },
+        // Destop 49
+        { path: "/edit-admin-file", element: <EditAdminFile /> },
 
 
 
 
-          // Destop 58
-          { path: "/all-numbers", element: <AllNumbersOfGroups /> },
 
 
 
+        // Done
+        { path: "/clients-number", element: <ClientsNumber /> },
+        // Done
+        { path: "/clients-groups", element: <ClientsGroups /> },
 
-          // Destop 59
-          { path: "/saudi-numbers", element: <SaudiNumbers /> },
+        // Done
+        { path: "/add-country-numbers", element: <AddCountryNum /> },
+        // Done
+        // Destop 61
+        { path: "/saudi-groups", element: <SaudiGroups /> },
+        // Done
+        // Done
+        { path: "/create-groups", element: <CreateGroups /> },
 
-
-
-
-          { path: "/show-users", element: <ShowUsers /> },
-          { path: "/show-user-file", element: <ShowUserFile /> },
-          { path: "/add-new-package", element: <AddPackage /> },
-          { path: "/edit-user-file", element: <EditUserFile /> },
-      
+        // Destop 58
+        { path: "/all-numbers", element: <AllNumbersOfGroups /> },
+        // Done
+        // Destop 59
+        { path: "/saudi-numbers", element: <SaudiNumbers /> },
+        // Done
+        { path: "/show-users", element: <ShowUsers /> },
+        // Done
+        { path: "/show-user-file", element: <ShowUserFile /> },
+        // Done
+        { path: "/add-new-package", element: <AddPackage /> },
+        // Done
+        { path: "/edit-user-file", element: <EditUserFile /> },
+        // Done
+        { path: "/add-user", element: <AddUser /> },
       ],
     },
   ]);
