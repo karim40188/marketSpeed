@@ -5,7 +5,7 @@ function Packages() {
     let navigate=useNavigate()
   return (
     <Box>
-      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+      <Box sx={{ display: "flex", justifyContent: "space-between",    }}>
         <Typography
           sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
         >
@@ -25,6 +25,10 @@ function Packages() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+          }}
+
+          onClick={()=>{
+            navigate('/add-new-package')
           }}
         >
           أضف باقة جديدة

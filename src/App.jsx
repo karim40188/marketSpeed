@@ -37,6 +37,10 @@ import EditAdminFile from "./components/EditAdminFile";
 import SaudiGroups from "./components/SaudiGroups";
 import AllNumbersOfGroups from "./components/AllNumbersOfGroups";
 import SaudiNumbers from "./components/SaudiNumbers";
+import ShowUsers from "./components/ShowUsers";
+import ShowUserFile from "./components/ShowUserFile";
+import AddPackage from "./components/AddPackage";
+import EditUserFile from "./components/EditUserFile";
 
 function App() {
   let router = createBrowserRouter([
@@ -110,6 +114,14 @@ function App() {
 
           // Destop 59
           { path: "/saudi-numbers", element: <SaudiNumbers /> },
+
+
+
+
+          { path: "/show-users", element: <ShowUsers /> },
+          { path: "/show-user-file", element: <ShowUserFile /> },
+          { path: "/add-new-package", element: <AddPackage /> },
+          { path: "/edit-user-file", element: <EditUserFile /> },
       
       ],
     },

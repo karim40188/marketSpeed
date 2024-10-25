@@ -40,33 +40,27 @@ function Platforms() {
           جميع المنصات
         </Typography>
 
-        <Box sx={{ width: "70%", mx: "auto" }}>
-          <Grid2
-            container
-            spacing={5}
-            sx={{ display: "flex", justifyContent: "", flexWrap: "wrap" }}
-          >
+        <Box sx={{ width: "100%",  }}>
+          <Box sx={{ display: "flex", justifyContent: "", flexWrap: "wrap" }}>
             {icons.map((icon, index) => {
               return (
-                <Grid2
+                <Box
                   key={index}
-                  sx={{ maxWidth: "388px", maxHeight: "160px", cursor: 'pointer' }}
+                  sx={{
+                    maxWidth: "388px",
+                    maxHeight: "160px",
+                    cursor: "pointer",
+                  }}
                 >
-                  <motion.div
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <Box
-                      component="img"
-                      src={icon}
-                      sx={{ width: "100%", height: "100%" }}
-                    />
-                  </motion.div>
-                </Grid2>
+                  <Box
+                    component="img"
+                    src={icon}
+                    sx={{ width: "100%", height: "100%" }}
+                  />
+                </Box>
               );
             })}
-          </Grid2>
+          </Box>
         </Box>
       </Box>
     </Box>

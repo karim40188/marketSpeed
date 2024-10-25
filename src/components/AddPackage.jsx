@@ -1,6 +1,6 @@
 import { Box, Button, Grid2, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-function EditPackage() {
+function AddPackage() {
   let navigate = useNavigate();
   return (
     <Box>
@@ -8,9 +8,26 @@ function EditPackage() {
         <Typography
           sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
         >
-         تعديل الباقة
+         اضافه الباقة
         </Typography>
-       
+        <Button
+          sx={{
+            fontSize: "25px",
+            fontFamily: "Tanseek Modern Pro Arabic",
+            width: "auto",
+            height: "32px",
+            backgroundColor: "#114F80",
+            borderRadius: "6px",
+            color: "#fff",
+            px: "30px",
+            py: "20px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          أضف باقة جديدة
+        </Button>
       </Box>
       <Box sx={{ p: "40px", width: "70%" }}>
         <Box
@@ -39,9 +56,12 @@ function EditPackage() {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-            
+              onClick={() => {
+                navigate("/edit-package");
+              }}
             >
-              حفظ
+
+                حفظ
             </Button>
             <Button
               sx={{
@@ -78,8 +98,7 @@ function EditPackage() {
         >
           <ul style={{ color: "#000" }}>
             <li>
-              <Typography>
-                 مجانية </Typography>
+              <Typography>15 ماسة مجانية </Typography>
             </li>
             <li>
               <Typography>شعار واتساب متاح لمده 4 أسابيع</Typography>
@@ -146,4 +165,4 @@ function EditPackage() {
   );
 }
 
-export default EditPackage;
+export default AddPackage;

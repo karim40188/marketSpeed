@@ -11,6 +11,7 @@ function Sidebar() {
   let [techSupport, setTechSupport] = useState(false);
   let [marketers, setMarketers] = useState(false);
   let [groups, setGroups] = useState(false);
+  let [admins, setAdmins] = useState(false);
 
   let [dropDownLinks] = useState([
     { name: "بنرات التطبيق", path: "/banners" },
@@ -27,7 +28,7 @@ function Sidebar() {
     <Box
       sx={{
         backgroundColor: "#114F80",
-        width: { xs: "200px", md: "400px", lg: "466px" },
+        width: "30%",
         position: "sticky",
         top: "0",
         right: "0",
@@ -81,16 +82,15 @@ function Sidebar() {
           <Box
             sx={{
               backgroundColor: "#EDE8E9",
-              width: { xs: "90%", sm: "300px", md: "354px" },
-              height: "388px",
+              width: { xs: "90%", sm: "80%", md: "300px", xl: "354px" },
+              height: "auto",
               borderRadius: "20px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              gap: "10px",
+              gap: "5px",
               color: "#114F80",
-              px: "10px",
-              py: "30px",
+              p: "10px",
             }}
           >
             {dropDownLinks.map((link) => (
@@ -135,16 +135,15 @@ function Sidebar() {
           <Box
             sx={{
               backgroundColor: "#EDE8E9",
-              width: { xs: "90%", sm: "300px", md: "354px" },
-              height: "175px",
+              width: { xs: "90%", sm: "300px", md: "300px", xl: "354px" },
+              height: "auto",
               borderRadius: "20px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              gap: "20px",
+              gap: "5px",
               color: "#114F80",
-              px: "10px",
-              py: "30px",
+              p: "10px",
             }}
           >
             <Link
@@ -198,16 +197,15 @@ function Sidebar() {
           <Box
             sx={{
               backgroundColor: "#EDE8E9",
-              width: { xs: "90%", sm: "300px", md: "354px" },
-              height: "259px",
+              width: { xs: "90%", sm: "300px", xl: "354px" },
+              height: "auto",
               borderRadius: "20px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              gap: "20px",
+              gap: "5px",
               color: "#114F80",
-              px: "10px",
-              py: "30px",
+              p: "10px",
             }}
           >
             <Link
@@ -252,19 +250,21 @@ function Sidebar() {
       </Box>
       {/* المستخدمين  */}
       <Box>
-        <Typography
-          sx={{
-            color: "#fff",
-            textAlign: "center",
-            fontFamily: "Tanseek Modern Pro Arabic",
-            fontSize: "25px",
-            fontWeight: "400",
-            cursor: "pointer",
-            mb: "5px",
-          }}
-        >
-          المستخدمين
-        </Typography>
+        <Link to="/show-users">
+          <Typography
+            sx={{
+              color: "#fff",
+              textAlign: "center",
+              fontFamily: "Tanseek Modern Pro Arabic",
+              fontSize: "25px",
+              fontWeight: "400",
+              cursor: "pointer",
+              mb: "5px",
+            }}
+          >
+            المستخدمين
+          </Typography>
+        </Link>
       </Box>
 
       {/* الدعم الفني */}
@@ -290,16 +290,15 @@ function Sidebar() {
           <Box
             sx={{
               backgroundColor: "#EDE8E9",
-              width: { xs: "90%", sm: "300px", md: "354px" },
+              width: { xs: "90%", sm: "300px", xl: "354px" },
               height: "auto",
               borderRadius: "20px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              gap: "10px",
+              gap: "5px",
               color: "#114F80",
-              px: "10px",
-              py: "30px",
+              p: "10px",
             }}
           >
             <Link
@@ -352,7 +351,7 @@ function Sidebar() {
           <Box
             sx={{
               backgroundColor: "#EDE8E9",
-              width: { xs: "90%", sm: "300px", md: "354px" },
+              width: { xs: "90%", sm: "300px", xl: "354px" },
               height: "auto",
               borderRadius: "20px",
               display: "flex",
@@ -360,12 +359,11 @@ function Sidebar() {
               justifyContent: "center",
               gap: "10px",
               color: "#114F80",
-              px: "10px",
-              py: "30px",
+              p: "10px",
             }}
           >
             <Link
-            to="create-groups"
+              to="create-groups"
               className="link"
               onClick={(e) => {
                 if (activeLink) {
@@ -378,7 +376,7 @@ function Sidebar() {
               انشاء مجموعات
             </Link>
             <Link
-           to="/add-links"
+              to="/add-links"
               onClick={(e) => {
                 if (activeLink) {
                   activeLink.classList.remove("active");
@@ -429,9 +427,54 @@ function Sidebar() {
             cursor: "pointer",
             mb: "5px",
           }}
+          onClick={() => {
+            setAdmins(!admins);
+          }}
         >
           المسؤلين
         </Typography>
+
+        {admins && (
+          <Box
+            sx={{
+              backgroundColor: "#EDE8E9",
+              width: { xs: "90%", sm: "300px", xl: "354px" },
+              height: "auto",
+              borderRadius: "20px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              gap: "5px",
+              color: "#114F80",
+              p: "10px",
+            }}
+          >
+            <Link
+              to="/show-admin-file"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              عرض المسؤلين
+            </Link>
+            <Link
+              to="/Add-admin-file"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              إضافة مسؤل
+            </Link>
+          </Box>
+        )}
       </Box>
 
       {/* المسوقين */}
@@ -457,16 +500,15 @@ function Sidebar() {
           <Box
             sx={{
               backgroundColor: "#EDE8E9",
-              width: { xs: "90%", sm: "300px", md: "354px" },
+              width: { xs: "90%", sm: "300px", xl: "354px" },
               height: "auto",
               borderRadius: "20px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              gap: "10px",
+              gap: "5px",
               color: "#114F80",
-              px: "10px",
-              py: "30px",
+              p: "10px",
             }}
           >
             <Link
