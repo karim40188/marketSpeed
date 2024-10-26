@@ -39,7 +39,7 @@ function Icons() {
         بنارات المنصات
       </Typography>
 
-      <Box sx={{ width: '60%', mx: 'auto' }}>
+      <Box sx={{ width: '100%', mx: 'auto' }}>
         <Grid2 container spacing={5} sx={{ display: "flex", flexWrap: 'wrap' }}>
           {icons.map((icon, index) => {
             return (

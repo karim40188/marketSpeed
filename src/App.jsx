@@ -44,6 +44,7 @@ import EditUserFile from "./components/EditUserFile";
 import AddUser from "./components/AddUser";
 import ClientsNumber from "./components/ClientsNumber";
 import ClientsGroups from "./components/ClientsGroups";
+import AddMarketer from "./components/AddMarketer";
 function App() {
   let router = createBrowserRouter([
 
@@ -91,6 +92,7 @@ function App() {
         { path: "/add-links", element: <AddLinks /> },
         // Desktop 42
         { path: "/marketers", element: <Marketers /> },
+        { path: "/add-marketer", element: <AddMarketer /> },
         // Desktop 50
         { path: "/Add-admin-file", element: <AddAdminFile /> },
 

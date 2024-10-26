@@ -2,8 +2,12 @@ import { Box, Button, TextField, Typography } from "@mui/material";
 import { IoSearchOutline } from "react-icons/io5";
 import profile_img from "../assets/profile_img.png";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Marketers() {
+
+
+  let navigate= useNavigate()
   let [marketers] = useState([
     "على محمد",
     "على محمد",
@@ -56,8 +60,14 @@ function Marketers() {
             fontWeight: "400",
             py: "25px",
           }}
+
+          onClick={()=>{
+            navigate('/add-marketer')
+          }}
         >
-          إضافه مشرف
+
+          
+          إضافه مسوق
         </Button>
       </Box>
 

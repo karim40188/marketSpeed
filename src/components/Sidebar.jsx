@@ -2,8 +2,25 @@ import { Box, Typography } from "@mui/material";
 import logo from "../assets/logo.svg";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  TextField,
+  Button,
+} from "@mui/material";
 
 function Sidebar() {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   let [activeLink, setActiveLink] = useState(false);
   let [appDropDown, setAppDropDown] = useState(false);
   let [statsDropDown, setStatsDropDown] = useState(false);
@@ -413,7 +430,6 @@ function Sidebar() {
               جميع الارقام
             </Link>
 
-
             <Link
               to="/clients-groups"
               className="link"
@@ -565,20 +581,72 @@ function Sidebar() {
             >
               إضافة مشرفين
             </Link>
-            <Link
+            <Typography
+            sx={{pr:'20px',cursor:'pointer'}}
+            to=""
               onClick={(e) => {
                 if (activeLink) {
                   activeLink.classList.remove("active");
                 }
                 e.target.classList.add("active");
                 setActiveLink(e.target);
+                handleClickOpen()
+
+
               }}
+              
             >
-              محفظة المشرفين والمسوقين
-            </Link>
+              عرض المسوقين
+            </Typography>
           </Box>
         )}
       </Box>
+
+      <Dialog 
+        open={open} 
+        onClose={handleClose}
+        PaperProps={{
+          style: {
+        
+            borderRadius: '25px',
+          }
+        }}
+      >
+        <DialogContent style={{ backgroundColor: '#114F80', color: '#fff' , padding:"80px",}}>
+          <TextField
+            label="اسم المستخدم"
+            variant="outlined"
+            fullWidth
+            margin="dense"
+            style={{ backgroundColor: '#fff',  borderRadius:'15px' }}
+          
+          />
+          <TextField
+            label="كلمة المرور"
+            type="password"
+            variant="outlined"
+            fullWidth
+            margin="dense"
+            style={{ backgroundColor: '#fff', borderRadius: '15px' ,marginBlock:'20px'}}
+          />
+          <Button
+            onClick={()=>{
+              handleClose()
+              navigate('/marketers')
+            }}
+            sx={{width:'200px',display:'block',mx:'auto',borderRadius:'15px'}}
+            variant="contained"
+            style={{
+              marginTop: '15px',
+              background: 'linear-gradient(90deg, #F9D053 0%, #937B31 100%)',
+              color: '#fff'
+            }}
+          >
+           دخول
+          </Button>
+        </DialogContent>
+      </Dialog>
+
     </Box>
   );
 }

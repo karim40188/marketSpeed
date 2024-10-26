@@ -36,7 +36,7 @@ function Discounts() {
             navigate('/add-discount')
           }}
         >
-          أضف باقة جديدة
+     أضافه كود خصم جديد
         </Button>
       </Box>
 
