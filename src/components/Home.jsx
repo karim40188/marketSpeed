@@ -19,7 +19,7 @@ function Home() {
   ]);
 
   return (
-    <Box sx={{ p: "40px" }}>
+    <Box >
       <Typography
         sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
       >
@@ -28,7 +28,7 @@ function Home() {
       <Grid2
         container
         sx={{
-          p: "40px",
+          p: "20px",
           width: { xs: "90%", sm: "80%" },
           justifyContent: "end",
         }}

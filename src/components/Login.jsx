@@ -66,11 +66,10 @@ function Login() {
             sx={{
               color: "#fff",
               position: "relative",
-              width: "35%",
+              width: "45%",
               "&::after": {
                 content: '""',
                 position: "absolute",
-
                 top: "100%",
                 left: "0",
                 width: "100%",
@@ -172,7 +171,7 @@ function Login() {
           }}
         ></Box>
 
-        <Box sx={{ width: {xs:"200px",md:"260px"}, height: {xs:"250px",md:"331px"}, mx: "auto" , }}>
+        <Box sx={{ width: {xs:"200px",md:"260px"}, height: {xs:"250px",xl:"331px"}, mx: "auto" , }}>
           <Box
             component="img"
             src={logo}

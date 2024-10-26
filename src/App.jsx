@@ -44,17 +44,22 @@ import EditUserFile from "./components/EditUserFile";
 import AddUser from "./components/AddUser";
 import ClientsNumber from "./components/ClientsNumber";
 import ClientsGroups from "./components/ClientsGroups";
-
 function App() {
   let router = createBrowserRouter([
-    { index: true, element: <Login /> },
-    { path: "/login", element: <Login /> },
 
+    // Done
+    {index:true , element:<Login/>},
     {
       path: "/",
       element: <Layout />,
       children: [
+        // Done
         { path: "/home", element: <Home /> },
+
+        
+
+
+
         { path: "/banners", element: <Banners /> },
         { path: "/videos", element: <Videos /> },
         { path: "/profitstats", element: <ProfitStats /> },

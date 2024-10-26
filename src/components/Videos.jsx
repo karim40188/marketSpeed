@@ -26,7 +26,7 @@ function Videos() {
   ]);
 
   return (
-    <Box sx={{ p: "60px", display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{  display: 'flex', flexDirection: 'column' }}>
       <Typography
         sx={{
           background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
@@ -39,7 +39,7 @@ function Videos() {
         بنارات المنصات
       </Typography>
 
-      <Box sx={{ width: '60%', mx: 'auto' }}>
+      <Box sx={{ width: '100%', mx: 'auto' , p:'20px' }}>
         <Grid2 container spacing={5} sx={{ display: "flex", flexWrap: 'wrap' }}>
           {icons.map((icon, index) => {
             return (

@@ -24,7 +24,7 @@ function Platforms() {
 
   return (
     <Box>
-      <Typography sx={{ fontSize: "40px", color: "#114F80" }}>
+      <Typography sx={{ fontSize: "40px", color: "#114F80" ,}}>
         المنصات
       </Typography>
       <Box sx={{ p: "60px", display: "flex", flexDirection: "column" }}>

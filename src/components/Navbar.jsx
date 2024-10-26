@@ -9,13 +9,13 @@ function Navbar() {
     <Box
       sx={{
         backgroundColor: "#fff",
-        height: "80px",
+        height: "auto",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
         pl: { xs: "10px", md: "20px" }, 
         pr: { xs: "10px", md: "80px" },
-        flexDirection: { xs: "column", md: "row" },
+        flexDirection: { xs: "row", md: "row" },
         gap: { xs: "10px", md: "0" }, 
       }}
     >
@@ -38,7 +38,7 @@ function Navbar() {
           display: "flex",
           alignItems: "center",
           gap: { xs: "5px", md: "10px" }, 
-          flexDirection: { xs: "column", md: "row" }, 
+          flexDirection: { xs: "row", md: "row" }, 
           width: { xs: "100%", md: "auto" },
         }}
       >

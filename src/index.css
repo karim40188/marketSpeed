@@ -49,6 +49,7 @@ body {
   background-color: #eee;
   direction: rtl !important; /* يجعل كل المحتوى يبدأ من اليمين */
   text-align: right !important; 
+  overflow-x:hidden;
 }
 
 a {
@@ -67,3 +68,5 @@ a {
   color: #fff !important;
   border-radius: 8px;
 }
+
+
