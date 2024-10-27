@@ -13,7 +13,7 @@ function Discounts() {
         }}
       >
         <Typography
-          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" ,fontWeight:'600'}}
         >
           أكواد الخصم
         </Typography>
@@ -63,7 +63,7 @@ function Discounts() {
           >
             <Box sx={{ display: "flex", flexDirection: "column", gap: "30px" }}>
               <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <Typography sx={{ width: "121px" }}>الكود</Typography>
+                <Typography sx={{ width: "121px" ,fontWeight:'600'}}>الكود</Typography>
                 <Typography
                   sx={{
                     border: "1px solid black",
@@ -75,13 +75,14 @@ function Discounts() {
                     borderRadius: "5px",
                     fontSize: "30px",
                     p: "10px",
+                    fontWeight:'600'
                   }}
                 >
                   FastMarketing50
                 </Typography>
               </Box>
               <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <Typography sx={{ width: "121px" }}>نسبه الخصم</Typography>
+                <Typography sx={{ width: "121px",fontWeight:'600' }}>نسبه الخصم</Typography>
                 <Typography
                   sx={{
                     border: "1px solid black",
@@ -93,6 +94,7 @@ function Discounts() {
                     borderRadius: "5px",
                     fontSize: "30px",
                     mr: "20px",
+                    fontWeight:'600'
                   }}
                 >
                   20 %
@@ -162,7 +164,7 @@ function Discounts() {
           >
             <Box sx={{ display: "flex", flexDirection: "column", gap: "30px" }}>
               <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <Typography sx={{ width: "121px" }}>الكود</Typography>
+                <Typography sx={{ width: "121px" ,fontWeight:'600'}}>الكود</Typography>
                 <Typography
                   sx={{
                     border: "1px solid black",
@@ -174,13 +176,14 @@ function Discounts() {
                     borderRadius: "5px",
                     fontSize: "30px",
                     p: "10px",
+                    fontWeight:'600'
                   }}
                 >
                   FastMarketing50
                 </Typography>
               </Box>
               <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <Typography sx={{ width: "121px" }}>نسبه الخصم</Typography>
+                <Typography sx={{ width: "121px",fontWeight:'600' }}>نسبه الخصم</Typography>
                 <Typography
                   sx={{
                     border: "1px solid black",
@@ -192,6 +195,7 @@ function Discounts() {
                     borderRadius: "5px",
                     fontSize: "30px",
                     mr: "20px",
+                    fontWeight:'600'
                   }}
                 >
                   20 %
@@ -261,7 +265,7 @@ function Discounts() {
           >
             <Box sx={{ display: "flex", flexDirection: "column", gap: "30px" }}>
               <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <Typography sx={{ width: "121px" }}>الكود</Typography>
+                <Typography sx={{ width: "121px",fontWeight:'600' }}>الكود</Typography>
                 <Typography
                   sx={{
                     border: "1px solid black",
@@ -273,13 +277,14 @@ function Discounts() {
                     borderRadius: "5px",
                     fontSize: "30px",
                     p: "10px",
+                    fontWeight:'600'
                   }}
                 >
                   FastMarketing50
                 </Typography>
               </Box>
               <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <Typography sx={{ width: "121px" }}>نسبه الخصم</Typography>
+                <Typography sx={{ width: "121px" ,fontWeight:'600'}}>نسبه الخصم</Typography>
                 <Typography
                   sx={{
                     border: "1px solid black",
@@ -291,6 +296,7 @@ function Discounts() {
                     borderRadius: "5px",
                     fontSize: "30px",
                     mr: "20px",
+                    fontWeight:'600'
                   }}
                 >
                   20 %

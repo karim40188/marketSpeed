@@ -8,7 +8,7 @@ function SaudiNumbers() {
   return (
     <Box>
       <Typography
-        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" ,fontWeight:'600'}}
       >
         جميع الأرقام مجموعات المملكة العربية السعودية
       </Typography>
@@ -19,7 +19,7 @@ function SaudiNumbers() {
           alignItems: "center",
           gap: "20px",
           justifyContent: "end",
-          width: "60%",
+          width: "90%",
         }}
       >
         <Button
@@ -59,11 +59,11 @@ function SaudiNumbers() {
             height: "818px",
             p: "100px",
             backgroundColor: "#fff",
-            mt: "100px",
+            mt: "50px",
             mr: "30px",
           }}
         >
-          <Typography>
+          <Typography sx={{fontWeight:'600'}}>
             يىبهريبنؤءىرنؤءر
             ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
             ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر

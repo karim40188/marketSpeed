@@ -6,9 +6,13 @@ function AddPackage() {
     <Box>
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <Typography
-          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+          sx={{
+            fontSize: { xs: "30px", md: "40px" },
+            color: "#114F80",
+            fontWeight: "600",
+          }}
         >
-         اضافه الباقة
+          إضافة الباقة
         </Typography>
         <Button
           sx={{
@@ -38,7 +42,7 @@ function AddPackage() {
             mb: "20px",
           }}
         >
-          <Typography>مزايا الباقة</Typography>
+          <Typography sx={{ fontWeight: "600" }}>مزايا الباقة</Typography>
 
           <Box sx={{ display: "flex", gap: "20px" }}>
             <Button
@@ -60,8 +64,7 @@ function AddPackage() {
                 navigate("/edit-package");
               }}
             >
-
-                حفظ
+              حفظ
             </Button>
             <Button
               sx={{
@@ -90,10 +93,9 @@ function AddPackage() {
             height: "auto",
             background: "#fff",
             borderRadius: "15px",
-            padding: "40px",
+            padding: "60px",
             display: "flex",
             alignItems: "center",
-    
           }}
         >
           <ul style={{ color: "#000" }}>
@@ -129,7 +131,9 @@ function AddPackage() {
         <Box
           sx={{ display: "flex", gap: "50px", p: "20px", alignItems: "center" }}
         >
-          <Typography sx={{ fontSize: "30px" }}>السعر</Typography>
+          <Typography sx={{ fontSize: "30px", fontWeight: "600" }}>
+            السعر
+          </Typography>
           <Typography
             sx={{
               fontSize: "30px",
@@ -140,6 +144,7 @@ function AddPackage() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              fontWeight: "600",
             }}
           >
             30 ريال
@@ -155,9 +160,10 @@ function AddPackage() {
               justifyContent: "center",
               alignItems: "center",
               mr: "20px",
+              fontWeight: "600",
             }}
           >
-            30 ريال
+            7.5 دولار
           </Typography>
         </Box>
       </Box>

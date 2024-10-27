@@ -1,13 +1,16 @@
 import { Box, Button, Grid2, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 function Packages() {
-
-    let navigate=useNavigate()
+  let navigate = useNavigate();
   return (
     <Box>
-      <Box sx={{ display: "flex", justifyContent: "space-between",    }}>
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <Typography
-          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+          sx={{
+            fontSize: { xs: "30px", md: "40px" },
+            color: "#114F80",
+            fontWeight: "600",
+          }}
         >
           الباقات
         </Typography>
@@ -26,9 +29,8 @@ function Packages() {
             justifyContent: "center",
             alignItems: "center",
           }}
-
-          onClick={()=>{
-            navigate('/add-new-package')
+          onClick={() => {
+            navigate("/add-new-package");
           }}
         >
           أضف باقة جديدة
@@ -43,7 +45,7 @@ function Packages() {
             mb: "20px",
           }}
         >
-          <Typography>مزايا الباقة</Typography>
+          <Typography sx={{ fontWeight: "600" }}>مزايا الباقة</Typography>
 
           <Box sx={{ display: "flex", gap: "20px" }}>
             <Button
@@ -61,10 +63,9 @@ function Packages() {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-
-            onClick={()=>{
-                navigate('/edit-package')
-            }}
+              onClick={() => {
+                navigate("/edit-package");
+              }}
             >
               تعديل
             </Button>
@@ -96,7 +97,7 @@ function Packages() {
             background:
               "linear-gradient(78.11deg, #F9D053 0.15%, #937B31 99.85%)",
             borderRadius: "15px",
-            padding: "40px",
+            padding: "60px",
             display: "flex",
             alignItems: "center",
           }}
@@ -131,8 +132,12 @@ function Packages() {
             </li>
           </ul>
         </Box>
-        <Box sx={{ display: "flex" ,gap:'50px',p:'20px',alignItems:'center'}}>
-          <Typography sx={{ fontSize: "30px" }}>السعر</Typography>
+        <Box
+          sx={{ display: "flex", gap: "50px", p: "20px", alignItems: "center" }}
+        >
+          <Typography sx={{ fontSize: "30px", fontWeight: "600" }}>
+            السعر
+          </Typography>
           <Typography
             sx={{
               fontSize: "30px",
@@ -143,6 +148,7 @@ function Packages() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              fontWeight: "600",
             }}
           >
             30 ريال
@@ -157,10 +163,11 @@ function Packages() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              mr:'20px'
+              mr: "20px",
+              fontWeight: "600",
             }}
           >
-            30 ريال
+            7.5 دولار
           </Typography>
         </Box>
       </Box>

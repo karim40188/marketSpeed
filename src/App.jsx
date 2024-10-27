@@ -42,9 +42,10 @@ import ShowUserFile from "./components/ShowUserFile";
 import AddPackage from "./components/AddPackage";
 import EditUserFile from "./components/EditUserFile";
 import AddUser from "./components/AddUser";
-import ClientsNumber from "./components/ClientsNumber";
 import ClientsGroups from "./components/ClientsGroups";
 import AddMarketer from "./components/AddMarketer";
+import MarketerLink from "./components/MarketerLink";
+import ClientsChannels from "./components/ClientsChannels";
 function App() {
   let router = createBrowserRouter([
 
@@ -93,6 +94,7 @@ function App() {
         // Desktop 42
         { path: "/marketers", element: <Marketers /> },
         { path: "/add-marketer", element: <AddMarketer /> },
+        { path: "/marketer-link", element: <MarketerLink /> },
         // Desktop 50
         { path: "/Add-admin-file", element: <AddAdminFile /> },
 
@@ -111,7 +113,7 @@ function App() {
 
 
         // Done
-        { path: "/clients-number", element: <ClientsNumber /> },
+        { path: "//clients-channels", element: <ClientsChannels /> },
         // Done
         { path: "/clients-groups", element: <ClientsGroups /> },
 

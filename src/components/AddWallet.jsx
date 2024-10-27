@@ -3,12 +3,12 @@ function AddWallet() {
   return (
     <Box>
       <Typography
-        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80",fontWeight:'600' }}
       >
-        تعديل المحفظة الماسية
+       أضافة المحفظة الماسية
       </Typography>
       <Box sx={{ p: "40px" }}>
-        <Typography sx={{ fontSize: "30px", mb: "30px" }}>
+        <Typography sx={{ fontSize: "30px", mb: "30px",fontWeight:'600' }}>
           {" "}
           مزايا الباقة
         </Typography>
@@ -23,7 +23,7 @@ function AddWallet() {
           >
             <Box sx={{ display: "flex", flexDirection: "column", gap: "30px" }}>
               <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <Typography sx={{ width: "121px" }}>عدد الماسات</Typography>
+                <Typography sx={{ width: "121px",fontWeight:'600' }}>عدد الماسات</Typography>
                 <TextField
                   sx={{
                     width: "174px",
@@ -37,7 +37,7 @@ function AddWallet() {
                 />
               </Box>
               <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <Typography sx={{ width: "121px" }}>السعر</Typography>
+                <Typography sx={{ width: "121px" ,fontWeight:'600'}}>السعر</Typography>
                 <TextField
                   sx={{
                     width: "174px",

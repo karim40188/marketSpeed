@@ -43,7 +43,7 @@ function Policy() {
 
   return (
     <Box>
-      <Typography sx={{ fontSize: "40px", color: "#114F80" }}>
+      <Typography sx={{ fontSize: "40px", color: "#114F80",fontWeight:"600" }}>
         الشاشة الشروط و الأحكام
       </Typography>
 

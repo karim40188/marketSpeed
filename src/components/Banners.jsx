@@ -21,7 +21,7 @@ function Banners() {
 
   return (
     <Box>
-      <Typography sx={{ fontSize: "40px", color: "#114F80" }}>
+      <Typography sx={{ fontSize: "40px", color: "#114F80",fontWeight:'600' }}>
         الصفحة الرئيسية
       </Typography>
       <Box sx={{ p: "40px" }}>

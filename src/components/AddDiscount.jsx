@@ -1,10 +1,13 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function AddDiscount() {
+
+  let navigate= useNavigate()
   return (
     <Box>
       <Typography
-        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80",fontWeight:'600' }}
       >
         أضف كود الخصم
       </Typography>
@@ -25,7 +28,7 @@ function AddDiscount() {
             }}
           >
             <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-              <Typography sx={{ width: "121px" }}>الكود</Typography>
+              <Typography sx={{ width: "121px",fontWeight:'600' }}>الكود</Typography>
               <TextField
                 sx={{
                   width: "189px",
@@ -39,7 +42,7 @@ function AddDiscount() {
               />
             </Box>
             <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-              <Typography sx={{ width: "121px" }}>نسبه الخصم</Typography>
+              <Typography sx={{ width: "121px" ,fontWeight:'600'}}>نسبه الخصم</Typography>
               <TextField
                 sx={{
                   width: "174px",
@@ -69,6 +72,10 @@ function AddDiscount() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+              }}
+
+              onClick={()=>{
+                navigate('/edit-discount')
               }}
             >
               تعديل

@@ -9,9 +9,10 @@ function EditAdminFile() {
           fontSize: { xs: "30px", md: "40px" },
           color: "#114F80",
           mb: "20px",
+          fontWeight:'600'
         }}
       >
-        عرض ملف المسئول
+       تعديل ملف المسئول
       </Typography>
 
       <Box
@@ -279,7 +280,7 @@ function EditAdminFile() {
           </Box>
 
           <Box sx={{ my: "30px" }}>
-            <Typography sx={{ fontSize: "40px", color: "#114F80" ,mb:'20px'}}>
+            <Typography sx={{ fontSize: "40px", color: "#114F80" ,mb:'20px',fontWeight:'600'}}>
               الأدوار
             </Typography>
 

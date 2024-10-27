@@ -72,7 +72,7 @@ function ShowUsers() {
       </Button>
 
       <Box sx={{ display: "flex", justifyContent: "space-between", my: "30px" }}>
-        <Typography sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}>
+        <Typography sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80",fontWeight:'600' }}>
           عرض المستخدمين
         </Typography>
         <Box sx={{ position: "relative" }}>
@@ -108,7 +108,7 @@ function ShowUsers() {
             width: "121.65px",
             height: "32px",
             backgroundColor: selectedFilter === "user" ? "#114F80" : "#fff",
-            color: selectedFilter === "user" ? "#fff" : "#000",
+            color: selectedFilter === "user" ? "#fff" : "#114F80",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -124,7 +124,7 @@ function ShowUsers() {
             width: "121.65px",
             height: "32px",
             backgroundColor: selectedFilter === "subscriber" ? "#114F80" : "#fff",
-            color: selectedFilter === "subscriber" ? "#fff" : "#000",
+            color: selectedFilter === "subscriber" ? "#fff" : "#114F80",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -140,7 +140,7 @@ function ShowUsers() {
             width: "121.65px",
             height: "32px",
             backgroundColor: selectedFilter === "all" ? "#114F80" : "#fff",
-            color: selectedFilter === "all" ? "#fff" : "#000",
+            color: selectedFilter === "all" ? "#fff" : "#114F80",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",

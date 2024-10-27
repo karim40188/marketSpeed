@@ -4,70 +4,42 @@ import addImg from "../assets/addImg.png";
 function AddMarketer() {
   return (
     <Box>
-      <Typography
-        sx={{
-          fontSize: { xs: "30px", md: "40px" },
-          color: "#114F80",
-          mb: "20px",
-        }}
-      >
-        عرض ملف المسئول
-      </Typography>
+      <Box sx={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+        <Box sx={{ textAlign: "center", width: "12%" }}>
+          <Typography
+            sx={{
+              fontSize: { xs: "30px", md: "40px" },
+              color: "#114F80",
+              fontWeight: "600",
+            }}
+          >
+            أحمد محمد
+          </Typography>
 
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
-          <Box sx={{ width: "108px", height: "108px" }}>
-            <Box
-              sx={{ width: "100%", height: "100%" }}
-              component="img"
-              src={profile_img}
-            />
-          </Box>
-        </Box>
-        <Box sx={{ display: "flex", gap: "20px" }}>
-          <Button
+          <Typography
             sx={{
-              fontSize: "25px",
-              fontFamily: "Tanseek Modern Pro Arabic",
-              width: "156px",
-              height: "32px",
-              backgroundColor: "#114F80",
-              borderRadius: "6px",
-              color: "#fff",
-              px: "30px",
-              py: "20px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
+              background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
             }}
           >
-            تعديل
-          </Button>
-          <Button
-            sx={{
-              fontSize: "25px",
-              fontFamily: "Tanseek Modern Pro Arabic",
-              width: "156px",
-              height: "32px",
-              backgroundColor: "#CC0000",
-              borderRadius: "6px",
-              color: "#fff",
-              px: "30px",
-              py: "20px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            حذف
-          </Button>
+            مشرف
+          </Typography>
         </Box>
+
+        <Button
+          sx={{
+            width: "136px",
+            height: "42px",
+            background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
+
+            borderRadius:'5px',
+            color:"#000",
+            fontWeight:'600'
+          }}
+        >
+          إضافه مسوق
+        </Button>
       </Box>
 
       <Box sx={{ p: "20px", width: { xs: "100%", xl: "60%" } }}>
@@ -226,7 +198,13 @@ function AddMarketer() {
               </Box>
             </Box>
 
-            <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
               <Box>
                 <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
                   نسبه الخصم

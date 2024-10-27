@@ -25,8 +25,8 @@ function UserStats() {
 
   return (
     <Box>
-      <Typography sx={{ color: "#114F80", fontSize: { xs: "30px", md: "40px" } }}>
-        إحصائيات مكسب التطبيق
+      <Typography sx={{ color: "#114F80", fontSize: { xs: "30px", md: "40px" } ,fontWeight:'600',mb:'30px'}}>
+      إحصائيات مستخدمين التطبيق
       </Typography>
 
       <Box
@@ -41,11 +41,14 @@ function UserStats() {
         {filters.map((filter) => (
           <Button
             sx={{
-              width: { xs: "auto", md: "158px" },
+              width: { xs: "auto", md: "156px" },
               height: "57px",
               fontSize: { xs: "16px", md: "20px" },
               borderRadius: "10px",
               fontFamily: "Tanseek Modern Pro Arabic",
+              fontWeight:'600',
+              backgroundColor:"#fff"
+              
             }}
             key={filter}
             onClick={(e) => {
@@ -97,13 +100,16 @@ function UserStats() {
               }}
             >
               <Typography sx={{ fontSize: { xs: "24px", md: "30px" } }}>{card.number}</Typography>
-              <Typography sx={{ fontSize: { xs: "24px", md: "30px" } }}>عميل</Typography>
+              <Typography sx={{ fontSize: { xs: "24px", md: "30px" },color:"#ff" }}>عميل</Typography>
             </Box>
-            <Typography sx={{ fontSize: { xs: "24px", md: "30px" }, color: "#114F80" }}>
-              {card.name}
+            <Typography sx={{ fontSize: { xs: "24px", md: "30px" }, color:"#114F80" }}>
+            عدد المشتركين
             </Typography>
           </Grid2>
         ))}
+
+
+
       </Grid2>
     </Box>
   );

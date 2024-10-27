@@ -35,7 +35,7 @@ function AddCountryNum() {
         }}
       >
         <Typography
-          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80",fontWeight:'600' }}
         >
        أضف دولة فى مجموعة أرقام الدول
         </Typography>

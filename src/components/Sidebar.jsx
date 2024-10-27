@@ -445,7 +445,7 @@ function Sidebar() {
             </Link>
 
             <Link
-              to="/clients-number"
+              to="/clients-channels"
               className="link"
               onClick={(e) => {
                 if (activeLink) {
@@ -455,7 +455,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              ارقام العملاء
+          قنوات العملاء
             </Link>
           </Box>
         )}

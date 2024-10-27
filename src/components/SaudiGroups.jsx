@@ -58,6 +58,7 @@ function SaudiGroups() {
             fontSize: { xs: "30px", md: "40px" },
             color: "#114F80",
             mb: "20px",
+            fontWeight:'600'
           }}
         >
           مجموعات المملكة العربية السعودية
@@ -92,7 +93,7 @@ function SaudiGroups() {
               alignItems: "center",
             }}
           >
-            <Typography sx={{ my: "30px" }}>الواتساب</Typography>
+            <Typography sx={{ my: "30px" ,fontWeight:'600'}}>الواتساب</Typography>
             <Box
               sx={{
                 display: "flex",
@@ -160,7 +161,7 @@ function SaudiGroups() {
               alignItems: "center",
             }}
           >
-            <Typography sx={{ my: "30px" }}>التليجرام</Typography>
+            <Typography sx={{ my: "30px" ,fontWeight:'600'}}>التليجرام</Typography>
             <Box
               sx={{
                 display: "flex",

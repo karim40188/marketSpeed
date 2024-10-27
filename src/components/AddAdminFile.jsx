@@ -5,7 +5,7 @@ function AddAdminFile() {
   return (
     <Box>
       <Typography
-        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" ,fontWeight:'600',mb:'30px'}}
       >
         إضافة ملف المسئول
       </Typography>
@@ -275,7 +275,7 @@ function AddAdminFile() {
           </Box>
 
           <Box sx={{ my: "30px" }}>
-            <Typography sx={{ fontSize: "40px", color: "#114F80" ,mb:'20px'}}>
+            <Typography sx={{ fontSize: "40px", color: "#114F80" ,mb:'20px',fontWeight:'600'}}>
               الأدوار
             </Typography>
 

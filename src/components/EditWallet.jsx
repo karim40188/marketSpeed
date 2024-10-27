@@ -4,12 +4,16 @@ function EditWallet() {
   return (
     <Box>
       <Typography
-        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+        sx={{
+          fontSize: { xs: "30px", md: "40px" },
+          color: "#114F80",
+          fontWeight: "600",
+        }}
       >
         تعديل المحفظة الماسية
       </Typography>
       <Box sx={{ p: "40px" }}>
-        <Typography sx={{ fontSize: "30px", mb: "30px" }}>
+        <Typography sx={{ fontSize: "30px", mb: "30px", fontWeight: "600" }}>
           {" "}
           مزايا الباقة
         </Typography>

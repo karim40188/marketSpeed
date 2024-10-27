@@ -12,7 +12,7 @@ function DiWallet() {
         }}
       >
         <Typography
-          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80",fontWeight:'600' }}
         >
           المحفظة الماسية
         </Typography>
@@ -40,13 +40,13 @@ function DiWallet() {
         </Button>
       </Box>
       <Box sx={{ p: "40px" }}>
-        <Typography sx={{ fontSize: "30px" }}> مزايا الباقة</Typography>
+        <Typography sx={{ fontSize: "30px" ,fontWeight:'600',mb:'30px'}}> مزايا الباقة</Typography>
 
         <Box>
           <Box sx={{ display: "flex", alignItems: "start",justifyContent:'space-between' }}>
             <Box sx={{display:"flex",flexDirection:'column',gap:'30px'}}>
             <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-              <Typography sx={{width:'121px'}}>عدد الماسات</Typography>
+              <Typography sx={{width:'121px',fontWeight:'600'}}>عدد الماسات</Typography>
               <Typography
                 sx={{
                   border: "1px solid black",
@@ -57,6 +57,7 @@ function DiWallet() {
                   alignItems: "center",
                   borderRadius: "5px",
                   fontSize: "30px",
+                  fontWeight:'600'
                 
                 }}
               >
@@ -64,7 +65,7 @@ function DiWallet() {
               </Typography>
             </Box>
             <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-              <Typography  sx={{width:'121px'}}>السعر</Typography>
+              <Typography  sx={{width:'121px',fontWeight:'600'}}>السعر</Typography>
               <Typography
                 sx={{
                   border: "1px solid black",
@@ -75,6 +76,7 @@ function DiWallet() {
                   alignItems: "center",
                   borderRadius: "5px",
                   fontSize: "30px",
+                  fontWeight:'600'
                 }}
               >
                30 ريال
@@ -89,7 +91,8 @@ function DiWallet() {
                   alignItems: "center",
                   borderRadius: "5px",
                   fontSize: "30px",
-                  mr:"70px"
+                  mr:"70px",
+                  fontWeight:'600'
                 }}
               >
                7.5 دولار
@@ -148,7 +151,7 @@ function DiWallet() {
           <Box sx={{ display: "flex", alignItems: "start",justifyContent:'space-between' }}>
             <Box sx={{display:"flex",flexDirection:'column',gap:'30px'}}>
             <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-              <Typography sx={{width:'121px'}}>عدد الماسات</Typography>
+              <Typography sx={{width:'121px',fontWeight:'600'}}>عدد الماسات</Typography>
               <Typography
                 sx={{
                   border: "1px solid black",
@@ -159,6 +162,7 @@ function DiWallet() {
                   alignItems: "center",
                   borderRadius: "5px",
                   fontSize: "30px",
+                  fontWeight:'600'
                 
                 }}
               >
@@ -166,7 +170,7 @@ function DiWallet() {
               </Typography>
             </Box>
             <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-              <Typography  sx={{width:'121px'}}>السعر</Typography>
+              <Typography  sx={{width:'121px',fontWeight:'600'}}>السعر</Typography>
               <Typography
                 sx={{
                   border: "1px solid black",
@@ -177,6 +181,7 @@ function DiWallet() {
                   alignItems: "center",
                   borderRadius: "5px",
                   fontSize: "30px",
+                  fontWeight:'600'
                 }}
               >
                30 ريال
@@ -191,7 +196,8 @@ function DiWallet() {
                   alignItems: "center",
                   borderRadius: "5px",
                   fontSize: "30px",
-                  mr:"70px"
+                  mr:"70px",
+                  fontWeight:'600'
                 }}
               >
                7.5 دولار
@@ -250,7 +256,7 @@ function DiWallet() {
           <Box sx={{ display: "flex", alignItems: "start",justifyContent:'space-between' }}>
             <Box sx={{display:"flex",flexDirection:'column',gap:'30px'}}>
             <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-              <Typography sx={{width:'121px'}}>عدد الماسات</Typography>
+              <Typography sx={{width:'121px',fontWeight:'600'}}>عدد الماسات</Typography>
               <Typography
                 sx={{
                   border: "1px solid black",
@@ -261,6 +267,7 @@ function DiWallet() {
                   alignItems: "center",
                   borderRadius: "5px",
                   fontSize: "30px",
+                  fontWeight:'600'
                 
                 }}
               >
@@ -268,7 +275,7 @@ function DiWallet() {
               </Typography>
             </Box>
             <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-              <Typography  sx={{width:'121px'}}>السعر</Typography>
+              <Typography  sx={{width:'121px',fontWeight:'600'}}>السعر</Typography>
               <Typography
                 sx={{
                   border: "1px solid black",
@@ -279,6 +286,7 @@ function DiWallet() {
                   alignItems: "center",
                   borderRadius: "5px",
                   fontSize: "30px",
+                  fontWeight:'600'
                 }}
               >
                30 ريال
@@ -293,7 +301,8 @@ function DiWallet() {
                   alignItems: "center",
                   borderRadius: "5px",
                   fontSize: "30px",
-                  mr:"70px"
+                  mr:"70px",
+                  fontWeight:'600'
                 }}
               >
                7.5 دولار

@@ -22,7 +22,7 @@ function Icons() {
     facebook,
     sms,
     email,
-    share,
+  
   ]);
 
   return (

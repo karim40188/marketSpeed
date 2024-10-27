@@ -1,7 +1,9 @@
 import { Box, Button, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
+import { useNavigate } from "react-router-dom";
 
 function ShowAdminFile() {
+  let navigate= useNavigate()
   return (
     <Box>
       <Typography
@@ -9,6 +11,7 @@ function ShowAdminFile() {
           fontSize: { xs: "30px", md: "40px" },
           color: "#114F80",
           mb: "20px",
+          fontWeight:'600'
         }}
       >
         عرض ملف المسئول
@@ -45,6 +48,10 @@ function ShowAdminFile() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+            }}
+
+            onClick={()=>{
+              navigate('/edit-admin-file')
             }}
           >
             تعديل
@@ -277,7 +284,7 @@ function ShowAdminFile() {
           </Box>
 
           <Box sx={{ my: "30px" }}>
-            <Typography sx={{ fontSize: "40px", color: "#114F80", mb: "20px" }}>
+            <Typography sx={{ fontSize: "40px", color: "#114F80", mb: "20px",fontWeight:'600' }}>
               الأدوار
             </Typography>
 

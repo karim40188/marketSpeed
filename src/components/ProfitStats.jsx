@@ -40,7 +40,7 @@ function ProfitStats() {
 
   return (
     <Box>
-      <Typography sx={{ color: "#114F80", fontSize: "40px" }}>
+      <Typography sx={{ color: "#114F80", fontSize: "40px" ,fontWeight:'600',mb:'30px'}}>
         إحصائيات مكسب التطبيق
       </Typography>
 
@@ -55,11 +55,13 @@ function ProfitStats() {
         {filters.map((filter) => (
           <Button
             sx={{
-              width: "158px",
+              width: "156px",
               height: "57px",
               fontSize: "20px",
               borderRadius: "10px",
               fontFamily: "Tanseek Modern Pro Arabic",
+              backgroundColor:'#fff',
+              fontWeight:'600'
             }}
             key={filter}
             onClick={(e)=>{

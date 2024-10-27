@@ -31,6 +31,7 @@ function Supervisors() {
           borderRadius: "6px",
           display: "block",
           mr: "auto",
+          fontWeight:'600'
         }}
         onClick={()=>{
             navigate('/add-supervisor')
@@ -43,7 +44,7 @@ function Supervisors() {
         sx={{ display: "flex", justifyContent: "space-between", my: "30px" }}
       >
         <Typography
-          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80",fontWeight:'600' }}
         >
           عرض المشرفين
         </Typography>

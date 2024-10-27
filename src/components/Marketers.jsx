@@ -28,7 +28,7 @@ function Marketers() {
       <Box sx={{ display: "flex", alignItems: "center" }}>
         <Box sx={{ textAlign: "center" }}>
           <Typography
-            sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+            sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" ,fontWeight:'600'}}
           >
             أحمد محمد
           </Typography>
@@ -73,7 +73,7 @@ function Marketers() {
 
       <Box sx={{ display: "flex", gap: "20px", my: "30px" }}>
         <Typography
-          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80",fontWeight:'600' }}
         >
           المسوقين
         </Typography>
@@ -250,6 +250,10 @@ function Marketers() {
                     background:
                       "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
                     borderRadius: "6px",
+                  }}
+
+                  onClick={()=>{
+                    navigate('/marketer-link')
                   }}
                 >
                   رابط المسوق

@@ -4,7 +4,7 @@ function ClientsGroups() {
   return (
     <Box>
       <Typography
-        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80",fontWeight:'600' }}
       >
       جروبات العملاء
       </Typography>
@@ -15,7 +15,7 @@ function ClientsGroups() {
             width: "836px",
             height: "auto",
             backgroundColor: "#114F80",
-            p: "50px",
+            p: "40px",
             color: "#fff",
             borderRadius: "15px",
             display: "flex",
@@ -31,11 +31,11 @@ function ClientsGroups() {
             }}
           >
             <Box sx={{ display: "flex", alignItems: "center", gap: "30px" }}>
-              <Typography>رابط القناة</Typography>
+              <Typography sx={{fontWeight:'600'}}>رابط القناة</Typography>
               <Typography>https://market-speed.vercel.app/</Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", gap: "30px" }}>
-              <Typography> اسم القناة</Typography>
+              <Typography sx={{fontWeight:'600'}}> اسم القناة</Typography>
               <Typography>العائلة</Typography>
             </Box>
           </Box>
@@ -47,7 +47,7 @@ function ClientsGroups() {
             }}
           >
             <Box sx={{ display: "flex", alignItems: "center", gap: "30px" }}>
-              <Typography>الدولة</Typography>
+              <Typography sx={{fontWeight:'600'}}>الدولة</Typography>
               <Box sx={{ width: "66px", height: "41px" }}>
                 <Box
                   component="img"
@@ -57,7 +57,7 @@ function ClientsGroups() {
               </Box>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", gap: "30px" }}>
-              <Typography> اسم المستخدم</Typography>
+              <Typography sx={{fontWeight:'600'}}> اسم المستخدم</Typography>
               <Typography>فيصل عبدالعزيز</Typography>
             </Box>
           </Box>
