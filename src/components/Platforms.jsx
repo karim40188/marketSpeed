@@ -1,6 +1,5 @@
-import { Box, Grid2, Typography } from "@mui/material";
+import { Box,  Typography } from "@mui/material";
 import { useState } from "react";
-import { motion } from "framer-motion";
 import whatsapp from "../assets/whatsapp_off.png";
 import telegram from "../assets/telegram_on.png";
 import tiktok from "../assets/tiktok_off.png";

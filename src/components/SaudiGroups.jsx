@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography , Grid2} from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -44,21 +44,22 @@ function SaudiGroups() {
     "جروب فرى فاير",
     "جروب سيارات",
   ]);
+
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", p: 2 }}>
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          mb: "20px",
         }}
       >
         <Typography
           sx={{
             fontSize: { xs: "30px", md: "40px" },
             color: "#114F80",
-            mb: "20px",
-            fontWeight:'600'
+            fontWeight: '600',
           }}
         >
           مجموعات المملكة العربية السعودية
@@ -78,148 +79,126 @@ function SaudiGroups() {
         </Button>
       </Box>
 
-      <Box sx={{ p: "25px" }}>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-around",
-          }}
-        >
-          <Box
-            sx={{
-              width: "40%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Typography sx={{ my: "30px" ,fontWeight:'600'}}>الواتساب</Typography>
+      <Grid2 container spacing={2}>
+        <Grid2 size={{xs:12 ,md:5}}>
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Typography sx={{ my: "30px", fontWeight: '600' }}>الواتساب</Typography>
             <Box
               sx={{
                 display: "flex",
-                gap: "30px",
+                gap: "15px",
                 flexWrap: "wrap",
                 justifyContent: "center",
               }}
             >
-              {whatsApp.map((_, index) => {
-                return (
-                  <Box
-                    key={index}
+              {whatsApp.map((item, index) => (
+                <Box
+                  key={index}
+                  sx={{
+                    width: { xs: "90%", sm: "97px" },
+                    height: "107px",
+                    borderRadius: "8px",
+                    border: "1px solid #114F80",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    p: "15px",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    navigate("/all-numbers");
+                  }}
+                >
+                  <Typography
                     sx={{
-                      width: "97px",
-                      height: "107px",
-                      borderRadius: "8px",
-                      border: "1px solid #114F80",
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "10px",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      p: "15px",
-                      cursor: "pointer",
-             
-                    }}
-
-
-                    onClick={() => {
-                      navigate("/all-numbers");
+                      fontFamily: "Sora",
+                      fontSize: "13px",
+                      fontWeight: "600",
+                      color: "#114F80",
+                      textAlign: "center",
                     }}
                   >
-                    <Typography
-                      sx={{
-                        fontFamily: "Sora",
-                        fontSize: "13px",
-                        fontWeight: "600",
-                        color: "#114F80",
-                      }}
-                    >
-                      جروب العائلة
-                    </Typography>
-                    <Button
-                      sx={{
-                        width: "70px",
-                        height: "18px",
-                        borderRadius: "5px",
-                        backgroundColor: "#CC0000",
-                        color: "#fff",
-                        fontFamily: "Inter",
-                      }}
-                    >
-                      حذف
-                    </Button>
-                  </Box>
-                );
-              })}
+                    {item}
+                  </Typography>
+                  <Button
+                    sx={{
+                      width: "70px",
+                      height: "18px",
+                      borderRadius: "5px",
+                      backgroundColor: "#CC0000",
+                      color: "#fff",
+                      fontFamily: "Inter",
+                    }}
+                  >
+                    حذف
+                  </Button>
+                </Box>
+              ))}
             </Box>
           </Box>
-          <Box
-            sx={{
-              width: "40%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Typography sx={{ my: "30px" ,fontWeight:'600'}}>التليجرام</Typography>
+        </Grid2>
+        <Grid2 size={{xs:12 ,md:5}}>
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Typography sx={{ my: "30px", fontWeight: '600' }}>التليجرام</Typography>
             <Box
               sx={{
                 display: "flex",
-                gap: "30px",
+                gap: "15px",
                 flexWrap: "wrap",
                 justifyContent: "center",
               }}
             >
-              {telegram.map((_, index) => {
-                return (
-                  <Box
-                    key={index}
+              {telegram.map((item, index) => (
+                <Box
+                  key={index}
+                  sx={{
+                    width: { xs: "90%", sm: "97px" },
+                    height: "107px",
+                    borderRadius: "8px",
+                    border: "1px solid #114F80",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    p: "15px",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    navigate("/all-numbers");
+                  }}
+                >
+                  <Typography
                     sx={{
-                      width: "97px",
-                      height: "107px",
-                      borderRadius: "8px",
-                      border: "1px solid #114F80",
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "10px",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      p: "15px",
-                      cursor: "pointer",
-                    }}
-                    onClick={() => {
-                      navigate("/all-numbers");
+                      fontFamily: "Sora",
+                      fontSize: "13px",
+                      fontWeight: "600",
+                      color: "#114F80",
+                      textAlign: "center",
                     }}
                   >
-                    <Typography
-                      sx={{
-                        fontFamily: "Sora",
-                        fontSize: "13px",
-                        fontWeight: "600",
-                        color: "#114F80",
-                      }}
-                    >
-                      جروب العائلة
-                    </Typography>
-                    <Button
-                      sx={{
-                        width: "70px",
-                        height: "18px",
-                        borderRadius: "5px",
-                        backgroundColor: "#CC0000",
-                        color: "#fff",
-                        fontFamily: "Inter",
-                      }}
-                    >
-                      حذف
-                    </Button>
-                  </Box>
-                );
-              })}
+                    {item}
+                  </Typography>
+                  <Button
+                    sx={{
+                      width: "70px",
+                      height: "18px",
+                      borderRadius: "5px",
+                      backgroundColor: "#CC0000",
+                      color: "#fff",
+                      fontFamily: "Inter",
+                    }}
+                  >
+                    حذف
+                  </Button>
+                </Box>
+              ))}
             </Box>
           </Box>
-        </Box>
-      </Box>
+        </Grid2>
+      </Grid2>
     </Box>
   );
 }

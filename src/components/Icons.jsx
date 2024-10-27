@@ -10,7 +10,6 @@ import twitter from "../assets/twitter.png";
 import instagram from "../assets/instagram.png";
 import sms from "../assets/sms.png";
 import email from "../assets/email.png";
-import share from "../assets/share.png";
 
 function Icons() {
   let [icons] = useState([

@@ -5,7 +5,7 @@ import { FaPlus } from "react-icons/fa";
 
 function SuggestionSession() {
   return (
-    <Box sx={{ width: "805px" }}>
+    <Box sx={{ width: { xs: "100%", md: "805px" }, px: { xs: "10px", md: "0" } }}>
       <Box
         sx={{
           display: "flex",
@@ -14,9 +14,9 @@ function SuggestionSession() {
         }}
       >
         <Typography
-          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80",fontWeight:'600' }}
+          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80", fontWeight: '600' }}
         >
-          الأقتراحات
+             الاقتراحات
         </Typography>
 
         <Button
@@ -43,7 +43,7 @@ function SuggestionSession() {
         <Box sx={{ mb: "100px" }}>
           <Box
             sx={{
-              width: "805px",
+              width: "100%", 
               height: "auto",
               p: "20px",
               backgroundColor: "#D9D9D9",
@@ -62,7 +62,7 @@ function SuggestionSession() {
                   src={profile_img}
                 />
               </Box>
-              <Typography sx={{ fontSize: "40px" }}>احمد على </Typography>
+              <Typography sx={{ fontSize: { xs: "25px", md: "40px" } }}>احمد على</Typography>
             </Box>
 
             <Typography
@@ -75,7 +75,7 @@ function SuggestionSession() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                fontSize: "40px",
+                fontSize: { xs: "25px", md: "40px" },
               }}
             >
               15
@@ -87,8 +87,9 @@ function SuggestionSession() {
           <Box sx={{ display: "flex", flexDirection: "column", gap: "50px" }}>
             <Box
               sx={{
-                width: "374px",
-                height: "177px",
+                width: "100%", 
+                maxWidth: "374px", 
+                height: "auto",
                 backgroundColor: "#fff",
                 position: "relative",
                 borderRadius: "10px 10px 10px 0",
@@ -116,8 +117,7 @@ function SuggestionSession() {
                   fontWeight: "300",
                 }}
               >
-                وريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي
-                الشكل وليس المحتوى){" "}
+                وريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)
               </Typography>
               <Box
                 sx={{
@@ -125,7 +125,7 @@ function SuggestionSession() {
                   borderLeft: "0px solid transparent",
                   borderRight: "50px solid transparent",
                   height: 0,
-                  width: "0",
+                  width: 0,
                   position: "absolute",
                   top: "100%",
                   left: "0",
@@ -134,8 +134,9 @@ function SuggestionSession() {
             </Box>
             <Box
               sx={{
-                width: "374px",
-                height: "177px",
+                width: "100%", 
+                maxWidth: "374px", 
+                height: "auto",
                 backgroundColor: "#114F80",
                 position: "relative",
                 borderRadius: "10px 10px 0px 10px",
@@ -163,8 +164,7 @@ function SuggestionSession() {
                   fontWeight: "300",
                 }}
               >
-                وريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي
-                الشكل وليس المحتوى)
+                وريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)
               </Typography>
               <Box
                 sx={{
@@ -173,7 +173,7 @@ function SuggestionSession() {
                   borderRight: "0px solid transparent",
                   borderBottom: "20px solid transparent",
                   height: 0,
-                  width: "0",
+                  width: 0,
                   position: "absolute",
                   top: "100%",
                   right: "0",
@@ -185,53 +185,47 @@ function SuggestionSession() {
 
         <Box
           sx={{
-            width: "805px",
+            width: "100%", 
             height: "126px",
             backgroundColor: "#114F80",
             display: "flex",
             alignItems: "center",
             p: "20px",
+            gap: "10px",
           }}
         >
           <Box
             sx={{
+              width: "61px",
+              height: "51px",
+              borderRadius: "50%",
+              backgroundColor: "#fff",
               display: "flex",
-              justifyContent: "space-between",
+              justifyContent: "center",
               alignItems: "center",
-              gap:'10px',
             }}
           >
             <Box
-              sx={{
-                width: "61px",
-                height: "51px",
-                borderRadius: "50%",
-                backgroundColor: "#fff",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Box
-                sx={{ width: "36.51px", height: "31.5px" }}
-                component="img"
-                src={send_btn}
-              />
-            </Box>
-            <TextField
-              sx={{
-                width: "604px",
-                height: "auto",
-                backgroundColor: "#EDE8E9",
-                borderRadius: "15px",
+              sx={{ width: "36.51px", height: "31.5px" }}
+              component="img"
+              src={send_btn}
+            />
+          </Box>
+          <TextField
+            sx={{
+              width: "100%", 
+              maxWidth: "604px", 
+              height: "auto",
+              backgroundColor: "#EDE8E9",
+              borderRadius: "15px",
             }}
             value={'وريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) '}
-            />
-           <Box sx={{fontSize:'80px',color:'#EFC750',fontFamily:'Titillium Web'}}>
-           <FaPlus/>
-            </Box>
-
-
+            variant="outlined" 
+            multiline
+            rows={2} 
+          />
+          <Box sx={{ fontSize: '80px', color: '#EFC750', fontFamily: 'Titillium Web' }}>
+            <FaPlus />
           </Box>
         </Box>
       </Box>

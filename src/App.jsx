@@ -46,21 +46,17 @@ import ClientsGroups from "./components/ClientsGroups";
 import AddMarketer from "./components/AddMarketer";
 import MarketerLink from "./components/MarketerLink";
 import ClientsChannels from "./components/ClientsChannels";
+import { ContextProvider } from "./components/Context";
 function App() {
   let router = createBrowserRouter([
-
     // Done
-    {index:true , element:<Login/>},
+    { index: true, element: <Login /> },
     {
       path: "/",
       element: <Layout />,
       children: [
         // Done
         { path: "/home", element: <Home /> },
-
-        
-
-
 
         { path: "/banners", element: <Banners /> },
         { path: "/videos", element: <Videos /> },
@@ -105,12 +101,6 @@ function App() {
 
         // Destop 49
         { path: "/edit-admin-file", element: <EditAdminFile /> },
-
-
-
-
-
-
 
         // Done
         { path: "//clients-channels", element: <ClientsChannels /> },
@@ -164,9 +154,11 @@ function App() {
     <Box>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <RouterProvider router={router}>
-          <Layout />
-        </RouterProvider>
+        <ContextProvider>
+          <RouterProvider router={router}>
+            <Layout />
+          </RouterProvider>
+        </ContextProvider>
       </ThemeProvider>
     </Box>
   );

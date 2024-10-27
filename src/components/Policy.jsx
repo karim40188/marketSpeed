@@ -53,7 +53,7 @@ function Policy() {
           minHeight: "818px",
           backgroundColor: "#fff",
           mx: "auto",
-          p: "100px",
+          p: {xs:"20px",md:"100px"},
           my: "30px",
           borderRadius:'15px'
         }}

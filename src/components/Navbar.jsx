@@ -1,10 +1,13 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import { useContext } from "react";
 import { BsTranslate } from "react-icons/bs";
 import { FaArrowDown } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { IoIosMenu } from "react-icons/io";
+import { Context } from "./Context";
 
 function Navbar() {
+  let { sidebarOpen, setSidebarOpen } = useContext(Context);
   return (
     <Box
       sx={{
@@ -13,10 +16,10 @@ function Navbar() {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        pl: { xs: "10px", md: "20px" }, 
+        pl: { xs: "10px", md: "20px" },
         pr: { xs: "10px", md: "80px" },
         flexDirection: { xs: "row", md: "row" },
-        gap: { xs: "10px", md: "0" }, 
+        gap: { xs: "10px", md: "0" },
       }}
     >
       <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
@@ -37,13 +40,11 @@ function Navbar() {
         sx={{
           display: "flex",
           alignItems: "center",
-          gap: { xs: "5px", md: "10px" }, 
-          flexDirection: { xs: "row", md: "row" }, 
+          gap: { xs: "5px", md: "10px" },
+          flexDirection: { xs: "row", md: "row" },
           width: { xs: "100%", md: "auto" },
         }}
       >
-    
-
         <Box
           sx={{
             backgroundColor: "#114F80",
@@ -55,7 +56,7 @@ function Navbar() {
             justifyContent: "space-around",
           }}
         >
-          <Box sx={{ display: "flex", alignItems: "center", gap: "10px", }}>
+          <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <Box
               sx={{
                 fontSize: "30px",
@@ -87,6 +88,15 @@ function Navbar() {
           }}
         >
           <IoIosNotifications />
+        </Box>
+
+        <Box
+          sx={{ fontSize: "40px" }}
+          onClick={() => {
+            setSidebarOpen(!sidebarOpen);
+          }}
+        >
+          <IoIosMenu />
         </Box>
       </Box>
     </Box>

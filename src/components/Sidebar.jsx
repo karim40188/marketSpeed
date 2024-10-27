@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import logo from "../assets/logo.svg";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   Dialog,
@@ -9,6 +9,7 @@ import {
   TextField,
   Button,
 } from "@mui/material";
+import { Context } from "./Context";
 
 function Sidebar() {
   const [open, setOpen] = useState(false);
@@ -21,6 +22,7 @@ function Sidebar() {
     setOpen(false);
   };
 
+  let {sidebarOpen}=useContext(Context)
   let [activeLink, setActiveLink] = useState(false);
   let [appDropDown, setAppDropDown] = useState(false);
   let [statsDropDown, setStatsDropDown] = useState(false);
@@ -45,8 +47,8 @@ function Sidebar() {
     <Box
       sx={{
         backgroundColor: "#114F80",
-        width: "30%",
-        position: "sticky",
+        width: sidebarOpen? {xs:'290px',md:"34%"}:'0',
+        position: sidebarOpen? {xs:'fixed',md:"sticky"}:'',
         top: "0",
         right: "0",
         bottom: "0",
@@ -55,14 +57,16 @@ function Sidebar() {
         flexDirection: "column",
         // justifyContent: "center",
         alignItems: "center",
-        gap: "20px",
+        gap: "10px",
         zIndex: "12",
-        py: "50px",
+        transition:'400ms width',
+        overflow:'hidden'
+        
       }}
     >
       <Box
         sx={{
-          width: { xs: "150px", md: "150px", xl: "260px" },
+          width: { xs: "110px", md: "150px", xl: "260px" },
           height: "auto",
           cursor: "pointer",
         }}
@@ -99,7 +103,7 @@ function Sidebar() {
           <Box
             sx={{
               backgroundColor: "#EDE8E9",
-              width: { xs: "90%", sm: "80%", md: "300px", xl: "354px" },
+              width: { xs: "100%", sm: "80%", md: "280px", xl: "354px" },
               height: "auto",
               borderRadius: "20px",
               display: "flex",
@@ -152,7 +156,7 @@ function Sidebar() {
           <Box
             sx={{
               backgroundColor: "#EDE8E9",
-              width: { xs: "90%", sm: "300px", md: "300px", xl: "354px" },
+              width: { xs: "100%", sm: "300px", md: "280", xl: "354px" },
               height: "auto",
               borderRadius: "20px",
               display: "flex",
@@ -214,7 +218,7 @@ function Sidebar() {
           <Box
             sx={{
               backgroundColor: "#EDE8E9",
-              width: { xs: "90%", sm: "300px", xl: "354px" },
+              width: { xs: "100%", sm: "280px", xl: "354px" },
               height: "auto",
               borderRadius: "20px",
               display: "flex",
@@ -307,7 +311,7 @@ function Sidebar() {
           <Box
             sx={{
               backgroundColor: "#EDE8E9",
-              width: { xs: "90%", sm: "300px", xl: "354px" },
+              width: { xs: "100%", sm: "280px", xl: "354px" },
               height: "auto",
               borderRadius: "20px",
               display: "flex",
@@ -368,7 +372,7 @@ function Sidebar() {
           <Box
             sx={{
               backgroundColor: "#EDE8E9",
-              width: { xs: "90%", sm: "300px", xl: "354px" },
+              width: { xs: "100%", sm: "280px", xl: "354px" },
               height: "auto",
               borderRadius: "20px",
               display: "flex",
@@ -484,7 +488,7 @@ function Sidebar() {
           <Box
             sx={{
               backgroundColor: "#EDE8E9",
-              width: { xs: "90%", sm: "300px", xl: "354px" },
+              width: { xs: "100%", sm: "280px", xl: "354px" },
               height: "auto",
               borderRadius: "20px",
               display: "flex",
@@ -546,7 +550,7 @@ function Sidebar() {
           <Box
             sx={{
               backgroundColor: "#EDE8E9",
-              width: { xs: "90%", sm: "300px", xl: "354px" },
+              width: { xs: "100%", sm: "280px", xl: "354px" },
               height: "auto",
               borderRadius: "20px",
               display: "flex",

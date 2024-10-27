@@ -11,12 +11,13 @@ function EditUserFile() {
           mb: "20px",
         }}
       >
-      تعديل المستخدم
+        تعديل المستخدم
       </Typography>
 
       <Box
         sx={{
           display: "flex",
+          flexDirection: { xs: "column", md: "row" }, // اتجاه عمودي في الشاشات الأصغر
           alignItems: "center",
           justifyContent: "space-between",
         }}
@@ -44,7 +45,7 @@ function EditUserFile() {
           </Button>
         </Box>
 
-        <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: "20px", mt: { xs: "20px", md: 0 } }}>
           <Button
             sx={{
               width: "121.65px",
@@ -72,15 +73,16 @@ function EditUserFile() {
         </Box>
       </Box>
 
-      <Box sx={{ p: "20px", width: { xs: "100%", xl: "60%" } }}>
+      <Box sx={{ p: "20px", width: { xs: "100%", xl: "60%" }, margin: "0 auto" }}>
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            flexDirection: { xs: "column", md: "row" }, // اتجاه عمودي في الشاشات الأصغر
           }}
         >
-          <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Box sx={{ display: "flex", alignItems: "center", gap: "10px", mb: { xs: "20px", md: 0 } }}>
             <Typography>رصيد الماسات</Typography>
             <Box
               sx={{
@@ -107,10 +109,11 @@ function EditUserFile() {
                 alignItems: "center",
               }}
             >
-              <Typography>غير مشترك </Typography>
+              <Typography>غير مشترك</Typography>
             </Box>
           </Box>
         </Box>
+
         <Box
           sx={{
             display: "flex",
@@ -118,15 +121,14 @@ function EditUserFile() {
             p: "20px",
           }}
         >
-          <Box sx={{ display: "flex", alignItems: "center", gap: "40px" }}>
-            <Box>
+          <Box sx={{ display: "flex", alignItems: "center", gap: "20px", flexDirection: { xs: "column", md: "row" } }}>
+            <Box sx={{ width: { xs: "100%", md: "49%" } }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
                 الاسم ثلاثى
               </Typography>
-
               <Box
                 sx={{
-                  width: "412px",
+                  width: "100%",
                   height: "70px",
                   p: "20px",
                   fontSize: "30px",
@@ -141,13 +143,13 @@ function EditUserFile() {
               </Box>
             </Box>
 
-            <Box>
+            <Box sx={{ width: { xs: "100%", md: "49%" } }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
                 البريد الإلكترونى
               </Typography>
               <Box
                 sx={{
-                  width: "412px",
+                  width: "100%",
                   height: "70px",
                   p: "20px",
                   fontSize: "30px",
@@ -170,10 +172,11 @@ function EditUserFile() {
               gap: "20px",
               justifyContent: "space-between",
               mt: "20px", // إضافة مسافة بين الصفوف
+              flexDirection: { xs: "column", md: "row" }, // اتجاه عمودي في الشاشات الأصغر
             }}
           >
             {/* حقل الدولة */}
-            <Box sx={{ width: "49%" }}>
+            <Box sx={{ width: { xs: "100%", md: "49%" } }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
                 الدولة
               </Typography>
@@ -195,7 +198,7 @@ function EditUserFile() {
             </Box>
 
             {/* حقل المدينة */}
-            <Box sx={{ width: "49%" }}>
+            <Box sx={{ width: { xs: "100%", md: "49%" } }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
                 المدينة
               </Typography>
@@ -217,16 +220,14 @@ function EditUserFile() {
             </Box>
           </Box>
 
-          {/* البريد الالكتروني  */}
-
           {/* رقم الجوال في صف منفصل */}
-          <Box sx={{ mt: "20px", width: "100%" }}>
+          <Box sx={{ mt: "20px", width: { xs: "100%", md: "412px" } }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
               رقم الجوال
             </Typography>
             <Box
               sx={{
-                width: "412px",
+                width: "100%",
                 height: "70px",
                 p: "20px",
                 fontSize: "30px",

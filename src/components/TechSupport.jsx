@@ -1,7 +1,8 @@
-import { Box,Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+
 function TechSupport() {
   let navigate = useNavigate();
   let [tech] = useState([
@@ -16,13 +17,13 @@ function TechSupport() {
   return (
     <Box>
       <Typography
-        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80",fontWeight:'600' }}
+        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80", fontWeight: '600' }}
       >
         المحادثة الدعم الفنى
       </Typography>
       <Box
         sx={{
-          p: "30px",
+          p: { xs: "20px", md: "30px" }, 
           display: "flex",
           flexDirection: "column",
           gap: "20px",
@@ -33,7 +34,7 @@ function TechSupport() {
             <Box
               key={index}
               sx={{
-                width: "805px",
+                width: { xs: "100%", md: "805px" }, 
                 height: "auto",
                 p: "20px",
                 backgroundColor: "#D9D9D9",
@@ -42,6 +43,10 @@ function TechSupport() {
                 justifyContent: "space-between",
                 alignItems: "center",
                 cursor: "pointer",
+                transition: "background-color 0.3s", 
+                "&:hover": {
+                  backgroundColor: "#C0C0C0", 
+                },
               }}
               onClick={() => {
                 navigate("/support-session");
@@ -55,7 +60,7 @@ function TechSupport() {
                     src={profile_img}
                   />
                 </Box>
-                <Typography sx={{ fontSize: "40px" }}>احمد على </Typography>
+                <Typography sx={{ fontSize: { xs: "25px", md: "40px" } }}>{tech.name}</Typography>
               </Box>
 
               <Typography
@@ -68,7 +73,7 @@ function TechSupport() {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  fontSize: "40px",
+                  fontSize: { xs: "25px", md: "40px" }, 
                 }}
               >
                 15
