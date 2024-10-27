@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
-import addImg from "../assets/addImg.png";
+import addImg from "../assets/addimg.png";
 function AddMarketer() {
   return (
     <Box>
