@@ -1,4 +1,4 @@
-import { Box, Button, Grid2, Typography } from "@mui/material";
+import { Box, Button,  Typography } from "@mui/material";
 import { useState } from "react";
 
 function UserStats() {

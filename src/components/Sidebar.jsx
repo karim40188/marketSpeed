@@ -1,14 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import logo from "../assets/logo.svg";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  TextField,
-  Button,
-} from "@mui/material";
+import { Dialog, DialogContent, TextField, Button } from "@mui/material";
 import { Context } from "./Context";
 
 function Sidebar() {
@@ -22,7 +16,7 @@ function Sidebar() {
     setOpen(false);
   };
 
-  let { sidebarOpen } = useContext(Context);
+  let { sidebarOpen, setSidebarOpen } = useContext(Context);
   let [activeLink, setActiveLink] = useState(false);
   let [appDropDown, setAppDropDown] = useState(false);
   let [statsDropDown, setStatsDropDown] = useState(false);
@@ -42,6 +36,21 @@ function Sidebar() {
   ]);
 
   let navigate = useNavigate();
+  let sidebarRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setSidebarOpen(false);
+      }
+    };
+    if (window.innerWidth < 600) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [setSidebarOpen, sidebarOpen]);
 
   return (
     <Box
@@ -55,13 +64,13 @@ function Sidebar() {
         height: "auto",
         display: "flex",
         flexDirection: "column",
-        // justifyContent: "center",
         alignItems: "center",
         gap: "10px",
         zIndex: "12",
         transition: "400ms width",
         overflow: "hidden",
       }}
+      ref={sidebarRef}
     >
       <Box
         sx={{

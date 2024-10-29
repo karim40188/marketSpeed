@@ -1,15 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
-import { useState } from "react";
 import addimg from "../assets/addimg.png";
 function AddSupervisor() {
-  let [field] = useState([
-    { name: "الاسم ثلاثى", value: "الاسم" },
-    { name: "الدولة", value: "المملكة العربية السعودية" },
-    { name: "المدينة", value: "الرياض" }, // تعديل المدينة هنا
-    { name: "رقم الجوال", value: "966 5552512" },
-    { name: "اسم البنك", value: "اسم البنك" },
-  ]);
-
   return (
     <Box>
       <Typography
