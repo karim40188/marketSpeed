@@ -16,7 +16,7 @@ function Socials() {
     "سناب شات",
     "الرسائل النصيه",
     "البريد الألكترونى",
-    "الهاتف المحمول"
+    "الهاتف المحمول",
   ]);
 
   return (
@@ -28,11 +28,9 @@ function Socials() {
       </Typography>
       <Box sx={{ p: "40px" }}>
         <Typography
+          className="text-gradient"
           sx={{
             fontSize: "30px",
-            background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
             mb: "30px",
           }}
         >
@@ -90,7 +88,7 @@ function Socials() {
                       }}
                     >
                       https://www.figma.com/design/
-                      epS6m7H0obCBxgPOrgZdlc/Untitl................. 
+                      epS6m7H0obCBxgPOrgZdlc/Untitl.................
                     </Link>
                   </Box>
                 </motion.div>

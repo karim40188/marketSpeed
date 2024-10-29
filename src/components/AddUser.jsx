@@ -3,22 +3,24 @@ import profile_img from "../assets/profile_img.png";
 
 function AddUser() {
   return (
-    <Box>
+    <Box sx={{ p: "20px" }}>
       <Typography
         sx={{
-          fontSize: { xs: "30px", md: "40px" },
+          fontSize: { xs: "24px", md: "40px" },
           color: "#114F80",
           mb: "20px",
         }}
       >
-      اضافه المستخدم
+        اضافه المستخدم
       </Typography>
 
       <Box
         sx={{
           display: "flex",
+          flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
           justifyContent: "space-between",
+          mb: { xs: "20px", md: "0" }, // مساحة أسفل للتفريق بين العناصر في الشاشات الصغيرة
         }}
       >
         <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
@@ -27,6 +29,7 @@ function AddUser() {
               sx={{ width: "100%", height: "100%" }}
               component="img"
               src={profile_img}
+              alt="Profile"
             />
           </Box>
           <Button
@@ -36,7 +39,7 @@ function AddUser() {
               backgroundColor: "#128C7F",
               borderRadius: "6px",
               color: "#fff",
-              fontSize: "25px",
+              fontSize: { xs: "20px", md: "25px" },
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
           >
@@ -44,14 +47,22 @@ function AddUser() {
           </Button>
         </Box>
 
-        <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "20px",
+            mt: { xs: "10px", md: "0" }, // مسافة أعلى للأزرار في الشاشات الصغيرة
+            flexWrap: "wrap", // السماح بتغليف الأزرار في الشاشات الصغيرة
+          }}
+        >
           <Button
             sx={{
               width: "121.65px",
               height: "32px",
               backgroundColor: "#128C7F",
               color: "#fff",
-              fontSize: "25px",
+              fontSize: { xs: "20px", md: "25px" },
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
           >
@@ -63,7 +74,7 @@ function AddUser() {
               height: "32px",
               backgroundColor: "#CC0000",
               color: "#fff",
-              fontSize: "25px",
+              fontSize: { xs: "20px", md: "25px" },
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
           >
@@ -72,12 +83,14 @@ function AddUser() {
         </Box>
       </Box>
 
-      <Box sx={{ p: "20px", width: { xs: "100%", xl: "60%" } }}>
+      <Box sx={{ p: "20px", width: { xs: "100%", xl: "60%" }, mx: "auto" }}>
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            flexDirection: { xs: "column", md: "row" }, // تعديل الاتجاه في الشاشات الصغيرة
+            mb: "20px", // مسافة أسفل بين الصفوف
           }}
         >
           <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -107,26 +120,25 @@ function AddUser() {
                 alignItems: "center",
               }}
             >
-              <Typography>غير مشترك </Typography>
+              <Typography>غير مشترك</Typography>
             </Box>
           </Box>
         </Box>
+
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
-            p: "20px",
           }}
         >
-          <Box sx={{ display: "flex", alignItems: "center", gap: "40px" }}>
-            <Box>
-              <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
+          <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, gap: "40px" }}>
+            <Box sx={{ width: { xs: "100%", md: "49%" } }}>
+              <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", md: "30px" } }}>
                 الاسم ثلاثى
               </Typography>
-
               <Box
                 sx={{
-                  width: "412px",
+                  width: "100%",
                   height: "70px",
                   p: "20px",
                   fontSize: "30px",
@@ -141,13 +153,13 @@ function AddUser() {
               </Box>
             </Box>
 
-            <Box>
-              <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
+            <Box sx={{ width: { xs: "100%", md: "49%" } }}>
+              <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", md: "30px" } }}>
                 البريد الإلكترونى
               </Typography>
               <Box
                 sx={{
-                  width: "412px",
+                  width: "100%",
                   height: "70px",
                   p: "20px",
                   fontSize: "30px",
@@ -169,12 +181,13 @@ function AddUser() {
               display: "flex",
               gap: "20px",
               justifyContent: "space-between",
-              mt: "20px", // إضافة مسافة بين الصفوف
+              mt: "20px",
+              flexDirection: { xs: "column", md: "row" },
             }}
           >
             {/* حقل الدولة */}
-            <Box sx={{ width: "49%" }}>
-              <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
+            <Box sx={{ width: { xs: "100%", md: "49%" } }}>
+              <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", md: "30px" } }}>
                 الدولة
               </Typography>
               <Box
@@ -195,8 +208,8 @@ function AddUser() {
             </Box>
 
             {/* حقل المدينة */}
-            <Box sx={{ width: "49%" }}>
-              <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
+            <Box sx={{ width: { xs: "100%", md: "49%" } }}>
+              <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", md: "30px" } }}>
                 المدينة
               </Typography>
               <Box
@@ -217,16 +230,14 @@ function AddUser() {
             </Box>
           </Box>
 
-          {/* البريد الالكتروني  */}
-
           {/* رقم الجوال في صف منفصل */}
           <Box sx={{ mt: "20px", width: "100%" }}>
-            <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
+            <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", md: "30px" } }}>
               رقم الجوال
             </Typography>
             <Box
               sx={{
-                width: "412px",
+                width: "100%",
                 height: "70px",
                 p: "20px",
                 fontSize: "30px",

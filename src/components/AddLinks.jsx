@@ -14,10 +14,11 @@ function AddLinks() {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            flexWrap:'wrap'
           }}
         >
-          <Box sx={{ width: "412px" }}>
-            <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
+          <Box sx={{ width: {xs:"100%" ,md:"412px" }}}>
+            <Typography sx={{ color: "#5E5E5E", fontSize: "30px" , fontWeight:'700'}}>
             أضف رابط الجروب
             </Typography>
             <Box
@@ -102,42 +103,7 @@ function AddLinks() {
             </Box>
           </Box>
 
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              my: "30px",
-              width: "300px",
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: "30px",
-                color: "#5E5E5E",
-                alignSelf: "flex-start",
-              }}
-            >
-             اضف  الملف
-            </Typography>
-            <Button
-              sx={{
-                width: "205px",
-                height: "70px",
-                fontSize: "30px",
-                fontFamily: "Tanseek Modern Pro Arabic",
-                borderRadius: "15px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                color: "#000",
-                background: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-              }}
-            >
-            قم بتحميل الملف  csv  
-            </Button>
-          </Box>
+          
         </Box>
 
        

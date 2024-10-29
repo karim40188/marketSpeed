@@ -49,7 +49,7 @@ function Suggestion() {
                 },
               }}
               onClick={() => {
-                navigate("/support-session");
+                navigate("/suggestion-session");
               }}
             >
               <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -75,6 +75,7 @@ function Suggestion() {
                   alignItems: "center",
                   fontSize: { xs: "25px", md: "40px" }, 
                 }}
+            
               >
                 15
               </Typography>

@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
-import arrow from "../assets/arrow.png"
+import arrow from "../assets/arrow.png";
 function AddGroup() {
   return (
     <Box>
@@ -15,9 +15,10 @@ function AddGroup() {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            flexWrap: "wrap",
           }}
         >
-          <Box sx={{ width: "412px" }}>
+          <Box sx={{ width: { xs: "100%", md: "412px" } }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
               أسم المجموعة
             </Typography>
@@ -76,7 +77,7 @@ function AddGroup() {
           </Box>
         </Box>
 
-        <Box sx={{ width: "412px" }}>
+        <Box sx={{ width: { xs: "100%", md: "412px" } }}>
           <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
             المنصة
           </Typography>
@@ -102,37 +103,44 @@ function AddGroup() {
                 position: "absolute",
                 left: "10px",
                 top: "50%",
-                transform: "translateY(-50%)",
-                display:'flex',
-                justifyContent:'center',
-                alignItems:'center'
+                // transform: "translateY(-50%)",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              <Box sx={{width:'100%',height:'100%',backgroundSize:'contain',objectFit:'contain'}}  component="img" src={arrow}/>
+              <Box
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  backgroundSize: "contain",
+                  objectFit: "contain",
+                }}
+                component="img"
+                src={arrow}
+              />
             </Box>
           </Box>
         </Box>
 
-
-
         <Button
-            sx={{
-              width: "121.65px",
-              height: "32px",
-              backgroundColor: "#114F80",
-              mt: "30px",
-              color: "#fff",
-              fontSize: "25px",
-              fontFamily: "Tanseek Modern Pro Arabic",
-              display:'flex',
-              justifyContnet:'center',
-              alignItems:'center',
-              py:'20px',
-              borderRadius:"6px"
-            }}
-          >
-            حفظ
-          </Button>
+          sx={{
+            width: "121.65px",
+            height: "32px",
+            backgroundColor: "#114F80",
+            mt: "30px",
+            color: "#fff",
+            fontSize: "25px",
+            fontFamily: "Tanseek Modern Pro Arabic",
+            display: "flex",
+            justifyContnet: "center",
+            alignItems: "center",
+            py: "20px",
+            borderRadius: "6px",
+          }}
+        >
+          حفظ
+        </Button>
       </Box>
     </Box>
   );

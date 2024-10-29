@@ -26,12 +26,10 @@ function Platforms() {
       <Typography sx={{ fontSize: "40px", color: "#114F80" ,fontWeight:'600'}}>
         المنصات
       </Typography>
-      <Box sx={{ p: "60px", display: "flex", flexDirection: "column" }}>
+      <Box sx={{ p: "40px", display: "flex", flexDirection: "column" }}>
         <Typography
+        className="text-gradient"
           sx={{
-            background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
             mb: "30px",
             display: "flex",
           }}

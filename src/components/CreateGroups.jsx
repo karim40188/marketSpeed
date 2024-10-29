@@ -1,4 +1,4 @@
-import { Box, Button, Typography, Grid } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import saudiImg from "../assets/saudi.png";
 import qatarImg from "../assets/qatar.png";
 import { useState } from "react";
@@ -14,7 +14,7 @@ function CreateGroups() {
     qatarImg,
     saudiImg,
   ]);
-  
+
   let [telegram] = useState([
     saudiImg,
     qatarImg,
@@ -28,7 +28,7 @@ function CreateGroups() {
   let navigate = useNavigate();
 
   return (
-    <Box sx={{ width: "90%", mx: "auto" }}> {/* Adjust width for better responsiveness */}
+    <Box sx={{ width: "100%", mx: "auto" }}>
       <Box
         sx={{
           display: "flex",
@@ -40,7 +40,7 @@ function CreateGroups() {
         <Typography
           sx={{ fontSize: { xs: "24px", md: "36px" }, color: "#114F80", fontWeight: '600' }}
         >
-          أرقام المجموعة الدول
+         أرقام المجموعة الدول
         </Typography>
 
         <Button
@@ -60,8 +60,18 @@ function CreateGroups() {
         </Button>
       </Box>
 
-      <Grid container spacing={2} sx={{ width: "100%" }}>
-        <Grid item xs={12} md={6}> {/* Change to Grid layout */}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          gap: 2,
+          width: "100%",
+          mt: 2,
+          p:'20px'
+        }}
+      >
+        {/* WhatsApp Section */}
+        <Box sx={{ width: "100%", mb: { xs: 2, md: 0 } ,display:'flex',flexDirection:'column',alignItems:'center'}}>
           <Typography sx={{ textAlign: "center", mb: 1 }}>الواتساب</Typography>
           {whatsApp.map((country, index) => (
             <Box
@@ -70,7 +80,7 @@ function CreateGroups() {
                 navigate('/saudi-groups');
               }}
               sx={{
-                width: "100%", 
+                width: {xs:'100%',md:"336px"},
                 height: "77px",
                 border: "3px solid #114F80",
                 borderRadius: "15px",
@@ -80,7 +90,7 @@ function CreateGroups() {
                 justifyContent: "center",
                 cursor: 'pointer',
                 p: 1,
-                mt:'15px'
+                mt: '15px',
               }}
             >
               <Box sx={{ width: "83.06px", height: "44.46px" }}>
@@ -105,8 +115,10 @@ function CreateGroups() {
               </Box>
             </Box>
           ))}
-        </Grid>
-        <Grid item xs={12} md={6}> {/* Change to Grid layout */}
+        </Box>
+
+        {/* Telegram Section */}
+        <Box sx={{ width: "100%",display:'flex',flexDirection:'column',alignItems:'center' }}>
           <Typography sx={{ textAlign: "center", mb: 1 }}>التليجرام</Typography>
           {telegram.map((country, index) => (
             <Box
@@ -115,7 +127,7 @@ function CreateGroups() {
                 navigate('/saudi-groups');
               }}
               sx={{
-                width: "100%", 
+                width: {xs:'100%',md:"336px"},
                 height: "77px",
                 border: "3px solid #114F80",
                 borderRadius: "15px",
@@ -125,7 +137,7 @@ function CreateGroups() {
                 justifyContent: "center",
                 cursor: 'pointer',
                 p: 1,
-                 mt:'15px'
+                mt: '15px',
               }}
             >
               <Box sx={{ width: "83.06px", height: "44.46px" }}>
@@ -150,8 +162,8 @@ function CreateGroups() {
               </Box>
             </Box>
           ))}
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
     </Box>
   );
 }

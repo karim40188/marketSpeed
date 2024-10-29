@@ -1,7 +1,10 @@
-import { Box, Button,  Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { Context } from "./Context";
 function AddPackage() {
   let navigate = useNavigate();
+  let { sidebarOpen } = useContext(Context);
   return (
     <Box>
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -33,11 +36,18 @@ function AddPackage() {
           أضف باقة جديدة
         </Button>
       </Box>
-      <Box sx={{ p: "40px", width: "70%" }}>
+      <Box
+        sx={{
+          p: "20px",
+
+          width: sidebarOpen ? { xs: "100%", md: "672px" } : "100%",
+          mx: sidebarOpen ? { xs: "", md: "" } : "auto",
+        }}
+      >
         <Box
           sx={{
             display: "flex",
-
+            flexDirection: { xs: "column", md: "row" },
             justifyContent: "space-between",
             mb: "20px",
           }}
@@ -60,9 +70,7 @@ function AddPackage() {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-              onClick={() => {
-                navigate("/edit-package");
-              }}
+            
             >
               حفظ
             </Button>

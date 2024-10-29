@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import { useState } from "react";
-
+import addimg from "../assets/addimg.png";
 function AddSupervisor() {
   let [field] = useState([
     { name: "الاسم ثلاثى", value: "الاسم" },
@@ -13,7 +13,11 @@ function AddSupervisor() {
   return (
     <Box>
       <Typography
-        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" ,fontWeight:'600'}}
+        sx={{
+          fontSize: { xs: "30px", md: "40px" },
+          color: "#114F80",
+          fontWeight: "600",
+        }}
       >
         إضافة مشرف
       </Typography>
@@ -25,106 +29,9 @@ function AddSupervisor() {
             p: "20px",
           }}
         >
-          <Box
-            sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "20px",
-              justifyContent: "space-between",
-            }}
-          >
-            {field.map((field) => {
-              if (
-                field.name === "الدولة" ||
-                field.name === "المدينة" ||
-                field.name === "رقم الجوال"
-              ) {
-                return null; // تجاهل الدولة، المدينة، ورقم الجوال هنا
-              } else {
-                return (
-                  <Box key={field.name}>
-                    <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                      {field.name}
-                    </Typography>
-                    <Box
-                      sx={{
-                        width: "412px",
-                        height: "70px",
-                        p: "20px",
-                        fontSize: "30px",
-                        backgroundColor: "#fff",
-                        display: "flex",
-                        alignItems: "center",
-                        mt: "10px",
-                        borderRadius: "15px",
-                      }}
-                    >
-                      {field.value}
-                    </Box>
-                  </Box>
-                );
-              }
-            })}
-          </Box>
-
-          {/* الدولة والمدينة في صف واحد */}
-          <Box
-            sx={{
-              display: "flex",
-              gap: "20px",
-              justifyContent: "space-between",
-              mt: "20px", // إضافة مسافة بين الصفوف
-            }}
-          >
-            {/* حقل الدولة */}
-            <Box sx={{ width: "49%" }}>
-              <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                {field[1].name}
-              </Typography>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: "70px",
-                  p: "20px",
-                  fontSize: "30px",
-                  backgroundColor: "#fff",
-                  display: "flex",
-                  alignItems: "center",
-                  mt: "10px",
-                  borderRadius: "15px",
-                }}
-              >
-                {field[1].value}
-              </Box>
-            </Box>
-
-            {/* حقل المدينة */}
-            <Box sx={{ width: "49%" }}>
-              <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                {field[2].name}
-              </Typography>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: "70px",
-                  p: "20px",
-                  fontSize: "30px",
-                  backgroundColor: "#fff",
-                  display: "flex",
-                  alignItems: "center",
-                  mt: "10px",
-                  borderRadius: "15px",
-                }}
-              >
-                {field[2].value}
-              </Box>
-            </Box>
-          </Box>
-
-          {/* رقم الجوال في صف منفصل */}
-          <Box sx={{ mt: "20px", width: "100%" }}>
+          <Box>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              {field[3].name}
+              الاسم ثلاثى
             </Typography>
             <Box
               sx={{
@@ -139,97 +46,7 @@ function AddSupervisor() {
                 borderRadius: "15px",
               }}
             >
-              {field[3].value}
-            </Box>
-          </Box>
-
-          <Box>
-            <Box
-              sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "20px",
-                justifyContent: "space-between",
-              }}
-            >
-              <Box>
-                <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                  اسم البنك
-                </Typography>
-                <Box
-                  sx={{
-                    width: "412px",
-                    height: "70px",
-                    p: "20px",
-                    fontSize: "30px",
-                    backgroundColor: "#fff",
-                    display: "flex",
-                    alignItems: "center",
-                    mt: "10px",
-                    borderRadius: "15px",
-                  }}
-                >
-                  اسم البنك
-                </Box>
-              </Box>
-              <Box sx={{ display: "flex", flexDirection: "column" }}>
-                <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                  رقم الحساب البنكي
-                </Typography>
-                <Box
-                  sx={{
-                    width: "412px",
-                    height: "70px",
-                    p: "20px",
-                    fontSize: "30px",
-                    backgroundColor: "#fff",
-                    display: "flex",
-                    alignItems: "center",
-                    mt: "10px",
-                    borderRadius: "15px",
-                  }}
-                >
-                  رقم الحساب
-                </Box>
-
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    width: "100%",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    my: "30px",
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontSize: "30px",
-                      color: "#5E5E5E",
-                      alignSelf: "flex-start",
-                    }}
-                  >
-                    اضف صوره الملف
-                  </Typography>
-                  <Button
-                    sx={{
-                      width: "205px",
-                      height: "70px",
-                      fontSize: "30px",
-                      fontFamily: "Tanseek Modern Pro Arabic",
-                      borderRadius: "15px",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      color: "#000",
-                      background:
-                        "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-                    }}
-                  >
-                    قم بتحميل صورة
-                  </Button>
-                </Box>
-              </Box>
+              أحمد محمد
             </Box>
           </Box>
 
@@ -238,7 +55,147 @@ function AddSupervisor() {
               display: "flex",
               gap: "20px",
               justifyContent: "space-between",
-              mt: "20px", // إضافة مسافة بين الصفوف
+              mt: "20px",
+            }}
+          >
+            <Box sx={{ width: "49%" }}>
+              <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
+                الدولة
+              </Typography>
+              <Box
+                sx={{
+                  width: "100%",
+                  height: "70px",
+                  p: "20px",
+                  fontSize: "30px",
+                  backgroundColor: "#fff",
+                  display: "flex",
+                  alignItems: "center",
+                  mt: "10px",
+                  borderRadius: "15px",
+                }}
+              >
+                المملكة العربية السعودية
+              </Box>
+            </Box>
+
+            <Box sx={{ width: "49%" }}>
+              <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
+                المدينة
+              </Typography>
+              <Box
+                sx={{
+                  width: "100%",
+                  height: "70px",
+                  p: "20px",
+                  fontSize: "30px",
+                  backgroundColor: "#fff",
+                  display: "flex",
+                  alignItems: "center",
+                  mt: "10px",
+                  borderRadius: "15px",
+                }}
+              >
+                الرياض
+              </Box>
+            </Box>
+          </Box>
+
+          {/* البريد الالكتروني  */}
+
+          {/* رقم الجوال في صف منفصل */}
+          <Box sx={{ mt: "20px", width: "100%" }}>
+            <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
+              رقم الجوال
+            </Typography>
+            <Box
+              sx={{
+                width: "412px",
+                height: "70px",
+                p: "20px",
+                fontSize: "30px",
+                backgroundColor: "#fff",
+                display: "flex",
+                alignItems: "center",
+                mt: "10px",
+                borderRadius: "15px",
+              }}
+            >
+              966 5552512
+            </Box>
+          </Box>
+
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "20px",
+              justifyContent: "space-between",
+            }}
+          >
+            <Box>
+              <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
+                اسم البنك
+              </Typography>
+              <Box
+                sx={{
+                  width: "412px",
+                  height: "70px",
+                  p: "20px",
+                  fontSize: "30px",
+                  backgroundColor: "#fff",
+                  display: "flex",
+                  alignItems: "center",
+                  mt: "10px",
+                  borderRadius: "15px",
+                }}
+              >
+                الراجحى
+              </Box>
+            </Box>
+            <Box sx={{ display: "flex", flexDirection: "column" }}>
+              <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
+                رقم الحساب البنكي
+              </Typography>
+              <Box
+                sx={{
+                  width: "412px",
+                  height: "70px",
+                  p: "20px",
+                  fontSize: "30px",
+                  backgroundColor: "#fff",
+                  display: "flex",
+                  alignItems: "center",
+                  mt: "10px",
+                  borderRadius: "15px",
+                }}
+              >
+                56145612515615614154145
+              </Box>
+            </Box>
+          </Box>
+
+          <Box
+            sx={{
+              width: "292px",
+              height: "123px",
+              alignSelf: "end",
+              mt: "10px",
+            }}
+          >
+            <Box
+              component="img"
+              src={addimg}
+              sx={{ width: "100%", height: "100%" }}
+            />
+          </Box>
+
+          <Box
+            sx={{
+              display: "flex",
+              gap: "20px",
+              justifyContent: "space-between",
+              mt: "20px",
             }}
           >
             <Box>
@@ -284,13 +241,13 @@ function AddSupervisor() {
 
           <Button
             sx={{
+              alignSelf: "start",
+              mt: "40px",
               width: "121.65px",
               height: "32px",
               backgroundColor: "#114F80",
-              mt: "30px",
               color: "#fff",
-              fontSize: "25px",
-              fontFamily: "Tanseek Modern Pro Arabic",
+              borderRadius:'6px'
             }}
           >
             حفظ

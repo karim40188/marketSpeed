@@ -47,6 +47,8 @@ import AddMarketer from "./components/AddMarketer";
 import MarketerLink from "./components/MarketerLink";
 import ClientsChannels from "./components/ClientsChannels";
 import { ContextProvider } from "./components/Context";
+import ShowSubscribers from "./components/ShowSubscribers";
+import AllUsers from "./components/AllUsers";
 function App() {
   let router = createBrowserRouter([
     // Done
@@ -73,7 +75,7 @@ function App() {
         { path: "/edit-package", element: <EditPackage /> },
         { path: "/diwallet", element: <DiWallet /> },
         { path: "/edit-wallet", element: <EditWallet /> },
-        { path: "/add-package", element: <AddWallet /> },
+        { path: "/add-wallet", element: <AddWallet /> },
         { path: "/discount", element: <Discounts /> },
         { path: "/edit-discount", element: <EditDiscount /> },
         { path: "/add-discount", element: <AddDiscount /> },
@@ -123,6 +125,8 @@ function App() {
         { path: "/saudi-numbers", element: <SaudiNumbers /> },
         // Done
         { path: "/show-users", element: <ShowUsers /> },
+        { path: "/show-subscribers", element: <ShowSubscribers /> },
+        { path: "/all-users", element: <AllUsers /> },
         // Done
         { path: "/show-user-file", element: <ShowUserFile /> },
         // Done

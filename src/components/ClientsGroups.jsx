@@ -1,26 +1,35 @@
 import { Box, Button, Typography } from "@mui/material";
 import saudiImg from "../assets/saudi.png";
+import { useContext } from "react";
+import { Context } from "./Context";
 function ClientsGroups() {
+  let { sidebarOpen } = useContext(Context);
   return (
     <Box>
       <Typography
-        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80",fontWeight:'600' }}
+        sx={{
+          fontSize: { xs: "30px", md: "40px" },
+          color: "#114F80",
+          fontWeight: "600",
+          textAlign: { xs: "center", md: "right" },
+        }}
       >
-      جروبات العملاء
+        جروبات العملاء
       </Typography>
 
-      <Box sx={{ p: "20px" }}>
+      <Box sx={{ p: { xs: "10px", md: "20px" } }}>
         <Box
           sx={{
-            width: "836px",
+            width: { xs: "100%", sm: "80%", md: "90%", lg: "836px" },
             height: "auto",
             backgroundColor: "#114F80",
-            p: "40px",
+            p: { xs: "20px", md: "30px" },
             color: "#fff",
             borderRadius: "15px",
             display: "flex",
             flexDirection: "column",
-            gap:'20px'
+            gap: "20px",
+            mx: sidebarOpen ? "" : "auto",
           }}
         >
           <Box
@@ -28,27 +37,32 @@ function ClientsGroups() {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
+              flexDirection: { xs: "column", sm: "row" },
+              gap: { xs: "15px", sm: "30px" },
             }}
           >
-            <Box sx={{ display: "flex", alignItems: "center", gap: "30px" }}>
-              <Typography sx={{fontWeight:'600'}}>رابط القناة</Typography>
+            <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <Typography sx={{ fontWeight: "600" }}>رابط القناة</Typography>
               <Typography>https://market-speed.vercel.app/</Typography>
             </Box>
-            <Box sx={{ display: "flex", alignItems: "center", gap: "30px" }}>
-              <Typography sx={{fontWeight:'600'}}> اسم القناة</Typography>
+            <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <Typography sx={{ fontWeight: "600" }}>اسم القناة</Typography>
               <Typography>العائلة</Typography>
             </Box>
           </Box>
+
           <Box
             sx={{
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
+              flexDirection: { xs: "column", sm: "row" },
+              gap: { xs: "15px", sm: "30px" },
             }}
           >
-            <Box sx={{ display: "flex", alignItems: "center", gap: "30px" }}>
-              <Typography sx={{fontWeight:'600'}}>الدولة</Typography>
-              <Box sx={{ width: "66px", height: "41px" }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <Typography sx={{ fontWeight: "600" }}>الدولة</Typography>
+              <Box sx={{ width: "50px", height: "31px" }}>
                 <Box
                   component="img"
                   src={saudiImg}
@@ -56,31 +70,42 @@ function ClientsGroups() {
                 />
               </Box>
             </Box>
-            <Box sx={{ display: "flex", alignItems: "center", gap: "30px" }}>
-              <Typography sx={{fontWeight:'600'}}> اسم المستخدم</Typography>
+            <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <Typography sx={{ fontWeight: "600" }}>اسم المستخدم</Typography>
               <Typography>فيصل عبدالعزيز</Typography>
             </Box>
           </Box>
 
-          <Box sx={{display:'flex',justifyContent:'end',gap:'20px'}}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: { xs: "center", md: "end" },
+              gap: "20px",
+              flexWrap: { xs: "wrap", sm: "nowrap" },
+              mt: "20px",
+              mr: "10px",
+            }}
+          >
             <Button
               sx={{
-                width: "121.65px",
+                width: { xs: "100%", sm: "121.65px" },
                 p: "10px",
                 borderRadius: "6px",
                 backgroundColor: "#128C7F",
                 color: "#fff",
+                textAlign: "center",
               }}
             >
               قبول
             </Button>
             <Button
               sx={{
-                width: "121.65px",
+                width: { xs: "100%", sm: "121.65px" },
                 p: "10px",
                 borderRadius: "6px",
                 backgroundColor: "#CC0000",
                 color: "#fff",
+                textAlign: "center",
               }}
             >
               رفض

@@ -52,6 +52,7 @@ function SaudiGroups() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          flexWrap:'wrap',
           mb: "20px",
         }}
       >
@@ -67,12 +68,13 @@ function SaudiGroups() {
 
         <Button
           sx={{
-            width: "163px",
+            width: {xs:'100%',md:"163px"},
             height: "32px",
             backgroundColor: "#114F80",
             color: "#fff",
             fontSize: "25px",
             fontFamily: "Tanseek Modern Pro Arabic",
+            mt:{xs:'10px',md:''}
           }}
         >
           أضف مجموعة جديدة

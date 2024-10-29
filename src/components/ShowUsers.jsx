@@ -5,12 +5,8 @@ import profile_img from "../assets/profile_img.png";
 import { useNavigate } from "react-router-dom";
 
 function ShowUsers() {
-  let [showUsers] = useState([
-    { name: "احمد محمد", type: "user" },
-    { name: "محمد علي", type: "subscriber" },
-    { name: "علي حسن", type: "user" },
-    { name: "سارة خالد", type: "subscriber" },
-    { name: "هشام احمد", type: "user" },
+  let [activeLink, setActiveLink] = useState(false);
+  const [showUsers] = useState([
     { name: "احمد محمد", type: "user" },
     { name: "محمد علي", type: "subscriber" },
     { name: "علي حسن", type: "user" },
@@ -29,31 +25,18 @@ function ShowUsers() {
   ]);
 
   const [filteredUsers, setFilteredUsers] = useState(showUsers);
-  const [selectedFilter, setSelectedFilter] = useState("all");
+  const navigate = useNavigate();
 
-  const handleFilter = (type) => {
-    setSelectedFilter(type);
+  const filterUsers = (type) => {
     if (type === "all") {
-      setFilteredUsers(centerSubscribers(showUsers));
+      setFilteredUsers(showUsers);
     } else {
-      setFilteredUsers(centerSubscribers(showUsers.filter((user) => user.type === type)));
+      setFilteredUsers(showUsers.filter((user) => user.type === type));
     }
   };
 
-  const centerSubscribers = (users) => {
-    const subscribers = users.filter((user) => user.type === "subscriber");
-    const nonSubscribers = users.filter((user) => user.type !== "subscriber");
-    const middleIndex = Math.floor(nonSubscribers.length / 2);
-    return [
-      ...nonSubscribers.slice(0, middleIndex),
-      ...subscribers,
-      ...nonSubscribers.slice(middleIndex),
-    ];
-  };
-
-  let navigate = useNavigate();
   return (
-    <Box sx={{ width: "95%", m: "0 auto" }}>
+    <Box sx={{ width: "100%", m: "0 auto" }}>
       <Button
         sx={{
           width: { xs: "100%", sm: "156px" },
@@ -70,11 +53,30 @@ function ShowUsers() {
         إضافه مستخدم
       </Button>
 
-      <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, justifyContent: "space-between", my: "30px" }}>
-        <Typography sx={{ fontSize: { xs: "24px", sm: "30px", md: "40px" }, color: "#114F80", fontWeight: '600' }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          justifyContent: "space-between",
+          my: "30px",
+        }}
+      >
+        <Typography
+          sx={{
+            fontSize: { xs: "24px", sm: "30px", md: "40px" },
+            color: "#114F80",
+            fontWeight: "600",
+          }}
+        >
           عرض المستخدمين
         </Typography>
-        <Box sx={{ position: "relative", width: { xs: "100%", sm: "597px" }, mt: { xs: "20px", sm: "0" } }}>
+        <Box
+          sx={{
+            position: "relative",
+            width: { xs: "100%", sm: "597px" },
+            mt: { xs: "20px", sm: "0" },
+          }}
+        >
           <TextField
             placeholder="بحث بالاسم"
             fullWidth
@@ -90,40 +92,104 @@ function ShowUsers() {
               height: "34.8px",
             }}
           >
-            <IoSearchOutline style={{ width: "100%", height: "100%", color: "#937B31" }} />
+            <IoSearchOutline
+              style={{ width: "100%", height: "100%", color: "#937B31" }}
+            />
           </Box>
         </Box>
       </Box>
 
       {/* أزرار الفلترة */}
       <Box sx={{ display: "flex", gap: "20px", p: "30px", flexWrap: "wrap" }}>
-        {["user", "subscriber", "all"].map((filter) => (
-          <Box
-            key={filter}
-            sx={{
-              width: "121.65px",
-              height: "32px",
-              backgroundColor: selectedFilter === filter ? "#114F80" : "#fff",
-              color: selectedFilter === filter ? "#fff" : "#114F80",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: "6px",
-              cursor: "pointer",
-            }}
-            onClick={() => handleFilter(filter)}
-          >
-            <Typography>{filter === "user" ? "مستخدم" : filter === "subscriber" ? "مشترك" : "الكل"}</Typography>
-          </Box>
-        ))}
+        <Box
+          sx={{
+            width: "121.65px",
+            height: "32px",
+            backgroundColor: "#fff",
+            color: "#000",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: "6px",
+            cursor: "pointer",
+          }}
+          onClick={(e) => {
+            if (activeLink) {
+              activeLink.classList.remove("active");
+            }
+            e.currentTarget.classList.add("active");
+            setActiveLink(e.currentTarget);
+            filterUsers("user");
+          }}
+        >
+          <Typography>مستخدم</Typography>
+        </Box>
+        <Box
+          sx={{
+            width: "121.65px",
+            height: "32px",
+            backgroundColor: "#fff",
+            color: "#000",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: "6px",
+            cursor: "pointer",
+          }}
+
+
+          onClick={(e) => {
+            if (activeLink) {
+              activeLink.classList.remove("active");
+            }
+            e.currentTarget.classList.add("active");
+            setActiveLink(e.currentTarget);
+            filterUsers("subscriber")
+          }}
+        >
+          <Typography>مشترك</Typography>
+        </Box>
+        <Box
+          sx={{
+            width: "121.65px",
+            height: "32px",
+            backgroundColor: "#fff",
+            color: "#000",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: "6px",
+            cursor: "pointer",
+          }}
+
+          onClick={(e) => {
+            if (activeLink) {
+              activeLink.classList.remove("active");
+            }
+            e.currentTarget.classList.add("active");
+            setActiveLink(e.currentTarget);
+            filterUsers("all")
+          }}
+      
+        >
+          <Typography>الكل</Typography>
+        </Box>
       </Box>
 
       {/* عرض المستخدمين */}
-      <Box sx={{ display: "flex", flexWrap: "wrap", gap: "20px", p: "25px", justifyContent: { xs: "center", sm: "flex-start" } }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "20px",
+          p: "25px",
+          justifyContent: "center",
+        }}
+      >
         {filteredUsers.map((user, index) => (
           <Box
-            onClick={() => navigate('/show-user-file')}
             key={index}
+            onClick={() => navigate("/show-user-file")}
             sx={{
               width: { xs: "100%", sm: "247px" },
               height: "331px",
@@ -135,26 +201,26 @@ function ShowUsers() {
               flexDirection: "column",
               p: "20px",
               textAlign: "center",
-              gap: "10px",
+              gap: "3px",
               cursor: "pointer",
             }}
           >
             <Box sx={{ width: "108px", height: "108px" }}>
-              <Box component="img" src={profile_img} sx={{ width: "100%", height: "100%" }} />
+              <Box
+                component="img"
+                src={profile_img}
+                sx={{ width: "100%", height: "100%" }}
+              />
             </Box>
-
             <Typography>{user.name}</Typography>
+            <Typography sx={{ fontSize: "20px" }}>
+              {user.type === "subscriber" ? "مشترك" : "مستخدم"}
+            </Typography>
             <Typography
               sx={{
-                background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
                 fontSize: "20px",
               }}
             >
-              {user.type === "subscriber" ? "مشترك" : "مستخدم"}
-            </Typography>
-            <Typography sx={{ fontSize: "20px", color: user.type === "subscriber" ? "#fff" : "#000" }}>
               الرياض-المملكة العربية السعودية <br />
               فريق العمل : 20 مسوق
             </Typography>

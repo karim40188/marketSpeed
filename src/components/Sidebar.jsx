@@ -22,7 +22,7 @@ function Sidebar() {
     setOpen(false);
   };
 
-  let {sidebarOpen}=useContext(Context)
+  let { sidebarOpen } = useContext(Context);
   let [activeLink, setActiveLink] = useState(false);
   let [appDropDown, setAppDropDown] = useState(false);
   let [statsDropDown, setStatsDropDown] = useState(false);
@@ -47,8 +47,8 @@ function Sidebar() {
     <Box
       sx={{
         backgroundColor: "#114F80",
-        width: sidebarOpen? {xs:'290px',md:"34%"}:'0',
-        position: sidebarOpen? {xs:'fixed',md:"sticky"}:'',
+        width: sidebarOpen ? { xs: "290px", md: "34%" } : "0",
+        position: sidebarOpen ? { xs: "fixed", md: "sticky" } : "",
         top: "0",
         right: "0",
         bottom: "0",
@@ -59,9 +59,8 @@ function Sidebar() {
         alignItems: "center",
         gap: "10px",
         zIndex: "12",
-        transition:'400ms width',
-        overflow:'hidden'
-        
+        transition: "400ms width",
+        overflow: "hidden",
       }}
     >
       <Box
@@ -459,7 +458,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-          قنوات العملاء
+              قنوات العملاء
             </Link>
           </Box>
         )}
@@ -586,19 +585,16 @@ function Sidebar() {
               إضافة مشرفين
             </Link>
             <Typography
-            sx={{pr:'20px',cursor:'pointer'}}
-            to=""
+              sx={{ pr: "20px", cursor: "pointer" }}
+              to=""
               onClick={(e) => {
                 if (activeLink) {
                   activeLink.classList.remove("active");
                 }
                 e.target.classList.add("active");
                 setActiveLink(e.target);
-                handleClickOpen()
-
-
+                handleClickOpen();
               }}
-              
             >
               عرض المسوقين
             </Typography>
@@ -606,24 +602,28 @@ function Sidebar() {
         )}
       </Box>
 
-      <Dialog 
-        open={open} 
+      <Dialog
+        open={open}
         onClose={handleClose}
         PaperProps={{
           style: {
-        
-            borderRadius: '25px',
-          }
+            borderRadius: "25px",
+          },
         }}
       >
-        <DialogContent style={{ backgroundColor: '#114F80', color: '#fff' , padding:"80px",}}>
+        <DialogContent
+          style={{
+            backgroundColor: "#114F80",
+            color: "#fff",
+            padding: "80px 80px 20px",
+          }}
+        >
           <TextField
             label="اسم المستخدم"
             variant="outlined"
             fullWidth
             margin="dense"
-            style={{ backgroundColor: '#fff',  borderRadius:'15px' }}
-          
+            style={{ backgroundColor: "#fff", borderRadius: "15px" }}
           />
           <TextField
             label="كلمة المرور"
@@ -631,26 +631,34 @@ function Sidebar() {
             variant="outlined"
             fullWidth
             margin="dense"
-            style={{ backgroundColor: '#fff', borderRadius: '15px' ,marginBlock:'20px'}}
+            style={{
+              backgroundColor: "#fff",
+              borderRadius: "15px",
+              marginBlock: "20px",
+            }}
           />
           <Button
-            onClick={()=>{
-              handleClose()
-              navigate('/marketers')
+            onClick={() => {
+              handleClose();
+              navigate("/marketers");
             }}
-            sx={{width:'200px',display:'block',mx:'auto',borderRadius:'15px'}}
+            sx={{
+              width: "200px",
+              display: "block",
+              mx: "auto",
+              borderRadius: "15px",
+            }}
             variant="contained"
             style={{
-              marginTop: '15px',
-              background: 'linear-gradient(90deg, #F9D053 0%, #937B31 100%)',
-              color: '#fff'
+              marginTop: "15px",
+              background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
+              color: "#fff",
             }}
           >
-           دخول
+            دخول
           </Button>
         </DialogContent>
       </Dialog>
-
     </Box>
   );
 }

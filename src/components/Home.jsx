@@ -30,6 +30,7 @@ function Home() {
         sx={{
           p: "20px",
           width: { xs: "90%", sm: "80%" },
+          mx:'auto',
           justifyContent: "end",
         }}
         spacing={5}

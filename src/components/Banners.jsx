@@ -11,7 +11,7 @@ function Banners() {
     { visitor: "ثالث زائر", upload: "أرفع صوره جديدة", img: cardImg },
     { visitor: "رابع زائر", upload: "أرفع صوره جديدة", img: cardImg },
   ]);
-  
+
   let [cardsEn] = useState([
     { visitor: "أول بانر", upload: "أرفع صوره جديدة", img: cardImg },
     { visitor: "ثانى زائر", upload: "أرفع صوره جديدة", img: cardImg },
@@ -21,16 +21,16 @@ function Banners() {
 
   return (
     <Box>
-      <Typography sx={{ fontSize: "40px", color: "#114F80",fontWeight:'600' }}>
+      <Typography
+        sx={{ fontSize: "40px", color: "#114F80", fontWeight: "600" }}
+      >
         الصفحة الرئيسية
       </Typography>
       <Box sx={{ p: "40px" }}>
         <Typography
+          className="text-gradient"
           sx={{
             fontSize: "30px",
-            background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
             mb: "30px",
           }}
         >
@@ -41,7 +41,7 @@ function Banners() {
           {cardsAr.map((card) => {
             return (
               <Grid2 size={{ xs: 12, md: 6 }} key={card.visitor}>
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: -20 }} // الإعدادات الأولية
                   whileInView={{ opacity: 1, y: 0 }} // كيف تظهر العناصر
                   transition={{ duration: 0.5 }} // مدة الانتقال
@@ -83,11 +83,9 @@ function Banners() {
       </Box>
       <Box sx={{ p: "40px" }}>
         <Typography
+          className="text-gradient"
           sx={{
             fontSize: "30px",
-            background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
             mb: "30px",
           }}
         >
@@ -98,7 +96,7 @@ function Banners() {
           {cardsEn.map((card) => {
             return (
               <Grid2 size={{ xs: 12, md: 6 }} key={card.visitor}>
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: -20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
@@ -147,7 +145,7 @@ function Banners() {
         }}
       ></Box>
 
-      <Icons/>
+      <Icons />
     </Box>
   );
 }

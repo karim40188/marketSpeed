@@ -2,13 +2,12 @@ import { Box, Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 function SaudiNumbers() {
-
-
-  let navigate= useNavigate()
+  let navigate = useNavigate();
+  
   return (
     <Box>
       <Typography
-        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" ,fontWeight:'600'}}
+        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80", fontWeight: '600' }}
       >
         جميع الأرقام مجموعات المملكة العربية السعودية
       </Typography>
@@ -18,54 +17,58 @@ function SaudiNumbers() {
           display: "flex",
           alignItems: "center",
           gap: "20px",
-          justifyContent: "end",
-          width: "90%",
+          justifyContent: { xs: "start", md: "end" }, // Adjust alignment based on screen size
+          width: "100%",
+          flexWrap: "wrap", // Allow wrapping on smaller screens
+          p: { xs: "0 10px", md: "0" } // Adjust padding for smaller screens
         }}
       >
         <Button
           sx={{
-            width: "146px",
+            width: { xs: "100%", md: "146px" },
             height: "32px",
             color: "#fff",
             backgroundColor: "#114F80",
             borderRadius: "5px",
             fontFamily: "Sora",
-            fonSize: "20px",
+            fontSize: { xs: "16px", md: "20px" }, // Responsive font size
             fontWeight: "600",
+            mb: { xs: "10px", md: "0" } // Add margin bottom for small screens
           }}
         >
           أرفق رابط
         </Button>
         <Button
           sx={{
-            width: "146px",
+            width: { xs: "100%", md: "146px" },
             height: "32px",
             color: "#fff",
             backgroundColor: "#114F80",
             borderRadius: "5px",
             fontFamily: "Sora",
-            fonSize: "20px",
+            fontSize: { xs: "16px", md: "20px" },
             fontWeight: "600",
+            mb: { xs: "10px", md: "0" } // Add margin bottom for small screens
           }}
         >
           أرفق رابط
         </Button>
       </Box>
 
-      <Box sx={{ display: "flex", flexDirection: "column", width: "890px" }}>
+      <Box sx={{ display: "flex", flexDirection: "column", width: { xs: "100%", sm: "90%", md: "890px" } }}>
         <Box
           sx={{
-            width: "855px",
-            height: "818px",
-            p: "100px",
+            width: { xs: "100%", sm: "100%", md: "855px" },
+            p: { xs: "20px", sm: "40px", md: "100px" }, // Responsive padding
             backgroundColor: "#fff",
             mt: "50px",
             mr: "30px",
+            borderRadius: "10px", // Optional: add some rounding to corners
+            overflow: "hidden" // Ensure content doesn't overflow
           }}
         >
-          <Typography sx={{fontWeight:'600'}}>
+          <Typography sx={{ fontWeight: '600', overflowWrap: "break-word" }}>
             يىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
             ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
             ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
             ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
@@ -79,22 +82,21 @@ function SaudiNumbers() {
 
         <Button
           sx={{
-            width: "146px",
+            width: { xs: "100%", md: "146px" },
             height: "32px",
             color: "#fff",
             backgroundColor: "#114F80",
             borderRadius: "5px",
             fontFamily: "Sora",
-            fonSize: "20px",
+            fontSize: { xs: "16px", md: "20px" },
             fontWeight: "600",
             mt: "30px",
             display: "block",
             mr: "auto",
           }}
-
-        onClick={()=>{
-          navigate('/saudi-groups')
-        }}
+          onClick={() => {
+            navigate('/saudi-groups');
+          }}
         >
           إرسال
         </Button>

@@ -41,7 +41,7 @@ function UserStats() {
         {filters.map((filter) => (
           <Button
             sx={{
-              width: { xs: "auto", md: "156px" },
+              width: { xs: "100%", md: "156px" },
               height: "57px",
               fontSize: { xs: "16px", md: "20px" },
               borderRadius: "10px",
@@ -65,15 +65,12 @@ function UserStats() {
         ))}
       </Box>
 
-      <Grid2 container spacing={4} sx={{ my: "30px" }} justifyContent="center">
+      <Box  sx={{display:'flex',flexWrap:'wrap',justifyContent:'center',mt:'30px'}}>
         {filteredCards.map((card, index) => (
-          <Grid2
-            key={index}
-            xs={12} 
-            sm={6} 
-            md={4}
+          <Box
+         key={index}
             sx={{
-              maxWidth: { xs: "100%", md: "659px" },
+              width: { xs: "100%", md: "659px" },
               height: "281px",
               backgroundColor: "#fff",
               display: "flex",
@@ -105,12 +102,12 @@ function UserStats() {
             <Typography sx={{ fontSize: { xs: "24px", md: "30px" }, color:"#114F80" }}>
             عدد المشتركين
             </Typography>
-          </Grid2>
+          </Box>
         ))}
 
 
 
-      </Grid2>
+      </Box>
     </Box>
   );
 }

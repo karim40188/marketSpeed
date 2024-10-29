@@ -65,21 +65,7 @@ function SuggestionSession() {
               <Typography sx={{ fontSize: { xs: "25px", md: "40px" } }}>احمد على</Typography>
             </Box>
 
-            <Typography
-              sx={{
-                width: "54px",
-                height: "54px",
-                backgroundColor: "#114F80",
-                borderRadius: "5px",
-                color: "#fff",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                fontSize: { xs: "25px", md: "40px" },
-              }}
-            >
-              15
-            </Typography>
+          
           </Box>
           <Typography sx={{ textAlign: "center", my: "10px" }}>
             12/10/2024

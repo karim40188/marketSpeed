@@ -97,16 +97,15 @@ function AddAdminFile() {
             </Box>
           </Box>
 
-          {/* الدولة والمدينة في صف واحد */}
           <Box
             sx={{
               display: "flex",
               gap: "20px",
               justifyContent: "space-between",
-              mt: "20px", // إضافة مسافة بين الصفوف
+              mt: "20px", 
             }}
           >
-            {/* حقل الدولة */}
+         
             <Box sx={{ width: "49%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
                 الدولة
@@ -128,7 +127,7 @@ function AddAdminFile() {
               </Box>
             </Box>
 
-            {/* حقل المدينة */}
+      
             <Box sx={{ width: "49%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
                 المدينة
@@ -180,7 +179,7 @@ function AddAdminFile() {
               display: "flex",
               gap: "20px",
               justifyContent: "space-between",
-              mt: "20px", // إضافة مسافة بين الصفوف
+              mt: "20px",
             }}
           >
             <Box>
@@ -273,6 +272,16 @@ function AddAdminFile() {
               </Box>
             </Box>
           </Box>
+
+
+
+
+
+
+
+
+
+          
 
           <Box sx={{ my: "30px" }}>
             <Typography sx={{ fontSize: "40px", color: "#114F80" ,mb:'20px',fontWeight:'600'}}>

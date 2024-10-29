@@ -1,13 +1,15 @@
-import { Box, Button,  Typography } from "@mui/material";
-// import { useNavigate } from "react-router-dom";
+import { Box, Button, Typography } from "@mui/material";
+import { useContext } from "react";
+import { Context } from "./Context";
+
 function EditPackage() {
-  // let navigate = useNavigate();
+  let { sidebarOpen } = useContext(Context);
   return (
-    <Box>
-      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+    <Box sx={{ width: "100%", p: { xs: 2, md: 1 } }}>
+      <Box sx={{ display: "flex", justifyContent: "space-between", mb: 0 }}>
         <Typography
           sx={{
-            fontSize: { xs: "30px", md: "40px" },
+            fontSize: { xs: "24px", md: "40px" },
             color: "#114F80",
             fontWeight: "600",
           }}
@@ -15,50 +17,53 @@ function EditPackage() {
           تعديل الباقة
         </Typography>
       </Box>
-      <Box sx={{ p: "40px", width: "70%" }}>
+
+      <Box
+        sx={{
+          p: "20px",
+
+          width: sidebarOpen ? { xs: "100%", md: "672px" } : "100%",
+          mx: sidebarOpen ? { xs: "", md: "" } : "auto",
+        }}
+      >
         <Box
           sx={{
             display: "flex",
-
             justifyContent: "space-between",
-            mb: "20px",
+            mb: 3,
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: { xs: "center", md: "flex-start" },
           }}
         >
-          <Typography>مزايا الباقة</Typography>
+          <Typography sx={{ mb: { xs: 2, md: 0 } }}>مزايا الباقة</Typography>
 
-          <Box sx={{ display: "flex", gap: "20px" }}>
+          <Box sx={{ display: "flex", gap: 2 }}>
             <Button
               sx={{
-                fontSize: "25px",
+                fontSize: { xs: "20px", md: "25px" },
                 fontFamily: "Tanseek Modern Pro Arabic",
                 width: "156px",
                 height: "32px",
                 backgroundColor: "#128C7F",
                 borderRadius: "6px",
                 color: "#fff",
-                px: "30px",
-                py: "20px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
+                px: 2,
+                py: 1,
               }}
             >
               حفظ
             </Button>
             <Button
               sx={{
-                fontSize: "25px",
+                fontSize: { xs: "20px", md: "25px" },
                 fontFamily: "Tanseek Modern Pro Arabic",
                 width: "156px",
                 height: "32px",
                 backgroundColor: "#CC0000",
                 borderRadius: "6px",
                 color: "#fff",
-                px: "30px",
-                py: "20px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
+                px: 2,
+                py: 1,
               }}
             >
               حذف
@@ -69,53 +74,48 @@ function EditPackage() {
         <Box
           sx={{
             width: "100%",
-            height: "auto",
             background: "#fff",
             borderRadius: "15px",
-            padding: "60px",
+            px: 5,
+            py: 4,
+            mb: 3,
+          }}
+        >
+          <ul style={{ color: "#000", paddingLeft: "20px" }}>
+            {[
+              "15 ماسة مجانية",
+              "شعار واتساب متاح لمده 4 أسابيع",
+              "شعار تليجرام متاح لمده 4 أسابيع",
+              "شعار الإنستجرام متاح لمده 4 أسابيع",
+              "شعار X متاح لمده 4 أسابيع",
+              "شعار فيس بوك متاح لمده 4 أسابيع",
+              "شعار تيك توك متاح لمده 4 أسابيع",
+              "شعار رسائل نصية متاح لمده 4 أسابيع",
+              "شعار الإيميلات متاح لمده 4 أسابيع",
+            ].map((benefit, index) => (
+              <li key={index}>
+                <Typography>{benefit}</Typography>
+              </li>
+            ))}
+          </ul>
+        </Box>
+
+        <Box
+          sx={{
             display: "flex",
+            gap: { xs: 2, md: 5 },
+            p: 2,
             alignItems: "center",
           }}
         >
-          <ul style={{ color: "#000" }}>
-            <li>
-              <Typography>15 ماسة مجانية</Typography>
-            </li>
-            <li>
-              <Typography>شعار واتساب متاح لمده 4 أسابيع</Typography>
-            </li>
-            <li>
-              <Typography>شعار تليجرام متاح لمده 4 أسابيع</Typography>
-            </li>
-            <li>
-              <Typography>شعار الإنستجرام متاح لمده 4 أسابيع</Typography>
-            </li>
-            <li>
-              <Typography>شعار X متاح لمده 4 أسابيع</Typography>
-            </li>
-            <li>
-              <Typography>شعار فيس بوك متاح لمده 4 أسابيع</Typography>
-            </li>
-            <li>
-              <Typography>شعار تيك توك متاح لمده 4 أسابيع</Typography>
-            </li>
-            <li>
-              <Typography>شعار رسائل نصية متاح لمده 4 أسابيع</Typography>
-            </li>
-            <li>
-              <Typography>شعار الإيميلات متاح لمده 4 أسابيع</Typography>
-            </li>
-          </ul>
-        </Box>
-        <Box
-          sx={{ display: "flex", gap: "50px", p: "20px", alignItems: "center" }}
-        >
-          <Typography sx={{ fontSize: "30px", fontWeight: "600" }}>
+          <Typography
+            sx={{ fontSize: { xs: "24px", md: "30px" }, fontWeight: "600" }}
+          >
             السعر
           </Typography>
           <Typography
             sx={{
-              fontSize: "30px",
+              fontSize: { xs: "24px", md: "30px" },
               border: "1px solid black",
               width: "174px",
               height: "62px",
@@ -130,7 +130,7 @@ function EditPackage() {
           </Typography>
           <Typography
             sx={{
-              fontSize: "30px",
+              fontSize: { xs: "24px", md: "30px" },
               border: "1px solid black",
               width: "174px",
               height: "62px",
@@ -138,7 +138,6 @@ function EditPackage() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              mr: "20px",
               fontWeight: "600",
             }}
           >

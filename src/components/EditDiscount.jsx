@@ -4,21 +4,31 @@ function EditDiscount() {
   return (
     <Box>
       <Typography
-        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" ,fontWeight:'600'}}
+        sx={{
+          fontSize: { xs: "24px", md: "40px" },
+          color: "#114F80",
+          fontWeight: "600",
+          mb: { xs: 2, md: 4 },
+        }}
       >
-       تعديل كود الخصم
+        تعديل كود الخصم
       </Typography>
-      <Box sx={{p:'40px',mt:'50px'}} >
+      
+      <Box sx={{ p: { xs: 2, md: 4 }, mt: { xs: 3, md: 6 } }}>
         <Box
           sx={{
             display: "flex",
             alignItems: "start",
+            flexDirection: { xs: "column", md: "row" },
             justifyContent: "space-between",
+            gap: { xs: 2, md: 0 },
           }}
         >
-          <Box sx={{ display: "flex", flexDirection: "column", gap: "30px" }}>
-            <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-              <Typography sx={{ width: "121px",fontWeight:'600' }}>الكود</Typography>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+            <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+              <Typography sx={{ width: { xs: "auto", md: "121px" }, fontWeight: "600" }}>
+                الكود
+              </Typography>
               <Typography
                 sx={{
                   border: "1px solid black",
@@ -28,16 +38,18 @@ function EditDiscount() {
                   justifyContent: "center",
                   alignItems: "center",
                   borderRadius: "5px",
-                  fontSize: "30px",
+                  fontSize: { xs: "20px", md: "30px" },
                   p: "10px",
-                  fontWeight:'600'
+                  fontWeight: "600",
                 }}
               >
                 FastMarketing50
               </Typography>
             </Box>
-            <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-              <Typography sx={{ width: "121px" ,fontWeight:'600'}}>نسبه الخصم</Typography>
+            <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+              <Typography sx={{ width: { xs: "auto", md: "121px" }, fontWeight: "600" }}>
+                نسبه الخصم
+              </Typography>
               <Typography
                 sx={{
                   border: "1px solid black",
@@ -47,9 +59,9 @@ function EditDiscount() {
                   justifyContent: "center",
                   alignItems: "center",
                   borderRadius: "5px",
-                  fontSize: "30px",
-                  mr: "20px",
-                  fontWeight:'600'
+                  fontSize: { xs: "20px", md: "30px" },
+                  mr: { xs: 0, md: 2 },
+                  fontWeight: "600",
                 }}
               >
                 20 %
@@ -57,36 +69,43 @@ function EditDiscount() {
             </Box>
           </Box>
 
-          <Box sx={{ display: "flex", gap: "20px" }}>
+          <Box
+            sx={{
+              display: "flex",
+              gap: 2,
+              justifyContent: { xs: "center", md: "flex-start" },
+              mt: { xs: 2, md: 0 },
+            }}
+          >
             <Button
               sx={{
-                fontSize: "25px",
+                fontSize: { xs: "18px", md: "25px" },
                 fontFamily: "Tanseek Modern Pro Arabic",
                 width: "156px",
                 height: "32px",
                 backgroundColor: "#128C7F",
                 borderRadius: "6px",
                 color: "#fff",
-                px: "30px",
-                py: "20px",
+                px: { xs: 2, md: 4 },
+                py: { xs: 1, md: 2 },
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
-             حفظ
+              حفظ
             </Button>
             <Button
               sx={{
-                fontSize: "25px",
+                fontSize: { xs: "18px", md: "25px" },
                 fontFamily: "Tanseek Modern Pro Arabic",
                 width: "156px",
                 height: "32px",
                 backgroundColor: "#CC0000",
                 borderRadius: "6px",
                 color: "#fff",
-                px: "30px",
-                py: "20px",
+                px: { xs: 2, md: 4 },
+                py: { xs: 1, md: 2 },
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -96,7 +115,6 @@ function EditDiscount() {
             </Button>
           </Box>
         </Box>
-       
       </Box>
     </Box>
   );

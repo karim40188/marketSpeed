@@ -36,17 +36,15 @@ function Videos() {
       >
         مقاطع الفيديو
       </Typography>
-      <Box sx={{ display: "flex", flexDirection: "column",p:'20px' }}>
+      <Box sx={{ display: "flex", flexDirection: "column", p: "20px" }}>
         <Typography
+          className="text-gradient"
           sx={{
-            background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
             my: "30px",
             display: "flex",
           }}
         >
-       فيديوهات المنصات عربى
+          فيديوهات المنصات عربى
         </Typography>
 
         <Box sx={{ width: "100%", mx: "auto", p: "20px" }}>
@@ -78,10 +76,8 @@ function Videos() {
           </Grid2>
         </Box>
         <Typography
+          className="text-gradient"
           sx={{
-            background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
             mb: "30px",
             display: "flex",
             mt: "50px",

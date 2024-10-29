@@ -49,13 +49,15 @@ function ProfitStats() {
           display: "flex",
           gap: "20px",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: {xs:"center",md:"space-between"},
+          flexWrap:'wrap',
+          
         }}
       >
         {filters.map((filter) => (
           <Button
             sx={{
-              width: "156px",
+              width: {xs:'100%',md:"156px"},
               height: "57px",
               fontSize: "20px",
               borderRadius: "10px",
@@ -86,7 +88,7 @@ function ProfitStats() {
           <Grid2
             key={card.name}
             sx={{
-              width: "220px",
+              width: {xs:'100%',md:"220px"},
               height: "281px",
               backgroundColor: "#fff",
               display: "flex",
