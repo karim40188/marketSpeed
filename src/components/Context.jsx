@@ -1,10 +1,12 @@
-import { createContext, useState } from "react";
+import { createContext,  useState } from "react";
 
 export let Context = createContext("");
 
 // eslint-disable-next-line react/prop-types
 export function ContextProvider({ children }) {
-  let [sidebarOpen, setSidebarOpen] = useState(false);
+  let [sidebarOpen, setSidebarOpen] = useState(true);
+
+
   return (
     <Context.Provider value={{ sidebarOpen, setSidebarOpen }}>
       {children}

@@ -11,7 +11,6 @@
     url(./mbc-arabic-font.ttf) format("woff");
 }
 
-
 @font-face {
   font-family: "Titillium Web";
   src: url("./TitilliumWeb-Regular.ttf") format("truetype");
@@ -35,21 +34,18 @@
 @font-face {
   font-family: "inter";
   src: url("./Inter-VariableFont_opsz,wght.ttf") format("truetype");
-
 }
 @font-face {
   font-family: "Sora";
   src: url("./sora/Sora-VariableFont_wght.ttf") format("truetype");
-
 }
 
-p
-html,
+p html,
 body {
   background-color: #eee;
   direction: rtl !important; /* يجعل كل المحتوى يبدأ من اليمين */
-  text-align: right !important; 
-  overflow-x:hidden;
+  text-align: right !important;
+  overflow-x: hidden;
 }
 
 a {
@@ -59,8 +55,16 @@ a {
   align-items: center;
   padding: 20px;
   color: #114f80;
-  font-size: 25px;
+font-size: 25px;
   font-family: Tanseek Modern Pro Arabic;
+}
+
+@media only screen and (max-width: 600px) {
+  
+  a {
+    font-size: 18px;
+    font-weight: 500;
+  }
 }
 
 .active {
@@ -69,10 +73,9 @@ a {
   border-radius: 8px;
 }
 
-
-.text-gradient{
-  background: linear-gradient(90deg, #F9D053 0%, #937B31 100%);
+.text-gradient {
+  background: linear-gradient(90deg, #f9d053 0%, #937b31 100%);
   -webkit-background-clip: text;
-  background-clip:text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }

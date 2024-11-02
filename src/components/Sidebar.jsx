@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import logo from "../assets/logo.svg";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext,  useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Dialog, DialogContent, TextField, Button } from "@mui/material";
 import { Context } from "./Context";
@@ -16,7 +16,7 @@ function Sidebar() {
     setOpen(false);
   };
 
-  let { sidebarOpen, setSidebarOpen } = useContext(Context);
+  let { sidebarOpen } = useContext(Context);
   let [activeLink, setActiveLink] = useState(false);
   let [appDropDown, setAppDropDown] = useState(false);
   let [statsDropDown, setStatsDropDown] = useState(false);
@@ -38,25 +38,23 @@ function Sidebar() {
   let navigate = useNavigate();
   let sidebarRef = useRef(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-        setSidebarOpen(false);
-      }
-    };
-    if (window.innerWidth < 600) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [setSidebarOpen, sidebarOpen]);
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+  //       setSidebarOpen(false);
+  //     }
+  //   };
+  //   if (window.innerWidth < 600) {
+  //     document.addEventListener("mousedown", handleClickOutside);
+  //   }
+
+  // }, []);
 
   return (
     <Box
       sx={{
         backgroundColor: "#114F80",
-        width: sidebarOpen ? { xs: "290px", md: "34%" } : "0",
+        width: sidebarOpen ? { xs: "200px", md: "34%" } : "0",
         position: sidebarOpen ? { xs: "fixed", md: "sticky" } : "",
         top: "0",
         right: "0",
@@ -172,7 +170,7 @@ function Sidebar() {
               justifyContent: "center",
               gap: "5px",
               color: "#114F80",
-              p: "10px",
+              p: "3px",
             }}
           >
             <Link

@@ -81,8 +81,9 @@ function ShowUserFile() {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            flexDirection: { xs: "column", md: "row" }, // اتجاه عمودي في الشاشات الأصغر
+            flexDirection: { xs: "column", md: "row" },
             mb: "20px",
+          gap:'10px'
           }}
         >
           <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -176,16 +177,14 @@ function ShowUserFile() {
             </Box>
           </Box>
 
-          {/* الدولة والمدينة في صف واحد */}
+       
           <Box
             sx={{
               display: "flex",
-              flexDirection: { xs: "column", md: "row" }, // اتجاه عمودي في الشاشات الأصغر
-              gap: "20px",
+              flexDirection: { xs: "column", md: "row" }, 
               mt: "20px",
             }}
           >
-            {/* حقل الدولة */}
             <Box sx={{ width: "100%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
                 الدولة

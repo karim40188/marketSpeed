@@ -49,6 +49,10 @@ import ClientsChannels from "./components/ClientsChannels";
 import { ContextProvider } from "./components/Context";
 import ShowSubscribers from "./components/ShowSubscribers";
 import AllUsers from "./components/AllUsers";
+import CountryNumGroup from "./components/unknown/CountryNumGroup";
+import AddNewGroup from "./components/unknown/AddNewGroup";
+import AddNewLinks from "./components/unknown/AddNewLinks";
+import ShareWithFriends from "./components/ShareWithFriends";
 function App() {
   let router = createBrowserRouter([
     // Done
@@ -135,6 +139,10 @@ function App() {
         { path: "/edit-user-file", element: <EditUserFile /> },
         // Done
         { path: "/add-user", element: <AddUser /> },
+        { path: "/country-num-group", element: <CountryNumGroup /> },
+        { path: "/add-new-group", element: <AddNewGroup /> },
+        { path: "/add-new-links", element: <AddNewLinks /> },
+        { path: "/share", element: <ShareWithFriends /> },
       ],
     },
   ]);

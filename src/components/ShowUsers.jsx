@@ -136,15 +136,13 @@ function ShowUsers() {
             borderRadius: "6px",
             cursor: "pointer",
           }}
-
-
           onClick={(e) => {
             if (activeLink) {
               activeLink.classList.remove("active");
             }
             e.currentTarget.classList.add("active");
             setActiveLink(e.currentTarget);
-            filterUsers("subscriber")
+            filterUsers("subscriber");
           }}
         >
           <Typography>مشترك</Typography>
@@ -161,22 +159,19 @@ function ShowUsers() {
             borderRadius: "6px",
             cursor: "pointer",
           }}
-
           onClick={(e) => {
             if (activeLink) {
               activeLink.classList.remove("active");
             }
             e.currentTarget.classList.add("active");
             setActiveLink(e.currentTarget);
-            filterUsers("all")
+            filterUsers("all");
           }}
-      
         >
           <Typography>الكل</Typography>
         </Box>
       </Box>
 
-      {/* عرض المستخدمين */}
       <Box
         sx={{
           display: "flex",
@@ -213,16 +208,21 @@ function ShowUsers() {
               />
             </Box>
             <Typography>{user.name}</Typography>
-            <Typography sx={{ fontSize: "20px" }}>
+            <Typography
+              sx={{
+                fontSize: "20px",
+                color: user.type === "subscriber" ? "#fff" : "#114F80",
+              }}
+            >
               {user.type === "subscriber" ? "مشترك" : "مستخدم"}
             </Typography>
             <Typography
               sx={{
                 fontSize: "20px",
+                color: user.type === "subscriber" ? "#fff" : "#114F80",
               }}
             >
               الرياض-المملكة العربية السعودية <br />
-              فريق العمل : 20 مسوق
             </Typography>
           </Box>
         ))}

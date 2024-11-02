@@ -69,7 +69,6 @@ function AddPackage() {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-            
             >
               حفظ
             </Button>
@@ -136,7 +135,13 @@ function AddPackage() {
           </ul>
         </Box>
         <Box
-          sx={{ display: "flex", gap: "50px", p: "20px", alignItems: "center" }}
+          sx={{
+            display: "flex",
+            gap: { xs: "20px", md: "50px" },
+            p: "20px",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
         >
           <Typography sx={{ fontSize: "30px", fontWeight: "600" }}>
             السعر
@@ -166,7 +171,7 @@ function AddPackage() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              mr: "20px",
+              mr: {xs:"",md:"20px"},
               fontWeight: "600",
             }}
           >

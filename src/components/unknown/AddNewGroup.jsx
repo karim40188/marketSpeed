@@ -1,11 +1,12 @@
 import { Box, Button, Typography } from "@mui/material";
-function AddLinks() {
+import arrow from "../../assets/arrow.png";
+function AddNewGroup() {
   return (
     <Box>
       <Typography
         sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
       >
-        أضف روابط مجموعة المملكة العربية السعودية
+        أضف دولة فى مجموعة الدول
       </Typography>
 
       <Box sx={{ p: "25px" }}>
@@ -18,10 +19,8 @@ function AddLinks() {
           }}
         >
           <Box sx={{ width: { xs: "100%", md: "412px" } }}>
-            <Typography
-              sx={{ color: "#5E5E5E", fontSize: "30px", fontWeight: "700" }}
-            >
-              أضف رابط الجروب
+            <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
+              أسم المجموعة
             </Typography>
             <Box
               sx={{
@@ -57,7 +56,7 @@ function AddLinks() {
                 alignSelf: "flex-start",
               }}
             >
-              اضف الملف
+              علم المجموعة
             </Typography>
             <Button
               sx={{
@@ -73,35 +72,53 @@ function AddLinks() {
                 background: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
               }}
             >
-              قم بتحميل الملف csv
+              قم بتحميل صورة
             </Button>
           </Box>
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <Box sx={{ width: "412px" }}>
-            <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              المنصة
-            </Typography>
+
+        <Box sx={{ width: { xs: "100%", md: "412px" } }}>
+          <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
+            المنصة
+          </Typography>
+          <Box
+            sx={{
+              width: "100%",
+              height: "70px",
+              p: "10px",
+              fontSize: "30px",
+              backgroundColor: "#fff",
+              display: "flex",
+              alignItems: "center",
+              mt: "10px",
+              borderRadius: "15px",
+              position: "relative",
+            }}
+          >
+            الواتساب
             <Box
               sx={{
-                width: "100%",
-                height: "70px",
-                p: "10px",
-                fontSize: "30px",
-                backgroundColor: "#fff",
+                width: "10.81px",
+                height: "20.6px",
+                position: "absolute",
+                left: "10px",
+                top: "50%",
+                // transform: "translateY(-50%)",
                 display: "flex",
+                justifyContent: "center",
                 alignItems: "center",
-                mt: "10px",
-                borderRadius: "15px",
               }}
             >
-              الواتساب
+              <Box
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  backgroundSize: "contain",
+                  objectFit: "contain",
+                }}
+                component="img"
+                src={arrow}
+              />
             </Box>
           </Box>
         </Box>
@@ -129,4 +146,4 @@ function AddLinks() {
   );
 }
 
-export default AddLinks;
+export default AddNewGroup;

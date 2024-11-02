@@ -18,8 +18,11 @@ function Navbar() {
         alignItems: "center",
         pl: { xs: "10px", md: "20px" },
         pr: { xs: "10px", md: "80px" },
+        py:'10px',
         flexDirection: { xs: "row", md: "row" },
         gap: { xs: "10px", md: "0" },
+
+        width:'100%',
       }}
     >
       <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
