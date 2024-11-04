@@ -1,12 +1,40 @@
 import { Box, Button, Typography } from "@mui/material";
+import { FaArrowDown } from "react-icons/fa";
+
 function AddLinks() {
   return (
     <Box>
-      <Typography
-        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "",
+          gap: "10px",
+          flexDirection: "column",
+        }}
       >
-        أضف روابط مجموعة المملكة العربية السعودية
-      </Typography>
+        <Typography
+          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+        >
+          اختر الدوله
+        </Typography>
+
+        <select
+          name=""
+          id=""
+          style={{
+            marginTop: "20px",
+            width: "30%",
+            height: "50px",
+            padding: "10px",
+          }}
+        >
+          <option value="">مصر</option>
+          <option value="">المملكه العربيه السعوديه</option>
+          <option value="">قطر</option>
+          <option value="">عمان</option>
+          <option value="">البحرين</option>
+        </select>
+      </Box>
 
       <Box sx={{ p: "25px" }}>
         <Box
@@ -88,20 +116,37 @@ function AddLinks() {
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
               المنصة
             </Typography>
+
             <Box
               sx={{
-                width: "100%",
-                height: "70px",
-                p: "10px",
-                fontSize: "30px",
-                backgroundColor: "#fff",
                 display: "flex",
-                alignItems: "center",
-                mt: "10px",
+                alignItems: "cnenter",
+                justifyContent: "space-between",
+                width: "100%",
+                backgroundColor: "#fff",
                 borderRadius: "15px",
+                p: "10px",
+                height: "70px",
+                position: "relative",
               }}
             >
-              الواتساب
+              <Typography
+                sx={{
+                  fontSize: "30px",
+                }}
+              >
+                الواتساب
+              </Typography>
+
+              <FaArrowDown
+                style={{
+                  fontSize: "10px",
+                  position: "absolute",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  left:"20px"
+                }}
+              />
             </Box>
           </Box>
         </Box>

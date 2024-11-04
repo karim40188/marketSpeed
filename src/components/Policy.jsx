@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -30,7 +30,7 @@ function Policy() {
     let index = 0;
 
     const interval = setInterval(() => {
-      if (index < fullText.length -1) {
+      if (index < fullText.length - 1) {
         setDisplayedText((prev) => prev + fullText[index]);
         index++;
       } else {
@@ -43,30 +43,48 @@ function Policy() {
 
   return (
     <Box>
-      <Typography sx={{ fontSize: "40px", color: "#114F80",fontWeight:"600" }}>
-        الشاشة الشروط و الأحكام
-      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        
+        }}
+      >
+        <Typography
+          sx={{ fontSize: "40px", color: "#114F80", fontWeight: "600" }}
+        >
+          الشاشة الشروط و الأحكام
+        </Typography>
+
+        <Box sx={{display:'flex',  gap:"15px"}}>
+          <Button variant="outlined">حفظ</Button>
+          <Button variant="outlined">تعديل</Button>
+        </Box>
+      </Box>
 
       <Box
         sx={{
-          width: {xs:'auto',md:"855px"},
+          width: { xs: "auto", md: "855px" },
           minHeight: "818px",
           backgroundColor: "#fff",
           mx: "auto",
-          p: {xs:"20px",md:"100px"},
+          p: { xs: "20px", md: "100px" },
           my: "30px",
-          borderRadius:'15px'
+          borderRadius: "15px",
         }}
       >
-        <Typography sx={{ fontWeight: "700", whiteSpace: "pre-wrap" }}>
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            {displayedText}
-          </motion.span>
-        </Typography>
+        <textarea
+          type="text"
+          // value={fullText}
+          style={{
+            fontWeight: "700",
+            fontSize: "20px",
+            width: "100%",
+            height: "818px",
+            padding: "10px",
+          }}
+        />
       </Box>
     </Box>
   );

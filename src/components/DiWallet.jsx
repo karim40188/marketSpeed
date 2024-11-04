@@ -40,7 +40,7 @@ function DiWallet() {
             navigate("/add-wallet");
           }}
         >
-          أضف باقة جديدة
+         اضافه محفظه جديدة
         </Button>
       </Box>
 

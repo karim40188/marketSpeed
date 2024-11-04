@@ -35,7 +35,7 @@ function AddGroup() {
                 borderRadius: "15px",
               }}
             >
-              رابط المجموعة
+              أسم الدولة
             </Box>
           </Box>
 
@@ -56,7 +56,7 @@ function AddGroup() {
                 alignSelf: "flex-start",
               }}
             >
-              علم المجموعة
+            علم الدوله
             </Typography>
             <Button
               sx={{

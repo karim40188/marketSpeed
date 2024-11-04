@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import share from "../assets/share.png";
 import share_logo from "../assets/share-logo.png";
 function ShareWithFriends() {
@@ -9,6 +9,56 @@ function ShareWithFriends() {
       >
         شارك مع الأصدقاء
       </Typography>
+      <Box sx={{}}>
+
+        
+      <Typography>للتطبيق</Typography>
+            <textarea
+              style={{
+                width: "300px",
+                height: "300px",
+                borderRadius: "15px",
+                border: "none",
+                padding: "10px",
+                fontSize: "20px",
+              }}
+            />
+
+            <Box
+              sx={{
+                display: "flex",
+                mt: "10px",
+                alignItems: "center",
+                gap: "20px",
+              }}
+            >
+              <Button
+                sx={{
+                  width: "121.65px",
+                  height: "32px",
+                  backgroundColor: "#128C7F",
+                  color: "#fff",
+                  fontSize: "25px",
+                  fontFamily: "Tanseek Modern Pro Arabic",
+                }}
+              >
+              تعديل
+              </Button>
+              <Button
+                sx={{
+                  width: "121.65px",
+                  height: "32px",
+                  backgroundColor: "#CC0000",
+                  color: "#fff",
+                  fontSize: "25px",
+                  fontFamily: "Tanseek Modern Pro Arabic",
+                }}
+              >
+                حفظ
+              </Button>
+            </Box>
+          </Box>
+   
 
       <Typography
         sx={{
@@ -54,15 +104,70 @@ function ShareWithFriends() {
             </Box>
           </Box>
         </Box>
-
         <Box
-          sx={{ maxWidth: "293px", height: "173px", mr: "auto", mt: "100px" }}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-around",
+           
+          }}
         >
-          <Box
-            component="img"
-            src={share_logo}
-            sx={{ width: "100%", height: "100%" }}
-          />
+          <Box sx={{mt:"100px"}}>
+
+            <Typography>للارسال</Typography>
+            <textarea
+              style={{
+                width: "300px",
+                height: "300px",
+                borderRadius: "15px",
+                border: "none",
+                padding: "10px",
+                fontSize: "20px",
+              }}
+            />
+
+            <Box
+              sx={{
+                display: "flex",
+                mt: "10px",
+                alignItems: "center",
+                gap: "20px",
+              }}
+            >
+              <Button
+                sx={{
+                  width: "121.65px",
+                  height: "32px",
+                  backgroundColor: "#128C7F",
+                  color: "#fff",
+                  fontSize: "25px",
+                  fontFamily: "Tanseek Modern Pro Arabic",
+                }}
+              >
+              تعديل
+              </Button>
+              <Button
+                sx={{
+                  width: "121.65px",
+                  height: "32px",
+                  backgroundColor: "#CC0000",
+                  color: "#fff",
+                  fontSize: "25px",
+                  fontFamily: "Tanseek Modern Pro Arabic",
+                }}
+              >
+                حفظ
+              </Button>
+            </Box>
+          </Box>
+
+          <Box sx={{ width: "500px", height: "auto", mt: "100px" }}>
+            <Box
+              component="img"
+              src={share_logo}
+              sx={{ width: "100%", height: "100%", backgroundSize: "cover" }}
+            />
+          </Box>
         </Box>
 
         <Typography

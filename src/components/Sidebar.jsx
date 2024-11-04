@@ -33,6 +33,8 @@ function Sidebar() {
     { name: "المنصات", path: "/platforms" },
     { name: "الشاشه الترحيب", path: "/Welcome" },
     { name: "سياسه التطبيق", path: "/policy" },
+    { name: "شارك مع الاصدقاء ", path: "/share" },
+    { name: "ارسال الاشعار", path: "/send-logo" },
   ]);
 
   let navigate = useNavigate();
@@ -151,6 +153,7 @@ function Sidebar() {
             fontWeight: "400",
             cursor: "pointer",
             mb: "5px",
+           
           }}
           onClick={() => {
             setStatsDropDown(!statsDropDown);
@@ -170,7 +173,7 @@ function Sidebar() {
               justifyContent: "center",
               gap: "5px",
               color: "#114F80",
-              p: "3px",
+              p: "10px",
             }}
           >
             <Link
@@ -390,7 +393,7 @@ function Sidebar() {
             }}
           >
             <Link
-              to="create-groups"
+              to="/categories"
               className="link"
               onClick={(e) => {
                 if (activeLink) {
@@ -401,6 +404,19 @@ function Sidebar() {
               }}
             >
               انشاء مجموعات
+            </Link>
+            <Link
+              to="/send-to-groups"
+              className="link"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              ارسال على  المجموعات
             </Link>
             <Link
               to="/add-links"
@@ -425,7 +441,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              اضافة مجموعات الدول
+              ارقام الدول
             </Link>
             <Link
               className="link"
@@ -505,18 +521,7 @@ function Sidebar() {
               p: "10px",
             }}
           >
-            <Link
-              to="/show-admin-file"
-              onClick={(e) => {
-                if (activeLink) {
-                  activeLink.classList.remove("active");
-                }
-                e.target.classList.add("active");
-                setActiveLink(e.target);
-              }}
-            >
-              عرض المسؤلين
-            </Link>
+           
             <Link
               to="/Add-admin-file"
               onClick={(e) => {
@@ -528,6 +533,20 @@ function Sidebar() {
               }}
             >
               إضافة مسؤل
+            </Link>
+
+
+            <Link
+              to="/show-admin-file"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              عرض المسؤلين
             </Link>
           </Box>
         )}
@@ -567,18 +586,7 @@ function Sidebar() {
               p: "10px",
             }}
           >
-            <Link
-              to="supervisors"
-              onClick={(e) => {
-                if (activeLink) {
-                  activeLink.classList.remove("active");
-                }
-                e.target.classList.add("active");
-                setActiveLink(e.target);
-              }}
-            >
-              عرض المشرفين
-            </Link>
+           
             <Link
               to="/add-supervisor"
               onClick={(e) => {
@@ -590,6 +598,20 @@ function Sidebar() {
               }}
             >
               إضافة مشرفين
+            </Link>
+
+
+            <Link
+              to="supervisors"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              عرض المشرفين
             </Link>
             <Typography
               sx={{ pr: "20px", cursor: "pointer" }}

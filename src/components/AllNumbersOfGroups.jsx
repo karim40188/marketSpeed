@@ -75,6 +75,8 @@ function AllNumbersOfGroups() {
                 fontWeight: "600",
                 mt: { xs: 2, md: 0 },
               }}
+              onClick={() => navigate('/saudi-numbers')}
+
             >
               التالى
             </Button>
@@ -114,7 +116,6 @@ function AllNumbersOfGroups() {
           {numbers.map((number, index) => (
             <Box
               key={index}
-              onClick={() => navigate('/saudi-numbers')}
               sx={{
                 width: { xs: "100%", md: "821px" },
                 height: "77px",

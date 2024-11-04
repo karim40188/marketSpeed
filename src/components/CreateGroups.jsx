@@ -40,7 +40,7 @@ function CreateGroups() {
         <Typography
           sx={{ fontSize: { xs: "24px", md: "36px" }, color: "#114F80", fontWeight: '600' }}
         >
-         أرقام المجموعة الدول
+        أنشاء مجموعات الدول
         </Typography>
 
         <Button

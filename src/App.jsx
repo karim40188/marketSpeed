@@ -34,7 +34,6 @@ import Marketers from "./components/Marketers";
 import AddAdminFile from "./components/AddAdminFile";
 import ShowAdminFile from "./components/ShowAdminFile";
 import EditAdminFile from "./components/EditAdminFile";
-import SaudiGroups from "./components/SaudiGroups";
 import AllNumbersOfGroups from "./components/AllNumbersOfGroups";
 import SaudiNumbers from "./components/SaudiNumbers";
 import ShowUsers from "./components/ShowUsers";
@@ -53,6 +52,13 @@ import CountryNumGroup from "./components/unknown/CountryNumGroup";
 import AddNewGroup from "./components/unknown/AddNewGroup";
 import AddNewLinks from "./components/unknown/AddNewLinks";
 import ShareWithFriends from "./components/ShareWithFriends";
+import Categories from "./components/Categories";
+import WhatsAppGroups from "./components/WhatsAppGroups";
+import TelegramGroups from "./components/TelegramGroups";
+import Groups from "./components/Groups";
+import SendToGroups from "./components/SendToGroups";
+import SendLogo from "./components/SendLogo";
+import './i18n'; // استيراد إعدادات الترجمة
 function App() {
   let router = createBrowserRouter([
     // Done
@@ -117,10 +123,13 @@ function App() {
         { path: "/add-country-numbers", element: <AddCountryNum /> },
         // Done
         // Destop 61
-        { path: "/saudi-groups", element: <SaudiGroups /> },
+        { path: "/groups/:id", element: <Groups /> },
+        { path: "/send-to-groups", element: <SendToGroups /> },
         // Done
         // Done
         { path: "/create-groups", element: <CreateGroups /> },
+        { path: "/whatsapp-groups", element: <WhatsAppGroups /> },
+        { path: "/telegram-groups", element: <TelegramGroups /> },
 
         // Destop 58
         { path: "/all-numbers", element: <AllNumbersOfGroups /> },
@@ -135,6 +144,7 @@ function App() {
         { path: "/show-user-file", element: <ShowUserFile /> },
         // Done
         { path: "/add-new-package", element: <AddPackage /> },
+        { path: "/categories", element: <Categories /> },
         // Done
         { path: "/edit-user-file", element: <EditUserFile /> },
         // Done
@@ -143,6 +153,7 @@ function App() {
         { path: "/add-new-group", element: <AddNewGroup /> },
         { path: "/add-new-links", element: <AddNewLinks /> },
         { path: "/share", element: <ShareWithFriends /> },
+        { path: "/send-logo", element: <SendLogo /> },
       ],
     },
   ]);

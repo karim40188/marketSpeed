@@ -1,8 +1,8 @@
-import { Box, Button, Typography , Grid2} from "@mui/material";
+import { Box, Button, Typography, Grid2 } from "@mui/material";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-function SaudiGroups() {
+function Groups() {
   let navigate = useNavigate();
   let [whatsApp] = useState([
     "جروب العائله",
@@ -45,6 +45,10 @@ function SaudiGroups() {
     "جروب سيارات",
   ]);
 
+  let path = useParams();
+
+  console.log(path.id);
+
   return (
     <Box sx={{ width: "100%", p: 2 }}>
       <Box
@@ -52,7 +56,7 @@ function SaudiGroups() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          flexWrap:'wrap',
+          flexWrap: "wrap",
           mb: "20px",
         }}
       >
@@ -60,31 +64,35 @@ function SaudiGroups() {
           sx={{
             fontSize: { xs: "30px", md: "40px" },
             color: "#114F80",
-            fontWeight: '600',
+            fontWeight: "600",
           }}
         >
-          مجموعات المملكة العربية السعودية
+          {path.id == "saudi"
+            ? "  مجموهات المملكه العربيه السعوديه"
+            : path.id == "egypt"
+            ? "مجموعات مصر"
+            : path.id == "bahrian"
+            ? "مجموعات البحرين"
+            : path.id == "qatar"
+            ? "مجموعات قطر"
+            : path.id == "turkey"
+            ? "مجموعات تركيا"
+            : path.id == "oman"
+            ? "مجموعات عمان"
+            : path.id == "yemen"
+            ? "مجموعات اليمن"
+            : ""}
         </Typography>
 
-        <Button
-          sx={{
-            width: {xs:'100%',md:"163px"},
-            height: "32px",
-            backgroundColor: "#114F80",
-            color: "#fff",
-            fontSize: "25px",
-            fontFamily: "Tanseek Modern Pro Arabic",
-            mt:{xs:'10px',md:''}
-          }}
-        >
-          أضف مجموعة جديدة
-        </Button>
+     
       </Box>
-
+      <Typography sx={{ my: "30px", fontWeight: "600" }}>
+              الواتساب    {`(${whatsApp.length * 2})`}
+            </Typography>
       <Grid2 container spacing={2}>
-        <Grid2 size={{xs:12 ,md:5}}>
+        <Grid2 size={{ xs: 12, md: 5 }}>
           <Box display="flex" flexDirection="column" alignItems="center">
-            <Typography sx={{ my: "30px", fontWeight: '600' }}>الواتساب</Typography>
+       
             <Box
               sx={{
                 display: "flex",
@@ -141,9 +149,9 @@ function SaudiGroups() {
             </Box>
           </Box>
         </Grid2>
-        <Grid2 size={{xs:12 ,md:5}}>
+        <Grid2 size={{ xs: 12, md: 5 }}>
           <Box display="flex" flexDirection="column" alignItems="center">
-            <Typography sx={{ my: "30px", fontWeight: '600' }}>التليجرام</Typography>
+          
             <Box
               sx={{
                 display: "flex",
@@ -152,7 +160,7 @@ function SaudiGroups() {
                 justifyContent: "center",
               }}
             >
-              {telegram.map((item, index) => (
+              {whatsApp.map((item, index) => (
                 <Box
                   key={index}
                   sx={{
@@ -200,9 +208,11 @@ function SaudiGroups() {
             </Box>
           </Box>
         </Grid2>
+       
       </Grid2>
+     
     </Box>
   );
 }
 
-export default SaudiGroups;
+export default Groups;

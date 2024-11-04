@@ -1,25 +1,64 @@
 import { Box, Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-function SaudiNumbers() {
+function SendLogo() {
   let navigate = useNavigate();
-  
+
   return (
     <Box>
-
-
-      <Box>
       <Typography
-        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80", fontWeight: '600' }}
+        sx={{
+          fontSize: { xs: "30px", md: "40px" },
+          color: "#114F80",
+          fontWeight: "600",
+        }}
       >
-        جميع الأرقام مجموعات المملكة العربية السعودية
+        إرسال اشعار
       </Typography>
 
-      <Typography>
-        جميع الارقام (36)
-      </Typography>
-      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "15px",
+          mt: "20px",
+          mr: "50px",
+        }}
+      >
+        <Box sx={{ width: "", display: "flex", gap: "10px" }}>
+          <Button
+            sx={{
+              backgroundColor: "#114F80",
+              color: "#fff",
+              borderRadius: "6px",
+              width: "121.65px",
+            }}
+          >
+            مشترك
+          </Button>
+          <Button
+            sx={{
+              backgroundColor: "#fff",
+              color: "#114F80",
+              borderRadius: "6px",
+              width: "121.65px",
+            }}
+          >
+            مستخدم
+          </Button>
+          <Button
+            sx={{
+              backgroundColor: "#fff",
+              color: "#114F80",
+              borderRadius: "6px",
+              width: "121.65px",
+            }}
+          >
+            الكل
+          </Button>
+        </Box>
      
+      </Box>
 
       <Box
         sx={{
@@ -29,7 +68,7 @@ function SaudiNumbers() {
           justifyContent: { xs: "start", md: "end" }, // Adjust alignment based on screen size
           width: "100%",
           flexWrap: "wrap", // Allow wrapping on smaller screens
-          p: { xs: "0 10px", md: "0" } // Adjust padding for smaller screens
+          p: { xs: "0 10px", md: "0" }, // Adjust padding for smaller screens
         }}
       >
         <Button
@@ -42,7 +81,7 @@ function SaudiNumbers() {
             fontFamily: "Sora",
             fontSize: { xs: "16px", md: "20px" }, // Responsive font size
             fontWeight: "600",
-            mb: { xs: "10px", md: "0" } // Add margin bottom for small screens
+            mb: { xs: "10px", md: "0" }, // Add margin bottom for small screens
           }}
         >
           أرفق رابط
@@ -57,14 +96,20 @@ function SaudiNumbers() {
             fontFamily: "Sora",
             fontSize: { xs: "16px", md: "20px" },
             fontWeight: "600",
-            mb: { xs: "10px", md: "0" } // Add margin bottom for small screens
+            mb: { xs: "10px", md: "0" }, // Add margin bottom for small screens
           }}
         >
-          أرفق الصورة او الفيديو 
+          أرفق الصورة او الفيديو
         </Button>
       </Box>
 
-      <Box sx={{ display: "flex", flexDirection: "column", width: { xs: "100%", sm: "90%", md: "890px" } }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          width: { xs: "100%", sm: "90%", md: "890px" },
+        }}
+      >
         <Box
           sx={{
             width: { xs: "100%", sm: "100%", md: "855px" },
@@ -73,10 +118,10 @@ function SaudiNumbers() {
             mt: "50px",
             mr: "30px",
             borderRadius: "10px", // Optional: add some rounding to corners
-            overflow: "hidden" // Ensure content doesn't overflow
+            overflow: "hidden", // Ensure content doesn't overflow
           }}
         >
-          <Typography sx={{ fontWeight: '600', overflowWrap: "break-word" }}>
+          <Typography sx={{ fontWeight: "600", overflowWrap: "break-word" }}>
             يىبهريبنؤءىرنؤءر
             ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
             ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
@@ -104,7 +149,7 @@ function SaudiNumbers() {
             mr: "auto",
           }}
           onClick={() => {
-            navigate('/saudi-groups');
+            navigate("/saudi-groups");
           }}
         >
           إرسال
@@ -114,4 +159,4 @@ function SaudiNumbers() {
   );
 }
 
-export default SaudiNumbers;
+export default SendLogo;

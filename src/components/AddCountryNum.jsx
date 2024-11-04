@@ -111,7 +111,7 @@ function AddCountryNum() {
                 >
                   مجموعات المملكة العربية السعودية
                 </Typography>
-                <Typography>1026 مجموعة</Typography>
+                <Typography>1026 رقم</Typography>
               </Box>
             </Box>
           ))}
@@ -158,7 +158,7 @@ function AddCountryNum() {
                 >
                   مجموعات المملكة العربية السعودية
                 </Typography>
-                <Typography>1026 مجموعة</Typography>
+                <Typography>1026 رقم</Typography>
               </Box>
             </Box>
           ))}

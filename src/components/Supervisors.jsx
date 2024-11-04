@@ -22,23 +22,7 @@ function Supervisors() {
   let navigate= useNavigate()
   return (
     <Box sx={{ width: "95%" }}>
-      <Button
-        sx={{
-          width: "156px",
-          height: "42px",
-          background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
-          color: "#000",
-          borderRadius: "6px",
-          display: "block",
-          mr: "auto",
-          fontWeight:'600'
-        }}
-        onClick={()=>{
-            navigate('/add-supervisor')
-        }}
-      >
-        إضافه مشرف
-      </Button>
+   
 
       <Box
         sx={{ display: "flex", justifyContent: "space-between", my: "30px" }}
