@@ -58,7 +58,6 @@ import TelegramGroups from "./components/TelegramGroups";
 import Groups from "./components/Groups";
 import SendToGroups from "./components/SendToGroups";
 import SendLogo from "./components/SendLogo";
-import './i18n'; // استيراد إعدادات الترجمة
 function App() {
   let router = createBrowserRouter([
     // Done
