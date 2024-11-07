@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-function AllCountryNum2() {
+function SaudiNumber2() {
   let navigate = useNavigate();
   
   return (
@@ -12,11 +12,11 @@ function AllCountryNum2() {
       <Typography
         sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80", fontWeight: '600' }}
       >
-     ارقام   الدول  
+      مجموعات الدول
       </Typography>
 
       <Typography>
-        عدد الارقام  (36)
+       عدد المجموعات (30)
       </Typography>
       </Box>
      
@@ -114,4 +114,4 @@ function AllCountryNum2() {
   );
 }
 
-export default AllCountryNum2;
+export default SaudiNumber2;

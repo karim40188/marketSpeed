@@ -32,7 +32,7 @@ function SendToGroups() {
             borderRadius: "10px",
           }}
           onClick={() => {
-            navigate("/whatsapp-groups");
+            navigate("/SendToGroupWhatsApp");
           }}
           initial={{ scale: 1 }}
           whileHover={{ scale: 1.2, borderRadius: [0, 10, 20, 30, 10, 15] }}

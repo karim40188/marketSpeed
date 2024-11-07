@@ -63,6 +63,8 @@ import AllNumbers2 from "./components/AllNumbers2";
 import AllCountryNum2 from "./components/AllCountryNum2";
 import AllNumbers3 from "./components/AllNumber3";
 import i18next from "./i18next"
+import SendToGroupWhatsApp from "./components/SendToGroupWhatsApp";
+import SaudiNumber2 from "./components/SaudiNumber2";
 function App() {
   let router = createBrowserRouter([
     // Done
@@ -83,10 +85,12 @@ function App() {
         { path: "/welcome", element: <Welcome /> },
         { path: "/policy", element: <Policy /> },
         { path: "/packages", element: <Packages /> },
+        { path: "/SendToGroupWhatsApp", element: <SendToGroupWhatsApp /> },
 
         // ------------------
 
         { path: "/edit-package", element: <EditPackage /> },
+        { path: "/saudi-number2", element: <SaudiNumber2 /> },
         { path: "/diwallet", element: <DiWallet /> },
         { path: "/edit-wallet", element: <EditWallet /> },
         { path: "/add-wallet", element: <AddWallet /> },

@@ -6,7 +6,7 @@ function AddGroup() {
       <Typography
         sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
       >
-        أضف دولة فى مجموعة الدول
+      مجموعات الدول المضافه 
       </Typography>
 
       <select style={{ width: "310px", height: "50px", borderRadius: "15px" ,marginTop:'20px',fontSize:'20px'}}>
@@ -15,7 +15,6 @@ function AddGroup() {
         <option value="3">البحرين</option>
         <option value="4">اليمن</option>
         <option value="5">المغرب</option>
-        <option value="6">الكل</option>
       </select>
 
       <Box sx={{ p: "25px" }}>
@@ -31,11 +30,11 @@ function AddGroup() {
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
               أسم المجموعة
             </Typography>
-            <Box
-              sx={{
+            <input
+              style={{
                 width: "100%",
                 height: "70px",
-                p: "10px",
+                paddingInline: "10px",
                 fontSize: "30px",
                 backgroundColor: "#fff",
                 display: "flex",
@@ -43,9 +42,9 @@ function AddGroup() {
                 mt: "10px",
                 borderRadius: "15px",
               }}
-            >
-              أسم الدولة
-            </Box>
+            />
+            
+       
           </Box>
 
           <Box
@@ -90,22 +89,13 @@ function AddGroup() {
           <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
             المنصة
           </Typography>
-          <Box
-            sx={{
-              width: "100%",
-              height: "70px",
-              p: "10px",
-              fontSize: "30px",
-              backgroundColor: "#fff",
-              display: "flex",
-              alignItems: "center",
-              mt: "10px",
-              borderRadius: "15px",
-              position: "relative",
-            }}
-          >
-            الواتساب
-            <Box
+          <select style={{width:'200px',height:'60px',fontSize:"20px",borderRadius:'10px'}}>
+          <option value="">الواتساب</option>
+          <option value="">التليجرام</option>
+          
+          </select>
+        </Box>
+{/*   <Box
               sx={{
                 width: "10.81px",
                 height: "20.6px",
@@ -128,10 +118,7 @@ function AddGroup() {
                 component="img"
                 src={arrow}
               />
-            </Box>
-          </Box>
-        </Box>
-
+            </Box> */}
         <Button
           sx={{
             width: "121.65px",

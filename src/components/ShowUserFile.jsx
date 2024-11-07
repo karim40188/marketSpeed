@@ -17,6 +17,17 @@ function ShowUserFile() {
         عرض ملف المستخدم
       </Typography>
 
+      <Box sx={{display:'flex',justifyContnet:"cneter",alignItems:'center'}}>
+
+      <Typography sx={{mb:'20px'}}>
+        كم يوم مر على الاشتراك   
+      </Typography>
+
+      <Box sx={{width:'auto',height:'auto',borderRadius:'10px',border:'1px solid black',mr:"20px",p:'5px'}} >
+        3 ايام
+      </Box>
+      </Box>
+
       <Box
         sx={{
           display: "flex",

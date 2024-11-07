@@ -62,11 +62,11 @@ function AddLinks() {
             >
               أضف رابط الجروب
             </Typography>
-            <Box
-              sx={{
+            <input
+              style={{
                 width: "100%",
                 height: "70px",
-                p: "10px",
+                paddinInline: "10px",
                 fontSize: "30px",
                 backgroundColor: "#fff",
                 display: "flex",
@@ -74,9 +74,9 @@ function AddLinks() {
                 mt: "10px",
                 borderRadius: "15px",
               }}
-            >
-              رابط المجموعة
-            </Box>
+            />
+           
+            
           </Box>
 
           <Box sx={{}}>
@@ -161,8 +161,8 @@ function AddLinks() {
               المنصة
             </Typography>
 
-            <Box
-              sx={{
+            <select
+              style={{
                 display: "flex",
                 alignItems: "cnenter",
                 justifyContent: "space-between",
@@ -172,15 +172,19 @@ function AddLinks() {
                 p: "10px",
                 height: "70px",
                 position: "relative",
+                fontSize: "24px",
               }}
             >
-              <Typography
-                sx={{
-                  fontSize: "30px",
-                }}
+              <option
+            
               >
                 الواتساب
-              </Typography>
+              </option>
+              <option
+            
+              >
+                التليجرام
+              </option>
 
               <FaArrowDown
                 style={{
@@ -191,7 +195,7 @@ function AddLinks() {
                   left: "20px",
                 }}
               />
-            </Box>
+            </select>
           </Box>
         </Box>
 

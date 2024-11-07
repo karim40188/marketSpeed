@@ -4,7 +4,10 @@ import qatarImg from "../assets/qatar.png";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function WhatsAppGroups() {
+function SendToGroupWhatsApp() {
+
+
+    let navigate= useNavigate()
   let [whatsApp] = useState([
     saudiImg,
     qatarImg,
@@ -14,8 +17,6 @@ function WhatsAppGroups() {
     qatarImg,
     saudiImg,
   ]);
-
-  let navigate = useNavigate();
 
   let [activeOption, setActiveOption] = useState();
 
@@ -34,7 +35,7 @@ function WhatsAppGroups() {
           fontWeight: "600",
         }}
       >
-    مجموعات الدول 
+        مجموعات الدول
       </Typography>
 
       <Box
@@ -47,7 +48,7 @@ function WhatsAppGroups() {
           my: "30px",
         }}
       >
-        {/* <Box
+        <Box
           sx={{
             display: "flex",
             alignItems: "center",
@@ -83,16 +84,19 @@ function WhatsAppGroups() {
                 fontWeight: "600",
                 mt: { xs: 2, md: 0 },
               }}
-              onClick={() => navigate("/all-country-num")}
+
+              onClick={()=>{
+                navigate('/saudi-number2')
+              }}
             >
               التالى
             </Button>
           </Box>
-        </Box> */}
+        </Box>
 
-        {/* <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
           <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-  اختر مجموعات التى يتم الارسال عليها 
+            اختر مجموعات التى يتم الارسال عليها
           </Typography>
           <select
             onChange={(e) => {
@@ -102,16 +106,24 @@ function WhatsAppGroups() {
                 setActiveOption(false);
               }
             }}
-            style={{ width: "250px", height: "50px", borderRadius: "15px",fontSize:'20px' }}
+            style={{
+              width: "250px",
+              height: "50px",
+              borderRadius: "15px",
+              fontSize: "24px",
+            }}
           >
-            <option value="1">المملكه العربيه السعوديه</option>
+            <option value="1">المملكه العربيه السعوديه
+            <input type="checkbox"/>
+
+            </option>
             <option value="2">قطر</option>
             <option value="3">البحرين</option>
             <option value="4">اليمن</option>
             <option value="5">المغرب</option>
             <option value="6">الكل</option>
           </select>
-        </Box> */}
+        </Box>
       </Box>
 
       <Typography sx={{ textAlign: "center", mb: 1 }}>الواتساب</Typography>
@@ -148,7 +160,7 @@ function WhatsAppGroups() {
                 e.currentTarget.classList.add("active-group");
                 setActiveGroup(e.currentTarget);
 
-                navigate("/groups/:id");
+                // navigate("/groups/:id");
               }}
               sx={{
                 width: { xs: "100%", md: "336px" },
@@ -181,7 +193,7 @@ function WhatsAppGroups() {
                     fontFamily: "inter",
                   }}
                 >
-           عدد مجموعات المملكه العربيه السعوديه 
+                  عدد مجموعات المملكه العربيه السعوديه
                 </Typography>
                 <Typography>1026 مجموعات </Typography>
               </Box>
@@ -209,7 +221,7 @@ function WhatsAppGroups() {
                 e.currentTarget.classList.add("active-group");
                 setActiveGroup(e.currentTarget);
 
-                navigate("/groups/:id");
+                // navigate("/groups/:id");
               }}
               sx={{
                 width: { xs: "100%", md: "336px" },
@@ -242,8 +254,8 @@ function WhatsAppGroups() {
                     fontFamily: "inter",
                   }}
                 >
-           عدد مجموعات المملكه العربيه السعوديه 
-           </Typography>
+                  عدد مجموعات المملكه العربيه السعوديه
+                </Typography>
                 <Typography>1026 مجموعات</Typography>
               </Box>
             </Box>
@@ -254,4 +266,4 @@ function WhatsAppGroups() {
   );
 }
 
-export default WhatsAppGroups;
+export default SendToGroupWhatsApp;

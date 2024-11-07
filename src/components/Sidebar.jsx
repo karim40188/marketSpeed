@@ -422,7 +422,9 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-          {t('all_country_codes')}
+          {/* {t('all_country_codes')} */}
+
+          ارسال على جميع ارقام الدول
             </Link>
             <Link
               to="/add-links"

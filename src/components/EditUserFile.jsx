@@ -1,7 +1,11 @@
 import { Box, Button, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
+import { useState } from "react";
 
 function EditUserFile() {
+
+
+  let [inputValue,setInputValue]=useState("40")
   return (
     <Box>
       <Typography
@@ -45,7 +49,14 @@ function EditUserFile() {
           </Button>
         </Box>
 
-        <Box sx={{ display: "flex", alignItems: "center", gap: "20px", mt: { xs: "20px", md: 0 } }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "20px",
+            mt: { xs: "20px", md: 0 },
+          }}
+        >
           <Button
             sx={{
               width: "121.65px",
@@ -73,7 +84,9 @@ function EditUserFile() {
         </Box>
       </Box>
 
-      <Box sx={{ p: "20px", width: { xs: "100%", xl: "60%" }, margin: "0 auto" }}>
+      <Box
+        sx={{ p: "20px", width: { xs: "100%", xl: "60%" }, margin: "0 auto" }}
+      >
         <Box
           sx={{
             display: "flex",
@@ -82,20 +95,21 @@ function EditUserFile() {
             flexDirection: { xs: "column", md: "row" }, // اتجاه عمودي في الشاشات الأصغر
           }}
         >
-          <Box sx={{ display: "flex", alignItems: "center", gap: "10px", mb: { xs: "20px", md: 0 } }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+              mb: { xs: "20px", md: 0 },
+            }}
+          >
             <Typography>رصيد الماسات</Typography>
-            <Box
-              sx={{
-                width: "174px",
-                border: "1px solid",
-                height: "62px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Typography>40 بوصه</Typography>
-            </Box>
+
+            <input type="number" value={inputValue} onChange={(e)=>{
+              setInputValue(e.target.value)
+            }} style={{textAlign:'center',width:'50px',height:"50px"}} />
+
+            <Typography>ماسه</Typography>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <Typography>الباقة الحالية</Typography>
@@ -109,7 +123,10 @@ function EditUserFile() {
                 alignItems: "center",
               }}
             >
-              <Typography>غير مشترك</Typography>
+             <select name="" id="" style={{width:'100%',height:'100%',fontSize:'24px'}}>
+              <option value="">مشترك</option>
+              <option value="">غير مشترك</option>
+             </select>
             </Box>
           </Box>
         </Box>
@@ -121,7 +138,14 @@ function EditUserFile() {
             p: "20px",
           }}
         >
-          <Box sx={{ display: "flex", alignItems: "center", gap: "20px", flexDirection: { xs: "column", md: "row" } }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: "20px",
+              flexDirection: { xs: "column", md: "row" },
+            }}
+          >
             <Box sx={{ width: { xs: "100%", md: "49%" } }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
                 الاسم ثلاثى

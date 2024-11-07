@@ -103,7 +103,7 @@ function AddCountryNum() {
                 setActiveOption(false);
               }
             }}
-            style={{ width: "250px", height: "50px", borderRadius: "15px" }}
+            style={{ width: "250px", height: "50px", borderRadius: "15px",fontSize:'20px' }}
           >
             <option value="1">المملكه العربيه السعوديه</option>
             <option value="2">قطر</option>
