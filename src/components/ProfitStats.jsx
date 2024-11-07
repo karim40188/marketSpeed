@@ -1,4 +1,5 @@
 import { Box, Button, Grid2, Typography } from "@mui/material";
+import { t } from "i18next";
 import { useState } from "react";
 
 function ProfitStats() {
@@ -117,7 +118,7 @@ function ProfitStats() {
               <Typography sx={{ fontSize: "30px" }}>ر.س</Typography>
             </Box>
             <Typography sx={{ fontSize: "30px", color: "#114F80" }}>
-              {card.name}
+              {t(card.name)}
             </Typography>
           </Grid2>
         ))}

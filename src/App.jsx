@@ -58,6 +58,11 @@ import TelegramGroups from "./components/TelegramGroups";
 import Groups from "./components/Groups";
 import SendToGroups from "./components/SendToGroups";
 import SendLogo from "./components/SendLogo";
+import AllnumberWhatsApp from "./components/AllnumberWhatsApp";
+import AllNumbers2 from "./components/AllNumbers2";
+import AllCountryNum2 from "./components/AllCountryNum2";
+import AllNumbers3 from "./components/AllNumber3";
+import i18next from "./i18next"
 function App() {
   let router = createBrowserRouter([
     // Done
@@ -124,6 +129,9 @@ function App() {
         // Destop 61
         { path: "/groups/:id", element: <Groups /> },
         { path: "/send-to-groups", element: <SendToGroups /> },
+        { path: "/all-country-num", element: <AllCountryNum2 /> },
+        { path: "/all-numbers-3", element: <AllNumbers3 /> },
+        { path: "/all-numbers-whatsapp", element: <AllnumberWhatsApp /> },
         // Done
         // Done
         { path: "/create-groups", element: <CreateGroups /> },
@@ -139,6 +147,7 @@ function App() {
         { path: "/show-users", element: <ShowUsers /> },
         { path: "/show-subscribers", element: <ShowSubscribers /> },
         { path: "/all-users", element: <AllUsers /> },
+        { path: "/all-number2", element: <AllNumbers2 /> },
         // Done
         { path: "/show-user-file", element: <ShowUserFile /> },
         // Done

@@ -4,7 +4,8 @@ import qatarImg from "../assets/qatar.png";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function WhatsAppGroups() {
+function AllNumbers3() {
+  let selectRef = useRef();
   let [whatsApp] = useState([
     saudiImg,
     qatarImg,
@@ -34,7 +35,7 @@ function WhatsAppGroups() {
           fontWeight: "600",
         }}
       >
-    مجموعات الدول 
+        ارقام الدول
       </Typography>
 
       <Box
@@ -92,7 +93,7 @@ function WhatsAppGroups() {
 
         <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
           <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-  اختر مجموعات التى يتم الارسال عليها 
+            اختر مجموعات التى يتم ارسال على جميع ارقامها
           </Typography>
           <select
             onChange={(e) => {
@@ -102,7 +103,7 @@ function WhatsAppGroups() {
                 setActiveOption(false);
               }
             }}
-            style={{ width: "250px", height: "50px", borderRadius: "15px",fontSize:'20px' }}
+            style={{ width: "250px", height: "50px", borderRadius: "15px" }}
           >
             <option value="1">المملكه العربيه السعوديه</option>
             <option value="2">قطر</option>
@@ -148,7 +149,7 @@ function WhatsAppGroups() {
                 e.currentTarget.classList.add("active-group");
                 setActiveGroup(e.currentTarget);
 
-                navigate("/groups/:id");
+                // navigate("/saudi-groups");
               }}
               sx={{
                 width: { xs: "100%", md: "336px" },
@@ -181,9 +182,9 @@ function WhatsAppGroups() {
                     fontFamily: "inter",
                   }}
                 >
-           عدد مجموعات المملكه العربيه السعوديه 
+                  عدد الارقام داخل المجموعات المملكة العربيه السعوديه
                 </Typography>
-                <Typography>1026 مجموعات </Typography>
+                <Typography>1026 رقم</Typography>
               </Box>
             </Box>
           ))}
@@ -209,7 +210,7 @@ function WhatsAppGroups() {
                 e.currentTarget.classList.add("active-group");
                 setActiveGroup(e.currentTarget);
 
-                navigate("/groups/:id");
+                // navigate("/saudi-groups");
               }}
               sx={{
                 width: { xs: "100%", md: "336px" },
@@ -242,9 +243,9 @@ function WhatsAppGroups() {
                     fontFamily: "inter",
                   }}
                 >
-           عدد مجموعات المملكه العربيه السعوديه 
-           </Typography>
-                <Typography>1026 مجموعات</Typography>
+                  عدد الارقام داخل المجموعات المملكة العربيه السعوديه
+                </Typography>
+                <Typography>1026 رقم</Typography>
               </Box>
             </Box>
           ))}
@@ -254,4 +255,4 @@ function WhatsAppGroups() {
   );
 }
 
-export default WhatsAppGroups;
+export default AllNumbers3;

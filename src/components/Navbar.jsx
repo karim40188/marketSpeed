@@ -8,6 +8,14 @@ import { Context } from "./Context";
 
 function Navbar() {
   let { sidebarOpen, setSidebarOpen } = useContext(Context);
+
+  let { language, languageChanger } = useContext(Context);
+  function handleLanguageChange(event) {
+    let selectedLanguage = event.target.value;
+    console.log(selectedLanguage)
+
+    languageChanger(selectedLanguage);
+  }
   return (
     <Box
       sx={{
@@ -18,11 +26,11 @@ function Navbar() {
         alignItems: "center",
         pl: { xs: "10px", md: "20px" },
         pr: { xs: "10px", md: "80px" },
-        py:'10px',
+        py: "10px",
         flexDirection: { xs: "row", md: "row" },
         gap: { xs: "10px", md: "0" },
 
-        width:'100%',
+        width: "100%",
       }}
     >
       <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
@@ -68,9 +76,14 @@ function Navbar() {
             >
               <BsTranslate />
             </Box>
-            <Typography sx={{ color: "#fff", fontSize: "14px" }}>
-              اللغة (العربية)
-            </Typography>
+            <select
+              style={{ color: "#000", fontSize: "14px", width: "100%" }}
+              onChange={handleLanguageChange}
+              value={language}
+            >
+              <option value="ar"> اللغة (العربية)</option>
+              <option value="en"> اللغة (الانجليزيه )</option>
+            </select>
           </Box>
 
           <FaArrowDown

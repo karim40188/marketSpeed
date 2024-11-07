@@ -1,5 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
+import { t } from "i18next";
 import { useEffect, useState } from "react";
 
 function Policy() {
@@ -54,12 +55,12 @@ function Policy() {
         <Typography
           sx={{ fontSize: "40px", color: "#114F80", fontWeight: "600" }}
         >
-          الشاشة الشروط و الأحكام
+         {t('terms_conditions_screen')}
         </Typography>
 
         <Box sx={{display:'flex',  gap:"15px"}}>
-          <Button variant="outlined">حفظ</Button>
-          <Button variant="outlined">تعديل</Button>
+          <Button variant="outlined">{t('save')}</Button>
+          <Button variant="outlined">{t("edit")}</Button>
         </Box>
       </Box>
 

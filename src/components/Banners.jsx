@@ -1,22 +1,29 @@
 import { Box, Button, Grid2, Typography } from "@mui/material";
 import { useState } from "react";
-import { motion } from "framer-motion"; // استيراد motion من framer-motion
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import cardImg from "../assets/cardImg.png";
 import Icons from "./Icons";
 
 function Banners() {
-  let [cardsAr] = useState([
-    { visitor: "أول بانر", upload: "أرفع صوره جديدة", img: cardImg },
-    { visitor: "ثانى زائر", upload: "أرفع صوره جديدة", img: cardImg },
-    { visitor: "ثالث زائر", upload: "أرفع صوره جديدة", img: cardImg },
-    { visitor: "رابع زائر", upload: "أرفع صوره جديدة", img: cardImg },
-  ]);
-
-  let [cardsEn] = useState([
-    { visitor: "أول بانر", upload: "أرفع صوره جديدة", img: cardImg },
-    { visitor: "ثانى زائر", upload: "أرفع صوره جديدة", img: cardImg },
-    { visitor: "ثالث زائر", upload: "أرفع صوره جديدة", img: cardImg },
-    { visitor: "رابع زائر", upload: "أرفع صوره جديدة", img: cardImg },
+  const { t } = useTranslation();
+  let [cards] = useState([
+    { visitorKey: "first_banner", uploadKey: "upload_new_image", img: cardImg },
+    {
+      visitorKey: "second_visitor",
+      uploadKey: "upload_new_image",
+      img: cardImg,
+    },
+    {
+      visitorKey: "third_visitor",
+      uploadKey: "upload_new_image",
+      img: cardImg,
+    },
+    {
+      visitorKey: "fourth_visitor",
+      uploadKey: "upload_new_image",
+      img: cardImg,
+    },
   ]);
 
   return (
@@ -24,116 +31,58 @@ function Banners() {
       <Typography
         sx={{ fontSize: "40px", color: "#114F80", fontWeight: "600" }}
       >
-        الصفحة الرئيسية
+        {t("home_page")}
       </Typography>
+
       <Box sx={{ p: "40px" }}>
         <Typography
           className="text-gradient"
-          sx={{
-            fontSize: "30px",
-            mb: "30px",
-          }}
+          sx={{ fontSize: "30px", mb: "30px" }}
         >
-          البنارات المتحركة عربى
+          {t("banners_ar")} {/* البنارات المتحركة عربي */}
         </Typography>
 
         <Grid2 container spacing={4}>
-          {cardsAr.map((card) => {
-            return (
-              <Grid2 size={{ xs: 12, md: 6 }} key={card.visitor}>
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }} // الإعدادات الأولية
-                  whileInView={{ opacity: 1, y: 0 }} // كيف تظهر العناصر
-                  transition={{ duration: 0.5 }} // مدة الانتقال
+          {cards.map((card, index) => (
+            <Grid2 size={{ xs: 12, md: 6 }} key={index}>
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
                 >
-                  <Box
+                  <Typography>{t(card.visitorKey)}</Typography>{" "}
+                  {/* ترجمة اسم الزائر */}
+                  <Button
                     sx={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
+                      width: "auto",
+                      height: "auto",
+                      background:
+                        "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+                      color: "#fff",
+                      borderRadius: "6px",
                     }}
                   >
-                    <Typography> {card.visitor}</Typography>
-                    <Button
-                      sx={{
-                        width: "156px",
-                        height: "32px",
-                        background:
-                          "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-                        color: "#fff",
-                        borderRadius: "6px",
-                      }}
-                    >
-                      {card.upload}
-                    </Button>
-                  </Box>
+                    {t(card.uploadKey)}
+                  </Button>
+                </Box>
 
-                  <Box sx={{ width: "100%", height: "auto", my: "10px" }}>
-                    <Box
-                      sx={{ width: "100%", height: "100%" }}
-                      component="img"
-                      src={card.img}
-                    />
-                  </Box>
-                </motion.div>
-              </Grid2>
-            );
-          })}
-        </Grid2>
-      </Box>
-      <Box sx={{ p: "40px" }}>
-        <Typography
-          className="text-gradient"
-          sx={{
-            fontSize: "30px",
-            mb: "30px",
-          }}
-        >
-          البنارات المتحركة إنجليزى
-        </Typography>
-
-        <Grid2 container spacing={4}>
-          {cardsEn.map((card) => {
-            return (
-              <Grid2 size={{ xs: 12, md: 6 }} key={card.visitor}>
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
+                <Box sx={{ width: "100%", height: "auto", my: "10px" }}>
                   <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography> {card.visitor}</Typography>
-                    <Button
-                      sx={{
-                        width: "156px",
-                        height: "32px",
-                        background:
-                          "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-                        color: "#fff",
-                        borderRadius: "6px",
-                      }}
-                    >
-                      {card.upload}
-                    </Button>
-                  </Box>
-
-                  <Box sx={{ width: "100%", height: "auto", my: "10px" }}>
-                    <Box
-                      sx={{ width: "100%", height: "100%" }}
-                      component="img"
-                      src={card.img}
-                    />
-                  </Box>
-                </motion.div>
-              </Grid2>
-            );
-          })}
+                    sx={{ width: "100%", height: "100%" }}
+                    component="img"
+                    src={card.img}
+                  />
+                </Box>
+              </motion.div>
+            </Grid2>
+          ))}
         </Grid2>
       </Box>
 

@@ -4,6 +4,7 @@ import { useContext,  useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Dialog, DialogContent, TextField, Button } from "@mui/material";
 import { Context } from "./Context";
+import { useTranslation } from "react-i18next";
 
 function Sidebar() {
   const [open, setOpen] = useState(false);
@@ -27,30 +28,20 @@ function Sidebar() {
   let [admins, setAdmins] = useState(false);
 
   let [dropDownLinks] = useState([
-    { name: "بنرات التطبيق", path: "/banners" },
-    { name: "المقاطع الفديو", path: "/videos" },
-    { name: "حسابات تواصل", path: "/socials" },
-    { name: "المنصات", path: "/platforms" },
-    { name: "الشاشه الترحيب", path: "/Welcome" },
-    { name: "سياسه التطبيق", path: "/policy" },
-    { name: "شارك مع الاصدقاء ", path: "/share" },
-    { name: "ارسال الاشعار", path: "/send-logo" },
+    { name: "application_banners", path: "/banners" },
+    { name: "videos", path: "/videos" },
+    { name: "social_account", path: "/socials" },
+    { name: "platforms", path: "/platforms" },
+    { name: "welcome_screen", path: "/Welcome" },
+    { name: "application_policy", path: "/policy" },
+    { name: "share_with_friends", path: "/share" },
+    { name: "send_notification", path: "/send-logo" },
   ]);
 
   let navigate = useNavigate();
   let sidebarRef = useRef(null);
 
-  // useEffect(() => {
-  //   const handleClickOutside = (event) => {
-  //     if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-  //       setSidebarOpen(false);
-  //     }
-  //   };
-  //   if (window.innerWidth < 600) {
-  //     document.addEventListener("mousedown", handleClickOutside);
-  //   }
-
-  // }, []);
+let {t}=useTranslation()
 
   return (
     <Box
@@ -105,7 +96,7 @@ function Sidebar() {
             setAppDropDown(!appDropDown);
           }}
         >
-          التطبيق
+         {t('application')}
         </Typography>
         {appDropDown && (
           <Box
@@ -135,7 +126,7 @@ function Sidebar() {
                   setActiveLink(e.target);
                 }}
               >
-                {link.name}
+                {t(link.name)}
               </Link>
             ))}
           </Box>
@@ -159,7 +150,7 @@ function Sidebar() {
             setStatsDropDown(!statsDropDown);
           }}
         >
-          الاحصائيات
+         {t('statistics')}
         </Typography>
         {statsDropDown && (
           <Box
@@ -187,7 +178,7 @@ function Sidebar() {
                 navigate("/profitstats");
               }}
             >
-              احصائيات مكسب التطبيق
+            {t("app_profit_statistics")}
             </Link>
             <Link
               to={"/userstats"}
@@ -199,7 +190,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              احصائيات مستخدمين التطبيق
+             {t('user_statistics')}
             </Link>
           </Box>
         )}
@@ -221,7 +212,7 @@ function Sidebar() {
             setPrices(!prices);
           }}
         >
-          الاسعار
+        {t("pricing")}
         </Typography>
         {prices && (
           <Box
@@ -248,7 +239,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              الباقات
+            {t('packages')}
             </Link>
             <Link
               to={"/diwallet"}
@@ -260,7 +251,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              المحفظه الماسية
+              {t('diamond_wallet')}
             </Link>
 
             <Link
@@ -273,7 +264,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              أكواد الخصم
+           {t('discount_codes')}
             </Link>
           </Box>
         )}
@@ -292,7 +283,7 @@ function Sidebar() {
               mb: "5px",
             }}
           >
-            المستخدمين
+           {t("users")}
           </Typography>
         </Link>
       </Box>
@@ -314,7 +305,7 @@ function Sidebar() {
             setTechSupport(!techSupport);
           }}
         >
-          الدعم الفني
+          {t('technical_support')}
         </Typography>
         {techSupport && (
           <Box
@@ -341,7 +332,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              المحادثة الدعم الفني
+            {t('support_chat')}
             </Link>
             <Link
               to="suggestion"
@@ -353,7 +344,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              الاقتراحات
+            {t('suggestions')}
             </Link>
           </Box>
         )}
@@ -375,7 +366,7 @@ function Sidebar() {
             setGroups(!groups);
           }}
         >
-          المجموعات
+         {t('groups')}
         </Typography>
         {groups && (
           <Box
@@ -403,7 +394,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              انشاء مجموعات
+            {t('create_groups')}
             </Link>
             <Link
               to="/send-to-groups"
@@ -416,10 +407,26 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              ارسال على  المجموعات
+           {t('send_to_groups')}
+            </Link>
+
+
+            <Link
+              to="/all-numbers-whatsapp"
+              className="link"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+          {t('all_country_codes')}
             </Link>
             <Link
               to="/add-links"
+              style={{width:'100%',}}
               onClick={(e) => {
                 if (activeLink) {
                   activeLink.classList.remove("active");
@@ -428,33 +435,10 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              اضافة روابط المجموعات
+            {t('add_group_links_and_numbers')}
             </Link>
-            <Link
-              to="/add-country-numbers"
-              className="link"
-              onClick={(e) => {
-                if (activeLink) {
-                  activeLink.classList.remove("active");
-                }
-                e.target.classList.add("active");
-                setActiveLink(e.target);
-              }}
-            >
-              ارقام الدول
-            </Link>
-            <Link
-              className="link"
-              onClick={(e) => {
-                if (activeLink) {
-                  activeLink.classList.remove("active");
-                }
-                e.target.classList.add("active");
-                setActiveLink(e.target);
-              }}
-            >
-              جميع الارقام
-            </Link>
+          
+          
 
             <Link
               to="/clients-groups"
@@ -467,7 +451,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              جروبات العملاء
+             {t('customer_groups')}
             </Link>
 
             <Link
@@ -481,7 +465,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              قنوات العملاء
+            {t('customer_channels')}
             </Link>
           </Box>
         )}
@@ -503,7 +487,7 @@ function Sidebar() {
             setAdmins(!admins);
           }}
         >
-          المسؤلين
+         {t('admins')}
         </Typography>
 
         {admins && (
@@ -532,7 +516,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              إضافة مسؤل
+             {t('add_admin')}
             </Link>
 
 
@@ -546,7 +530,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              عرض المسؤلين
+             {t('view_admins')}
             </Link>
           </Box>
         )}
@@ -569,7 +553,7 @@ function Sidebar() {
             setMarketers(!marketers);
           }}
         >
-          المسوقين
+         {t('marketers')}
         </Typography>
         {marketers && (
           <Box
@@ -597,7 +581,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              إضافة مشرفين
+             {t('add_moderators')}
             </Link>
 
 
@@ -611,7 +595,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              عرض المشرفين
+              {t('view_moderators')}
             </Link>
             <Typography
               sx={{ pr: "20px", cursor: "pointer" }}
@@ -625,7 +609,7 @@ function Sidebar() {
                 handleClickOpen();
               }}
             >
-              عرض المسوقين
+             {t('view_marketers')}
             </Typography>
           </Box>
         )}

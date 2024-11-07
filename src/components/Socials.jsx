@@ -2,23 +2,23 @@ import { Box, Button, Grid2, Typography } from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 function Socials() {
-  let [socials] = useState([
- 
-    "التليفجرام",
-    "الانستجرام",
-    "التيك توك",
 
+  let {t}= useTranslation()
+  let [socials] = useState([
+    "WhatsApp",
+    "Telegram",
+    "Instagram",
+    "TikTok",
     "X",
-    "فيسبوك",
-    "اليوتيوب",
-    "سناب شات",
-    "الرسائل النصيه",
-    "البريد الألكترونى",
-    "البريد الألكترونى",
-    "الواتساب",
-    "الهاتف المحمول",
+    "Facebook",
+    "Youtube",
+    "Snapchat",
+    "SMS",
+    "Email",
+    "mobile",
   ]);
 
   return (
@@ -26,7 +26,7 @@ function Socials() {
       <Typography
         sx={{ fontSize: "40px", color: "#114F80", fontWeight: "700" }}
       >
-        صفحة حسابات سرعة التسويق
+       {t('marketing_speed_account_page')}
       </Typography>
       <Box sx={{ p: "40px" }}>
         <Typography
@@ -36,7 +36,7 @@ function Socials() {
             mb: "30px",
           }}
         >
-          حسابات التواصل
+          {t("social_account")}
         </Typography>
         <Grid2 container spacing={4}>
           {socials.map((social) => {
@@ -49,7 +49,7 @@ function Socials() {
                     alignItems: "center",
                   }}
                 >
-                  <Typography> {social}</Typography>
+                  <Typography> {t(social)}</Typography>
                   <Button
                     sx={{
                       width: "156px",
@@ -60,7 +60,7 @@ function Socials() {
                       borderRadius: "6px",
                     }}
                   >
-                    حفظ
+                   {t('save')}
                   </Button>
                 </Box>
 

@@ -55,12 +55,11 @@ a {
   align-items: center;
   padding: 20px;
   color: #114f80;
-font-size: 25px;
+  font-size: 24px;
   font-family: Tanseek Modern Pro Arabic;
 }
 
 @media only screen and (max-width: 600px) {
-  
   a {
     font-size: 18px;
     font-weight: 500;
@@ -72,6 +71,56 @@ font-size: 25px;
   color: #fff !important;
   border-radius: 8px;
 }
+
+.active-group {
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #fedb37 0%,
+      #fdb931 8%,
+      #9f7928 30%,
+      #8a6e2f 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ffffff 0%,
+      #ffffac 8%,
+      #d1b464 25%,
+      #5d4a1f 62.5%,
+      #5d4a1f 100%
+    );
+
+
+    transform:scale(1.1);
+
+  color: white;
+  border:none !important;
+}
+
+
+.active-option {
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #fedb37 0%,
+      #fdb931 8%,
+      #9f7928 30%,
+      #8a6e2f 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ffffff 0%,
+      #ffffac 8%,
+      #d1b464 25%,
+      #5d4a1f 62.5%,
+      #5d4a1f 100%
+    );
+
+  color: white;
+  border:none;
+}
+
+
 
 .text-gradient {
   background: linear-gradient(90deg, #f9d053 0%, #937b31 100%);

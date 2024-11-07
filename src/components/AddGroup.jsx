@@ -9,6 +9,15 @@ function AddGroup() {
         أضف دولة فى مجموعة الدول
       </Typography>
 
+      <select style={{ width: "310px", height: "50px", borderRadius: "15px" ,marginTop:'20px',fontSize:'20px'}}>
+        <option value="1">المملكه العربيه السعوديه</option>
+        <option value="2">قطر</option>
+        <option value="3">البحرين</option>
+        <option value="4">اليمن</option>
+        <option value="5">المغرب</option>
+        <option value="6">الكل</option>
+      </select>
+
       <Box sx={{ p: "25px" }}>
         <Box
           sx={{
@@ -56,7 +65,7 @@ function AddGroup() {
                 alignSelf: "flex-start",
               }}
             >
-            علم الدوله
+              علم الدوله
             </Typography>
             <Button
               sx={{

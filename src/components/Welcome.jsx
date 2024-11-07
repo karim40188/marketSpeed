@@ -1,8 +1,11 @@
 import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import cardImg from "../assets/cardImg.png";
+import { useTranslation } from "react-i18next";
 
 function Welcome() {
+
+  let {t}= useTranslation()
   return (
     <Box>
       <Typography
@@ -12,7 +15,7 @@ function Welcome() {
           fontWeight: "600",
         }}
       >
-        الشاشة الترحيبية
+        {t('welcome_screen')}
       </Typography>
 
       <Box
@@ -37,7 +40,7 @@ function Welcome() {
             borderRadius:'6px'
           }}
         >
-          اضف فيديو جديد
+         {t('add_new_video')}
         </Button>
         <Box sx={{}}>
           <motion.div

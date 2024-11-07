@@ -1,21 +1,12 @@
 import { Box, Button, Typography } from "@mui/material";
 import saudiImg from "../assets/saudi.png";
 import qatarImg from "../assets/qatar.png";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function AddCountryNum() {
+  let selectRef = useRef();
   let [whatsApp] = useState([
-    saudiImg,
-    qatarImg,
-    saudiImg,
-    qatarImg,
-    saudiImg,
-    qatarImg,
-    saudiImg,
-  ]);
-
-  let [telegram] = useState([
     saudiImg,
     qatarImg,
     saudiImg,
@@ -27,38 +18,104 @@ function AddCountryNum() {
 
   let navigate = useNavigate();
 
+  let [activeOption, setActiveOption] = useState();
+
+  // useEffect(()=>{
+  //   console.log(selectRef.current.value)
+  // },[])
+
+  const [activeGroup, setActiveGroup] = useState(false);
+
   return (
     <Box sx={{ width: "100%", mx: "auto" }}>
+      <Typography
+        sx={{
+          fontSize: { xs: "24px", md: "36px" },
+          color: "#114F80",
+          fontWeight: "600",
+        }}
+      >
+        ارقام الدول
+      </Typography>
+
       <Box
         sx={{
           display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          mb: 2,
+          flexDirection: "column",
+          gap: "20px",
+          width: { xs: "100%", md: "100%" },
+          mx: "auto",
+          my: "30px",
         }}
       >
-        <Typography
-          sx={{ fontSize: { xs: "24px", md: "36px" }, color: "#114F80", fontWeight: '600' }}
-        >
-          أضف دولة فى مجموعة أرقام الدول
-        </Typography>
-
-        <Button
+        <Box
           sx={{
-            fontSize: "20px",
-            fontFamily: "Tanseek Modern Pro Arabic",
-            backgroundColor: "#114F80",
-            borderRadius: "6px",
-            color: "#fff",
-            padding: "10px 20px",
-          }}
-          onClick={() => {
-            navigate('/add-group');
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexDirection: { xs: "column", md: "row" },
+            gap: { xs: 2, md: 0 },
           }}
         >
-          أضف مجموعة جديدة
-        </Button>
+          <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
+            <input
+              style={{
+                width: "37px",
+                height: "37px",
+                backgroundColor: "#fff",
+                borderRadius: "5px",
+              }}
+              type="checkbox"
+            />
+            <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
+              تحديد الكل (10000)
+            </Typography>
+          </Box>
+
+          <Box>
+            <Button
+              sx={{
+                width: { xs: "100%", md: "146px" },
+                height: "32px",
+                backgroundColor: "#114F80",
+                color: "#fff",
+                fontFamily: "Sora",
+                fontSize: { xs: "18px", md: "20px" },
+                fontWeight: "600",
+                mt: { xs: 2, md: 0 },
+              }}
+              onClick={() => navigate("/all-country-num")}
+            >
+              التالى
+            </Button>
+          </Box>
+        </Box>
+
+        <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
+          <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
+            اختر مجموعات التى يتم ارسال على جميع ارقامها
+          </Typography>
+          <select
+            onChange={(e) => {
+              if (e.target.value == 6) {
+                setActiveOption(true);
+              } else {
+                setActiveOption(false);
+              }
+            }}
+            style={{ width: "250px", height: "50px", borderRadius: "15px" }}
+          >
+            <option value="1">المملكه العربيه السعوديه</option>
+            <option value="2">قطر</option>
+            <option value="3">البحرين</option>
+            <option value="4">اليمن</option>
+            <option value="5">المغرب</option>
+            <option value="6">الكل</option>
+          </select>
+        </Box>
       </Box>
+
+      <Typography sx={{ textAlign: "center", mb: 1 }}>الواتساب</Typography>
 
       <Box
         sx={{
@@ -67,20 +124,35 @@ function AddCountryNum() {
           gap: 2,
           width: "100%",
           mt: 2,
-          p:'20px'
+          p: "20px",
         }}
       >
         {/* WhatsApp Section */}
-        <Box sx={{ width: "100%", mb: { xs: 2, md: 0 } ,display:'flex',flexDirection:'column',alignItems:'center'}}>
-          <Typography sx={{ textAlign: "center", mb: 1 }}>الواتساب</Typography>
+        <Box
+          sx={{
+            width: "100%",
+            mb: { xs: 2, md: 0 },
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           {whatsApp.map((country, index) => (
             <Box
+              className={`${activeOption ? "active-option" : ""}`}
               key={index}
-              onClick={() => {
-                navigate('/saudi-groups');
+              onClick={(e) => {
+                if (activeGroup) {
+                  activeGroup.classList.remove("active-group");
+                }
+                e.currentTarget.classList.add("active-group");
+                setActiveGroup(e.currentTarget);
+
+                // navigate("/saudi-groups");
               }}
               sx={{
-                width: {xs:'100%',md:"336px"},
+                width: { xs: "100%", md: "336px" },
                 height: "77px",
                 border: "3px solid #114F80",
                 borderRadius: "15px",
@@ -88,9 +160,10 @@ function AddCountryNum() {
                 alignItems: "center",
                 gap: "20px",
                 justifyContent: "center",
-                cursor: 'pointer',
-                p: 1,
-                mt: '15px',
+                cursor: "pointer",
+                px: "20px",
+                py: "50px",
+                mt: "15px",
               }}
             >
               <Box sx={{ width: "83.06px", height: "44.46px" }}>
@@ -109,25 +182,38 @@ function AddCountryNum() {
                     fontFamily: "inter",
                   }}
                 >
-                  مجموعات المملكة العربية السعودية
+                  عدد الارقام داخل المجموعات المملكة العربيه السعوديه
                 </Typography>
                 <Typography>1026 رقم</Typography>
               </Box>
             </Box>
           ))}
         </Box>
-
-        {/* Telegram Section */}
-        <Box sx={{ width: "100%",display:'flex',flexDirection:'column',alignItems:'center' }}>
-          <Typography sx={{ textAlign: "center", mb: 1 }}>التليجرام</Typography>
-          {telegram.map((country, index) => (
+        <Box
+          sx={{
+            width: "100%",
+            mb: { xs: 2, md: 0 },
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {whatsApp.map((country, index) => (
             <Box
+              className={`${activeOption ? "active-option" : ""}`}
               key={index}
-              onClick={() => {
-                navigate('/saudi-groups');
+              onClick={(e) => {
+                if (activeGroup) {
+                  activeGroup.classList.remove("active-group");
+                }
+                e.currentTarget.classList.add("active-group");
+                setActiveGroup(e.currentTarget);
+
+                // navigate("/saudi-groups");
               }}
               sx={{
-                width: {xs:'100%',md:"336px"},
+                width: { xs: "100%", md: "336px" },
                 height: "77px",
                 border: "3px solid #114F80",
                 borderRadius: "15px",
@@ -135,9 +221,10 @@ function AddCountryNum() {
                 alignItems: "center",
                 gap: "20px",
                 justifyContent: "center",
-                cursor: 'pointer',
-                p: 1,
-                mt: '15px',
+                cursor: "pointer",
+                px: "20px",
+                py: "50px",
+                mt: "15px",
               }}
             >
               <Box sx={{ width: "83.06px", height: "44.46px" }}>
@@ -156,7 +243,7 @@ function AddCountryNum() {
                     fontFamily: "inter",
                   }}
                 >
-                  مجموعات المملكة العربية السعودية
+                  عدد الارقام داخل المجموعات المملكة العربيه السعوديه
                 </Typography>
                 <Typography>1026 رقم</Typography>
               </Box>

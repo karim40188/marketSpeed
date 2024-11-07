@@ -7,40 +7,51 @@ function AddLinks() {
       <Box
         sx={{
           display: "flex",
-          alignItems: "",
-          gap: "10px",
-          flexDirection: "column",
+          alignItems: "center",
+          // justifyContent: "space-between",
+          gap: "30px",
         }}
       >
-        <Typography
-          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
-        >
-          اختر الدوله
-        </Typography>
-
-        <select
-          name=""
-          id=""
-          style={{
-            marginTop: "20px",
-            width: "30%",
-            height: "50px",
-            padding: "10px",
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "",
+            gap: "10px",
+            flexDirection: "column",
           }}
         >
-          <option value="">مصر</option>
-          <option value="">المملكه العربيه السعوديه</option>
-          <option value="">قطر</option>
-          <option value="">عمان</option>
-          <option value="">البحرين</option>
-        </select>
+          <Typography
+            sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
+          >
+            اختر الدوله
+          </Typography>
+
+          <select
+            name=""
+            id=""
+            style={{
+              marginTop: "20px",
+              height: "50px",
+              padding: "10px",
+              width: "300px",
+              fontSize:'20px'
+              
+            }}
+          >
+            <option value="">مصر</option>
+            <option value="">المملكه العربيه السعوديه</option>
+            <option value="">قطر</option>
+            <option value="">عمان</option>
+            <option value="">البحرين</option>
+          </select>
+        </Box>
       </Box>
 
       <Box sx={{ p: "25px" }}>
         <Box
           sx={{
             display: "flex",
-            alignItems: "center",
+            alignItems: "end",
             justifyContent: "space-between",
             flexWrap: "wrap",
           }}
@@ -68,41 +79,74 @@ function AddLinks() {
             </Box>
           </Box>
 
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              my: "30px",
-              width: "300px",
-            }}
-          >
-            <Typography
+          <Box sx={{}}>
+            <Box
               sx={{
-                fontSize: "30px",
-                color: "#5E5E5E",
-                alignSelf: "flex-start",
+                display: "flex",
+                alignItems: "",
+                gap: "10px",
+                flexDirection: "column",
               }}
             >
-              اضف الملف
-            </Typography>
-            <Button
+              <Typography
+                sx={{
+                  fontSize: { xs: "30px", md: "40px" },
+                  color: "#114F80",
+                  textAlign: "center",
+                }}
+              >
+                اضف رقم
+              </Typography>
+
+              <input
+                name=""
+                id=""
+                style={{
+                  marginTop: "20px",
+                  height: "50px",
+                  padding: "10px",
+                  borderRadius: "10px",
+                }}
+              />
+            </Box>
+
+            <Box
               sx={{
-                width: "205px",
-                height: "70px",
-                fontSize: "30px",
-                fontFamily: "Tanseek Modern Pro Arabic",
-                borderRadius: "15px",
                 display: "flex",
+                flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                color: "#000",
-                background: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+                my: "30px",
+                width: "300px",
               }}
             >
-              قم بتحميل الملف csv
-            </Button>
+              <Typography
+                sx={{
+                  fontSize: "30px",
+                  color: "#5E5E5E",
+                  alignSelf: "flex-start",
+                }}
+              >
+                اضف الملف
+              </Typography>
+              <Button
+                sx={{
+                  width: "205px",
+                  height: "70px",
+                  fontSize: "30px",
+                  fontFamily: "Tanseek Modern Pro Arabic",
+                  borderRadius: "15px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  color: "#000",
+                  background:
+                    "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+                }}
+              >
+                قم بتحميل الملف csv
+              </Button>
+            </Box>
           </Box>
         </Box>
         <Box
@@ -144,7 +188,7 @@ function AddLinks() {
                   position: "absolute",
                   top: "50%",
                   transform: "translateY(-50%)",
-                  left:"20px"
+                  left: "20px",
                 }}
               />
             </Box>
