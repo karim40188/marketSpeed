@@ -1,16 +1,18 @@
 import { Box, Button, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function SupervisorProfile() {
+  let {t}= useTranslation()
   let [field] = useState([
-    { name: "الاسم ثلاثى", value: "أحمد محمد" },
-    { name: "الأحالات", value: "40,000,0000" },
-    { name: "الدولة", value: "المملكة العربية السعودية" },
-    { name: "المدينة", value: "الرياض" }, // هذا هو الحقل الذي سيظهر في صف منفصل
-    { name: "رقم الجوال", value: "966 5552512" },
-    { name: "اسم البنك", value: "الراجحى" },
-    { name: "رقم الحساب البنكى", value: "56145612515615614154145" },
+    { name: "full_name", value: "ahmed_mohamed" },
+    { name: "Referrals", value: "40,000,0000" },
+    { name: "country", value: "kingdom_of_saudi_arabia" },
+    { name: "city", value: "riyadah" }, // هذا هو الحقل الذي سيظهر في صف منفصل
+    { name: "phone_number", value: "966 5552512" },
+    { name: "bank_name", value: "alraghy" },
+    { name: "bank_account_number", value: "56145612515615614154145" },
   ]);
 
   return (
@@ -18,7 +20,7 @@ function SupervisorProfile() {
       <Typography
         sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" ,fontWeight:'600'}}
       >
-        عرض الملف
+        {t('view_profile')}
       </Typography>
       <Box sx={{ p: "20px", width:{xs: "100%",xl:'60%'} }}>
         <Box
@@ -53,7 +55,7 @@ function SupervisorProfile() {
                 alignItems: "center",
               }}
             >
-              تعديل
+              {t('edit')}
             </Button>
             <Button
               sx={{
@@ -71,7 +73,7 @@ function SupervisorProfile() {
                 alignItems: "center",
               }}
             >
-              حذف
+              {t('delete')}
             </Button>
           </Box>
         </Box>
@@ -101,7 +103,7 @@ function SupervisorProfile() {
                       sx={{width:'412px'}} // عرض 100% لجعل الحقل يظهر في صف منفصل
                     >
                       <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                        {field.name}
+                        {t(field.name)}
                       </Typography>
                       <Box
                         sx={{
@@ -116,7 +118,7 @@ function SupervisorProfile() {
                           borderRadius: "15px",
                         }}
                       >
-                        {field.value}
+                        {t(field.value)}
                       </Box>
                     </Box>
                   </Box>
@@ -125,7 +127,7 @@ function SupervisorProfile() {
                 return (
                   <Box key={field.name}>
                     <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                      {field.name}
+                      {t(field.name)}
                     </Typography>
                     <Box
                       sx={{
@@ -140,7 +142,7 @@ function SupervisorProfile() {
                         borderRadius: "15px",
                       }}
                     >
-                      {field.value}
+                      {t(field.value)}
                     </Box>
                   </Box>
                 );

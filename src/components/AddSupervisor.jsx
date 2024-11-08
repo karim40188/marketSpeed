@@ -1,6 +1,8 @@
 import { Box, Button, Typography } from "@mui/material";
 import addimg from "../assets/addimg.png";
+import { useTranslation } from "react-i18next";
 function AddSupervisor() {
+  let {t}= useTranslation()
   return (
     <Box>
       <Typography
@@ -10,7 +12,7 @@ function AddSupervisor() {
           fontWeight: "600",
         }}
       >
-        إضافة مشرف
+        {t("add_supervisor")}
       </Typography>
       <Box sx={{ p: "20px", width: { xs: "100%", xl: "60%" } }}>
         <Box
@@ -22,7 +24,7 @@ function AddSupervisor() {
         >
           <Box>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              الاسم ثلاثى
+             {t('full_name')}
             </Typography>
             <Box
               sx={{
@@ -37,7 +39,7 @@ function AddSupervisor() {
                 borderRadius: "15px",
               }}
             >
-              أحمد محمد
+             {t("ahmed_mohamed")}
             </Box>
           </Box>
 
@@ -51,7 +53,7 @@ function AddSupervisor() {
           >
             <Box sx={{ width: "49%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                الدولة
+                {t('country')}
               </Typography>
               <Box
                 sx={{
@@ -66,13 +68,13 @@ function AddSupervisor() {
                   borderRadius: "15px",
                 }}
               >
-                المملكة العربية السعودية
+             {t('kingdom_of_saudi_arabia')}
               </Box>
             </Box>
 
             <Box sx={{ width: "49%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                المدينة
+                {t('city')}
               </Typography>
               <Box
                 sx={{
@@ -87,7 +89,7 @@ function AddSupervisor() {
                   borderRadius: "15px",
                 }}
               >
-                الرياض
+                         {t('riyadah')}
               </Box>
             </Box>
           </Box>
@@ -97,7 +99,7 @@ function AddSupervisor() {
           {/* رقم الجوال في صف منفصل */}
           <Box sx={{ mt: "20px", width: "100%" }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              رقم الجوال
+              {t('phone_number')}
             </Typography>
             <Box
               sx={{
@@ -126,7 +128,7 @@ function AddSupervisor() {
           >
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                اسم البنك
+               {t('bank_name')}
               </Typography>
               <Box
                 sx={{
@@ -141,12 +143,12 @@ function AddSupervisor() {
                   borderRadius: "15px",
                 }}
               >
-                الراجحى
+                {t('alraghy')}
               </Box>
             </Box>
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                رقم الحساب البنكي
+               {t('bank_account_number')}
               </Typography>
               <Box
                 sx={{
@@ -191,7 +193,7 @@ function AddSupervisor() {
           >
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                البريد الإلكترونى
+                {t('email')}
               </Typography>
               <Box
                 sx={{
@@ -212,7 +214,7 @@ function AddSupervisor() {
 
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                تغير كلمة السر
+                {t('change_password')}
               </Typography>
               <Box
                 sx={{
@@ -241,7 +243,7 @@ function AddSupervisor() {
               borderRadius:'6px'
             }}
           >
-            حفظ
+            {t('save')}
           </Button>
         </Box>
       </Box>

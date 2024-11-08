@@ -1,6 +1,9 @@
 import { Box, Button, Typography } from "@mui/material";
 import addImg from "../assets/addimg.png";
+import { useTranslation } from "react-i18next";
 function AddMarketer() {
+
+  let {t} = useTranslation()
   return (
     <Box>
       <Box sx={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
@@ -12,7 +15,9 @@ function AddMarketer() {
               fontWeight: "600",
             }}
           >
-            أحمد محمد
+
+
+            {t('ahmed_mohamed')}
           </Typography>
 
           <Typography
@@ -22,7 +27,7 @@ function AddMarketer() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            مشرف
+            {t('supervisor')}
           </Typography>
         </Box>
 
@@ -37,7 +42,7 @@ function AddMarketer() {
             fontWeight:'600'
           }}
         >
-          إضافه مسوق
+         {t('add_marketer')}
         </Button>
       </Box>
 
@@ -51,7 +56,7 @@ function AddMarketer() {
         >
           <Box>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              الاسم ثلاثى
+             {t('full_name')}
             </Typography>
             <Box
               sx={{
@@ -66,7 +71,7 @@ function AddMarketer() {
                 borderRadius: "15px",
               }}
             >
-              أحمد محمد
+              {t('ahmed_mohamed')}
             </Box>
           </Box>
 
@@ -76,13 +81,13 @@ function AddMarketer() {
               display: "flex",
               gap: "20px",
               justifyContent: "space-between",
-              mt: "20px", // إضافة مسافة بين الصفوف
+              mt: "20px", 
             }}
           >
             {/* حقل الدولة */}
             <Box sx={{ width: "49%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                الدولة
+                {t('country')}
               </Typography>
               <Box
                 sx={{
@@ -97,14 +102,14 @@ function AddMarketer() {
                   borderRadius: "15px",
                 }}
               >
-                المملكة العربية السعودية
+                {t('kingdom_of_saudi_arabia')}
               </Box>
             </Box>
 
             {/* حقل المدينة */}
             <Box sx={{ width: "49%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                المدينة
+                {t("city")}
               </Typography>
               <Box
                 sx={{
@@ -119,7 +124,7 @@ function AddMarketer() {
                   borderRadius: "15px",
                 }}
               >
-                الرياض
+                {t('riyadah')}
               </Box>
             </Box>
           </Box>
@@ -129,7 +134,7 @@ function AddMarketer() {
           {/* رقم الجوال في صف منفصل */}
           <Box sx={{ mt: "20px", width: "100%" }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              رقم الجوال
+              {t('phone_number')}
             </Typography>
             <Box
               sx={{
@@ -158,7 +163,7 @@ function AddMarketer() {
           >
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                اسم البنك
+                {t('bank_name')}
               </Typography>
               <Box
                 sx={{
@@ -173,12 +178,12 @@ function AddMarketer() {
                   borderRadius: "15px",
                 }}
               >
-                الراجحى
+                {t('alraghy')}
               </Box>
             </Box>
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                رقم الحساب البنكي
+               {t('bank_account_number')}
               </Typography>
               <Box
                 sx={{
@@ -202,11 +207,12 @@ function AddMarketer() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
+                gap:'20px'
               }}
             >
               <Box>
                 <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                  نسبه الخصم
+                {t('discount_percentage')}
                 </Typography>
 
                 <Box
@@ -223,7 +229,7 @@ function AddMarketer() {
                     borderRadius: "15px",
                   }}
                 >
-                  <Typography>نسبه الخصم</Typography>
+                  <Typography>{t("discount_percentage")} </Typography>
 
                   <Typography>%</Typography>
                 </Box>
@@ -241,7 +247,7 @@ function AddMarketer() {
 
           <Box sx={{ my: "30px" }}>
             <Typography sx={{ fontSize: "40px", color: "#114F80", mb: "20px" }}>
-              نوع الخصم
+             {t('discount_type')}
             </Typography>
 
             <Box

@@ -3,19 +3,19 @@ import { useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import profile_img from "../assets/profile_img.png";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Supervisors() {
+
+
+  let {t}=useTranslation()
   let [supervisors] = useState([
-    { name: "احمد محمد" },
-    { name: "احمد محمد" },
-    { name: "احمد محمد" },
-    { name: "احمد محمد" },
-    { name: "احمد محمد" },
-    { name: "احمد محمد" },
-    { name: "احمد محمد" },
-    { name: "احمد محمد" },
-    { name: "احمد محمد" },
-    { name: "احمد محمد" },
+    { name: "ahmed_mohamed" },
+    { name: "ahmed_mohamed" },
+    { name: "ahmed_mohamed" },
+    { name: "ahmed_mohamed" },
+    { name: "ahmed_mohamed" },
+ 
   ]);
 
 
@@ -30,7 +30,7 @@ function Supervisors() {
         <Typography
           sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80",fontWeight:'600' }}
         >
-          عرض المشرفين
+       {t('view_supervisor')}
         </Typography>
         <Box sx={{ position: "relative" }}>
           <TextField
@@ -89,7 +89,7 @@ function Supervisors() {
                 />
               </Box>
 
-              <Typography>{supervisor.name}</Typography>
+              <Typography>{t(supervisor.name)}</Typography>
               <Typography
                 sx={{
                   background:
@@ -99,11 +99,11 @@ function Supervisors() {
                   fontSize: "20px",
                 }}
               >
-                مشرف
+                {t("supervisor")}
               </Typography>
               <Typography sx={{ fontSize: "20px", color: "#114F80" }}>
-                الرياض-المملكة العربية السعودية <br />
-                فريق العمل : 20 مسوق
+              {t('location')} <br />
+               {t('team_work_20_marketer')}
               </Typography>
             </Box>
           );

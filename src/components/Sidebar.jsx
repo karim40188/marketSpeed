@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import logo from "../assets/logo.svg";
-import { useContext,  useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Dialog, DialogContent, TextField, Button } from "@mui/material";
 import { Context } from "./Context";
@@ -41,7 +41,7 @@ function Sidebar() {
   let navigate = useNavigate();
   let sidebarRef = useRef(null);
 
-let {t}=useTranslation()
+  let { t } = useTranslation();
 
   return (
     <Box
@@ -50,7 +50,6 @@ let {t}=useTranslation()
         width: sidebarOpen ? { xs: "200px", md: "30%" } : "0",
         position: sidebarOpen ? { xs: "fixed", md: "sticky" } : "",
         top: "0",
-     
         bottom: "0",
         height: "auto",
         display: "flex",
@@ -79,7 +78,19 @@ let {t}=useTranslation()
           src={logo}
         />
       </Box>
-
+      <Box>
+        <Link
+          style={{
+            color: "#fff",
+            fontFamily: "Tanseek Modern Pro Arabic",
+            fontSize: "25px",
+            fontWeight: "400",
+          }}
+          to='/home'
+        >
+          الرئيسيه
+        </Link>
+      </Box>
       {/* التطبيق */}
       <Box>
         <Typography
@@ -96,7 +107,7 @@ let {t}=useTranslation()
             setAppDropDown(!appDropDown);
           }}
         >
-         {t('application')}
+          {t("application")}
         </Typography>
         {appDropDown && (
           <Box
@@ -144,13 +155,12 @@ let {t}=useTranslation()
             fontWeight: "400",
             cursor: "pointer",
             mb: "5px",
-           
           }}
           onClick={() => {
             setStatsDropDown(!statsDropDown);
           }}
         >
-         {t('statistics')}
+          {t("statistics")}
         </Typography>
         {statsDropDown && (
           <Box
@@ -178,7 +188,7 @@ let {t}=useTranslation()
                 navigate("/profitstats");
               }}
             >
-            {t("app_profit_statistics")}
+              {t("app_profit_statistics")}
             </Link>
             <Link
               to={"/userstats"}
@@ -190,7 +200,7 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-             {t('user_statistics')}
+              {t("user_statistics")}
             </Link>
           </Box>
         )}
@@ -212,7 +222,7 @@ let {t}=useTranslation()
             setPrices(!prices);
           }}
         >
-        {t("pricing")}
+          {t("pricing")}
         </Typography>
         {prices && (
           <Box
@@ -239,7 +249,7 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-            {t('packages')}
+              {t("packages")}
             </Link>
             <Link
               to={"/diwallet"}
@@ -251,7 +261,7 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-              {t('diamond_wallet')}
+              {t("diamond_wallet")}
             </Link>
 
             <Link
@@ -264,7 +274,7 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-           {t('discount_codes')}
+              {t("discount_codes")}
             </Link>
           </Box>
         )}
@@ -283,7 +293,7 @@ let {t}=useTranslation()
               mb: "5px",
             }}
           >
-           {t("users")}
+            {t("users")}
           </Typography>
         </Link>
       </Box>
@@ -305,7 +315,7 @@ let {t}=useTranslation()
             setTechSupport(!techSupport);
           }}
         >
-          {t('technical_support')}
+          {t("technical_support")}
         </Typography>
         {techSupport && (
           <Box
@@ -332,7 +342,7 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-            {t('support_chat')}
+              {t("support_chat")}
             </Link>
             <Link
               to="suggestion"
@@ -344,7 +354,7 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-            {t('suggestions')}
+              {t("suggestions")}
             </Link>
           </Box>
         )}
@@ -366,7 +376,7 @@ let {t}=useTranslation()
             setGroups(!groups);
           }}
         >
-         {t('groups')}
+          {t("groups")}
         </Typography>
         {groups && (
           <Box
@@ -394,7 +404,7 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-            {t('create_groups')}
+              {t("create_groups")}
             </Link>
             <Link
               to="/send-to-groups"
@@ -407,9 +417,8 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-           {t('send_to_groups')}
+              {t("send_to_groups")}
             </Link>
-
 
             <Link
               to="/all-numbers-whatsapp"
@@ -422,13 +431,13 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-          {/* {t('all_country_codes')} */}
+              {/* {t('all_country_codes')} */}
 
-         {t('Send to all numbers of countries')}
+              {t("Send to all numbers of countries")}
             </Link>
             <Link
               to="/add-links"
-              style={{width:'100%',}}
+              style={{ width: "100%" }}
               onClick={(e) => {
                 if (activeLink) {
                   activeLink.classList.remove("active");
@@ -437,10 +446,8 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-            {t('add_group_links_and_numbers')}
+              {t("add_group_links_and_numbers")}
             </Link>
-          
-          
 
             <Link
               to="/clients-groups"
@@ -453,7 +460,7 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-             {t('customer_groups')}
+              {t("customer_groups")}
             </Link>
 
             <Link
@@ -467,7 +474,7 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-            {t('customer_channels')}
+              {t("customer_channels")}
             </Link>
           </Box>
         )}
@@ -489,7 +496,7 @@ let {t}=useTranslation()
             setAdmins(!admins);
           }}
         >
-         {t('admins')}
+          {t("admins")}
         </Typography>
 
         {admins && (
@@ -507,7 +514,6 @@ let {t}=useTranslation()
               p: "10px",
             }}
           >
-           
             <Link
               to="/Add-admin-file"
               onClick={(e) => {
@@ -518,9 +524,8 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-             {t('add_admin')}
+              {t("add_admin")}
             </Link>
-
 
             <Link
               to="/show-admin-file"
@@ -532,7 +537,7 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-             {t('view_admins')}
+              {t("view_admins")}
             </Link>
           </Box>
         )}
@@ -555,7 +560,7 @@ let {t}=useTranslation()
             setMarketers(!marketers);
           }}
         >
-         {t('marketers')}
+          {t("marketers")}
         </Typography>
         {marketers && (
           <Box
@@ -572,7 +577,6 @@ let {t}=useTranslation()
               p: "10px",
             }}
           >
-           
             <Link
               to="/add-supervisor"
               onClick={(e) => {
@@ -583,9 +587,8 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-             {t('add_moderators')}
+              {t("add_moderators")}
             </Link>
-
 
             <Link
               to="supervisors"
@@ -597,7 +600,7 @@ let {t}=useTranslation()
                 setActiveLink(e.target);
               }}
             >
-              {t('view_moderators')}
+              {t("view_moderators")}
             </Link>
             <Typography
               sx={{ pr: "20px", cursor: "pointer" }}
@@ -611,7 +614,7 @@ let {t}=useTranslation()
                 handleClickOpen();
               }}
             >
-             {t('view_marketers')}
+              {t("view_marketers")}
             </Typography>
           </Box>
         )}

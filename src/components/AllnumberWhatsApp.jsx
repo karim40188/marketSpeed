@@ -1,15 +1,15 @@
 import { Box,  Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 function AllnumberWhatsApp() {
   const navigate = useNavigate();
+  let {t}=useTranslation()
   
   return (
     <Box sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 4 }}>
-      <Typography sx={{ fontSize: "36px", color: "#114F80", fontWeight: "600", textAlign: "center" }}>
-        أرقام الواتساب لكل الدول
-      </Typography>
+   
 
       <Box
         sx={{
@@ -42,7 +42,7 @@ function AllnumberWhatsApp() {
           initial={{ scale: 1 }}
           whileHover={{ scale: 1.1, backgroundColor: "#0d7a61", transition: { duration: 0.3 } }}
         >
-          أرقام الواتساب
+         {t('whatApp')}
         </motion.div>
 
         {/* Another WhatsApp Button */}
@@ -65,7 +65,7 @@ function AllnumberWhatsApp() {
           initial={{ scale: 1 }}
           whileHover={{ scale: 1.1, backgroundColor: "#1b8db7", transition: { duration: 0.3 } }}
         >
-          أرقام الواتساب
+        {t('telegram')}
         </motion.div>
       </Box>
     </Box>

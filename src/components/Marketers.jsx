@@ -3,34 +3,34 @@ import { IoSearchOutline } from "react-icons/io5";
 import profile_img from "../assets/profile_img.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Marketers() {
-
-
-  let navigate= useNavigate()
-  let [marketers] = useState([
-    "على محمد",
-    "على محمد",
-    "على محمد",
-    "على محمد",
-    "على محمد",
-    "على محمد",
-    "على محمد",
-    "على محمد",
-    "على محمد",
-    "على محمد",
-    "على محمد",
-    "على محمد",
-    "على محمد",
+  const { t } = useTranslation(); // Import t function for translations
+  const navigate = useNavigate();
+  const [marketers] = useState([
+    "ahmed_mohamed",
+    "ahmed_mohamed",
+    "ahmed_mohamed",
+    "ahmed_mohamed",
+    "ahmed_mohamed",
+    "ahmed_mohamed",
+    "ahmed_mohamed",
+    "ahmed_mohamed",
   ]);
+
   return (
     <Box sx={{ width: "100%" }}>
-      <Box sx={{ display: "flex", alignItems: "center" }}>
-        <Box sx={{ textAlign: "center" }}>
+      <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+        <Box>
           <Typography
-            sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" ,fontWeight:'600'}}
+            sx={{
+              fontSize: { xs: "30px", md: "40px" },
+              color: "#114F80",
+              fontWeight: "600",
+            }}
           >
-            أحمد محمد
+            {t("ahmed_mohamed")}
           </Typography>
 
           <Typography
@@ -40,46 +40,50 @@ function Marketers() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            مشرف
+            {t("supervisor")}
           </Typography>
         </Box>
 
         <Button
-          sx={{
-            width: "136px",
-            height: "42px",
-            background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
-            color: "#000",
-            borderRadius: "6px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            mr: "auto",
-            fontSize: "30px",
-            fontFamily: "Tanseek Modern Pro Arabic",
-            fontWeight: "400",
-            py: "25px",
-          }}
+        sx={{
+          width: "auto",
+          height: "42px",
+          background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
+          color: "#000",
+          borderRadius: "6px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          // mr: "auto",
+          fontSize: "30px",
+          fontFamily: "Tanseek Modern Pro Arabic",
+          fontWeight: "400",
+          py: "25px",
+        }}
+        onClick={() => {
+          navigate("/add-marketer");
+        }}
+      >
+        {t("add_marketer")}
+      </Button>
 
-          onClick={()=>{
-            navigate('/add-marketer')
-          }}
-        >
-
-          
-          إضافه مسوق
-        </Button>
       </Box>
+
+  
 
       <Box sx={{ display: "flex", gap: "20px", my: "30px" }}>
         <Typography
-          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80",fontWeight:'600' }}
+          sx={{
+            fontSize: { xs: "30px", md: "40px" },
+            color: "#114F80",
+            fontWeight: "600",
+          }}
         >
-          المسوقين
+          {t("marketers")}
         </Typography>
         <Box sx={{ position: "relative" }}>
           <TextField
-            placeholder={"بحث بالاسم"}
+            placeholder={t("search_by_name")}
             sx={{ width: "597px", backgroundColor: "#fff" }}
           />
           <Box
@@ -93,17 +97,13 @@ function Marketers() {
             }}
           >
             <IoSearchOutline
-              style={{
-                width: "100%",
-                height: "100%",
-                color: "#937B31",
-              }}
+              style={{ width: "100%", height: "100%", color: "#937B31" }}
             />
           </Box>
         </Box>
       </Box>
 
-      <Box sx={{ display: "flex", gap: "20px", flexWrap: "wrap", p:'20px'}}>
+      <Box sx={{ display: "flex", gap: "20px", flexWrap: "wrap", p: "20px" }}>
         {marketers.map((marketer, index) => {
           return (
             <Box
@@ -118,12 +118,7 @@ function Marketers() {
                 borderRadius: "15px",
               }}
             >
-              <Box
-                sx={{
-                  display: "flex",
-                  gap: "20px",
-                }}
-              >
+              <Box sx={{ display: "flex", gap: "20px" }}>
                 <Box
                   sx={{
                     textAlign: "center",
@@ -140,7 +135,7 @@ function Marketers() {
                     />
                   </Box>
 
-                  <Typography>على محمد</Typography>
+                  <Typography>{t(marketer)}</Typography>
                   <Typography
                     sx={{
                       background:
@@ -149,28 +144,28 @@ function Marketers() {
                       WebkitTextFillColor: "transparent",
                     }}
                   >
-                    مسوق{" "}
+                    {t("marketer")}
                   </Typography>
                 </Box>
 
                 <Box sx={{ mt: "30px", color: "#114F80" }}>
                   <Typography sx={{ fontSize: "20px" }}>
-                    كود الخصم : ALIO15412
+                    {t("discount_codes")}: ALIO15412
                   </Typography>
                   <Typography sx={{ fontSize: "20px" }}>
-                    عدد الإحالات: 12,500
+                    {t("referrals_count")}: 12,500
                   </Typography>
                   <Typography sx={{ fontSize: "20px" }}>
-                    الرياض-المملكة العربية السعودية
+                    {t("location")}
                   </Typography>
                   <Typography sx={{ fontSize: "20px" }}>
-                    رقم الجوال : 966 5522116
+                    {t("phone_number")}: 966 5522116
                   </Typography>
                   <Typography sx={{ fontSize: "20px" }}>
-                    رقم الحساب البنكى : 5147892154156
+                    {t("bank_account_number")}: 5147892154156
                   </Typography>
                   <Typography sx={{ fontSize: "20px" }}>
-                    البنك : الراجحى
+                    {t("bank_name")}: {t("bank_name")}
                   </Typography>
                 </Box>
 
@@ -198,7 +193,7 @@ function Marketers() {
                     borderRadius: "6px",
                   }}
                 >
-                  تجديد
+                  {t("renew")}
                 </Button>
                 <Button
                   sx={{
@@ -211,7 +206,7 @@ function Marketers() {
                     borderRadius: "6px",
                   }}
                 >
-                  تعديل
+                  {t("edit")}
                 </Button>
                 <Button
                   sx={{
@@ -224,11 +219,11 @@ function Marketers() {
                     borderRadius: "6px",
                   }}
                 >
-                  حذف
+                  {t("delete")}
                 </Button>
                 <Button
                   sx={{
-                    width: "122px",
+                    width: "auto",
                     height: "32px",
                     backgroundColor: "#000000",
                     color: "#fff",
@@ -237,11 +232,11 @@ function Marketers() {
                     borderRadius: "6px",
                   }}
                 >
-                  رابط الخصم
+                  {t("discount_link")}
                 </Button>
                 <Button
                   sx={{
-                    width: "122px",
+                    width: "auto",
                     height: "32px",
                     backgroundColor: "#000000",
                     color: "#fff",
@@ -251,12 +246,11 @@ function Marketers() {
                       "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
                     borderRadius: "6px",
                   }}
-
-                  onClick={()=>{
-                    navigate('/marketer-link')
+                  onClick={() => {
+                    navigate("/marketer-link");
                   }}
                 >
-                  رابط المسوق
+                  {t("marketer_link")}
                 </Button>
               </Box>
             </Box>

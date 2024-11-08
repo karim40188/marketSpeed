@@ -5,6 +5,8 @@ import { FaShareAlt } from "react-icons/fa";
 import { t } from "i18next";
 import { useTranslation } from "react-i18next";
 import addlogo from "../assets/addlogo.png";
+import share from "../assets/share.png";
+
 function ShareWithFriends() {
   let { t } = useTranslation();
   return (
@@ -83,54 +85,24 @@ function ShareWithFriends() {
             flexWrap: "wrap",
           }}
         >
-          <Box>
+          <Box
+            sx={{
+              width: "339px",
+              height: "auto",
+              p: "20px",
+              borderRadius: "15px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "30px",
+              cursor: "pointer",
+            }}
+          >
             <Box
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                mb: "10px",
-              }}
-            >
-              <Typography>{t("share")}</Typography>
-              <Button
-                sx={{
-                  width: "156px",
-                  height: "32px",
-                  color: "#fff",
-                  px: "5px",
-                  fontFamily: "Tanseek Modern Pro Arabic",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "20px",
-                  borderRadius: "6px",
-                  background:
-                    "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-                }}
-              >
-                {t("add_new_video")}
-              </Button>
-            </Box>
-
-            <Box
-              sx={{
-                width: "339px",
-                height: "auto",
-                p: "20px",
-                background: "#fff",
-                borderRadius: "15px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "30px",
-                cursor: "pointer",
-              }}
-            >
-              <Typography sx={{ fontSize: "35px" }}>{t("share")}</Typography>
-              <Box sx={{ fontSize: "30px" }}>
-                <FaShareAlt />
-              </Box>
-            </Box>
+              component="img"
+              src={share}
+              sx={{ width: "100%", height: "100%" }}
+            />
           </Box>
 
           <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
@@ -205,46 +177,12 @@ function ShareWithFriends() {
             </Box>
           </Box>
 
-        
-
-          <Box sx={{ width: "300px" }}>
+          <Box sx={{ width: "500px", height: "auto", mt: "100px" }}>
             <Box
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "start",
-              }}
-            >
-              <Typography>{t('logo')}</Typography>
-              <Box>
-                <Button
-                  sx={{
-                    color: "#fff",
-                    width:'100%',
-                    background:
-                      "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-                  }}
-                >
-                 {t('add_logo')}
-                </Button>
-
-                <Box
-                  sx={{
-                    width: "135px",
-                    height: "116px",
-                    borderRadius: "15px",
-                    backgroundColor: "#fff",
-                    display:'flex',
-                    alignItems:"center",
-                    justifyContent:'end',
-                    padding:'20px',
-                    mt:'20px'
-                  }}
-                >
-                  <Box component="img" src={addlogo} />
-                </Box>
-              </Box>
-            </Box>
+              component="img"
+              src={share_logo}
+              sx={{ width: "100%", height: "100%", backgroundSize: "cover" }}
+            />
           </Box>
         </Box>
 
@@ -257,7 +195,7 @@ function ShareWithFriends() {
             mt: "100px",
           }}
         >
-        {t('app_links')}
+          {t("app_links")}
         </Typography>
 
         <Box
@@ -269,7 +207,7 @@ function ShareWithFriends() {
           }}
         >
           <Box sx={{ display: "flex", flexDirection: "column", gap: "3px" }}>
-            <Typography>{t('apple_link')}</Typography>
+            <Typography>{t("apple_link")}</Typography>
 
             <Box
               sx={{
@@ -293,7 +231,7 @@ function ShareWithFriends() {
             </Box>
           </Box>
           <Box sx={{ display: "flex", flexDirection: "column", gap: "3px" }}>
-            <Typography>{t('google_link')} </Typography>
+            <Typography>{t("google_link")} </Typography>
 
             <Box
               sx={{

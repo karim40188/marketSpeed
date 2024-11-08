@@ -1,7 +1,9 @@
 import { Box, Button, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { FaArrowDown } from "react-icons/fa";
 
 function AddLinks() {
+  let {t} = useTranslation()
   return (
     <Box>
       <Box
@@ -23,7 +25,7 @@ function AddLinks() {
           <Typography
             sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" }}
           >
-            اختر الدوله
+          {t('choose_country')}
           </Typography>
 
           <select
@@ -38,11 +40,10 @@ function AddLinks() {
               
             }}
           >
-            <option value="">مصر</option>
-            <option value="">المملكه العربيه السعوديه</option>
-            <option value="">قطر</option>
-            <option value="">عمان</option>
-            <option value="">البحرين</option>
+            <option value="">{t('egypt')}</option>
+            <option value="">{t('kingdom_of_saudi_arabia')} </option>
+            <option value="">{t('qatar')}</option>
+            <option value="">{t("bahrain")}</option>
           </select>
         </Box>
       </Box>
@@ -60,7 +61,7 @@ function AddLinks() {
             <Typography
               sx={{ color: "#5E5E5E", fontSize: "30px", fontWeight: "700" }}
             >
-              أضف رابط الجروب
+             {t('Add_group_link')}
             </Typography>
             <input
               style={{
@@ -95,7 +96,7 @@ function AddLinks() {
                   textAlign: "center",
                 }}
               >
-                اضف رقم
+               {t('add_number')}
               </Typography>
 
               <input
@@ -158,7 +159,7 @@ function AddLinks() {
         >
           <Box sx={{ width: "412px" }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              المنصة
+              {t('platform')}
             </Typography>
 
             <select
@@ -178,12 +179,12 @@ function AddLinks() {
               <option
             
               >
-                الواتساب
+               {t('whatsApp')}
               </option>
               <option
             
               >
-                التليجرام
+                {t('telegram')}
               </option>
 
               <FaArrowDown
@@ -215,7 +216,7 @@ function AddLinks() {
             borderRadius: "6px",
           }}
         >
-          حفظ
+          {t('save')}
         </Button>
       </Box>
     </Box>

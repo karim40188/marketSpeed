@@ -149,7 +149,7 @@ function TelegramGroups() {
                 e.currentTarget.classList.add("active-group");
                 setActiveGroup(e.currentTarget);
 
-                navigate("/telegram-group");
+                // navigate("/telegram-group");
               }}
               sx={{
                 width: { xs: "100%", md: "336px" },
@@ -210,7 +210,7 @@ function TelegramGroups() {
                 e.currentTarget.classList.add("active-group");
                 setActiveGroup(e.currentTarget);
 
-                navigate("/telegram-group");
+                // navigate("/telegram-group");
               }}
               sx={{
                 width: { xs: "100%", md: "336px" },

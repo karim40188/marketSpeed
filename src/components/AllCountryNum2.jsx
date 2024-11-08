@@ -1,25 +1,25 @@
 import { Box, Button, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 function AllCountryNum2() {
   let navigate = useNavigate();
-  
+  let { t } = useTranslation();
   return (
     <Box>
-
-
       <Box>
-      <Typography
-        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80", fontWeight: '600' }}
-      >
-     ارقام   الدول  
-      </Typography>
+        <Typography
+          sx={{
+            fontSize: { xs: "30px", md: "40px" },
+            color: "#114F80",
+            fontWeight: "600",
+          }}
+        >
+          {t("country_numbers")}
+        </Typography>
 
-      <Typography>
-        عدد الارقام  (36)
-      </Typography>
+        <Typography>{t("numbers")} (36)</Typography>
       </Box>
-     
 
       <Box
         sx={{
@@ -29,7 +29,7 @@ function AllCountryNum2() {
           justifyContent: { xs: "start", md: "end" }, // Adjust alignment based on screen size
           width: "100%",
           flexWrap: "wrap", // Allow wrapping on smaller screens
-          p: { xs: "0 10px", md: "0" } // Adjust padding for smaller screens
+          p: { xs: "0 10px", md: "0" }, // Adjust padding for smaller screens
         }}
       >
         <Button
@@ -42,10 +42,11 @@ function AllCountryNum2() {
             fontFamily: "Sora",
             fontSize: { xs: "16px", md: "20px" }, // Responsive font size
             fontWeight: "600",
-            mb: { xs: "10px", md: "0" } // Add margin bottom for small screens
+            textTransform:'capitalize',
+            mb: { xs: "10px", md: "0" }, // Add margin bottom for small screens
           }}
         >
-          أرفق رابط
+          {t("attach_link")}
         </Button>
         <Button
           sx={{
@@ -57,14 +58,21 @@ function AllCountryNum2() {
             fontFamily: "Sora",
             fontSize: { xs: "16px", md: "20px" },
             fontWeight: "600",
-            mb: { xs: "10px", md: "0" } // Add margin bottom for small screens
+            textTransform:'capitalize',
+            mb: { xs: "10px", md: "0" }, // Add margin bottom for small screens
           }}
         >
-          أرفق الصورة او الفيديو 
+          {t("attach_image_or_video")}
         </Button>
       </Box>
 
-      <Box sx={{ display: "flex", flexDirection: "column", width: { xs: "100%", sm: "90%", md: "890px" } }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          width: { xs: "100%", sm: "90%", md: "890px" },
+        }}
+      >
         <Box
           sx={{
             width: { xs: "100%", sm: "100%", md: "855px" },
@@ -73,19 +81,16 @@ function AllCountryNum2() {
             mt: "50px",
             mr: "30px",
             borderRadius: "10px", // Optional: add some rounding to corners
-            overflow: "hidden" // Ensure content doesn't overflow
+            overflow: "hidden", // Ensure content doesn't overflow
           }}
         >
-          <Typography sx={{ fontWeight: '600', overflowWrap: "break-word" }}>
-            يىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتن
+          <Typography sx={{ fontWeight: "600", overflowWrap: "break-word" }}>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+            necessitatibus provident inventore, unde aperiam dolorem aspernatur
+            iusto sit animi obcaecati, blanditiis similique quasi voluptatibus
+            sequi velit voluptas corrupti itaque vel voluptate harum. In natus
+            aperiam est aut quisquam architecto eos voluptates, quasi veritatis
+            rerum nihil quo necessitatibus beatae quia nisi?
           </Typography>
         </Box>
 
@@ -100,14 +105,14 @@ function AllCountryNum2() {
             fontSize: { xs: "16px", md: "20px" },
             fontWeight: "600",
             mt: "30px",
-            display: "block",
             mr: "auto",
+            textTransform:'capitalize'
           }}
           onClick={() => {
-            navigate('/saudi-groups');
+            navigate("/saudi-groups");
           }}
         >
-          إرسال
+          {t('send')}
         </Button>
       </Box>
     </Box>

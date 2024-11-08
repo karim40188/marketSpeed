@@ -5,14 +5,16 @@ import { IoIosNotifications } from "react-icons/io";
 import { IoIosMenu } from "react-icons/io";
 import { Context } from "./Context";
 import { t } from "i18next";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   let { sidebarOpen, setSidebarOpen } = useContext(Context);
+  let navigate = useNavigate();
 
   let { language, languageChanger } = useContext(Context);
   function handleLanguageChange(event) {
     let selectedLanguage = event.target.value;
-    console.log(selectedLanguage)
+    console.log(selectedLanguage);
 
     languageChanger(selectedLanguage);
   }
@@ -34,7 +36,7 @@ function Navbar() {
       }}
     >
       <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
-        <Typography>{t('hello_faisal')}</Typography>
+        <Typography>{t("hello_faisal")}</Typography>
         <Typography
           sx={{
             background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
@@ -43,9 +45,34 @@ function Navbar() {
             fontSize: { xs: "16px", md: "20px" },
           }}
         >
-         {t('general_manager')}
+          {t("general_manager")}
         </Typography>
+
+
+
+     
       </Box>
+
+      <Box
+          sx={{
+            fontSize: { xs: "24px", md: "30px" },
+            color: "#fff",
+            fontWeight: "400",
+            border: "1px solid #114F80",
+            borderRadius: "8px",
+            padding: { xs: "10px 20px", md: "5px 5px" },
+            backgroundColor: "#114F80",
+          }}
+        >
+          <Typography
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              navigate("/supervisor-profile");
+            }}
+          >
+            {t('view_profile')}
+          </Typography>
+        </Box>
 
       <Box
         sx={{
@@ -77,16 +104,33 @@ function Navbar() {
               <BsTranslate />
             </Box>
             <select
-              style={{ color: "#fff", fontSize: "14px",paddingInline:'30px', width: "100%",border:'none' ,backgroundColor:'transparent'}}
+              style={{
+                color: "#fff",
+                fontSize: "14px",
+                paddingInline: "30px",
+                width: "100%",
+                border: "none",
+                backgroundColor: "transparent",
+              }}
               onChange={handleLanguageChange}
               value={language}
             >
-              <option style={{backgroundColor:'#114F80',color:"#fff",}} value="ar"> {t('arabic')}</option>
-              <option style={{backgroundColor:'#114F80',color:"#fff"}} value="en"> {t('english')}</option>
+              <option
+                style={{ backgroundColor: "#114F80", color: "#fff" }}
+                value="ar"
+              >
+                {" "}
+                {t("arabic")}
+              </option>
+              <option
+                style={{ backgroundColor: "#114F80", color: "#fff" }}
+                value="en"
+              >
+                {" "}
+                {t("english")}
+              </option>
             </select>
           </Box>
-
-         
         </Box>
 
         <Box
