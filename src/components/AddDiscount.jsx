@@ -52,7 +52,7 @@ function AddDiscount() {
               />
             </Box>
             <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-              <Typography sx={{ width: { xs: "auto", md: "121px" }, fontWeight: '600' }}>{t('discount_percentage')}</Typography>
+              <Typography sx={{ width: { xs: "auto", md: "121px" }, fontWeight: '600' }}>{t('discount_percentage')} </Typography>
               <TextField
                 sx={{
                   width: { xs: "100%", md: "174px" },

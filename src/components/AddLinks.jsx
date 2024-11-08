@@ -159,7 +159,7 @@ function AddLinks() {
         >
           <Box sx={{ width: "412px" }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              {t('platform')}
+              {t('platforms')}
             </Typography>
 
             <select

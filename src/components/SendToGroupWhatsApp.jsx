@@ -185,7 +185,7 @@ function SendToGroupWhatsApp() {
                     fontFamily: "inter",
                   }}
                 >
-                  {t("Number of groups in Saudi Arabia")}
+                  {t("عدد المجموعات")}
                 </Typography>
                 <Typography>1026 {t("number")}</Typography>
               </Box>

@@ -214,12 +214,12 @@ function AddSupervisor() {
 
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                {t('change_password')}
+                {t('اضافه كلمه السر ')}
               </Typography>
               <Box
                 sx={{
                   width: "412px",
-                  height: "70px",
+                  height: "70pxح",
                   p: "20px",
                   fontSize: "30px",
                   backgroundColor: "#fff",

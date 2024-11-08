@@ -524,7 +524,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              {t("add_admin")}
+              {t("اضافه مسؤل")}
             </Link>
 
             <Link
@@ -537,7 +537,19 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              {t("view_admins")}
+              {t("عرض ملف المسؤل")}
+            </Link>
+            <Link
+              to="/show-admin-file"
+              onClick={(e) => {
+                if (activeLink) {
+                  activeLink.classList.remove("active");
+                }
+                e.target.classList.add("active");
+                setActiveLink(e.target);
+              }}
+            >
+              {t("عرض المسؤلين ")}
             </Link>
           </Box>
         )}

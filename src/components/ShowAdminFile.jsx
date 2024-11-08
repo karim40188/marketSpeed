@@ -212,24 +212,7 @@ function ShowAdminFile() {
               </Box>
             </Box>
 
-            <Box>
-              <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                {t("change_password")}
-              </Typography>
-              <Box
-                sx={{
-                  width: "412px",
-                  height: "70px",
-                  p: "20px",
-                  fontSize: "30px",
-                  backgroundColor: "#fff",
-                  display: "flex",
-                  alignItems: "center",
-                  mt: "10px",
-                  borderRadius: "15px",
-                }}
-              ></Box>
-            </Box>
+        
           </Box>
 
           <Box
