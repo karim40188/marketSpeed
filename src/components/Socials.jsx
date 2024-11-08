@@ -95,6 +95,9 @@ function Socials() {
           })}
           <Box></Box>
         </Grid2>
+        <Typography sx={{textAlign:'right'}}>
+          حسابات سرعه التسويق
+        </Typography>
         <Typography sx={{ textAlign: "center" }}>حساب تواصل</Typography>
         <Grid2 container>
           <Grid2 size={{ xs: 12, md: 6 }}>
