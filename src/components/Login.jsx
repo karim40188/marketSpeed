@@ -161,7 +161,7 @@ function Login() {
         ></Box>
         <Box
           sx={{
-            width: {xs:"250px",md:"350px"},
+            width: {xs:"250px",md:"550px"},
             height:{xs:"250px",md:"350px"},
             backgroundColor: "#F9D053",
             borderRadius: "50%",

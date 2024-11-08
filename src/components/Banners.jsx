@@ -85,6 +85,59 @@ function Banners() {
           ))}
         </Grid2>
       </Box>
+      <Box sx={{ p: "40px" }}>
+
+        
+        <Typography
+          className="text-gradient"
+          sx={{ fontSize: "30px", mb: "30px" }}
+        >
+          {t("banners_en")} {/* البنارات المتحركة عربي */}
+        </Typography>
+
+        <Grid2 container spacing={4}>
+          {cards.map((card, index) => (
+            <Grid2 size={{ xs: 12, md: 6 }} key={index}>
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography>{t(card.visitorKey)}</Typography>{" "}
+                  {/* ترجمة اسم الزائر */}
+                  <Button
+                    sx={{
+                      width: "auto",
+                      height: "auto",
+                      background:
+                        "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+                      color: "#fff",
+                      borderRadius: "6px",
+                    }}
+                  >
+                    {t(card.uploadKey)}
+                  </Button>
+                </Box>
+
+                <Box sx={{ width: "100%", height: "auto", my: "10px" }}>
+                  <Box
+                    sx={{ width: "100%", height: "100%" }}
+                    component="img"
+                    src={card.img}
+                  />
+                </Box>
+              </motion.div>
+            </Grid2>
+          ))}
+        </Grid2>
+      </Box>
 
       <Box
         sx={{
