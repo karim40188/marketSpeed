@@ -540,7 +540,7 @@ function Sidebar() {
               {t("عرض ملف المسؤل")}
             </Link>
             <Link
-              to="/show-admin-file"
+              to="/show-supervisor"
               onClick={(e) => {
                 if (activeLink) {
                   activeLink.classList.remove("active");

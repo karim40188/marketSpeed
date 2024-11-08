@@ -69,6 +69,8 @@ import TelegramGroup from "./components/telegramGroup";
 import SpesificTelegramGroup from "./components/SpesificTelegramGroup";
 import SaudiNumbers3 from "./components/saudiNumbers3";
 import SaudiNumberTelegram from "./components/SaudiNumberTelegram";
+import EditSupervisor from "./components/EditSupervisor";
+import ShowSupervisor from "./components/ShowSupervisor";
 function App() {
   let router = createBrowserRouter([
     // Done
@@ -107,10 +109,12 @@ function App() {
         // ------------------
         { path: "/suggestion-session", element: <SuggestionSession /> },
         { path: "/supervisors", element: <Supervisors /> },
+        { path: "/show-supervisor", element: <ShowSupervisor /> },
         { path: "/supervisor-profile", element: <SupervisorProfile /> },
         { path: "/add-supervisor", element: <AddSupervisor /> },
         { path: "/add-group", element: <AddGroup /> },
         { path: "/add-links", element: <AddLinks /> },
+        { path: "/edit-supervisor", element: <EditSupervisor /> },
         // Desktop 42
         { path: "/marketers", element: <Marketers /> },
         { path: "/add-marketer", element: <AddMarketer /> },

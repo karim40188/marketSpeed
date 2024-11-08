@@ -54,6 +54,7 @@ function SupervisorProfile() {
                 justifyContent: "center",
                 alignItems: "center",
               }}
+              to='/edit-supervisor'
             >
               {t('edit')}
             </Button>
