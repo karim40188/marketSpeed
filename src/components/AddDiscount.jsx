@@ -80,7 +80,7 @@ function AddDiscount() {
                 fontFamily: "Tanseek Modern Pro Arabic",
                 width: "156px",
                 height: "32px",
-                backgroundColor: "#114F80",
+                backgroundColor: "#128C7F",
                 borderRadius: "6px",
                 color: "#fff",
                 display: "flex",
@@ -96,7 +96,7 @@ function AddDiscount() {
                 navigate('/edit-discount');
               }}
             >
-             {t('edit')}
+             {t('حفظ')}
             </Button>
             <Button
               sx={{
