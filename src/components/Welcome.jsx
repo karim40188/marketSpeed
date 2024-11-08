@@ -4,8 +4,7 @@ import cardImg from "../assets/cardImg.png";
 import { useTranslation } from "react-i18next";
 
 function Welcome() {
-
-  let {t}= useTranslation()
+  let { t } = useTranslation();
   return (
     <Box>
       <Typography
@@ -15,7 +14,7 @@ function Welcome() {
           fontWeight: "600",
         }}
       >
-        {t('welcome_screen')}
+        {t("welcome_screen")}
       </Typography>
 
       <Box
@@ -25,7 +24,7 @@ function Welcome() {
           flexDirection: "column",
           width: "27%",
           mx: "auto",
-          gap:'20px'
+          gap: "20px",
         }}
       >
         <Button
@@ -37,10 +36,10 @@ function Welcome() {
             background: " linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
             color: "#fff",
             alignSelf: "start",
-            borderRadius:'6px'
+            borderRadius: "6px",
           }}
         >
-         {t('add_new_video')}
+          {t("add_new_video")}
         </Button>
         <Box sx={{}}>
           <motion.div
@@ -61,6 +60,10 @@ function Welcome() {
               }}
             />
           </motion.div>
+
+          <Typography sx={{ textAlign: "center" }}>
+            العرض 9 والطول 16
+          </Typography>
         </Box>
       </Box>
     </Box>

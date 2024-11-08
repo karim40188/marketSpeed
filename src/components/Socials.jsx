@@ -5,10 +5,8 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 function Socials() {
-
-  let {t}= useTranslation()
+  let { t } = useTranslation();
   let [socials] = useState([
-    "WhatsApp",
     "Telegram",
     "Instagram",
     "TikTok",
@@ -18,6 +16,7 @@ function Socials() {
     "Snapchat",
     "SMS",
     "Email",
+    "WhatsApp",
     "mobile",
   ]);
 
@@ -26,7 +25,7 @@ function Socials() {
       <Typography
         sx={{ fontSize: "40px", color: "#114F80", fontWeight: "700" }}
       >
-       {t('marketing_speed_account_page')}
+        {t("marketing_speed_account_page")}
       </Typography>
       <Box sx={{ p: "40px" }}>
         <Typography
@@ -60,7 +59,7 @@ function Socials() {
                       borderRadius: "6px",
                     }}
                   >
-                   {t('save')}
+                    {t("save")}
                   </Button>
                 </Box>
 

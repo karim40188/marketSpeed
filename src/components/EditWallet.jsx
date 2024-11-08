@@ -106,7 +106,7 @@ function EditWallet() {
                   fontFamily: "Tanseek Modern Pro Arabic",
                   width: "156px",
                   height: "32px",
-                  backgroundColor: "#114F80",
+                  backgroundColor: "#128C7F",
                   borderRadius: "6px",
                   color: "#fff",
                   px: "30px",
@@ -116,7 +116,7 @@ function EditWallet() {
                   alignItems: "center",
                 }}
               >
-              {t('edit')}
+              {t('save')}
               </Button>
             </motion.div>
             <motion.div variants={slideIn} initial="hidden" animate="visible">

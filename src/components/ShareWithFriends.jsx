@@ -177,7 +177,7 @@ function ShareWithFriends() {
             </Box>
           </Box>
 
-          <Box sx={{ width: "500px", height: "auto", mt: "100px" }}>
+        <Box sx={{ width: "500px", height: "auto", mt: "100px" }}>
             <Box
               component="img"
               src={share_logo}
