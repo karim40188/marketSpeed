@@ -71,6 +71,7 @@ import SaudiNumbers3 from "./components/saudiNumbers3";
 import SaudiNumberTelegram from "./components/SaudiNumberTelegram";
 import EditSupervisor from "./components/EditSupervisor";
 import ShowSupervisor from "./components/ShowSupervisor";
+import CreateGroupsTelegram from "./components/CreateGroupsTelegram";
 function App() {
   let router = createBrowserRouter([
     // Done
@@ -112,6 +113,7 @@ function App() {
         { path: "/show-supervisor", element: <ShowSupervisor /> },
         { path: "/supervisor-profile", element: <SupervisorProfile /> },
         { path: "/add-supervisor", element: <AddSupervisor /> },
+        { path: "/createGroup-telegram", element: <CreateGroupsTelegram /> },
         { path: "/add-group", element: <AddGroup /> },
         { path: "/add-links", element: <AddLinks /> },
         { path: "/edit-supervisor", element: <EditSupervisor /> },

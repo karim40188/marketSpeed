@@ -77,7 +77,7 @@ function CreateGroups() {
             <Box
               key={index}
               onClick={() => {
-                navigate('/saudi-groups');
+                // navigate('/saudi-groups');
               }}
               sx={{
                 width: {xs:'100%',md:"336px"},
@@ -124,7 +124,7 @@ function CreateGroups() {
             <Box
               key={index}
               onClick={() => {
-                navigate('/saudi-groups');
+                // navigate('/saudi-groups');
               }}
               sx={{
                 width: {xs:'100%',md:"336px"},

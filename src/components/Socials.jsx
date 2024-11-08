@@ -95,7 +95,7 @@ function Socials() {
           })}
           <Box></Box>
         </Grid2>
-<Typography sx={{textAlign:'center'}}>حساب تواصل</Typography>
+        <Typography sx={{ textAlign: "center" }}>حساب تواصل</Typography>
         <Grid2 container>
           <Grid2 size={{ xs: 12, md: 6 }}>
             <Box
@@ -191,7 +191,6 @@ function Socials() {
                   py: "5px",
                   display: "flex",
                   alignItems: "center",
-                
                 }}
               >
                 <Link

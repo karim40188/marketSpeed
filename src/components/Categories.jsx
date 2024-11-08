@@ -110,7 +110,7 @@ function Categories() {
               borderRadius: "15px",
               boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
             }}
-            onClick={() => navigate("/telegram-groups")}
+            onClick={() => navigate("/createGroup-telegram")}
             initial={{ scale: 1 }}
             whileHover={{
               scale: 1.1,
