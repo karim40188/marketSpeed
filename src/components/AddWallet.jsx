@@ -1,9 +1,34 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 function AddWallet() {
+  const { t } = useTranslation();
+
+  // تعريف المتغيرات للأنيميشن
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5 } },
+  };
+
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  };
+
+  const slideUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <Box>
+      {/* تطبيق أنيميشن Fade In على العنوان */}
       <Typography
+        component={motion.div}
+        variants={fadeIn}
+        initial="hidden"
+        animate="visible"
         sx={{
           fontSize: { xs: "24px", md: "40px" },
           color: "#114F80",
@@ -11,12 +36,19 @@ function AddWallet() {
           mb: { xs: 2, md: 4 },
         }}
       >
-        أضافة المحفظة الماسية
+        {t("add_new_wallet")}
       </Typography>
-      
+
       <Box sx={{ p: { xs: 2, md: 4 } }}>
-        <Typography sx={{ fontSize: { xs: "20px", md: "30px" }, fontWeight: "600", mb: 3 }}>
-          مزايا الباقة
+        {/* تطبيق تأثير Fade In على العنوان الفرعي */}
+        <Typography
+          component={motion.div}
+          variants={fadeIn}
+          initial="hidden"
+          animate="visible"
+          sx={{ fontSize: { xs: "20px", md: "30px" }, fontWeight: "600", mb: 3 }}
+        >
+          {t("benefits_of_the_package")}
         </Typography>
 
         <Box>
@@ -30,9 +62,16 @@ function AddWallet() {
             }}
           >
             <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-              <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+              {/* تطبيق أنيميشن للحقول */}
+              <Box
+                component={motion.div}
+                variants={slideUp}
+                initial="hidden"
+                animate="visible"
+                sx={{ display: "flex", gap: 1, alignItems: "center" }}
+              >
                 <Typography sx={{ width: { xs: "auto", md: "121px" }, fontWeight: "600" }}>
-                  عدد الماسات
+                  {t("diamond_count")}
                 </Typography>
                 <TextField
                   sx={{
@@ -46,13 +85,20 @@ function AddWallet() {
                   }}
                 />
               </Box>
-              <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+
+              <Box
+                component={motion.div}
+                variants={slideUp}
+                initial="hidden"
+                animate="visible"
+                sx={{ display: "flex", gap: 1, alignItems: "center" }}
+              >
                 <Typography sx={{ width: { xs: "auto", md: "121px" }, fontWeight: "600" }}>
-                  السعر
+                  {t("price")}
                 </Typography>
                 <TextField
                   sx={{
-                    width: {xs:"130px",md:"174px"},
+                    width: { xs: "130px", md: "174px" },
                     height: "62px",
                     display: "flex",
                     justifyContent: "center",
@@ -63,7 +109,7 @@ function AddWallet() {
                 />
                 <TextField
                   sx={{
-                    width: {xs:"130px",md:"174px"},
+                    width: { xs: "130px", md: "174px" },
                     height: "62px",
                     display: "flex",
                     justifyContent: "center",
@@ -84,7 +130,12 @@ function AddWallet() {
                 mt: { xs: 2, md: 0 },
               }}
             >
+              {/* تطبيق أنيميشن تكبير على الأزرار */}
               <Button
+                component={motion.button}
+                variants={scaleIn}
+                initial="hidden"
+                animate="visible"
                 sx={{
                   fontSize: { xs: "18px", md: "25px" },
                   fontFamily: "Tanseek Modern Pro Arabic",
@@ -97,9 +148,14 @@ function AddWallet() {
                   py: { xs: 1, md: 2 },
                 }}
               >
-                حفظ
+                {t("save")}
               </Button>
+
               <Button
+                component={motion.button}
+                variants={scaleIn}
+                initial="hidden"
+                animate="visible"
                 sx={{
                   fontSize: { xs: "18px", md: "25px" },
                   fontFamily: "Tanseek Modern Pro Arabic",
@@ -112,7 +168,7 @@ function AddWallet() {
                   py: { xs: 1, md: 2 },
                 }}
               >
-                حذف
+                {t("delete")}
               </Button>
             </Box>
           </Box>

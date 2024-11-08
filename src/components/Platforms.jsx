@@ -10,156 +10,174 @@ import { FaSquareFacebook } from "react-icons/fa6";
 import { FaSms } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaShareAlt } from "react-icons/fa";
-
-
- 
+import {motion} from "framer-motion"
 function Platforms() {
-
-
   const { t } = useTranslation();
 
   let [icons] = useState([
     {
       name: "WhatsApp",
-      color: "#fff",
-      bgColor: "#128C7F",
-      hoverBgColor: "#18B9A8",
+      iconColor: "#ffffff", // Keep icons white to ensure visibility
+      bgColor: "#075E54", // WhatsApp dark green
+      hoverBgColor: "#128C7F", // Hover effect (lighter green)
       icon: <IoLogoWhatsapp />,
     },
     {
       name: "Telegram",
-      color: "#fff",
-      bgColor: "#1E77BD",
-      hoverBgColor: "#3091DE",
+      iconColor: "#ffffff", // White icon color for contrast
+      bgColor: "#006DB6", // Telegram dark blue
+      hoverBgColor: "#4C8BF5", // Hover effect (lighter blue)
       icon: <FaTelegram />,
     },
     {
       name: "Instagram",
-      color: "#fff",
-      bgColor: "#BC548A",
-      hoverBgColor: "#9A3E6F",
+      iconColor: "#ffffff", // White icon color for contrast
+      bgColor: "#C13584", // Instagram purple
+      hoverBgColor: "#9B349B", // Hover effect (darker purple)
       icon: <FaInstagramSquare />,
     },
     {
       name: "TikTok",
-      color: "#fff",
-      bgColor: "#000000",
-      hoverBgColor: "#1A1A1A",
+      iconColor: "#ffffff", // White icon color for contrast
+      bgColor: "#000000", // TikTok black background
+      hoverBgColor: "#333333", // Hover effect (dark gray)
       icon: <IoLogoTiktok />,
     },
     {
       name: "X",
-      color: "#000",
-      bgColor: "#FFFFFF",
-      hoverBgColor: "#E6E6E6",
+      iconColor: "#ffffff", // White icon color for contrast
+      bgColor: "#1DA1F2", // Twitter blue
+      hoverBgColor: "#1B95E0", // Hover effect (darker blue)
       icon: <FaXTwitter />,
     },
     {
       name: "Facebook",
-      color: "#fff",
-      bgColor: "#163C92",
-      hoverBgColor: "#1D4EBE",
+      iconColor: "#ffffff", // White icon color for contrast
+      bgColor: "#3b5998", // Facebook blue
+      hoverBgColor: "#1D4EBE", // Hover effect (darker blue)
       icon: <FaSquareFacebook />,
     },
     {
       name: "SMS",
-      color: "#fff",
-      bgColor: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-      hoverBgColor: "",
+      iconColor: "#000000", // Dark icon color for visibility on light background
+      bgColor: "#F9D053", // SMS yellow background
+      hoverBgColor: "#937B31", // Hover effect (darker yellow)
       icon: <FaSms />,
     },
     {
       name: "Email",
-      color: "#fff",
-      bgColor: "#1D6671",
-      hoverBgColor: "#278B9A",
+      iconColor: "#ffffff", // White icon color for contrast
+      bgColor: "#D44638", // Email red background
+      hoverBgColor: "#E54B3A", // Hover effect (darker red)
       icon: <MdEmail />,
     },
     {
       name: "Share",
-      color: "#000",
-      bgColor: "#fff",
-      hoverBgColor: "#E6E6E6",
+      iconColor: "#000000", // Dark icon color for visibility
+      bgColor: "#E4E4E4", // Light gray background
+      hoverBgColor: "#C4C4C4", // Hover effect (darker gray)
       icon: <FaShareAlt />,
     },
   ]);
 
- 
+
   return (
-    <Box>
-      <Typography sx={{ fontSize: "40px", color: "#114F80" ,fontWeight:'600'}}>
-        {t('platforms')}
+    <Box sx={{display:'flex',justifyContent:'center'}}>
+      <Typography
+        sx={{ fontSize: "40px", color: "#114F80", fontWeight: "600" }}
+      >
+        {t("platforms")}
       </Typography>
       <Box sx={{ p: "40px", display: "flex", flexDirection: "column" }}>
         <Typography
-        className="text-gradient"
+          className="text-gradient"
           sx={{
             mb: "30px",
             display: "flex",
           }}
         >
-         {t('all_platforms')}
+          {t("all_platforms")}
         </Typography>
 
         <Box sx={{ width: "100%", mx: "auto", p: "20px" }}>
-            <Grid2 container spacing={5} sx={{ display: "flex", flexWrap: "wrap" }}>
+          <Grid2
+            container
+            spacing={5}
+            sx={{ display: "flex", flexWrap: "wrap" }}
+          >
               {icons.map((icon, index) => (
-                <Grid2 key={index}>
-                  <Box>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        mb: "10px",
-                      }}
-                    >
-                      <Typography>{t(icon.name)}</Typography>
-                      <Button
-                        sx={{
-                          width: "156px",
-                          height: "32px",
-                          color: "#fff",
-                          px: "5px",
-                          fontFamily: "Tanseek Modern Pro Arabic",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontSize: "20px",
-                          borderRadius: "6px",
-                          background:
-                            "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-                        }}
-                      >
-                        {t("add_new_video")}
-                      </Button>
-                    </Box>
-                  </Box>
-                  <Box
+            <Grid2 key={index}>
+              <Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    mb: "10px",
+                  }}
+                >
+                  <Typography>{t(icon.name)}</Typography>
+                  <Button
                     sx={{
-                      width: "339px",
-                      height: "auto",
-                      p: "20px",
-                      background: icon.bgColor,
-                      borderRadius: "15px",
+                      width: "156px",
+                      height: "32px",
+                      color: "#fff",
+                      px: "5px",
+                      fontFamily: "Tanseek Modern Pro Arabic",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      gap: "30px",
-                      cursor: "pointer",
-                      "&:hover": {
-                        background: icon.hoverBgColor,
-                      },
+                      fontSize: "20px",
+                      borderRadius: "6px",
+                      background:
+                        "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+                    }}
+                   
+                  >
+                    {t("add_new_video")}
+                  </Button>
+                </Box>
+              </Box>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                whileInView={{ opacity: 1 }}
+              >
+                <Box
+                  sx={{
+                    width: "339px",
+                    height: "auto",
+                    p: "20px",
+                    background: icon.bgColor,
+                    borderRadius: "15px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between", // Align icon and text horizontally
+                    gap: "20px", // Adjust space between icon and name
+                    cursor: "pointer",
+                    "&:hover": {
+                      background: icon.hoverBgColor,
+                    },
+                    transition: "background-color 0.3s ease-in-out",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      fontSize: "35px",
+                      color: icon.iconColor,
                     }}
                   >
-                    <Typography sx={{ color: icon.color, fontSize: "35px" }}>
-                      {t(icon.name)}
-                    </Typography>
-                    <Box sx={{ fontSize: "30px" }}>{icon.icon}</Box>
+                    {icon.icon}
                   </Box>
-                </Grid2>
-              ))}
+                  <Typography sx={{ fontSize: "18px", color: icon.iconColor }}>
+                    {t(icon.name)} {/* Display the name beside the icon */}
+                  </Typography>
+                </Box>
+              </motion.div>
             </Grid2>
-          </Box>
+          ))}
+          </Grid2>
+        </Box>
       </Box>
     </Box>
   );

@@ -1,9 +1,12 @@
 import { Box, Button, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function ShowAdminFile() {
-  let navigate= useNavigate()
+  let navigate = useNavigate();
+
+  let { t } = useTranslation();
   return (
     <Box>
       <Typography
@@ -11,10 +14,10 @@ function ShowAdminFile() {
           fontSize: { xs: "30px", md: "40px" },
           color: "#114F80",
           mb: "20px",
-          fontWeight:'600'
+          fontWeight: "600",
         }}
       >
-        عرض ملف المسئول
+        {t("view_admin_file")}
       </Typography>
 
       <Box
@@ -49,12 +52,11 @@ function ShowAdminFile() {
               justifyContent: "center",
               alignItems: "center",
             }}
-
-            onClick={()=>{
-              navigate('/edit-admin-file')
+            onClick={() => {
+              navigate("/edit-admin-file");
             }}
           >
-            تعديل
+            {t("edit")}
           </Button>
           <Button
             sx={{
@@ -72,7 +74,7 @@ function ShowAdminFile() {
               alignItems: "center",
             }}
           >
-            حذف
+            {t("delete")}
           </Button>
         </Box>
       </Box>
@@ -87,7 +89,7 @@ function ShowAdminFile() {
         >
           <Box>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              الاسم ثلاثى
+              {t("full_name")}
             </Typography>
             <Box
               sx={{
@@ -102,23 +104,21 @@ function ShowAdminFile() {
                 borderRadius: "15px",
               }}
             >
-              أحمد محمد
+              {t("ahmed_mohamed")}
             </Box>
           </Box>
 
-          {/* الدولة والمدينة في صف واحد */}
           <Box
             sx={{
               display: "flex",
               gap: "20px",
               justifyContent: "space-between",
-              mt: "20px", // إضافة مسافة بين الصفوف
+              mt: "20px",
             }}
           >
-            {/* حقل الدولة */}
             <Box sx={{ width: "49%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                الدولة
+                {t("country")}
               </Typography>
               <Box
                 sx={{
@@ -133,14 +133,13 @@ function ShowAdminFile() {
                   borderRadius: "15px",
                 }}
               >
-                المملكة العربية السعودية
+                {t("kingdom_of_saudi_arabia")}
               </Box>
             </Box>
 
-            {/* حقل المدينة */}
             <Box sx={{ width: "49%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                المدينة
+                {t("city")}
               </Typography>
               <Box
                 sx={{
@@ -155,7 +154,7 @@ function ShowAdminFile() {
                   borderRadius: "15px",
                 }}
               >
-                الرياض
+                {t("riyadh")}
               </Box>
             </Box>
           </Box>
@@ -165,7 +164,7 @@ function ShowAdminFile() {
           {/* رقم الجوال في صف منفصل */}
           <Box sx={{ mt: "20px", width: "100%" }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              رقم الجوال
+              {t("mobile")}
             </Typography>
             <Box
               sx={{
@@ -189,12 +188,12 @@ function ShowAdminFile() {
               display: "flex",
               gap: "20px",
               justifyContent: "space-between",
-              mt: "20px", // إضافة مسافة بين الصفوف
+              mt: "20px",
             }}
           >
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                البريد الإلكترونى
+                {t("email")}
               </Typography>
               <Box
                 sx={{
@@ -215,7 +214,7 @@ function ShowAdminFile() {
 
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                تغير كلمة السر
+                {t("change_password")}
               </Typography>
               <Box
                 sx={{
@@ -243,7 +242,7 @@ function ShowAdminFile() {
           >
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                اسم البنك
+                {t("bank_name")}
               </Typography>
               <Box
                 sx={{
@@ -258,12 +257,12 @@ function ShowAdminFile() {
                   borderRadius: "15px",
                 }}
               >
-                الراجحى
+                {t("alraghy")}
               </Box>
             </Box>
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                رقم الحساب البنكي
+                {t("bank_account_number")}
               </Typography>
               <Box
                 sx={{
@@ -284,8 +283,15 @@ function ShowAdminFile() {
           </Box>
 
           <Box sx={{ my: "30px" }}>
-            <Typography sx={{ fontSize: "40px", color: "#114F80", mb: "20px",fontWeight:'600' }}>
-              الأدوار
+            <Typography
+              sx={{
+                fontSize: "40px",
+                color: "#114F80",
+                mb: "20px",
+                fontWeight: "600",
+              }}
+            >
+              {t("roles")}
             </Typography>
 
             <Box
@@ -307,7 +313,7 @@ function ShowAdminFile() {
 
                 <Box>
                   <Typography sx={{ fontSize: "30px" }}>
-                    التحكم في اكواد الخصم
+                    {t("discount_codes_control")}
                   </Typography>
                 </Box>
               </Box>
@@ -322,7 +328,7 @@ function ShowAdminFile() {
 
                 <Box>
                   <Typography sx={{ fontSize: "30px" }}>
-                    احصائيات مكسب التطبيق
+                    {t("app_profit_stats")}
                   </Typography>
                 </Box>
               </Box>
@@ -337,7 +343,7 @@ function ShowAdminFile() {
 
                 <Box>
                   <Typography sx={{ fontSize: "30px" }}>
-                    احصائيات الأشتراكات الشهري والسنوى
+                    {t("monthly_and_annual_subscriptions_stats")}
                   </Typography>
                 </Box>
               </Box>
@@ -352,7 +358,7 @@ function ShowAdminFile() {
 
                 <Box>
                   <Typography sx={{ fontSize: "30px" }}>
-                    احصائيات مستخدمى التطبيق
+                    {t("app_users_stats")}
                   </Typography>
                 </Box>
               </Box>
@@ -367,7 +373,7 @@ function ShowAdminFile() {
 
                 <Box>
                   <Typography sx={{ fontSize: "30px" }}>
-                    التحكم فى الأسعار
+                    {t("pricing_control")}
                   </Typography>
                 </Box>
               </Box>
@@ -382,7 +388,7 @@ function ShowAdminFile() {
 
                 <Box>
                   <Typography sx={{ fontSize: "30px" }}>
-                    التحكم فى المنصات
+                    {t("platform_control")}
                   </Typography>
                 </Box>
               </Box>
@@ -396,20 +402,9 @@ function ShowAdminFile() {
                 ></Box>
 
                 <Box>
-                  <Typography sx={{ fontSize: "30px" }}>إضافة الدول</Typography>
-                </Box>
-              </Box>
-              <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
-                <Box
-                  sx={{
-                    width: "37px",
-                    height: "37px",
-                    backgroundColor: "#fff",
-                  }}
-                ></Box>
-
-                <Box>
-                  <Typography sx={{ fontSize: "30px" }}>الدردشات</Typography>
+                  <Typography sx={{ fontSize: "30px" }}>
+                    {t("add_countries")}
+                  </Typography>
                 </Box>
               </Box>
               <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
@@ -423,131 +418,84 @@ function ShowAdminFile() {
 
                 <Box>
                   <Typography sx={{ fontSize: "30px" }}>
-                    التحكم فى التطبيق
+                    {t("chats")}
+                  </Typography>
+                </Box>
+              </Box>
+              <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
+                <Box
+                  sx={{
+                    width: "37px",
+                    height: "37px",
+                    backgroundColor: "#fff",
+                  }}
+                ></Box>
+
+                <Box>
+                  <Typography sx={{ fontSize: "30px" }}>
+                    {t("app_control")}
                   </Typography>
                 </Box>
               </Box>
 
               <Box>
-              <Box sx={{ display: "flex", gap: "20px", alignItems:"center"}}>
                 <Box
-                  sx={{
-                    width: "37px",
-                    height: "37px",
-                    backgroundColor: "#fff",
-                  }}
-                ></Box>
+                  sx={{ display: "flex", gap: "20px", alignItems: "center" }}
+                >
+                  <Box
+                    sx={{
+                      width: "37px",
+                      height: "37px",
+                      backgroundColor: "#fff",
+                    }}
+                  ></Box>
 
-                <Box>
-                  <Typography sx={{ fontSize: "30px" }}>
-                    التحكم فى مجموعات الدول
-                  </Typography>
-              
+                  <Box>
+                    <Typography sx={{ fontSize: "30px" }}>
+                      {t("groups_control")}
+                    </Typography>
+                  </Box>
                 </Box>
 
+                <Box sx={{ mt: "20px" }}>
+                  <Box
+                    sx={{
+                      px: "25px",
 
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "20px",
+                    }}
+                  >
+                    <Box sx={{ display: "flex", gap: "20px" }}>
+                      <Box
+                        sx={{
+                          width: "37px",
+                          height: "37px",
+                          backgroundColor: "#fff",
+                        }}
+                      ></Box>
 
-              </Box>
+                      <Typography sx={{ fontSize: "30px" }}>
+                        {t("Control_of_Groups_in_the_Kingdom_of_Saudi_Arabia")}
+                      </Typography>
+                    </Box>
+                    <Box sx={{ display: "flex", gap: "20px" }}>
+                      <Box
+                        sx={{
+                          width: "37px",
+                          height: "37px",
+                          backgroundColor: "#fff",
+                        }}
+                      ></Box>
 
-
-              <Box sx={{mt:'20px'}}>
-                    <Box
-                      sx={{
-                        px: "25px",
-
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "20px",
-                      }}
-                    >
-                      <Box sx={{ display: "flex", gap: "20px" }}>
-                        <Box
-                          sx={{
-                            width: "37px",
-                            height: "37px",
-                            backgroundColor: "#fff",
-                          }}
-                        ></Box>
-
-
-                        <Typography sx={{fontSize:'30px'}}>
-                        التحكم فى مجموعات المملكة العربية السعودية
-                        </Typography>
-                      </Box>
-                      <Box sx={{ display: "flex", gap: "20px" }}>
-                        <Box
-                          sx={{
-                            width: "37px",
-                            height: "37px",
-                            backgroundColor: "#fff",
-                          }}
-                        ></Box>
-
-
-                        <Typography sx={{fontSize:'30px'}}>
-                        التحكم فى مجموعات الأمارات
-                        </Typography>
-                      </Box>
-                      <Box sx={{ display: "flex", gap: "20px" }}>
-                        <Box
-                          sx={{
-                            width: "37px",
-                            height: "37px",
-                            backgroundColor: "#fff",
-                          }}
-                        ></Box>
-
-
-                        <Typography sx={{fontSize:'30px'}}>
-                        التحكم فى مجموعات الأمارات
-                        </Typography>
-                      </Box>
-                      <Box sx={{ display: "flex", gap: "20px" }}>
-                        <Box
-                          sx={{
-                            width: "37px",
-                            height: "37px",
-                            backgroundColor: "#fff",
-                          }}
-                        ></Box>
-
-
-                        <Typography sx={{fontSize:'30px'}}>
-                        التحكم فى مجموعات الأمارات
-                        </Typography>
-                      </Box>
-                      <Box sx={{ display: "flex", gap: "20px" }}>
-                        <Box
-                          sx={{
-                            width: "37px",
-                            height: "37px",
-                            backgroundColor: "#fff",
-                          }}
-                        ></Box>
-
-
-                        <Typography sx={{fontSize:'30px'}}>
-                        التحكم فى مجموعات الأمارات
-                        </Typography>
-                      </Box>
-                      <Box sx={{ display: "flex", gap: "20px" }}>
-                        <Box
-                          sx={{
-                            width: "37px",
-                            height: "37px",
-                            backgroundColor: "#fff",
-                          }}
-                        ></Box>
-
-
-                        <Typography sx={{fontSize:'30px'}}>
-                        التحكم فى مجموعات الأمارات
-                        </Typography>
-                      </Box>
+                      <Typography sx={{ fontSize: "30px" }}>
+                        {t("Control_of_Groups_in_the_UAE")}
+                      </Typography>
                     </Box>
                   </Box>
+                </Box>
               </Box>
-              
             </Box>
           </Box>
         </Box>

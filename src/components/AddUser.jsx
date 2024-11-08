@@ -1,9 +1,24 @@
 import { Box, Button, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
+import { useState } from "react";
+import { useTranslation } from 'react-i18next';
+import { keyframes } from '@mui/system';
 
 function AddUser() {
+  const { t } = useTranslation();
+
+  // أنيميشن التلاشي عند تحميل المكون
+  const fadeIn = keyframes`
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  `;
+
   return (
-    <Box sx={{ p: "20px" }}>
+    <Box sx={{ p: "20px", animation: `${fadeIn} 1s ease-out` }}>
       <Typography
         sx={{
           fontSize: { xs: "24px", md: "40px" },
@@ -11,7 +26,7 @@ function AddUser() {
           mb: "20px",
         }}
       >
-        اضافه المستخدم
+        {t('add_user')}
       </Typography>
 
       <Box
@@ -20,7 +35,7 @@ function AddUser() {
           flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
           justifyContent: "space-between",
-          mb: { xs: "20px", md: "0" }, // مساحة أسفل للتفريق بين العناصر في الشاشات الصغيرة
+          mb: { xs: "20px", md: "0" },
         }}
       >
         <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
@@ -34,8 +49,8 @@ function AddUser() {
           </Box>
           <Button
             sx={{
-              width: "138px",
-              height: "32px",
+              width: "auto",
+              height: "auto",
               backgroundColor: "#128C7F",
               borderRadius: "6px",
               color: "#fff",
@@ -43,7 +58,7 @@ function AddUser() {
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
           >
-            رفع صوره جديدة
+            {t('upload_new_image')}
           </Button>
         </Box>
 
@@ -52,8 +67,8 @@ function AddUser() {
             display: "flex",
             alignItems: "center",
             gap: "20px",
-            mt: { xs: "10px", md: "0" }, // مسافة أعلى للأزرار في الشاشات الصغيرة
-            flexWrap: "wrap", // السماح بتغليف الأزرار في الشاشات الصغيرة
+            mt: { xs: "10px", md: "0" },
+            flexWrap: "wrap",
           }}
         >
           <Button
@@ -66,7 +81,7 @@ function AddUser() {
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
           >
-            حفظ
+            {t('save')}
           </Button>
           <Button
             sx={{
@@ -78,7 +93,7 @@ function AddUser() {
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
           >
-            حذف
+            {t('delete')}
           </Button>
         </Box>
       </Box>
@@ -89,12 +104,12 @@ function AddUser() {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            flexDirection: { xs: "column", md: "row" }, // تعديل الاتجاه في الشاشات الصغيرة
-            mb: "20px", // مسافة أسفل بين الصفوف
+            flexDirection: { xs: "column", md: "row" },
+            mb: "20px",
           }}
         >
           <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Typography>رصيد الماسات</Typography>
+            <Typography>{t('balance')}</Typography>
             <Box
               sx={{
                 width: "174px",
@@ -105,11 +120,11 @@ function AddUser() {
                 alignItems: "center",
               }}
             >
-              <Typography>40 بوصه</Typography>
+              <Typography>40 {t('diamond')}</Typography>
             </Box>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Typography>الباقة الحالية</Typography>
+            <Typography>{t('current_package')}</Typography>
             <Box
               sx={{
                 width: "174px",
@@ -120,21 +135,16 @@ function AddUser() {
                 alignItems: "center",
               }}
             >
-              <Typography>غير مشترك</Typography>
+              <Typography>{t('not_subscribed')}</Typography>
             </Box>
           </Box>
         </Box>
 
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
+        <Box sx={{ display: "flex", flexDirection: "column" }}>
           <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, gap: "40px" }}>
             <Box sx={{ width: { xs: "100%", md: "49%" } }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", md: "30px" } }}>
-                الاسم ثلاثى
+                {t('full_name')}
               </Typography>
               <Box
                 sx={{
@@ -149,13 +159,13 @@ function AddUser() {
                   borderRadius: "15px",
                 }}
               >
-                أحمد محمد
+               {t('ahmed_mohamed')}
               </Box>
             </Box>
 
             <Box sx={{ width: { xs: "100%", md: "49%" } }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", md: "30px" } }}>
-                البريد الإلكترونى
+                {t('email')}
               </Typography>
               <Box
                 sx={{
@@ -175,7 +185,6 @@ function AddUser() {
             </Box>
           </Box>
 
-          {/* الدولة والمدينة في صف واحد */}
           <Box
             sx={{
               display: "flex",
@@ -185,10 +194,9 @@ function AddUser() {
               flexDirection: { xs: "column", md: "row" },
             }}
           >
-            {/* حقل الدولة */}
             <Box sx={{ width: { xs: "100%", md: "49%" } }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", md: "30px" } }}>
-                الدولة
+                {t('country')}
               </Typography>
               <Box
                 sx={{
@@ -203,14 +211,13 @@ function AddUser() {
                   borderRadius: "15px",
                 }}
               >
-                المملكة العربية السعودية
+              {t('kingdom_of_saudi_arabia')}
               </Box>
             </Box>
 
-            {/* حقل المدينة */}
             <Box sx={{ width: { xs: "100%", md: "49%" } }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", md: "30px" } }}>
-                المدينة
+                {t('city')}
               </Typography>
               <Box
                 sx={{
@@ -225,15 +232,14 @@ function AddUser() {
                   borderRadius: "15px",
                 }}
               >
-                الرياض
+              {t('riyadh')}
               </Box>
             </Box>
           </Box>
 
-          {/* رقم الجوال في صف منفصل */}
           <Box sx={{ mt: "20px", width: "100%" }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", md: "30px" } }}>
-              رقم الجوال
+              {t('mobile_number')}
             </Typography>
             <Box
               sx={{

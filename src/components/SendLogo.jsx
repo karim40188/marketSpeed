@@ -1,8 +1,10 @@
 import { Box, Button, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 function SendLogo() {
   let navigate = useNavigate();
+  let { t } = useTranslation();
 
   return (
     <Box>
@@ -13,7 +15,7 @@ function SendLogo() {
           fontWeight: "600",
         }}
       >
-        إرسال اشعار
+        {t("send_notification")}
       </Typography>
 
       <Box
@@ -25,39 +27,38 @@ function SendLogo() {
           mr: "50px",
         }}
       >
-        <Box sx={{ width: "", display: "flex", gap: "10px" }}>
+        <Box sx={{ width: "100%", display: "flex", gap: "10px" }}>
           <Button
             sx={{
               backgroundColor: "#114F80",
               color: "#fff",
               borderRadius: "6px",
-              width: "121.65px",
+              width: "auto",
             }}
           >
-            مشترك
+            {t("subscriber")}
           </Button>
           <Button
             sx={{
               backgroundColor: "#fff",
               color: "#114F80",
               borderRadius: "6px",
-              width: "121.65px",
+              width: "auto",
             }}
           >
-            مستخدم
+            {t("user")}
           </Button>
           <Button
             sx={{
               backgroundColor: "#fff",
               color: "#114F80",
               borderRadius: "6px",
-              width: "121.65px",
+              width: "auto",
             }}
           >
-            الكل
+            {t("all")}
           </Button>
         </Box>
-     
       </Box>
 
       <Box
@@ -79,27 +80,29 @@ function SendLogo() {
             backgroundColor: "#114F80",
             borderRadius: "5px",
             fontFamily: "Sora",
-            fontSize: { xs: "16px", md: "20px" }, // Responsive font size
+            fontSize: { xs: "16px", xl: "20px" },
             fontWeight: "600",
+            textTransform: "capitalize",
             mb: { xs: "10px", md: "0" }, // Add margin bottom for small screens
           }}
         >
-          أرفق رابط
+          {t("attach_link")}
         </Button>
         <Button
           sx={{
             width: { xs: "100%", md: "auto" },
             height: "auto",
             color: "#fff",
+            textTransform: "capitalize",
             backgroundColor: "#114F80",
             borderRadius: "5px",
             fontFamily: "Sora",
-            fontSize: { xs: "16px", md: "20px" },
+            fontSize: { xs: "16px", xl: "20px" },
             fontWeight: "600",
             mb: { xs: "10px", md: "0" }, // Add margin bottom for small screens
           }}
         >
-          أرفق الصورة او الفيديو
+          {t("attach_image_or_video")}
         </Button>
       </Box>
 
@@ -115,6 +118,7 @@ function SendLogo() {
             width: { xs: "100%", sm: "100%", md: "855px" },
             p: { xs: "20px", sm: "40px", md: "100px" }, // Responsive padding
             backgroundColor: "#fff",
+            mx:'auto',
             mt: "50px",
             mr: "30px",
             borderRadius: "10px", // Optional: add some rounding to corners
@@ -122,15 +126,18 @@ function SendLogo() {
           }}
         >
           <Typography sx={{ fontWeight: "600", overflowWrap: "break-word" }}>
-            يىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتنيىبهريبنؤءىرنؤءر
-            ؤءمرةؤنمءىرنمءؤىرتنؤءىتنرىءؤنترىتنءئىنتىءئؤرتنىءتن
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi quo
+            voluptatem ipsa inventore nulla accusantium nihil laborum porro
+            dignissimos provident commodi possimus tempore, pariatur vero saepe
+            natus distinctio iure ratione harum voluptas? Corrupti, ipsam.
+            Soluta dolor amet cumque quis nemo numquam impedit saepe atque ipsam
+            iusto, praesentium earum quo esse, explicabo voluptatum iure,
+            distinctio ut? Id, blanditiis cum illo suscipit rerum enim modi
+            obcaecati repudiandae architecto vel nulla. Hic dolor ratione
+            perferendis voluptatum vero! Id dolores doloremque cupiditate rerum
+            nesciunt repellendus quo consequuntur vero voluptates ex nihil
+            adipisci, necessitatibus incidunt, harum velit! Eligendi laudantium
+            architecto totam nobis provident ratione aut? 
           </Typography>
         </Box>
 
@@ -144,15 +151,15 @@ function SendLogo() {
             fontFamily: "Sora",
             fontSize: { xs: "16px", md: "20px" },
             fontWeight: "600",
+            textTransform:"capitalize",
             mt: "30px",
-            display: "block",
             mr: "auto",
           }}
           onClick={() => {
             navigate("/saudi-groups");
           }}
         >
-          إرسال
+        {t('send')}
         </Button>
       </Box>
     </Box>

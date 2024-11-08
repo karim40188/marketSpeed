@@ -1,12 +1,27 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography,Grid2 } from "@mui/material";
 import { useContext } from "react";
-// import { useNavigate } from "react-router-dom";
 import { Context } from "./Context";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+
 function AddPackage() {
   let { sidebarOpen } = useContext(Context);
+  let { t } = useTranslation();
+
+  // Define animations for entry effects
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5 } },
+  };
+
+  const slideIn = {
+    hidden: { x: -100, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 0.5 } },
+  };
+
   return (
     <Box>
-      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+      <Box component={motion.div} variants={fadeIn} initial="hidden" animate="visible" sx={{ display: "flex", justifyContent: "space-between" }}>
         <Typography
           sx={{
             fontSize: { xs: "30px", md: "40px" },
@@ -14,9 +29,13 @@ function AddPackage() {
             fontWeight: "600",
           }}
         >
-          إضافة الباقة
+          {t('add_package')}
         </Typography>
         <Button
+          component={motion.button}
+          variants={slideIn}
+          initial="hidden"
+          animate="visible"
           sx={{
             fontSize: "25px",
             fontFamily: "Tanseek Modern Pro Arabic",
@@ -32,13 +51,16 @@ function AddPackage() {
             alignItems: "center",
           }}
         >
-          أضف باقة جديدة
+          {t("add_new_package")}
         </Button>
       </Box>
       <Box
+        component={motion.div}
+        variants={fadeIn}
+        initial="hidden"
+        animate="visible"
         sx={{
           p: "20px",
-
           width: sidebarOpen ? { xs: "100%", md: "672px" } : "100%",
           mx: sidebarOpen ? { xs: "", md: "" } : "auto",
         }}
@@ -51,10 +73,14 @@ function AddPackage() {
             mb: "20px",
           }}
         >
-          <Typography sx={{ fontWeight: "600" }}>مزايا الباقة</Typography>
+          <Typography sx={{ fontWeight: "600" }}>{t('benefits_of_the_package')}</Typography>
 
           <Box sx={{ display: "flex", gap: "20px" }}>
             <Button
+              component={motion.button}
+              variants={slideIn}
+              initial="hidden"
+              animate="visible"
               sx={{
                 fontSize: "25px",
                 fontFamily: "Tanseek Modern Pro Arabic",
@@ -70,9 +96,13 @@ function AddPackage() {
                 alignItems: "center",
               }}
             >
-              حفظ
+              {t("save")}
             </Button>
             <Button
+              component={motion.button}
+              variants={slideIn}
+              initial="hidden"
+              animate="visible"
               sx={{
                 fontSize: "25px",
                 fontFamily: "Tanseek Modern Pro Arabic",
@@ -88,53 +118,52 @@ function AddPackage() {
                 alignItems: "center",
               }}
             >
-              حذف
+              {t('delete')}
             </Button>
           </Box>
         </Box>
 
+        <Grid2 size={{ xs: 12 }}>
+          <Box
+            component={motion.div}
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            sx={{
+              width: "100%",
+              height: "auto",
+              background: "#fff",
+              borderRadius: "15px",
+              padding: { xs: "30px", md: "60px" },
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <ul
+              style={{
+                color: "#000",
+                padding: 0,
+                listStyleType: "disc",
+                margin: 0,
+              }}
+            >
+              <li><Typography>{t('15_free_diamonds')}</Typography></li>
+              <li><Typography>{t('whatsapp_logo_available_4_weeks')}</Typography></li>
+              <li><Typography>{t('telegram_logo_available_4_weeks')}</Typography></li>
+              <li><Typography>{t('instagram_logo_available_4_weeks')}</Typography></li>
+              <li><Typography>{t('x_logo_available_4_weeks')}</Typography></li>
+              <li><Typography>{t('facebook_logo_available_4_weeks')}</Typography></li>
+              <li><Typography>{t('tiktok_logo_available_4_weeks')}</Typography></li>
+              <li><Typography>{t("sms_logo_available_4_weeks")}</Typography></li>
+              <li><Typography>{t("email_logo_available_4_weeks")}</Typography></li>
+            </ul>
+          </Box>
+        </Grid2>
         <Box
-          sx={{
-            width: "100%",
-            height: "auto",
-            background: "#fff",
-            borderRadius: "15px",
-            padding: "60px",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <ul style={{ color: "#000" }}>
-            <li>
-              <Typography>15 ماسة مجانية </Typography>
-            </li>
-            <li>
-              <Typography>شعار واتساب متاح لمده 4 أسابيع</Typography>
-            </li>
-            <li>
-              <Typography>شعار تليجرام متاح لمده 4 أسابيع</Typography>
-            </li>
-            <li>
-              <Typography>شعار الإنستجرام متاح لمده 4 أسابيع</Typography>
-            </li>
-            <li>
-              <Typography>شعار X متاح لمده 4 أسابيع</Typography>
-            </li>
-            <li>
-              <Typography>شعار فيس بوك متاح لمده 4 أسابيع</Typography>
-            </li>
-            <li>
-              <Typography>شعار تيك توك متاح لمده 4 أسابيع</Typography>
-            </li>
-            <li>
-              <Typography>شعار رسائل نصية متاح لمده 4 أسابيع</Typography>
-            </li>
-            <li>
-              <Typography>شعار الإيميلات متاح لمده 4 أسابيع</Typography>
-            </li>
-          </ul>
-        </Box>
-        <Box
+          component={motion.div}
+          variants={fadeIn}
+          initial="hidden"
+          animate="visible"
           sx={{
             display: "flex",
             gap: { xs: "20px", md: "50px" },
@@ -144,7 +173,7 @@ function AddPackage() {
           }}
         >
           <Typography sx={{ fontSize: "30px", fontWeight: "600" }}>
-            السعر
+            {t("price")}
           </Typography>
           <Typography
             sx={{
@@ -159,7 +188,7 @@ function AddPackage() {
               fontWeight: "600",
             }}
           >
-            30 ريال
+            {t('30_riyals')}
           </Typography>
           <Typography
             sx={{
@@ -171,11 +200,11 @@ function AddPackage() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              mr: {xs:"",md:"20px"},
+              mr: { xs: "", md: "20px" },
               fontWeight: "600",
             }}
           >
-            7.5 دولار
+            {t('7_5_dollars')}
           </Typography>
         </Box>
       </Box>

@@ -10,6 +10,7 @@ import { FaSquareFacebook } from "react-icons/fa6";
 import { FaSms } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaShareAlt } from "react-icons/fa";
+import {motion} from "framer-motion"
 
 function Videos() {
   const { t } = useTranslation();
@@ -17,72 +18,73 @@ function Videos() {
   let [icons] = useState([
     {
       name: "WhatsApp",
-      color: "#fff",
-      bgColor: "#128C7F",
-      hoverBgColor: "#18B9A8",
+      iconColor: "#ffffff", 
+      bgColor: "#075E54", 
+      hoverBgColor: "#128C7F", 
       icon: <IoLogoWhatsapp />,
     },
     {
       name: "Telegram",
-      color: "#fff",
-      bgColor: "#1E77BD",
-      hoverBgColor: "#3091DE",
+      iconColor: "#ffffff", 
+      bgColor: "#006DB6", 
+      hoverBgColor: "#4C8BF5", 
       icon: <FaTelegram />,
     },
     {
       name: "Instagram",
-      color: "#fff",
-      bgColor: "#BC548A",
-      hoverBgColor: "#9A3E6F",
+      iconColor: "#ffffff", 
+      bgColor: "#C13584", 
+      hoverBgColor: "#9B349B", 
       icon: <FaInstagramSquare />,
     },
     {
       name: "TikTok",
-      color: "#fff",
-      bgColor: "#000000",
-      hoverBgColor: "#1A1A1A",
+      iconColor: "#ffffff", 
+      bgColor: "#000000", 
+      hoverBgColor: "#333333", 
       icon: <IoLogoTiktok />,
     },
     {
       name: "X",
-      color: "#000",
-      bgColor: "#FFFFFF",
-      hoverBgColor: "#E6E6E6",
+      iconColor: "#ffffff", 
+      bgColor: "#1DA1F2", 
+      hoverBgColor: "#1B95E0", 
       icon: <FaXTwitter />,
     },
     {
       name: "Facebook",
-      color: "#fff",
-      bgColor: "#163C92",
-      hoverBgColor: "#1D4EBE",
+      iconColor: "#ffffff", 
+      bgColor: "#3b5998", 
+      hoverBgColor: "#1D4EBE", 
       icon: <FaSquareFacebook />,
     },
     {
       name: "SMS",
-      color: "#fff",
-      bgColor: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-      hoverBgColor: "",
+      iconColor: "#000000", 
+      bgColor: "#F9D053", 
+      hoverBgColor: "#937B31", 
       icon: <FaSms />,
     },
     {
       name: "Email",
-      color: "#fff",
-      bgColor: "#1D6671",
-      hoverBgColor: "#278B9A",
+      iconColor: "#ffffff", 
+      bgColor: "#D44638", 
+      hoverBgColor: "#E54B3A", 
       icon: <MdEmail />,
     },
     {
       name: "Share",
-      color: "#000",
-      bgColor: "#fff",
-      hoverBgColor: "#E6E6E6",
+      iconColor: "#000000", 
+      bgColor: "#E4E4E4", 
+      hoverBgColor: "#C4C4C4", 
       icon: <FaShareAlt />,
     },
   ]);
 
+
   return (
     <>
-      <Box>
+      <Box sx={{display:'flex',justifyContent:'center'}}>
         <Typography
           sx={{
             fontSize: { xs: "30px", md: "40px" },
@@ -105,61 +107,77 @@ function Videos() {
 
           <Box sx={{ width: "100%", mx: "auto", p: "20px" }}>
             <Grid2 container spacing={5} sx={{ display: "flex", flexWrap: "wrap" }}>
-              {icons.map((icon, index) => (
-                <Grid2 key={index}>
-                  <Box>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        mb: "10px",
-                      }}
-                    >
-                      <Typography>{t(icon.name)}</Typography>
-                      <Button
-                        sx={{
-                          width: "156px",
-                          height: "32px",
-                          color: "#fff",
-                          px: "5px",
-                          fontFamily: "Tanseek Modern Pro Arabic",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontSize: "20px",
-                          borderRadius: "6px",
-                          background:
-                            "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-                        }}
-                      >
-                        {t("add_new_video")}
-                      </Button>
-                    </Box>
-                  </Box>
-                  <Box
+            {icons.map((icon, index) => (
+            <Grid2 key={index}>
+              <Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    mb: "10px",
+                  }}
+                >
+                  <Typography>{t(icon.name)}</Typography>
+                  <Button
                     sx={{
-                      width: "339px",
-                      height: "auto",
-                      p: "20px",
-                      background: icon.bgColor,
-                      borderRadius: "15px",
+                      width: "156px",
+                      height: "32px",
+                      color: "#fff",
+                      px: "5px",
+                      fontFamily: "Tanseek Modern Pro Arabic",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      gap: "30px",
-                      cursor: "pointer",
-                      "&:hover": {
-                        background: icon.hoverBgColor,
-                      },
+                      fontSize: "20px",
+                      borderRadius: "6px",
+                      background:
+                        "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+                    }}
+                   
+                  >
+                    {t("add_new_video")}
+                  </Button>
+                </Box>
+              </Box>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                whileInView={{ opacity: 1 }}
+              >
+                <Box
+                  sx={{
+                    width: "339px",
+                    height: "auto",
+                    p: "20px",
+                    background: icon.bgColor,
+                    borderRadius: "15px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between", 
+                    gap: "20px", 
+                    cursor: "pointer",
+                    "&:hover": {
+                      background: icon.hoverBgColor,
+                    },
+                    transition: "background-color 0.3s ease-in-out",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      fontSize: "35px",
+                      color: icon.iconColor,
                     }}
                   >
-                    <Typography sx={{ color: icon.color, fontSize: "35px" }}>
-                      {t(icon.name)}
-                    </Typography>
-                    <Box sx={{ fontSize: "30px" }}>{icon.icon}</Box>
+                    {icon.icon}
                   </Box>
-                </Grid2>
-              ))}
+                  <Typography sx={{ fontSize: "18px", color: icon.iconColor }}>
+                    {t(icon.name)} {/* Display the name beside the icon */}
+                  </Typography>
+                </Box>
+              </motion.div>
+            </Grid2>
+          ))}
             </Grid2>
           </Box>
 
@@ -176,61 +194,77 @@ function Videos() {
 
           <Box sx={{ width: "100%", mx: "auto", p: "20px" }}>
             <Grid2 container spacing={5} sx={{ display: "flex", flexWrap: "wrap" }}>
-              {icons.map((icon, index) => (
-                <Grid2 key={index}>
-                  <Box>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        mb: "10px",
-                      }}
-                    >
-                      <Typography>{t(icon.name)}</Typography>
-                      <Button
-                        sx={{
-                          width: "156px",
-                          height: "32px",
-                          color: "#fff",
-                          px: "5px",
-                          fontFamily: "Tanseek Modern Pro Arabic",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontSize: "20px",
-                          borderRadius: "6px",
-                          background:
-                            "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-                        }}
-                      >
-                        {t("add_new_video")}
-                      </Button>
-                    </Box>
-                  </Box>
-                  <Box
+            {icons.map((icon, index) => (
+            <Grid2 key={index}>
+              <Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    mb: "10px",
+                  }}
+                >
+                  <Typography>{t(icon.name)}</Typography>
+                  <Button
                     sx={{
-                      width: "339px",
-                      height: "auto",
-                      p: "20px",
-                      background: icon.bgColor,
-                      borderRadius: "15px",
+                      width: "156px",
+                      height: "32px",
+                      color: "#fff",
+                      px: "5px",
+                      fontFamily: "Tanseek Modern Pro Arabic",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      gap: "30px",
-                      cursor: "pointer",
-                      "&:hover": {
-                        background: icon.hoverBgColor,
-                      },
+                      fontSize: "20px",
+                      borderRadius: "6px",
+                      background:
+                        "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+                    }}
+                   
+                  >
+                    {t("add_new_video")}
+                  </Button>
+                </Box>
+              </Box>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                whileInView={{ opacity: 1 }}
+              >
+                <Box
+                  sx={{
+                    width: "339px",
+                    height: "auto",
+                    p: "20px",
+                    background: icon.bgColor,
+                    borderRadius: "15px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between", 
+                    gap: "20px", 
+                    cursor: "pointer",
+                    "&:hover": {
+                      background: icon.hoverBgColor,
+                    },
+                    transition: "background-color 0.3s ease-in-out",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      fontSize: "35px",
+                      color: icon.iconColor,
                     }}
                   >
-                    <Typography sx={{ color: icon.color, fontSize: "35px" }}>
-                      {t(icon.name)}
-                    </Typography>
-                    <Box sx={{ fontSize: "30px" }}>{icon.icon}</Box>
+                    {icon.icon}
                   </Box>
-                </Grid2>
-              ))}
+                  <Typography sx={{ fontSize: "18px", color: icon.iconColor }}>
+                    {t(icon.name)} {/* Display the name beside the icon */}
+                  </Typography>
+                </Box>
+              </motion.div>
+            </Grid2>
+          ))}
             </Grid2>
           </Box>
         </Box>

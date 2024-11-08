@@ -1,11 +1,13 @@
 import { Box, Button, Typography } from "@mui/material";
 import saudiImg from "../assets/saudi.png";
 import qatarImg from "../assets/qatar.png";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function AddCountryNum() {
-  let selectRef = useRef();
+
+  let { t } = useTranslation();
   let [whatsApp] = useState([
     saudiImg,
     qatarImg,
@@ -35,7 +37,7 @@ function AddCountryNum() {
           fontWeight: "600",
         }}
       >
-        ارقام الدول
+        {t("country_numbers")}
       </Typography>
 
       <Box
@@ -68,7 +70,7 @@ function AddCountryNum() {
               type="checkbox"
             />
             <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-              تحديد الكل (10000)
+              {t("select_all")} (10000)
             </Typography>
           </Box>
 
@@ -86,14 +88,14 @@ function AddCountryNum() {
               }}
               onClick={() => navigate("/all-country-num")}
             >
-              التالى
+              {t("next")}
             </Button>
           </Box>
         </Box>
 
         <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
           <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-            اختر مجموعات التى يتم ارسال على جميع ارقامها
+            {t("Choose_the_groups_to_which_it_will_be_sent")}
           </Typography>
           <select
             onChange={(e) => {
@@ -103,10 +105,15 @@ function AddCountryNum() {
                 setActiveOption(false);
               }
             }}
-            style={{ width: "250px", height: "50px", borderRadius: "15px",fontSize:'20px' }}
+            style={{
+              width: "250px",
+              height: "50px",
+              borderRadius: "15px",
+              fontSize: "20px",
+            }}
           >
-            <option value="1">المملكه العربيه السعوديه</option>
-            <option value="2">قطر</option>
+            <option value="1">{t("kingdom_of_saudi_arabia")}</option>
+            <option value="2">{t("qatar")}</option>
             <option value="3">البحرين</option>
             <option value="4">اليمن</option>
             <option value="5">المغرب</option>
@@ -115,7 +122,7 @@ function AddCountryNum() {
         </Box>
       </Box>
 
-      <Typography sx={{ textAlign: "center", mb: 1 }}>الواتساب</Typography>
+      <Typography sx={{ mb: 1 }}>{t("WhatsApp")}</Typography>
 
       <Box
         sx={{
@@ -152,7 +159,7 @@ function AddCountryNum() {
                 // navigate("/saudi-groups");
               }}
               sx={{
-                width: { xs: "100%", md: "336px" },
+                width: { xs: "100%", md: "auto" },
                 height: "77px",
                 border: "3px solid #114F80",
                 borderRadius: "15px",
@@ -166,7 +173,7 @@ function AddCountryNum() {
                 mt: "15px",
               }}
             >
-              <Box sx={{ width: "83.06px", height: "44.46px" }}>
+              <Box sx={{ width: "50px", height: "auto" }}>
                 <Box
                   component="img"
                   src={country}
@@ -182,7 +189,9 @@ function AddCountryNum() {
                     fontFamily: "inter",
                   }}
                 >
-                  عدد الارقام داخل المجموعات المملكة العربيه السعوديه
+                  {t(
+                    "Number of groups in Saudi Arabia"
+                  )}
                 </Typography>
                 <Typography>1026 رقم</Typography>
               </Box>
@@ -213,7 +222,7 @@ function AddCountryNum() {
                 // navigate("/saudi-groups");
               }}
               sx={{
-                width: { xs: "100%", md: "336px" },
+                width: { xs: "100%", md: "auto" },
                 height: "77px",
                 border: "3px solid #114F80",
                 borderRadius: "15px",
@@ -227,7 +236,7 @@ function AddCountryNum() {
                 mt: "15px",
               }}
             >
-              <Box sx={{ width: "83.06px", height: "44.46px" }}>
+              <Box sx={{ width: "50px", height: "auto" }}>
                 <Box
                   component="img"
                   src={country}
@@ -243,7 +252,7 @@ function AddCountryNum() {
                     fontFamily: "inter",
                   }}
                 >
-                  عدد الارقام داخل المجموعات المملكة العربيه السعوديه
+                  {t("Number of groups in Saudi Arabia")}
                 </Typography>
                 <Typography>1026 رقم</Typography>
               </Box>

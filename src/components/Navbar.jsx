@@ -1,10 +1,10 @@
 import { Box, Typography } from "@mui/material";
 import { useContext } from "react";
 import { BsTranslate } from "react-icons/bs";
-import { FaArrowDown } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
 import { IoIosMenu } from "react-icons/io";
 import { Context } from "./Context";
+import { t } from "i18next";
 
 function Navbar() {
   let { sidebarOpen, setSidebarOpen } = useContext(Context);
@@ -25,7 +25,7 @@ function Navbar() {
         justifyContent: "space-between",
         alignItems: "center",
         pl: { xs: "10px", md: "20px" },
-        pr: { xs: "10px", md: "80px" },
+        pr: { xs: "10px", md: "10px" },
         py: "10px",
         flexDirection: { xs: "row", md: "row" },
         gap: { xs: "10px", md: "0" },
@@ -34,7 +34,7 @@ function Navbar() {
       }}
     >
       <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
-        <Typography>أهلاً فيصل</Typography>
+        <Typography>{t('hello_faisal')}</Typography>
         <Typography
           sx={{
             background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
@@ -43,7 +43,7 @@ function Navbar() {
             fontSize: { xs: "16px", md: "20px" },
           }}
         >
-          مسئول عام
+         {t('general_manager')}
         </Typography>
       </Box>
 
@@ -77,18 +77,16 @@ function Navbar() {
               <BsTranslate />
             </Box>
             <select
-              style={{ color: "#000", fontSize: "14px", width: "100%" }}
+              style={{ color: "#fff", fontSize: "14px",paddingInline:'30px', width: "100%",border:'none' ,backgroundColor:'transparent'}}
               onChange={handleLanguageChange}
               value={language}
             >
-              <option value="ar"> اللغة (العربية)</option>
-              <option value="en"> اللغة (الانجليزيه )</option>
+              <option style={{backgroundColor:'#114F80',color:"#fff",}} value="ar"> {t('arabic')}</option>
+              <option style={{backgroundColor:'#114F80',color:"#fff"}} value="en"> {t('english')}</option>
             </select>
           </Box>
 
-          <FaArrowDown
-            style={{ width: "10.81px", height: "20.6px", color: "#fff" }}
-          />
+         
         </Box>
 
         <Box

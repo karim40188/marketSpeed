@@ -1,32 +1,59 @@
-import { Box, Button,  Typography } from "@mui/material";
-import { useState } from "react";
+import { Box, Button, Typography } from "@mui/material";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { keyframes } from "@mui/system";
 
 function UserStats() {
-  const [activeFilter, setActiveFilter] = useState("هذا الاسبوع");
-  const [activeLink, setActiveLink] = useState(false);
+  const { t } = useTranslation();
+  const [activeFilter, setActiveFilter] = useState("this_week");
+  const [activeLink, setActiveLink] = useState(null);
 
   const filters = [
-    "هذا الاسبوع",
-    "هذا الشهر",
-    "منذ شهر",
-    "منذ 6 أشهر",
-    "هذه السنة",
+    "this_week",
+    "this_month",
+    "since_last_month",
+    "since_6_months",
+    "this_year",
   ];
 
   const allCards = {
-    "هذا الاسبوع": [{ number: "40,000" }],
-    "هذا الشهر": [{ number: "200,000" }],
-    "منذ شهر": [{ number: "320,000" }],
-    "منذ 6 أشهر": [{ number: "800,000" }],
-    "هذه السنة": [{ number: "1,500,000" }],
+    "this_week": [{ number: "40,000" }],
+    "this_month": [{ number: "200,000" }],
+    "since_last_month": [{ number: "320,000" }],
+    "since_6_months": [{ number: "800,000" }],
+    "this_year": [{ number: "1,500,000" }],
   };
 
   const filteredCards = allCards[activeFilter];
 
+  
+  const fadeIn = keyframes`
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  `;
+
+  useEffect(() => {
+    
+    setActiveFilter(filters[0]);
+  }, []);
+
   return (
     <Box>
-      <Typography sx={{ color: "#114F80", fontSize: { xs: "30px", md: "40px" } ,fontWeight:'600',mb:'30px'}}>
-      إحصائيات مستخدمين التطبيق
+      <Typography
+        sx={{
+          color: "#114F80",
+          fontSize: { xs: "30px", md: "40px" },
+          fontWeight: "600",
+          mb: "30px",
+        }}
+      >
+        {t("user_stats_title")}
       </Typography>
 
       <Box
@@ -46,9 +73,11 @@ function UserStats() {
               fontSize: { xs: "16px", md: "20px" },
               borderRadius: "10px",
               fontFamily: "Tanseek Modern Pro Arabic",
-              fontWeight:'600',
-              backgroundColor:"#fff"
-              
+              fontWeight: "600",
+              backgroundColor: "#fff",
+              "&.active": {
+                backgroundColor: "#F9D053", 
+              },
             }}
             key={filter}
             onClick={(e) => {
@@ -60,15 +89,22 @@ function UserStats() {
               setActiveFilter(filter);
             }}
           >
-            {filter}
+            {t(filter)}
           </Button>
         ))}
       </Box>
 
-      <Box  sx={{display:'flex',flexWrap:'wrap',justifyContent:'center',mt:'30px'}}>
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          mt: "30px",
+        }}
+      >
         {filteredCards.map((card, index) => (
           <Box
-         key={index}
+            key={index}
             sx={{
               width: { xs: "100%", md: "659px" },
               height: "281px",
@@ -79,7 +115,8 @@ function UserStats() {
               alignItems: "center",
               gap: "10px",
               borderRadius: "15px",
-              p:'40px'
+              p: "40px",
+              animation: `${fadeIn} 0.8s ease-out`, 
             }}
           >
             <Box
@@ -96,17 +133,22 @@ function UserStats() {
                 textAlign: "center",
               }}
             >
-              <Typography sx={{ fontSize: { xs: "24px", md: "30px" } }}>{card.number}</Typography>
-              <Typography sx={{ fontSize: { xs: "24px", md: "30px" },color:"#ff" }}>عميل</Typography>
+              <Typography sx={{ fontSize: { xs: "24px", md: "30px" } }}>
+                {card.number}
+              </Typography>
+              <Typography
+                sx={{ fontSize: { xs: "24px", md: "30px" }, color: "#fff" }}
+              >
+                {t("clients")}
+              </Typography>
             </Box>
-            <Typography sx={{ fontSize: { xs: "24px", md: "30px" }, color:"#114F80" }}>
-            عدد المشتركين
+            <Typography
+              sx={{ fontSize: { xs: "24px", md: "30px" }, color: "#114F80" }}
+            >
+              {t("subscribers_count")}
             </Typography>
           </Box>
         ))}
-
-
-
       </Box>
     </Box>
   );

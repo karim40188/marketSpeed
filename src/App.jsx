@@ -65,6 +65,10 @@ import AllNumbers3 from "./components/AllNumber3";
 import i18next from "./i18next"
 import SendToGroupWhatsApp from "./components/SendToGroupWhatsApp";
 import SaudiNumber2 from "./components/SaudiNumber2";
+import TelegramGroup from "./components/telegramGroup";
+import SpesificTelegramGroup from "./components/SpesificTelegramGroup";
+import SaudiNumbers3 from "./components/saudiNumbers3";
+import SaudiNumberTelegram from "./components/SaudiNumberTelegram";
 function App() {
   let router = createBrowserRouter([
     // Done
@@ -144,9 +148,13 @@ function App() {
 
         // Destop 58
         { path: "/all-numbers", element: <AllNumbersOfGroups /> },
+        { path: "/telegram-group", element: <TelegramGroup /> },
         // Done
         // Destop 59
         { path: "/saudi-numbers", element: <SaudiNumbers /> },
+        { path: "/saudi-telegram-numbers", element: <SaudiNumberTelegram /> },
+        { path: "/Spesific-Telegram-Group", element: <SpesificTelegramGroup /> },
+        { path: "/saudi-numbers-3", element: <SaudiNumbers3 /> },
         // Done
         { path: "/show-users", element: <ShowUsers /> },
         { path: "/show-subscribers", element: <ShowSubscribers /> },

@@ -1,11 +1,10 @@
 import { Box, Button, Typography } from "@mui/material";
 import saudiImg from "../assets/saudi.png";
 import qatarImg from "../assets/qatar.png";
-import { useEffect, useRef, useState } from "react";
+import {   useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function AllNumbers3() {
-  let selectRef = useRef();
   let [whatsApp] = useState([
     saudiImg,
     qatarImg,

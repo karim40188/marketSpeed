@@ -2,16 +2,17 @@ import { Box, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function Suggestion() {
   let navigate = useNavigate();
+  let {t}=useTranslation()
   let [tech] = useState([
-    { name: "احمد على" },
-    { name: "احمد على" },
-    { name: "احمد على" },
-    { name: "احمد على" },
-    { name: "احمد على" },
-    { name: "احمد على" },
+    { name: "ahmed_mohamed" },
+    { name: "ahmed_mohamed" },
+    { name: "ahmed_mohamed" },
+    { name: "ahmed_mohamed" },
+
   ]);
 
   return (
@@ -19,13 +20,14 @@ function Suggestion() {
       <Typography
         sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80", fontWeight: '600' }}
       >
-           الاقتراحات
+           {t('suggestion')}
       </Typography>
       <Box
         sx={{
           p: { xs: "20px", md: "30px" }, 
           display: "flex",
           flexDirection: "column",
+          alignItems:'center',
           gap: "20px",
         }}
       >
@@ -60,7 +62,7 @@ function Suggestion() {
                     src={profile_img}
                   />
                 </Box>
-                <Typography sx={{ fontSize: { xs: "25px", md: "40px" } }}>{tech.name}</Typography>
+                <Typography sx={{ fontSize: { xs: "25px", md: "40px" } }}>{t(tech.name)}</Typography>
               </Box>
 
               <Typography

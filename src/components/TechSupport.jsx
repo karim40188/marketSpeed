@@ -2,28 +2,36 @@ import { Box, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function TechSupport() {
+  let { t } = useTranslation();
   let navigate = useNavigate();
   let [tech] = useState([
-    { name: "احمد على" },
-    { name: "احمد على" },
-    { name: "احمد على" },
-    { name: "احمد على" },
-    { name: "احمد على" },
-    { name: "احمد على" },
+    { name: "ahmed_mohamed" },
+    { name: "ahmed_mohamed" },
+    { name: "ahmed_mohamed" },
+    { name: "ahmed_mohamed" },
+    { name: "ahmed_mohamed" },
+    { name: "ahmed_mohamed" },
+    { name: "ahmed_mohamed" },
+    { name: "ahmed_mohamed" },
   ]);
 
   return (
-    <Box>
+    <Box sx={{width:'100%'}}>
       <Typography
-        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80", fontWeight: '600' }}
+        sx={{
+          fontSize: { xs: "30px", md: "40px" },
+          color: "#114F80",
+          fontWeight: "600",
+        }}
       >
-        المحادثة الدعم الفنى
+        {t("support_chat")}
       </Typography>
       <Box
         sx={{
-          p: { xs: "20px", md: "30px" }, 
+          p: { xs: "20px", md: "30px" },
           display: "flex",
           flexDirection: "column",
           gap: "20px",
@@ -34,7 +42,8 @@ function TechSupport() {
             <Box
               key={index}
               sx={{
-                width: { xs: "100%", md: "805px" }, 
+                width: { xs: "100%", md: "805px" },
+                mx:'auto',
                 height: "auto",
                 p: "20px",
                 backgroundColor: "#D9D9D9",
@@ -43,16 +52,16 @@ function TechSupport() {
                 justifyContent: "space-between",
                 alignItems: "center",
                 cursor: "pointer",
-                transition: "background-color 0.3s", 
+                transition: "background-color 0.3s",
                 "&:hover": {
-                  backgroundColor: "#C0C0C0", 
+                  backgroundColor: "#C0C0C0",
                 },
               }}
               onClick={() => {
                 navigate("/support-session");
               }}
             >
-              <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <Box sx={{ display: "flex", alignItems: "center", gap: "10px" ,}}>
                 <Box sx={{ width: "66px", height: "66px" }}>
                   <Box
                     sx={{ width: "100%", height: "100%" }}
@@ -60,7 +69,9 @@ function TechSupport() {
                     src={profile_img}
                   />
                 </Box>
-                <Typography sx={{ fontSize: { xs: "25px", md: "40px" } }}>{tech.name}</Typography>
+                <Typography sx={{ fontSize: { xs: "25px", md: "40px" } }}>
+                  {t(tech.name)}
+                </Typography>
               </Box>
 
               <Typography
@@ -73,7 +84,7 @@ function TechSupport() {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  fontSize: { xs: "25px", md: "40px" }, 
+                  fontSize: { xs: "25px", md: "40px" },
                 }}
               >
                 15

@@ -1,7 +1,9 @@
 import { Box, Button, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
+import { useTranslation } from "react-i18next";
 
 function EditAdminFile() {
+  let {t}=useTranslation()
   return (
     <Box>
       <Typography
@@ -12,7 +14,7 @@ function EditAdminFile() {
           fontWeight:'600'
         }}
       >
-       تعديل ملف المسئول
+       {t('edit_admin_file')}
       </Typography>
 
       <Box
@@ -32,8 +34,8 @@ function EditAdminFile() {
           </Box>
           <Button
             sx={{
-              width: "138px",
-              height: "32px",
+              width: "auto",
+              height: "auto",
               backgroundColor: "#128C7F",
               borderRadius: "6px",
               color: "#fff",
@@ -41,7 +43,7 @@ function EditAdminFile() {
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
           >
-            رفع صوره جديدة
+           {t('upload_new_image')}
           </Button>
         </Box>
 
@@ -56,7 +58,7 @@ function EditAdminFile() {
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
           >
-            حفظ
+            {t("save")}
           </Button>
           <Button
             sx={{
@@ -68,7 +70,7 @@ function EditAdminFile() {
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
           >
-            حذف
+            {t('delete')}
           </Button>
         </Box>
       </Box>
@@ -83,7 +85,7 @@ function EditAdminFile() {
         >
           <Box>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              الاسم ثلاثى
+              {t("full_name")}
             </Typography>
             <Box
               sx={{
@@ -98,7 +100,7 @@ function EditAdminFile() {
                 borderRadius: "15px",
               }}
             >
-              أحمد محمد
+             {t("ahmed_mohamed")}
             </Box>
           </Box>
 
@@ -114,7 +116,7 @@ function EditAdminFile() {
             {/* حقل الدولة */}
             <Box sx={{ width: "49%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                الدولة
+                {t('country')}
               </Typography>
               <Box
                 sx={{
@@ -129,14 +131,14 @@ function EditAdminFile() {
                   borderRadius: "15px",
                 }}
               >
-                المملكة العربية السعودية
+               {t('kingdom_of_saudi_arabia')}
               </Box>
             </Box>
 
             {/* حقل المدينة */}
             <Box sx={{ width: "49%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                المدينة
+                {t('city')}
               </Typography>
               <Box
                 sx={{
@@ -151,7 +153,7 @@ function EditAdminFile() {
                   borderRadius: "15px",
                 }}
               >
-                الرياض
+              {t('riyadah')}
               </Box>
             </Box>
           </Box>
@@ -161,7 +163,7 @@ function EditAdminFile() {
           {/* رقم الجوال في صف منفصل */}
           <Box sx={{ mt: "20px", width: "100%" }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              رقم الجوال
+             {t('phone_number')}
             </Typography>
             <Box
               sx={{
@@ -190,7 +192,7 @@ function EditAdminFile() {
           >
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                البريد الإلكترونى
+                {t('email')}
               </Typography>
               <Box
                 sx={{

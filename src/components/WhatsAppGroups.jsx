@@ -1,8 +1,9 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box,  Typography } from "@mui/material";
 import saudiImg from "../assets/saudi.png";
 import qatarImg from "../assets/qatar.png";
-import { useEffect, useRef, useState } from "react";
+import {  useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function WhatsAppGroups() {
   let [whatsApp] = useState([
@@ -17,8 +18,8 @@ function WhatsAppGroups() {
 
   let navigate = useNavigate();
 
-  let [activeOption, setActiveOption] = useState();
-
+  let [activeOption] = useState();
+let {t}=useTranslation()
   // useEffect(()=>{
   //   console.log(selectRef.current.value)
   // },[])
@@ -34,7 +35,7 @@ function WhatsAppGroups() {
           fontWeight: "600",
         }}
       >
-    مجموعات الدول 
+         {t('country_groups')}
       </Typography>
 
       <Box
@@ -114,7 +115,7 @@ function WhatsAppGroups() {
         </Box> */}
       </Box>
 
-      <Typography sx={{ textAlign: "center", mb: 1 }}>الواتساب</Typography>
+      <Typography sx={{  mb: 1 }}>{t("whatsApp")}</Typography>
 
       <Box
         sx={{
@@ -181,9 +182,9 @@ function WhatsAppGroups() {
                     fontFamily: "inter",
                   }}
                 >
-           عدد مجموعات المملكه العربيه السعوديه 
+                  {t('Number_of_Saudi_Arabia_groups')}
                 </Typography>
-                <Typography>1026 مجموعات </Typography>
+                <Typography>1026 {t('groups')} </Typography>
               </Box>
             </Box>
           ))}
@@ -242,7 +243,7 @@ function WhatsAppGroups() {
                     fontFamily: "inter",
                   }}
                 >
-           عدد مجموعات المملكه العربيه السعوديه 
+     {t("Number_of_Saudi_Arabia_groups")}
            </Typography>
                 <Typography>1026 مجموعات</Typography>
               </Box>

@@ -2,10 +2,16 @@ import { Box, Button, TextField, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
 import send_btn from "../assets/send_btn.png";
 import { FaPlus } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 function SupportSession() {
+  let [value, setValue] = useState("");
+  let { t } = useTranslation();
   return (
-    <Box sx={{ width: { xs: "100%", md: "805px" }, px: { xs: "10px", md: "0" } }}>
+    <Box
+      sx={{ width: { xs: "100%", md: "100%" }, px: { xs: "10px", md: "0" },mx:'auto' }}
+    >
       <Box
         sx={{
           display: "flex",
@@ -14,9 +20,13 @@ function SupportSession() {
         }}
       >
         <Typography
-          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80", fontWeight: '600' }}
+          sx={{
+            fontSize: { xs: "30px", md: "40px" },
+            color: "#114F80",
+            fontWeight: "600",
+          }}
         >
-          المحادثة الدعم الفنى
+          {t("support_chat")}
         </Typography>
 
         <Button
@@ -35,7 +45,7 @@ function SupportSession() {
             alignItems: "center",
           }}
         >
-          حذف
+          {t("delete")}
         </Button>
       </Box>
 
@@ -43,7 +53,7 @@ function SupportSession() {
         <Box sx={{ mb: "100px" }}>
           <Box
             sx={{
-              width: "100%", 
+              width: "100%",
               height: "auto",
               p: "20px",
               backgroundColor: "#D9D9D9",
@@ -62,9 +72,10 @@ function SupportSession() {
                   src={profile_img}
                 />
               </Box>
-              <Typography sx={{ fontSize: { xs: "25px", md: "40px" } }}>احمد على</Typography>
+              <Typography sx={{ fontSize: { xs: "25px", md: "40px" } }}>
+                {t("ahmed_mohamed")}
+              </Typography>
             </Box>
-
           </Box>
           <Typography sx={{ textAlign: "center", my: "10px" }}>
             12/10/2024
@@ -72,8 +83,8 @@ function SupportSession() {
           <Box sx={{ display: "flex", flexDirection: "column", gap: "50px" }}>
             <Box
               sx={{
-                width: "100%", 
-                maxWidth: "374px", 
+                width: "100%",
+                maxWidth: "374px",
                 height: "auto",
                 backgroundColor: "#fff",
                 position: "relative",
@@ -93,7 +104,7 @@ function SupportSession() {
                   fontWeight: "600",
                 }}
               >
-                أحمد على
+                {t("ahmed_mohamed")}
               </Typography>
               <Typography
                 sx={{
@@ -102,7 +113,8 @@ function SupportSession() {
                   fontWeight: "300",
                 }}
               >
-                وريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Architecto, corrupti.
               </Typography>
               <Box
                 sx={{
@@ -119,8 +131,8 @@ function SupportSession() {
             </Box>
             <Box
               sx={{
-                width: "100%", 
-                maxWidth: "374px", 
+                width: "100%",
+                maxWidth: "374px",
                 height: "auto",
                 backgroundColor: "#114F80",
                 position: "relative",
@@ -140,7 +152,7 @@ function SupportSession() {
                   fontWeight: "600",
                 }}
               >
-                موظف الدعم
+                {t("support_employee")}
               </Typography>
               <Typography
                 sx={{
@@ -149,7 +161,8 @@ function SupportSession() {
                   fontWeight: "300",
                 }}
               >
-                وريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Delectus, velit.
               </Typography>
               <Box
                 sx={{
@@ -170,7 +183,7 @@ function SupportSession() {
 
         <Box
           sx={{
-            width: "100%", 
+            width: "100%",
             height: "126px",
             backgroundColor: "#114F80",
             display: "flex",
@@ -196,20 +209,27 @@ function SupportSession() {
               src={send_btn}
             />
           </Box>
-          <TextField
-            sx={{
-              width: "100%", 
-              maxWidth: "604px", 
-              height: "auto",
-              backgroundColor: "#EDE8E9",
-              borderRadius: "15px",
+
+          <textarea
+            onChange={(e) => {
+              setValue(e.target.value);
             }}
-            value={'وريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) '}
-            variant="outlined" 
-            multiline
-            rows={2} 
+            style={{
+              width: "100%",
+              maxWidth: "604px",
+              height: "100px",
+              fontSize: "20px",
+              // borderRadius: "15px",
+            }}
+            value={value}
           />
-          <Box sx={{ fontSize: '80px', color: '#EFC750', fontFamily: 'Titillium Web' }}>
+          <Box
+            sx={{
+              fontSize: "80px",
+              color: "#EFC750",
+              fontFamily: "Titillium Web",
+            }}
+          >
             <FaPlus />
           </Box>
         </Box>

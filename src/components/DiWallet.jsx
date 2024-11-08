@@ -1,11 +1,35 @@
 import { Box, Button, Typography, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 function DiWallet() {
+  const { t } = useTranslation();
   let navigate = useNavigate();
+
+  // Define animation variants
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  };
+
+  const bounce = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 150, damping: 10 } },
+  };
+
+  const slideUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <Box>
       <Box
+        component={motion.div}
+        variants={bounce}
+        initial="hidden"
+        animate="visible"
         sx={{
           display: "flex",
           justifyContent: "space-between",
@@ -22,9 +46,13 @@ function DiWallet() {
             mb: { xs: 2, md: 0 },
           }}
         >
-          المحفظة الماسية
+          {t("diamond_wallet")}
         </Typography>
         <Button
+          component={motion.button}
+          variants={scaleIn}
+          initial="hidden"
+          animate="visible"
           sx={{
             fontSize: { xs: "18px", md: "25px" },
             fontFamily: "Tanseek Modern Pro Arabic",
@@ -40,11 +68,17 @@ function DiWallet() {
             navigate("/add-wallet");
           }}
         >
-         اضافه محفظه جديدة
+          {t("add_new_wallet")}
         </Button>
       </Box>
 
-      <Box sx={{ p: { xs: 2, md: 4 } }}>
+      <Box
+        component={motion.div}
+        variants={slideUp}
+        initial="hidden"
+        animate="visible"
+        sx={{ p: { xs: 2, md: 4 } }}
+      >
         <Typography
           sx={{
             fontSize: { xs: "20px", md: "30px" },
@@ -52,7 +86,7 @@ function DiWallet() {
             mb: 3,
           }}
         >
-          مزايا الباقة
+          {t("package_benefits")}
         </Typography>
 
         {[1, 2, 3].map((_, index) => (
@@ -62,7 +96,7 @@ function DiWallet() {
                 <Box display="flex" flexDirection="column" gap={3}>
                   <Box display="flex" gap={1} alignItems="center">
                     <Typography sx={{ width: "121px", fontWeight: "600" }}>
-                      عدد الماسات
+                      {t("diamond_count")}
                     </Typography>
                     <Typography
                       sx={{
@@ -77,12 +111,12 @@ function DiWallet() {
                         fontWeight: "600",
                       }}
                     >
-                      40 ماسة
+                      40 {t("diamond")}
                     </Typography>
                   </Box>
                   <Box display="flex" gap={1} alignItems="center">
                     <Typography sx={{ width: "121px", fontWeight: "600" }}>
-                      السعر
+                      {t("price")}
                     </Typography>
                     <Typography
                       sx={{
@@ -97,7 +131,7 @@ function DiWallet() {
                         fontWeight: "600",
                       }}
                     >
-                      30 ريال
+                      30 {t("sar")}
                     </Typography>
                     <Typography
                       sx={{
@@ -113,7 +147,7 @@ function DiWallet() {
                         mr: { xs: 0, md: 4 },
                       }}
                     >
-                      7.5 دولار
+                      7.5 {t("usd")}
                     </Typography>
                   </Box>
                 </Box>
@@ -122,6 +156,10 @@ function DiWallet() {
               <Grid item xs={12} md={6}>
                 <Box display="flex" gap={2} justifyContent={{ xs: "center", md: "flex-start" }}>
                   <Button
+                    component={motion.button}
+                    variants={scaleIn}
+                    initial="hidden"
+                    animate="visible"
                     sx={{
                       fontSize: { xs: "18px", md: "25px" },
                       fontFamily: "Tanseek Modern Pro Arabic",
@@ -137,7 +175,7 @@ function DiWallet() {
                       navigate("/edit-wallet");
                     }}
                   >
-                    تعديل
+                    {t("edit")}
                   </Button>
                   <Button
                     sx={{
@@ -152,7 +190,7 @@ function DiWallet() {
                       py: { xs: 1, md: 2 },
                     }}
                   >
-                    حذف
+                    {t("delete")}
                   </Button>
                 </Box>
               </Grid>

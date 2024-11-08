@@ -1,13 +1,15 @@
 import { Box, Button,Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
+import { useTranslation } from "react-i18next";
 
 function AddAdminFile() {
+  let {t}= useTranslation()
   return (
     <Box>
       <Typography
         sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" ,fontWeight:'600',mb:'30px'}}
       >
-        إضافة ملف المسئول
+       {t('add_admin_file')}
       </Typography>
 
       <Box
@@ -27,8 +29,8 @@ function AddAdminFile() {
           </Box>
           <Button
             sx={{
-              width: "138px",
-              height: "32px",
+              width: "auto",
+              height: "auto",
               backgroundColor: "#128C7F",
               borderRadius: "6px",
               color: "#fff",
@@ -36,7 +38,7 @@ function AddAdminFile() {
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
           >
-            رفع صوره جديدة
+           {t('upload_new_image')}
           </Button>
         </Box>
 
@@ -51,7 +53,7 @@ function AddAdminFile() {
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
           >
-            حفظ
+            {t('save')}
           </Button>
           <Button
             sx={{
@@ -63,7 +65,7 @@ function AddAdminFile() {
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
           >
-            حذف
+            {t('delete')}
           </Button>
         </Box>
       </Box>
@@ -78,7 +80,7 @@ function AddAdminFile() {
         >
           <Box>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              الاسم ثلاثى
+             {t('full_name')}
             </Typography>
             <Box
               sx={{
@@ -93,7 +95,7 @@ function AddAdminFile() {
                 borderRadius: "15px",
               }}
             >
-              أحمد محمد
+              {t('ahmed_mohamed')}
             </Box>
           </Box>
 
@@ -108,7 +110,7 @@ function AddAdminFile() {
          
             <Box sx={{ width: "49%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                الدولة
+                {t('country')}
               </Typography>
               <Box
                 sx={{
@@ -123,14 +125,14 @@ function AddAdminFile() {
                   borderRadius: "15px",
                 }}
               >
-                المملكة العربية السعودية
+                {t('kingdom_of_saudi_arabia')}
               </Box>
             </Box>
 
       
             <Box sx={{ width: "49%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                المدينة
+                {t('city')}
               </Typography>
               <Box
                 sx={{
@@ -145,7 +147,7 @@ function AddAdminFile() {
                   borderRadius: "15px",
                 }}
               >
-                الرياض
+                {t('riyadh')}
               </Box>
             </Box>
           </Box>
@@ -155,7 +157,7 @@ function AddAdminFile() {
           {/* رقم الجوال في صف منفصل */}
           <Box sx={{ mt: "20px", width: "100%" }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              رقم الجوال
+             {t('mobile')}
             </Typography>
             <Box
               sx={{
@@ -184,7 +186,7 @@ function AddAdminFile() {
           >
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                البريد الإلكترونى
+                {t('email')}
               </Typography>
               <Box
                 sx={{
@@ -205,7 +207,7 @@ function AddAdminFile() {
 
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                تغير كلمة السر
+                {t('change_password')}
               </Typography>
               <Box
                 sx={{
@@ -233,7 +235,7 @@ function AddAdminFile() {
           >
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                اسم البنك
+               {t('bank_name')}
               </Typography>
               <Box
                 sx={{
@@ -248,12 +250,12 @@ function AddAdminFile() {
                   borderRadius: "15px",
                 }}
               >
-                الراجحى
+                {t('alraghy')}
               </Box>
             </Box>
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                رقم الحساب البنكي
+               {t('bank_account_number')}
               </Typography>
               <Box
                 sx={{
@@ -285,7 +287,7 @@ function AddAdminFile() {
 
           <Box sx={{ my: "30px" }}>
             <Typography sx={{ fontSize: "40px", color: "#114F80" ,mb:'20px',fontWeight:'600'}}>
-              الأدوار
+              {t('roles')}
             </Typography>
 
             <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" ,px:'30px'}}>
@@ -300,7 +302,7 @@ function AddAdminFile() {
 
                 <Box>
                   <Typography sx={{fontSize:'30px'}}>
-                  التحكم في اكواد الخصم 
+                  {t('discount_codes_control')}
                   </Typography>
                
                 </Box>
@@ -316,7 +318,7 @@ function AddAdminFile() {
 
                 <Box>
                   <Typography sx={{fontSize:'30px'}}>
-                  احصائيات مكسب التطبيق
+                  {t('app_profit_stats')}
                   </Typography>
                
                 </Box>
@@ -332,7 +334,7 @@ function AddAdminFile() {
 
                 <Box>
                   <Typography sx={{fontSize:'30px'}}>
-                  احصائيات الأشتراكات الشهري والسنوى
+                  {t('monthly_and_annual_subscriptions_stats')}
                   </Typography>
                
                 </Box>
@@ -348,7 +350,7 @@ function AddAdminFile() {
 
                 <Box>
                   <Typography sx={{fontSize:'30px'}}>
-                  احصائيات مستخدمى التطبيق
+                  {t('app_users_stats')}
                   </Typography>
                
                 </Box>
@@ -364,7 +366,7 @@ function AddAdminFile() {
 
                 <Box>
                   <Typography sx={{fontSize:'30px'}}>
-                  التحكم فى الأسعار
+                 {t('pricing_control')}
                   </Typography>
                
                 </Box>
@@ -380,7 +382,7 @@ function AddAdminFile() {
 
                 <Box>
                   <Typography sx={{fontSize:'30px'}}>
-                  التحكم فى المنصات
+                  {t('platform_control')}
                   </Typography>
                
                 </Box>
@@ -396,7 +398,7 @@ function AddAdminFile() {
 
                 <Box>
                   <Typography sx={{fontSize:'30px'}}>
-                  إضافة الدول
+                 {t('add_countries')}
                   </Typography>
                
                 </Box>
@@ -412,7 +414,7 @@ function AddAdminFile() {
 
                 <Box>
                   <Typography sx={{fontSize:'30px'}}>
-                  الدردشات
+                  {t('chats')}
                   </Typography>
                
                 </Box>
@@ -428,7 +430,7 @@ function AddAdminFile() {
 
                 <Box>
                   <Typography sx={{fontSize:'30px'}}>
-                  التحكم فى التطبيق
+                  {t('app_control')}
                   </Typography>
                
                 </Box>
@@ -444,7 +446,7 @@ function AddAdminFile() {
 
                 <Box>
                   <Typography sx={{fontSize:'30px'}}>
-                  التحكم فى المجموعات
+                 {t('groups_control')}
                   </Typography>
                
                 </Box>

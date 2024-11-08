@@ -3,27 +3,32 @@ import { useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import profile_img from "../assets/profile_img.png";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion"; 
+import { useTranslation } from "react-i18next"; 
 
 function ShowUsers() {
+
+
+  const { t } = useTranslation(); 
+
   let [activeLink, setActiveLink] = useState(false);
   const [showUsers] = useState([
-    { name: "احمد محمد", type: "user" },
-    { name: "محمد علي", type: "subscriber" },
-    { name: "علي حسن", type: "user" },
-    { name: "سارة خالد", type: "subscriber" },
-    { name: "هشام احمد", type: "user" },
-    { name: "احمد محمد", type: "user" },
-    { name: "محمد علي", type: "subscriber" },
-    { name: "علي حسن", type: "user" },
-    { name: "سارة خالد", type: "subscriber" },
-    { name: "هشام احمد", type: "user" },
-    { name: "احمد محمد", type: "user" },
-    { name: "محمد علي", type: "subscriber" },
-    { name: "علي حسن", type: "user" },
-    { name: "سارة خالد", type: "subscriber" },
-    { name: "هشام احمد", type: "user" },
+    { name:"ahmed_mohamed", type: "user" },
+    { name:"ahmed_mohamed", type: "subscriber" },
+    { name:"ahmed_mohamed", type: "user" },
+    { name:"ahmed_mohamed", type: "subscriber" },
+    { name:"ahmed_mohamed", type: "user" },
+    { name:"ahmed_mohamed", type: "user" },
+    { name:"ahmed_mohamed", type: "subscriber" },
+    { name:"ahmed_mohamed", type: "user" },
+    { name:"ahmed_mohamed", type: "subscriber" },
+    { name:"ahmed_mohamed", type: "user" },
+    { name:"ahmed_mohamed", type: "user" },
+    { nam:"ahmed_mohamed", type: "subscriber" },
+    { name:"ahmed_mohamed", type: "user" },
+    { name:"ahmed_mohamed", type: "subscriber" },
+    { name:"ahmed_mohamed", type: "user" },
   ]);
-
   const [filteredUsers, setFilteredUsers] = useState(showUsers);
   const navigate = useNavigate();
 
@@ -50,7 +55,7 @@ function ShowUsers() {
         }}
         onClick={() => navigate("/add-user")}
       >
-        إضافه مستخدم
+        {t('add_user')}
       </Button>
 
       <Box
@@ -68,7 +73,7 @@ function ShowUsers() {
             fontWeight: "600",
           }}
         >
-          عرض المستخدمين
+          {t('view_users')}
         </Typography>
         <Box
           sx={{
@@ -78,7 +83,7 @@ function ShowUsers() {
           }}
         >
           <TextField
-            placeholder="بحث بالاسم"
+            placeholder={t("search_by_name")}
             fullWidth
             sx={{ backgroundColor: "#fff", borderRadius: "6px" }}
           />
@@ -122,7 +127,7 @@ function ShowUsers() {
             filterUsers("user");
           }}
         >
-          <Typography>مستخدم</Typography>
+          <Typography>{t('user')}</Typography>
         </Box>
         <Box
           sx={{
@@ -145,7 +150,7 @@ function ShowUsers() {
             filterUsers("subscriber");
           }}
         >
-          <Typography>مشترك</Typography>
+          <Typography>{t('subscriber')}</Typography>
         </Box>
         <Box
           sx={{
@@ -168,7 +173,7 @@ function ShowUsers() {
             filterUsers("all");
           }}
         >
-          <Typography>الكل</Typography>
+          <Typography>{t('all')}</Typography>
         </Box>
       </Box>
 
@@ -182,49 +187,55 @@ function ShowUsers() {
         }}
       >
         {filteredUsers.map((user, index) => (
-          <Box
+          <motion.div
             key={index}
-            onClick={() => navigate("/show-user-file")}
-            sx={{
-              width: { xs: "100%", sm: "247px" },
-              height: "331px",
-              backgroundColor: user.type === "subscriber" ? "#114F80" : "#fff",
-              color: user.type === "subscriber" ? "#fff" : "#000",
-              borderRadius: "15px",
-              display: "flex",
-              alignItems: "center",
-              flexDirection: "column",
-              p: "20px",
-              textAlign: "center",
-              gap: "3px",
-              cursor: "pointer",
-            }}
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }}  
+            transition={{ duration: 0.5, delay: 0.2 * index }} 
           >
-            <Box sx={{ width: "108px", height: "108px" }}>
-              <Box
-                component="img"
-                src={profile_img}
-                sx={{ width: "100%", height: "100%" }}
-              />
+            <Box
+              onClick={() => navigate("/show-user-file")}
+              sx={{
+                width: { xs: "100%", sm: "247px" },
+                height: "331px",
+                backgroundColor: user.type === "subscriber" ? "#114F80" : "#fff",
+                color: user.type === "subscriber" ? "#fff" : "#000",
+                borderRadius: "15px",
+                display: "flex",
+                alignItems: "center",
+                flexDirection: "column",
+                p: "20px",
+                textAlign: "center",
+                gap: "3px",
+                cursor: "pointer",
+              }}
+            >
+              <Box sx={{ width: "108px", height: "108px" }}>
+                <Box
+                  component="img"
+                  src={profile_img}
+                  sx={{ width: "100%", height: "100%" }}
+                />
+              </Box>
+              <Typography>{t(user.name)}</Typography>
+              <Typography
+                sx={{
+                  fontSize: "20px",
+                  color: user.type === "subscriber" ? "#fff" : "#114F80",
+                }}
+              >
+                {user.type === "subscriber" ? t("subscriber") : t("user")}
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "20px",
+                  color: user.type === "subscriber" ? "#fff" : "#114F80",
+                }}
+              >
+                {t('location')}<br />
+              </Typography>
             </Box>
-            <Typography>{user.name}</Typography>
-            <Typography
-              sx={{
-                fontSize: "20px",
-                color: user.type === "subscriber" ? "#fff" : "#114F80",
-              }}
-            >
-              {user.type === "subscriber" ? "مشترك" : "مستخدم"}
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: "20px",
-                color: user.type === "subscriber" ? "#fff" : "#114F80",
-              }}
-            >
-              الرياض-المملكة العربية السعودية <br />
-            </Typography>
-          </Box>
+          </motion.div>
         ))}
       </Box>
     </Box>

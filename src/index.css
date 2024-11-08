@@ -43,8 +43,7 @@
 p html,
 body {
   background-color: #eee;
-  direction: rtl !important; /* يجعل كل المحتوى يبدأ من اليمين */
-  text-align: right !important;
+
   overflow-x: hidden;
 }
 
@@ -55,7 +54,7 @@ a {
   align-items: center;
   padding: 20px;
   color: #114f80;
-  font-size: 24px;
+  font-size: 22px;
   font-family: Tanseek Modern Pro Arabic;
 }
 
@@ -73,54 +72,20 @@ a {
 }
 
 .active-group {
-  background: radial-gradient(
-      ellipse farthest-corner at right bottom,
-      #fedb37 0%,
-      #fdb931 8%,
-      #9f7928 30%,
-      #8a6e2f 40%,
-      transparent 80%
-    ),
-    radial-gradient(
-      ellipse farthest-corner at left top,
-      #ffffff 0%,
-      #ffffac 8%,
-      #d1b464 25%,
-      #5d4a1f 62.5%,
-      #5d4a1f 100%
-    );
-
-
-    transform:scale(1.1);
-
+  background: linear-gradient(90deg, #f9d053 0%, #937b31 100%);
+  transform: scale(1.1);
+  transition: 500ms all;
   color: white;
-  border:none !important;
+  border: none !important;
 }
-
 
 .active-option {
-  background: radial-gradient(
-      ellipse farthest-corner at right bottom,
-      #fedb37 0%,
-      #fdb931 8%,
-      #9f7928 30%,
-      #8a6e2f 40%,
-      transparent 80%
-    ),
-    radial-gradient(
-      ellipse farthest-corner at left top,
-      #ffffff 0%,
-      #ffffac 8%,
-      #d1b464 25%,
-      #5d4a1f 62.5%,
-      #5d4a1f 100%
-    );
-
+  background: linear-gradient(90deg, #f9d053 0%, #937b31 100%);
+  transform: scale(1.1);
+  transition: 500ms all;
   color: white;
-  border:none;
+  border: none !important;
 }
-
-
 
 .text-gradient {
   background: linear-gradient(90deg, #f9d053 0%, #937b31 100%);

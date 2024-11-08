@@ -2,21 +2,20 @@ import { Box, Button, Typography } from "@mui/material";
 import saudiImg from "../assets/saudi.png";
 import { useContext } from "react";
 import { Context } from "./Context";
-
+import { useTranslation } from "react-i18next";
 function ClientsChannels() {
-
-  let {sidebarOpen}=useContext(Context)
+  let {t}=useTranslation()
+  let { sidebarOpen } = useContext(Context);
   return (
     <Box>
       <Typography
         sx={{
-          fontSize: { xs: "24px", md: "30px", lg: "40px" },
+          fontSize: { xs: "30px", md: "40px" },
           color: "#114F80",
           fontWeight: "600",
-          textAlign: { xs: "center", md:'right'},
         }}
       >
-        قنوات العملاء
+       {t('clients_channels')}
       </Typography>
 
       <Box sx={{ p: { xs: "10px", md: "20px" } }}>
@@ -31,7 +30,7 @@ function ClientsChannels() {
             display: "flex",
             flexDirection: "column",
             gap: "20px",
-            mx: sidebarOpen?"":"auto",
+            mx: sidebarOpen ? "" : "auto",
           }}
         >
           <Box
@@ -44,12 +43,12 @@ function ClientsChannels() {
             }}
           >
             <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <Typography sx={{ fontWeight: "600" }}>رابط القناة</Typography>
+              <Typography sx={{ fontWeight: "600" }}>{t('channel_link')} </Typography>
               <Typography>https://market-speed.vercel.app/</Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <Typography sx={{ fontWeight: "600" }}>اسم القناة</Typography>
-              <Typography>العائلة</Typography>
+              <Typography sx={{ fontWeight: "600" }}> {t('channel_name')}</Typography>
+              <Typography>{t('family')}</Typography>
             </Box>
           </Box>
 
@@ -63,7 +62,7 @@ function ClientsChannels() {
             }}
           >
             <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <Typography sx={{ fontWeight: "600" }}>الدولة</Typography>
+              <Typography sx={{ fontWeight: "600" }}>{t("country")}</Typography>
               <Box sx={{ width: "50px", height: "31px" }}>
                 <Box
                   component="img"
@@ -73,8 +72,8 @@ function ClientsChannels() {
               </Box>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <Typography sx={{ fontWeight: "600" }}>اسم المستخدم</Typography>
-              <Typography>فيصل عبدالعزيز</Typography>
+              <Typography sx={{ fontWeight: "600" }}>{t("user_name")}</Typography>
+              <Typography>{t("faisal_abd_alaziz")}</Typography>
             </Box>
           </Box>
 
@@ -84,8 +83,8 @@ function ClientsChannels() {
               justifyContent: { xs: "center", md: "end" },
               gap: "20px",
               flexWrap: { xs: "wrap", sm: "nowrap" },
-              mt:'20px',
-              mr:'10px'
+              mt: "20px",
+              mr: "10px",
             }}
           >
             <Button
@@ -98,7 +97,7 @@ function ClientsChannels() {
                 textAlign: "center",
               }}
             >
-              قبول
+              {t("accept")}
             </Button>
             <Button
               sx={{
@@ -110,7 +109,7 @@ function ClientsChannels() {
                 textAlign: "center",
               }}
             >
-              رفض
+             {t('reject')}
             </Button>
           </Box>
         </Box>

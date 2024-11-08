@@ -2,7 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-function SaudiNumber2() {
+function SaudiNumberTelegram() {
   let navigate = useNavigate();
   let { t } = useTranslation();
 
@@ -16,7 +16,7 @@ function SaudiNumber2() {
             fontWeight: "600",
           }}
         >
-          {t("country_groups")}
+          {t("All_numbers_of_the_Kingdom_of_Saudi_Arabia_groups")}
         </Typography>
 
         <Typography>{t("all_numbers")} (36)</Typography>
@@ -119,4 +119,4 @@ function SaudiNumber2() {
   );
 }
 
-export default SaudiNumber2;
+export default SaudiNumberTelegram;

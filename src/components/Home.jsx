@@ -1,5 +1,5 @@
-import { Box, Grid2, Typography } from "@mui/material";
-import { useState } from "react";
+import { Box, CircularProgress, Grid2, Typography } from "@mui/material";
+import { useState, useEffect } from "react";
 import ceos from "../assets/some_stats/ceos.png";
 import subscribers from "../assets/some_stats/subscribers.png";
 import users from "../assets/some_stats/users.png";
@@ -7,19 +7,27 @@ import monthly_sub from "../assets/some_stats/monthly_sub.png";
 import yearly_sub from "../assets/some_stats/yearly_sub.png";
 import discounts from "../assets/some_stats/discount.png";
 import { motion } from "framer-motion";
-import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 
 function Home() {
-  let { i18n, t } = useTranslation();
-  let [someStats] = useState([
-    ceos,
-    subscribers,
-    users,
-    monthly_sub,
-    yearly_sub,
-    discounts,
-  ]);
+  const { t } = useTranslation();
+  const [loading, setLoading] = useState(true);
+  
+  const someStats = [ceos, subscribers, users, monthly_sub, yearly_sub, discounts];
+
+  useEffect(() => {
+   setTimeout(()=>{
+    setLoading(false)
+   },[1000])
+  }, []);
+
+  if (loading) {
+    return (
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+        <CircularProgress size={100} thickness={4} />
+      </Box>
+    );
+  }
 
   return (
     <Box>

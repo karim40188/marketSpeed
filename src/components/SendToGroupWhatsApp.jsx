@@ -1,13 +1,13 @@
 import { Box, Button, Typography } from "@mui/material";
 import saudiImg from "../assets/saudi.png";
 import qatarImg from "../assets/qatar.png";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function SendToGroupWhatsApp() {
-
-
-    let navigate= useNavigate()
+  let { t } = useTranslation();
+  let navigate = useNavigate();
   let [whatsApp] = useState([
     saudiImg,
     qatarImg,
@@ -20,10 +20,6 @@ function SendToGroupWhatsApp() {
 
   let [activeOption, setActiveOption] = useState();
 
-  // useEffect(()=>{
-  //   console.log(selectRef.current.value)
-  // },[])
-
   const [activeGroup, setActiveGroup] = useState(false);
 
   return (
@@ -35,7 +31,7 @@ function SendToGroupWhatsApp() {
           fontWeight: "600",
         }}
       >
-        مجموعات الدول
+        {t("country_groups")}
       </Typography>
 
       <Box
@@ -68,7 +64,7 @@ function SendToGroupWhatsApp() {
               type="checkbox"
             />
             <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-              تحديد الكل (10000)
+              {t("select_all")} (10000)
             </Typography>
           </Box>
 
@@ -84,19 +80,18 @@ function SendToGroupWhatsApp() {
                 fontWeight: "600",
                 mt: { xs: 2, md: 0 },
               }}
-
-              onClick={()=>{
-                navigate('/saudi-number2')
+              onClick={() => {
+                navigate("/saudi-number2");
               }}
             >
-              التالى
+              {t("next")}
             </Button>
           </Box>
         </Box>
 
         <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
           <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-            اختر مجموعات التى يتم الارسال عليها
+            {t("Choose_the_groups_to_which_it_will_be_sent")}
           </Typography>
           <select
             onChange={(e) => {
@@ -107,26 +102,23 @@ function SendToGroupWhatsApp() {
               }
             }}
             style={{
-              width: "250px",
+              width: "auto",
               height: "50px",
               borderRadius: "15px",
               fontSize: "24px",
             }}
           >
-            <option value="1">المملكه العربيه السعوديه
-            <input type="checkbox"/>
-
-            </option>
-            <option value="2">قطر</option>
-            <option value="3">البحرين</option>
-            <option value="4">اليمن</option>
-            <option value="5">المغرب</option>
-            <option value="6">الكل</option>
+            <option value="1"> {t('kingdom_of_saudi_arabia')} </option>
+            <option value="2">{t('qatar')}</option>
+            <option value="3">{t('bahrain')}</option>
+            <option value="4">{t('yemen')}</option>
+            <option value="5">{t("morocco")}</option>
+            <option value="6">{t('all')}</option>
           </select>
         </Box>
       </Box>
 
-      <Typography sx={{ textAlign: "center", mb: 1 }}>الواتساب</Typography>
+      <Typography sx={{  mb: 1 }}>{t('whatsApp')}</Typography>
 
       <Box
         sx={{
@@ -160,7 +152,7 @@ function SendToGroupWhatsApp() {
                 e.currentTarget.classList.add("active-group");
                 setActiveGroup(e.currentTarget);
 
-                // navigate("/groups/:id");
+                // navigate("/saudi-groups");
               }}
               sx={{
                 width: { xs: "100%", md: "336px" },
@@ -193,9 +185,9 @@ function SendToGroupWhatsApp() {
                     fontFamily: "inter",
                   }}
                 >
-                  عدد مجموعات المملكه العربيه السعوديه
+                  {t("Number of groups in Saudi Arabia")}
                 </Typography>
-                <Typography>1026 مجموعات </Typography>
+                <Typography>1026 {t("number")}</Typography>
               </Box>
             </Box>
           ))}
@@ -221,7 +213,7 @@ function SendToGroupWhatsApp() {
                 e.currentTarget.classList.add("active-group");
                 setActiveGroup(e.currentTarget);
 
-                // navigate("/groups/:id");
+                // navigate("/saudi-groups");
               }}
               sx={{
                 width: { xs: "100%", md: "336px" },
@@ -254,9 +246,9 @@ function SendToGroupWhatsApp() {
                     fontFamily: "inter",
                   }}
                 >
-                  عدد مجموعات المملكه العربيه السعوديه
+                  {t("Number of groups in Saudi Arabia")}
                 </Typography>
-                <Typography>1026 مجموعات</Typography>
+                <Typography>1026 {t("number")}</Typography>
               </Box>
             </Box>
           ))}

@@ -1,12 +1,27 @@
 import { Box, Button, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
+import { keyframes } from '@mui/system';
 
 function ShowUserFile() {
   let navigate = useNavigate();
+  const { t } = useTranslation();
+
+  
+  const fadeIn = keyframes`
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  `;
 
   return (
-    <Box>
+    <Box sx={{ animation: `${fadeIn} 1s ease-out` }}>
       <Typography
         sx={{
           fontSize: { xs: "30px", md: "40px" },
@@ -14,49 +29,64 @@ function ShowUserFile() {
           mb: "20px",
         }}
       >
-        عرض ملف المستخدم
+        {t('view_user_file')}
       </Typography>
 
-      <Box sx={{display:'flex',justifyContnet:"cneter",alignItems:'center'}}>
+      <Box sx={{ display: 'flex', justifyContent: "center", alignItems: 'center', mb: '30px', flexDirection: { xs: 'column', md: 'row' } }}>
+  {/* النص "عدد الأيام منذ الاشتراك" */}
+  <Typography 
+    sx={{
+      fontSize: { xs: '20px', md: '24px' },
+      fontWeight: '500',
+      color: "#333", 
+      mb: { xs: '15px', md: '0' }, 
+      textAlign: "center",
+    }}
+  >
+    {t('days_since_subscription')}
+  </Typography>
 
-      <Typography sx={{mb:'20px'}}>
-        كم يوم مر على الاشتراك   
-      </Typography>
+  {/* مربع الأيام مع تحسينات */}
+  <Box 
+    sx={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#f1f1f1', 
+      borderRadius: '20px', 
+      border: '2px solid #114F80', 
+      padding: '15px 25px', 
+      marginLeft: { xs: '0', md: '20px' },
+      fontSize: '22px',
+      fontWeight: 'bold',
+      color: '#114F80', 
+      boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', 
+    }}
+  >
+    3 {t('days')}
+  </Box>
+</Box>
 
-      <Box sx={{width:'auto',height:'auto',borderRadius:'10px',border:'1px solid black',mr:"20px",p:'5px'}} >
-        3 ايام
-      </Box>
-      </Box>
 
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", md: "row" }, 
-          alignItems: { xs: "center", md: "flex-start" }, 
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: { xs: "center", md: "flex-start" },
           justifyContent: "space-between",
+          gap: { xs: "20px", md: "40px" },
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            gap: "20px",
-            alignItems: "center",
-            mb: { xs: "20px", md: 0 },
-          }}
-        >
+        <Box sx={{ display: "flex", gap: "20px", alignItems: "center", mb: { xs: "20px", md: 0 } }}>
           <Box sx={{ width: "108px", height: "108px" }}>
-            <Box
-              sx={{ width: "100%", height: "100%" }}
-              component="img"
-              src={profile_img}
-            />
+            <Box sx={{ width: "100%", height: "100%" }} component="img" src={profile_img} />
           </Box>
         </Box>
 
-        <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
+        <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
           <Button
             sx={{
-              width: "121.65px",
+              minWidth: "121px",
               height: "32px",
               backgroundColor: "#114F80",
               color: "#fff",
@@ -67,11 +97,11 @@ function ShowUserFile() {
               navigate("/edit-user-file");
             }}
           >
-            تعديل
+            {t('edit')}
           </Button>
           <Button
             sx={{
-              width: "121.65px",
+              minWidth: "121px",
               height: "32px",
               backgroundColor: "#CC0000",
               color: "#fff",
@@ -79,14 +109,12 @@ function ShowUserFile() {
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
           >
-            حذف
+            {t('delete')}
           </Button>
         </Box>
       </Box>
 
-      <Box
-        sx={{ p: "20px", width: { xs: "100%", xl: "60%" }, margin: "0 auto" }}
-      >
+      <Box sx={{ p: "20px", width: { xs: "100%", xl: "60%" }, margin: "0 auto" }}>
         <Box
           sx={{
             display: "flex",
@@ -94,11 +122,11 @@ function ShowUserFile() {
             justifyContent: "space-between",
             flexDirection: { xs: "column", md: "row" },
             mb: "20px",
-          gap:'10px'
+            gap: '10px',
           }}
         >
           <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Typography>رصيد الماسات</Typography>
+            <Typography>{t('balance')}</Typography>
             <Box
               sx={{
                 width: "174px",
@@ -109,11 +137,11 @@ function ShowUserFile() {
                 alignItems: "center",
               }}
             >
-              <Typography>40 بوصه</Typography>
+              <Typography>40 {t('diamond')}</Typography>
             </Box>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Typography>الباقة الحالية</Typography>
+            <Typography>{t('current_package')}</Typography>
             <Box
               sx={{
                 width: "174px",
@@ -124,17 +152,12 @@ function ShowUserFile() {
                 alignItems: "center",
               }}
             >
-              <Typography>غير مشترك</Typography>
+              <Typography>{t('not_subscribed')}</Typography>
             </Box>
           </Box>
         </Box>
 
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
+        <Box sx={{ display: "flex", flexDirection: "column" }}>
           <Box
             sx={{
               display: "flex",
@@ -144,8 +167,8 @@ function ShowUserFile() {
             }}
           >
             <Box sx={{ width: "100%" }}>
-              <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                الاسم ثلاثى
+              <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", sm: "25px", md: "30px" } }}>
+                {t('full_name')}
               </Typography>
               <Box
                 sx={{
@@ -153,7 +176,7 @@ function ShowUserFile() {
                   maxWidth: "412px",
                   height: "70px",
                   p: "20px",
-                  fontSize: "30px",
+                  fontSize: { xs: "20px", sm: "25px", md: "30px" },
                   backgroundColor: "#fff",
                   display: "flex",
                   alignItems: "center",
@@ -161,13 +184,13 @@ function ShowUserFile() {
                   borderRadius: "15px",
                 }}
               >
-                أحمد محمد
+               {t('ahmed_mohamed')}
               </Box>
             </Box>
 
             <Box sx={{ width: "100%" }}>
-              <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                البريد الإلكترونى
+              <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", sm: "25px", md: "30px" } }}>
+                {t('email')}
               </Typography>
               <Box
                 sx={{
@@ -175,7 +198,7 @@ function ShowUserFile() {
                   maxWidth: "412px",
                   height: "70px",
                   p: "20px",
-                  fontSize: "30px",
+                  fontSize: { xs: "20px", sm: "25px", md: "30px" },
                   backgroundColor: "#fff",
                   display: "flex",
                   alignItems: "center",
@@ -188,24 +211,18 @@ function ShowUserFile() {
             </Box>
           </Box>
 
-       
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: { xs: "column", md: "row" }, 
-              mt: "20px",
-            }}
-          >
+          <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, mt: "20px",     gap: { xs: "20px", md: "40px" }, }}>
             <Box sx={{ width: "100%" }}>
-              <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                الدولة
+              <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", sm: "25px", md: "30px" } }}>
+                {t('country')}
               </Typography>
               <Box
                 sx={{
                   width: "100%",
+                  maxWidth: "412px",
                   height: "70px",
                   p: "20px",
-                  fontSize: "30px",
+                  fontSize: { xs: "20px", sm: "25px", md: "30px" },
                   backgroundColor: "#fff",
                   display: "flex",
                   alignItems: "center",
@@ -213,21 +230,21 @@ function ShowUserFile() {
                   borderRadius: "15px",
                 }}
               >
-                المملكة العربية السعودية
+                {t('kingdom_of_saudi_arabia')}
               </Box>
             </Box>
 
-            {/* حقل المدينة */}
             <Box sx={{ width: "100%" }}>
-              <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                المدينة
+              <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", sm: "25px", md: "30px" } }}>
+                {t('city')}
               </Typography>
               <Box
                 sx={{
                   width: "100%",
+                  maxWidth: "412px",
                   height: "70px",
                   p: "20px",
-                  fontSize: "30px",
+                  fontSize: { xs: "20px", sm: "25px", md: "30px" },
                   backgroundColor: "#fff",
                   display: "flex",
                   alignItems: "center",
@@ -235,15 +252,14 @@ function ShowUserFile() {
                   borderRadius: "15px",
                 }}
               >
-                الرياض
+                {t('riyadh')}
               </Box>
             </Box>
           </Box>
 
-          {/* رقم الجوال في صف منفصل */}
           <Box sx={{ mt: "20px", width: "100%" }}>
-            <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              رقم الجوال
+            <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", sm: "25px", md: "30px" } }}>
+              {t('mobile_number')}
             </Typography>
             <Box
               sx={{
@@ -251,7 +267,7 @@ function ShowUserFile() {
                 maxWidth: "412px",
                 height: "70px",
                 p: "20px",
-                fontSize: "30px",
+                fontSize: { xs: "20px", sm: "25px", md: "30px" },
                 backgroundColor: "#fff",
                 display: "flex",
                 alignItems: "center",

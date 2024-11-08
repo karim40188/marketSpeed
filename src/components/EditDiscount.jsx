@@ -1,20 +1,52 @@
 import { Box, Button, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 function EditDiscount() {
+
+
+  let {t}=useTranslation()
+  // Define animation variants
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  };
+
+  const bounce = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 150, damping: 10 } },
+  };
+
+  const slideUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <Box>
-      <Typography
-        sx={{
-          fontSize: { xs: "24px", md: "40px" },
-          color: "#114F80",
-          fontWeight: "600",
-          mb: { xs: 2, md: 4 },
-        }}
+      <motion.div
+        variants={bounce}
+        initial="hidden"
+        animate="visible"
       >
-        تعديل كود الخصم
-      </Typography>
+        <Typography
+          sx={{
+            fontSize: { xs: "24px", md: "40px" },
+            color: "#114F80",
+            fontWeight: "600",
+            mb: { xs: 2, md: 4 },
+          }}
+        >
+        {t('edit_discount')}
+        </Typography>
+      </motion.div>
       
-      <Box sx={{ p: { xs: 2, md: 4 }, mt: { xs: 3, md: 6 } }}>
+      <motion.div
+        variants={slideUp}
+        initial="hidden"
+        animate="visible"
+        sx={{ p: { xs: 2, md: 4 }, mt: { xs: 3, md: 6 } }}
+      >
         <Box
           sx={{
             display: "flex",
@@ -27,7 +59,7 @@ function EditDiscount() {
           <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
             <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
               <Typography sx={{ width: { xs: "auto", md: "121px" }, fontWeight: "600" }}>
-                الكود
+               {t('code')}
               </Typography>
               <Typography
                 sx={{
@@ -48,7 +80,7 @@ function EditDiscount() {
             </Box>
             <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
               <Typography sx={{ width: { xs: "auto", md: "121px" }, fontWeight: "600" }}>
-                نسبه الخصم
+               {t('discount_percentage')}
               </Typography>
               <Typography
                 sx={{
@@ -77,45 +109,50 @@ function EditDiscount() {
               mt: { xs: 2, md: 0 },
             }}
           >
-            <Button
-              sx={{
-                fontSize: { xs: "18px", md: "25px" },
-                fontFamily: "Tanseek Modern Pro Arabic",
-                width: "156px",
-                height: "32px",
-                backgroundColor: "#128C7F",
-                borderRadius: "6px",
-                color: "#fff",
-                px: { xs: 2, md: 4 },
-                py: { xs: 1, md: 2 },
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              حفظ
-            </Button>
-            <Button
-              sx={{
-                fontSize: { xs: "18px", md: "25px" },
-                fontFamily: "Tanseek Modern Pro Arabic",
-                width: "156px",
-                height: "32px",
-                backgroundColor: "#CC0000",
-                borderRadius: "6px",
-                color: "#fff",
-                px: { xs: 2, md: 4 },
-                py: { xs: 1, md: 2 },
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              حذف
-            </Button>
+            <motion.div variants={scaleIn} initial="hidden" animate="visible">
+              <Button
+                sx={{
+                  fontSize: { xs: "18px", md: "25px" },
+                  fontFamily: "Tanseek Modern Pro Arabic",
+                  width: "156px",
+                  height: "32px",
+                  backgroundColor: "#128C7F",
+                  borderRadius: "6px",
+                  color: "#fff",
+                  px: { xs: 2, md: 4 },
+                  py: { xs: 1, md: 2 },
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+               {t('save')}
+              </Button>
+            </motion.div>
+
+            <motion.div variants={scaleIn} initial="hidden" animate="visible">
+              <Button
+                sx={{
+                  fontSize: { xs: "18px", md: "25px" },
+                  fontFamily: "Tanseek Modern Pro Arabic",
+                  width: "156px",
+                  height: "32px",
+                  backgroundColor: "#CC0000",
+                  borderRadius: "6px",
+                  color: "#fff",
+                  px: { xs: 2, md: 4 },
+                  py: { xs: 1, md: 2 },
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                {t('delete')}
+              </Button>
+            </motion.div>
           </Box>
         </Box>
-      </Box>
+      </motion.div>
     </Box>
   );
 }

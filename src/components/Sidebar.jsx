@@ -47,10 +47,10 @@ let {t}=useTranslation()
     <Box
       sx={{
         backgroundColor: "#114F80",
-        width: sidebarOpen ? { xs: "200px", md: "34%" } : "0",
+        width: sidebarOpen ? { xs: "200px", md: "30%" } : "0",
         position: sidebarOpen ? { xs: "fixed", md: "sticky" } : "",
         top: "0",
-        right: "0",
+     
         bottom: "0",
         height: "auto",
         display: "flex",
@@ -424,7 +424,7 @@ let {t}=useTranslation()
             >
           {/* {t('all_country_codes')} */}
 
-          ارسال على جميع ارقام الدول
+         {t('Send to all numbers of countries')}
             </Link>
             <Link
               to="/add-links"

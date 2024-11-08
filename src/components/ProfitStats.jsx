@@ -1,48 +1,72 @@
 import { Box, Button, Grid2, Typography } from "@mui/material";
-import { t } from "i18next";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { keyframes } from '@mui/system';
 
 function ProfitStats() {
-  const [activeFilter, setActiveFilter] = useState("هذا الاسبوع");
-  let [activeLink, setActiveLink] = useState(false);
+  const { t } = useTranslation();
+  const [activeFilter, setActiveFilter] = useState("this_week");
+  const [activeLink, setActiveLink] = useState(false);
 
   const filters = [
-    "هذا الاسبوع",
-    "هذا الشهر",
-    "منذ شهر",
-    "منذ 6 أشهر",
-    "هذه السنة",
+    "this_week",
+    "this_month",
+    "since_one_month",
+    "since_six_months",
+    "this_year",
   ];
 
   const allCards = {
-    "هذا الاسبوع": [
-      { price: "40,000", name: "المحفظة الذهبية" },
-      { price: "80,000", name: "اشتراك الباقات" },
+    ["this_week"]: [
+      { price: "40,000", name: "golden_wallet" },
+      { price: "80,000", name: "package_subscription" },
     ],
-    "هذا الشهر": [
-      { price: "200,000", name: "المحفظة البلاتينية" },
-      { price: "120,000", name: "اشتراك الباقات" },
+    ["this_month"]: [
+      { price: "200,000", name: "platinum_wallet" },
+      { price: "120,000", name: "package_subscription" },
     ],
-    "منذ شهر": [
-      { price: "320,000", name: "المحفظة الماسية" },
-      { price: "180,000", name: "اشتراك الباقات" },
+    ["since_one_month"]: [
+      { price: "320,000", name: "diamond_wallet" },
+      { price: "180,000", name: "package_subscription" },
     ],
-    "منذ 6 أشهر": [
-      { price: "800,000", name: "المحفظة البلاتينية" },
-      { price: "1,000,000", name: "اشتراك الباقات" },
+    ["since_six_months"]: [
+      { price: "800,000", name: "platinum_wallet"},
+      { price: "1,000,000", name: "package_subscription"},
     ],
-    "هذه السنة": [
-      { price: "1,500,000", name: "المحفظة الماسية" },
-      { price: "2,000,000", name: "اشتراك الباقات" },
+    ["this_year"]: [
+      { price: "1,500,000", name: "diamond_wallet" },
+      { price: "2,000,000", name: "package_subscription" },
     ],
   };
 
   const filteredCards = allCards[activeFilter];
 
+  // أنيميشن التلاشي للأزرار
+  const fadeIn = keyframes`
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  `;
+
+  // أنيميشن التأثير عند ظهور الكروت
+  const cardAnimation = keyframes`
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  `;
+
   return (
     <Box>
-      <Typography sx={{ color: "#114F80", fontSize: "40px" ,fontWeight:'600',mb:'30px'}}>
-        إحصائيات مكسب التطبيق
+      <Typography sx={{ color: "#114F80", fontSize: "40px", fontWeight: "600", mb: "30px", animation: `${fadeIn} 1s ease-out` }}>
+        {t("app_profit_stats")}
       </Typography>
 
       <Box
@@ -50,36 +74,34 @@ function ProfitStats() {
           display: "flex",
           gap: "20px",
           alignItems: "center",
-          justifyContent: {xs:"center",md:"space-between"},
-          flexWrap:'wrap',
-          
+          justifyContent: { xs: "center", md: "space-between" },
+          flexWrap: "wrap",
+          animation: `${fadeIn} 1s ease-out`,
         }}
       >
-        {filters.map((filter) => (
+        {filters?.map((filter) => (
           <Button
             sx={{
-              width: {xs:'100%',md:"156px"},
+              width: { xs: "100%", md: "156px" },
               height: "57px",
               fontSize: "20px",
               borderRadius: "10px",
               fontFamily: "Tanseek Modern Pro Arabic",
-              backgroundColor:'#fff',
-              fontWeight:'600'
+              backgroundColor: "#fff",
+              fontWeight: "600",
+              animation: `${fadeIn} 1s ease-out`,
             }}
             key={filter}
-            onClick={(e)=>{
-                if (activeLink) {
-                    activeLink.classList.remove("active");
-                  }
-                  e.target.classList.add("active");
-                  setActiveLink(e.target);
-                  setActiveFilter(filter)
+            onClick={(e) => {
+              if (activeLink) {
+                activeLink.classList.remove("active");
+              }
+              e.target.classList.add("active");
+              setActiveLink(e.target);
+              setActiveFilter(filter);
             }}
-                
-                
-                
           >
-            {filter}
+            {t(filter)}
           </Button>
         ))}
       </Box>
@@ -87,9 +109,9 @@ function ProfitStats() {
       <Grid2 container spacing={4} sx={{ my: "30px" }} justifyContent="center">
         {filteredCards.map((card) => (
           <Grid2
-            key={card.name}
+            key={`${activeFilter}-${card.name}`}  // استخدام key متغير يعتمد على الفلتر واسم الكرت
             sx={{
-              width: {xs:'100%',md:"220px"},
+              width: { xs: "100%", md: "220px" },
               height: "281px",
               backgroundColor: "#fff",
               display: "flex",
@@ -98,6 +120,7 @@ function ProfitStats() {
               alignItems: "center",
               gap: "10px",
               borderRadius: "15px",
+              animation: `${cardAnimation} 0.8s ease-out`,
             }}
           >
             <Box
@@ -115,7 +138,7 @@ function ProfitStats() {
               }}
             >
               <Typography sx={{ fontSize: "30px" }}>{card.price}</Typography>
-              <Typography sx={{ fontSize: "30px" }}>ر.س</Typography>
+              <Typography sx={{ fontSize: "30px" }}>{t('sar')}</Typography>
             </Box>
             <Typography sx={{ fontSize: "30px", color: "#114F80" }}>
               {t(card.name)}
