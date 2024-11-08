@@ -207,7 +207,7 @@ function AddAdminFile() {
 
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                {t('change_password')}
+                {t('اضافه كلمه سر')}
               </Typography>
               <Box
                 sx={{
