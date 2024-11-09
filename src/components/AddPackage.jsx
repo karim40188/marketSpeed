@@ -31,28 +31,7 @@ function AddPackage() {
         >
           {t('add_package')}
         </Typography>
-        <Button
-          component={motion.button}
-          variants={slideIn}
-          initial="hidden"
-          animate="visible"
-          sx={{
-            fontSize: "25px",
-            fontFamily: "Tanseek Modern Pro Arabic",
-            width: "auto",
-            height: "32px",
-            backgroundColor: "#114F80",
-            borderRadius: "6px",
-            color: "#fff",
-            px: "30px",
-            py: "20px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          {t("add_new_package")}
-        </Button>
+     
       </Box>
       <Box
         component={motion.div}

@@ -83,7 +83,7 @@ function CreateGroupCategories() {
               borderRadius: "15px",
               boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
             }}
-            onClick={() => navigate("/create_group/whats")}
+            onClick={() => navigate("/create_whats_category")}
             initial={{ scale: 1 }}
             whileHover={{
               scale: 1.1,

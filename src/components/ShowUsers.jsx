@@ -181,7 +181,7 @@ function ShowUsers() {
         sx={{
           display: "flex",
           flexWrap: "wrap",
-          gap: "20px",
+          gap: "30px",
           p: "25px",
           justifyContent: "center",
         }}
@@ -191,7 +191,8 @@ function ShowUsers() {
             key={index}
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }}  
-            transition={{ duration: 0.5, delay: 0.2 * index }} 
+            // transition={{ duration: 0.5, delay: 0.2 * index }} 
+            whileHover={{scale:1.1}}
           >
             <Box
               onClick={() => navigate("/show-user-file")}

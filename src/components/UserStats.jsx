@@ -2,7 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { keyframes } from "@mui/system";
-
+import { motion } from "framer-motion";
 function UserStats() {
   const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState("this_week");
@@ -17,16 +17,15 @@ function UserStats() {
   ];
 
   const allCards = {
-    "this_week": [{ number: "40,000" }],
-    "this_month": [{ number: "200,000" }],
-    "since_last_month": [{ number: "320,000" }],
-    "since_6_months": [{ number: "800,000" }],
-    "this_year": [{ number: "1,500,000" }],
+    this_week: [{ number: "40,000" }],
+    this_month: [{ number: "200,000" }],
+    since_last_month: [{ number: "320,000" }],
+    since_6_months: [{ number: "800,000" }],
+    this_year: [{ number: "1,500,000" }],
   };
 
   const filteredCards = allCards[activeFilter];
 
-  
   const fadeIn = keyframes`
     from {
       opacity: 0;
@@ -39,7 +38,6 @@ function UserStats() {
   `;
 
   useEffect(() => {
-    
     setActiveFilter(filters[0]);
   }, []);
 
@@ -76,7 +74,7 @@ function UserStats() {
               fontWeight: "600",
               backgroundColor: "#fff",
               "&.active": {
-                backgroundColor: "#F9D053", 
+                backgroundColor: "#F9D053",
               },
             }}
             key={filter}
@@ -103,50 +101,54 @@ function UserStats() {
         }}
       >
         {filteredCards.map((card, index) => (
-          <Box
-            key={index}
-            sx={{
-              width: { xs: "100%", md: "659px" },
-              height: "281px",
-              backgroundColor: "#fff",
-              display: "flex",
-              justifyContent: "center",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: "10px",
-              borderRadius: "15px",
-              p: "40px",
-              animation: `${fadeIn} 0.8s ease-out`, 
-            }}
+          <Box key={index} component={motion.div}
+          whileHover={{scale:1.1}}
           >
             <Box
               sx={{
-                width: { xs: "100%", md: "521.21px" },
-                height: "169px",
-                borderRadius: "15px",
-                background: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-                color: "#fff",
+                width: { xs: "100%", md: "659px" },
+                height: "281px",
+                backgroundColor: "#fff",
                 display: "flex",
-                flexDirection: "column",
                 justifyContent: "center",
+                flexDirection: "column",
                 alignItems: "center",
-                textAlign: "center",
+                gap: "10px",
+                borderRadius: "15px",
+                p: "40px",
+                animation: `${fadeIn} 0.8s ease-out`,
               }}
             >
-              <Typography sx={{ fontSize: { xs: "24px", md: "30px" } }}>
-                {card.number}
-              </Typography>
-              <Typography
-                sx={{ fontSize: { xs: "24px", md: "30px" }, color: "#fff" }}
+              <Box
+                sx={{
+                  width: { xs: "100%", md: "521.21px" },
+                  height: "169px",
+                  borderRadius: "15px",
+                  background:
+                    "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+                  color: "#fff",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  textAlign: "center",
+                }}
               >
-                {t("clients")}
+                <Typography sx={{ fontSize: { xs: "24px", md: "30px" } }}>
+                  {card.number}
+                </Typography>
+                <Typography
+                  sx={{ fontSize: { xs: "24px", md: "30px" }, color: "#fff" }}
+                >
+                  {t("clients")}
+                </Typography>
+              </Box>
+              <Typography
+                sx={{ fontSize: { xs: "24px", md: "30px" }, color: "#114F80" }}
+              >
+                {t("subscribers_count")}
               </Typography>
             </Box>
-            <Typography
-              sx={{ fontSize: { xs: "24px", md: "30px" }, color: "#114F80" }}
-            >
-              {t("subscribers_count")}
-            </Typography>
           </Box>
         ))}
       </Box>

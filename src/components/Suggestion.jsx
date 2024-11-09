@@ -3,6 +3,7 @@ import profile_img from "../assets/profile_img.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 function Suggestion() {
   let navigate = useNavigate();
@@ -20,7 +21,7 @@ function Suggestion() {
       <Typography
         sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80", fontWeight: '600' }}
       >
-           {t('suggestion')}
+           {t('suggestions')}
       </Typography>
       <Box
         sx={{
@@ -34,6 +35,8 @@ function Suggestion() {
         {tech.map((tech, index) => {
           return (
             <Box
+            component={motion.div}
+            whileHover={{scale:1.1}}
               key={index}
               sx={{
                 width: { xs: "100%", md: "805px" }, 

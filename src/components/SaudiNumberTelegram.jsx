@@ -16,7 +16,7 @@ function SaudiNumberTelegram() {
             fontWeight: "600",
           }}
         >
-          {t("All_numbers_of_the_Kingdom_of_Saudi_Arabia_groups")}
+          {t("All_numbers_of_channels_the_Kingdom_of_Saudi_Arabia_groups")}
         </Typography>
 
         <Typography>{t("all_numbers")} (36)</Typography>

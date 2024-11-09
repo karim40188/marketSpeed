@@ -1,11 +1,11 @@
 import { Box,  Typography } from "@mui/material";
-import saudiImg from "../assets/saudi.png";
-import qatarImg from "../assets/qatar.png";
+import saudiImg from "../../assets/saudi.png";
+import qatarImg from "../../assets/qatar.png";
 import {  useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-function WhatsAppGroups() {
+function CgWhatsAppCategory() {
   let [whatsApp] = useState([
     saudiImg,
     qatarImg,
@@ -19,7 +19,7 @@ function WhatsAppGroups() {
   let navigate = useNavigate();
 
   let [activeOption] = useState();
-let {t}=useTranslation()
+  let { t } = useTranslation();
   // useEffect(()=>{
   //   console.log(selectRef.current.value)
   // },[])
@@ -35,7 +35,7 @@ let {t}=useTranslation()
           fontWeight: "600",
         }}
       >
-         {t('country_groups')}
+        {t("country_groups")}
       </Typography>
 
       <Box
@@ -48,74 +48,9 @@ let {t}=useTranslation()
           my: "30px",
         }}
       >
-        {/* <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexDirection: { xs: "column", md: "row" },
-            gap: { xs: 2, md: 0 },
-          }}
-        >
-          <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
-            <input
-              style={{
-                width: "37px",
-                height: "37px",
-                backgroundColor: "#fff",
-                borderRadius: "5px",
-              }}
-              type="checkbox"
-            />
-            <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-              تحديد الكل (10000)
-            </Typography>
-          </Box>
-
-          <Box>
-            <Button
-              sx={{
-                width: { xs: "100%", md: "146px" },
-                height: "32px",
-                backgroundColor: "#114F80",
-                color: "#fff",
-                fontFamily: "Sora",
-                fontSize: { xs: "18px", md: "20px" },
-                fontWeight: "600",
-                mt: { xs: 2, md: 0 },
-              }}
-              onClick={() => navigate("/all-country-num")}
-            >
-              التالى
-            </Button>
-          </Box>
-        </Box> */}
-
-        {/* <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-  اختر مجموعات التى يتم الارسال عليها 
-          </Typography>
-          <select
-            onChange={(e) => {
-              if (e.target.value == 6) {
-                setActiveOption(true);
-              } else {
-                setActiveOption(false);
-              }
-            }}
-            style={{ width: "250px", height: "50px", borderRadius: "15px",fontSize:'20px' }}
-          >
-            <option value="1">المملكه العربيه السعوديه</option>
-            <option value="2">قطر</option>
-            <option value="3">البحرين</option>
-            <option value="4">اليمن</option>
-            <option value="5">المغرب</option>
-            <option value="6">الكل</option>
-          </select>
-        </Box> */}
       </Box>
 
-      <Typography sx={{  mb: 1 }}>{t("whatsApp")}</Typography>
+      <Typography sx={{ mb: 1 }}>{t("WhatsApp")}</Typography>
 
       <Box
         sx={{
@@ -149,7 +84,7 @@ let {t}=useTranslation()
                 e.currentTarget.classList.add("active-group");
                 setActiveGroup(e.currentTarget);
 
-                navigate("/groups/:id");
+                navigate("/create_whats_group");
               }}
               sx={{
                 width: { xs: "100%", md: "336px" },
@@ -182,9 +117,9 @@ let {t}=useTranslation()
                     fontFamily: "inter",
                   }}
                 >
-                  {t('Number_of_Saudi_Arabia_groups')}
+                  {t("Number_of_Saudi_Arabia_groups")}
                 </Typography>
-                <Typography>1026 {t('groups')} </Typography>
+                <Typography>1026 {t("groups")} </Typography>
               </Box>
             </Box>
           ))}
@@ -210,7 +145,7 @@ let {t}=useTranslation()
                 e.currentTarget.classList.add("active-group");
                 setActiveGroup(e.currentTarget);
 
-                navigate("/groups/:id");
+                navigate("/create_whats_group");
               }}
               sx={{
                 width: { xs: "100%", md: "336px" },
@@ -243,9 +178,9 @@ let {t}=useTranslation()
                     fontFamily: "inter",
                   }}
                 >
-     {t("Number_of_Saudi_Arabia_groups")}
-           </Typography>
-                <Typography>1026 مجموعات</Typography>
+                  {t("Number_of_Saudi_Arabia_groups")}
+                </Typography>
+                <Typography>1026 {t("groups")}</Typography>
               </Box>
             </Box>
           ))}
@@ -255,4 +190,4 @@ let {t}=useTranslation()
   );
 }
 
-export default WhatsAppGroups;
+export default CgWhatsAppCategory;

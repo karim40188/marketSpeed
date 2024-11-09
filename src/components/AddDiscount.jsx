@@ -54,6 +54,8 @@ function AddDiscount() {
             <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
               <Typography sx={{ width: { xs: "auto", md: "121px" }, fontWeight: '600' }}>{t('discount_percentage')} </Typography>
               <TextField
+
+              value={"20    %"}
                 sx={{
                   width: { xs: "100%", md: "174px" },
                   height: "62px",
@@ -65,6 +67,8 @@ function AddDiscount() {
                   transition: 'all 0.3s ease-in-out',
                 }}
               />
+
+             
             </Box>
           </motion.div>
 

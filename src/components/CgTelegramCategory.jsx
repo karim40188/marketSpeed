@@ -35,7 +35,7 @@ function CgTelegramCategory() {
           fontWeight: "600",
         }}
       >
-        {t("country_groups")}
+        {t("Country_chennels")}
       </Typography>
 
       <Box
@@ -50,7 +50,7 @@ function CgTelegramCategory() {
       >
       </Box>
 
-      <Typography sx={{ mb: 1 }}>{t("telegram")}</Typography>
+      <Typography sx={{ mb: 1 }}>Telegram</Typography>
 
       <Box
         sx={{
@@ -117,9 +117,9 @@ function CgTelegramCategory() {
                     fontFamily: "inter",
                   }}
                 >
-                  {t("Number_of_Saudi_Arabia_groups")}
+                  {t("channel_numbers_saudi")}
                 </Typography>
-                <Typography>1026 {t("groups")} </Typography>
+                <Typography>1026 {t("channels")} </Typography>
               </Box>
             </Box>
           ))}
@@ -178,9 +178,9 @@ function CgTelegramCategory() {
                     fontFamily: "inter",
                   }}
                 >
-                  {t("Number_of_Saudi_Arabia_groups")}
+                  {t("channel_numbers_saudi")}
                 </Typography>
-                <Typography>1026 {t("groups")}</Typography>
+                <Typography>1026 {t("channels")}</Typography>
               </Box>
             </Box>
           ))}

@@ -74,6 +74,8 @@ function AddWallet() {
                   {t("diamond_count")}
                 </Typography>
                 <TextField
+
+                type="number"
                   sx={{
                     width: "174px",
                     height: "62px",
@@ -84,6 +86,9 @@ function AddWallet() {
                     fontSize: { xs: "20px", md: "30px" },
                   }}
                 />
+                <Typography>
+                 {t("diamond")}
+                </Typography>
               </Box>
 
               <Box
@@ -96,6 +101,7 @@ function AddWallet() {
                 <Typography sx={{ width: { xs: "auto", md: "121px" }, fontWeight: "600" }}>
                   {t("price")}
                 </Typography>
+
                 <TextField
                   sx={{
                     width: { xs: "130px", md: "174px" },
@@ -107,6 +113,10 @@ function AddWallet() {
                     fontSize: { xs: "20px", md: "30px" },
                   }}
                 />
+
+                 <Typography>
+                  {t('riyals')}
+                </Typography>
                 <TextField
                   sx={{
                     width: { xs: "130px", md: "174px" },
@@ -118,7 +128,12 @@ function AddWallet() {
                     fontSize: { xs: "20px", md: "30px" },
                     mr: { xs: 0, md: 4 },
                   }}
+                  
                 />
+                
+                <Typography>
+                  {t('dollar')}
+                </Typography>
               </Box>
             </Box>
 

@@ -1,7 +1,7 @@
-import { Box,  Typography } from "@mui/material";
+import { Box, Typography,Button } from "@mui/material";
 import saudiImg from "../assets/saudi.png";
 import qatarImg from "../assets/qatar.png";
-import {  useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -35,7 +35,7 @@ function TelegramGroups() {
           fontWeight: "600",
         }}
       >
-        {t("country_groups")}
+        {t("Country_chennels")}
       </Typography>
 
       <Box
@@ -48,7 +48,7 @@ function TelegramGroups() {
           my: "30px",
         }}
       >
-        {/* <Box
+        <Box
           sx={{
             display: "flex",
             alignItems: "center",
@@ -89,21 +89,26 @@ function TelegramGroups() {
               التالى
             </Button>
           </Box>
-        </Box> */}
+        </Box>
 
-        {/* <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
           <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-  اختر مجموعات التى يتم الارسال عليها 
+            اختر قنوات التى يتم الارسال عليها
           </Typography>
           <select
-            onChange={(e) => {
-              if (e.target.value == 6) {
-                setActiveOption(true);
-              } else {
-                setActiveOption(false);
-              }
+            // onChange={(e) => {
+            //   if (e.target.value == 6) {
+            //     setActiveOption(true);
+            //   } else {
+            //     setActiveOption(false);
+            //   }
+            // }}
+            style={{
+              width: "250px",
+              height: "50px",
+              borderRadius: "15px",
+              fontSize: "20px",
             }}
-            style={{ width: "250px", height: "50px", borderRadius: "15px",fontSize:'20px' }}
           >
             <option value="1">المملكه العربيه السعوديه</option>
             <option value="2">قطر</option>
@@ -112,7 +117,7 @@ function TelegramGroups() {
             <option value="5">المغرب</option>
             <option value="6">الكل</option>
           </select>
-        </Box> */}
+        </Box>
       </Box>
 
       <Typography sx={{ mb: 1 }}>{t("telegram")}</Typography>

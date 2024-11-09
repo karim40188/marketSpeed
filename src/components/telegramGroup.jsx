@@ -61,7 +61,7 @@ function TelegramGroup() {
             ? "مجموعات اليمن"
             : ""} */}
 
-          {t("country_groups")}
+          {t("Country_chennels")}
         </Typography>
       </Box>
       <Typography sx={{ my: "30px", fontWeight: "600" }}>

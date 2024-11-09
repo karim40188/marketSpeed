@@ -34,7 +34,6 @@ import Marketers from "./components/Marketers";
 import AddAdminFile from "./components/AddAdminFile";
 import ShowAdminFile from "./components/ShowAdminFile";
 import EditAdminFile from "./components/EditAdminFile";
-import AllNumbersOfGroups from "./components/CgWhatsNumbers";
 import SaudiNumbers from "./components/SaudiNumbers";
 import ShowUsers from "./components/ShowUsers";
 import ShowUserFile from "./components/ShowUserFile";
@@ -52,17 +51,14 @@ import CountryNumGroup from "./components/unknown/CountryNumGroup";
 import AddNewGroup from "./components/unknown/AddNewGroup";
 import AddNewLinks from "./components/unknown/AddNewLinks";
 import ShareWithFriends from "./components/ShareWithFriends";
-import Categories from "./components/CreateGroupCategories";
-import WhatsAppGroups from "./components/WhatsAppGroups";
 import TelegramGroups from "./components/TelegramGroups";
-import Groups from "./components/CgWhatAppCategory";
 import SendToGroups from "./components/SendToGroups";
 import SendLogo from "./components/SendLogo";
 import AllnumberWhatsApp from "./components/AllnumberWhatsApp";
 import AllNumbers2 from "./components/AllNumbers2";
 import AllCountryNum2 from "./components/AllCountryNum2";
 import AllNumbers3 from "./components/AllNumber3";
-import i18next from "./i18next";
+// import i18next from "./i18next";
 import SendToGroupWhatsApp from "./components/SendToGroupWhatsApp";
 import SaudiNumber2 from "./components/SaudiNumber2";
 import TelegramGroup from "./components/telegramGroup";
@@ -73,12 +69,15 @@ import EditSupervisor from "./components/EditSupervisor";
 import ShowSupervisor from "./components/ShowAdmins";
 import CreateGroupsTelegram from "./components/CgTelegramCategory";
 import CreateGroupCategories from "./components/CreateGroupCategories";
-import CgWhatAppCategory from "./components/CgWhatAppCategory";
-import CgWhatsNumbers from "./components/CgWhatsNumbers";
-import CgCountryNumber from "./components/SaudiNumbers";
+
 import CgTelegramCategory from "./components/CgTelegramCategory";
 import ShowAdmins from "./components/ShowAdmins";
 import EditMarketer from "./components/EditMarketer";
+import CgWhatsAppCategory from "./components/CreateGroupsWhatsApp/CgWhatsAppCategory";
+import CgWhatsAppGroup from "./components/CreateGroupsWhatsApp/CgWhatsAppGroup";
+import SpesificWhatsAppGroup from "./components/CreateGroupsWhatsApp/SpesificWhatsAppGroup";
+import SaudiNumbersWhatsApp from "./components/CreateGroupsWhatsApp/SaudiNumbersWhatsApp";
+
 function App() {
   let router = createBrowserRouter([
     // Done
@@ -150,7 +149,6 @@ function App() {
         { path: "/add-country-numbers", element: <AddCountryNum /> },
         // Done
         // Destop 61
-        { path: "create_group/whats", element: <CgWhatAppCategory /> },
         { path: "/send-to-groups", element: <SendToGroups /> },
         { path: "/all-country-num", element: <AllCountryNum2 /> },
         { path: "/all-numbers-3", element: <AllNumbers3 /> },
@@ -158,21 +156,20 @@ function App() {
         // Done
         // Done
         { path: "/create-groups", element: <CreateGroups /> },
-        { path: "/whatsapp-groups", element: <WhatsAppGroups /> },
         { path: "/telegram-groups", element: <TelegramGroups /> },
 
         // Destop 58
-        { path: "create_group/whats/numbers", element: <CgWhatsNumbers /> },
         { path: "/telegram-group", element: <TelegramGroup /> },
-        {
-          path: "create_group/whats/numbers/country_number",
-          element: <CgCountryNumber />,
-        },
+
         // Done
         { path: "/create_group/telegram", element: <CgTelegramCategory /> },
         // Destop 59
         { path: "/saudi-numbers", element: <SaudiNumbers /> },
         { path: "/saudi-telegram-numbers", element: <SaudiNumberTelegram /> },
+        { path: "/create_whats_category", element: <CgWhatsAppCategory /> },
+        { path: "/create_whats_group", element: <CgWhatsAppGroup /> },
+        { path: "/spesific_whats_group", element: <SpesificWhatsAppGroup /> },
+        { path: "/saudi_numbers_whats", element: <SaudiNumbersWhatsApp /> },
         {
           path: "/Spesific-Telegram-Group",
           element: <SpesificTelegramGroup />,

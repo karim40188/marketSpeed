@@ -184,10 +184,12 @@ function SupportSession() {
         <Box
           sx={{
             width: "100%",
-            height: "126px",
+            height: "100px",
             backgroundColor: "#114F80",
+            borderRadius:'20px',
             display: "flex",
             alignItems: "center",
+            justifyContent:'space-around',
             p: "20px",
             gap: "10px",
           }}
@@ -217,15 +219,15 @@ function SupportSession() {
             style={{
               width: "100%",
               maxWidth: "604px",
-              height: "100px",
+              height: "60px",
               fontSize: "20px",
-              // borderRadius: "15px",
+              borderRadius: "15px",
             }}
             value={value}
           />
           <Box
             sx={{
-              fontSize: "80px",
+              fontSize: "50px",
               color: "#EFC750",
               fontFamily: "Titillium Web",
             }}

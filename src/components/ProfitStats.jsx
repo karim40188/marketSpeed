@@ -1,8 +1,8 @@
 import { Box, Button, Grid2, Typography } from "@mui/material";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { keyframes } from '@mui/system';
-
+import { keyframes } from "@mui/system";
+import { motion } from "framer-motion";
 function ProfitStats() {
   const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState("this_week");
@@ -30,8 +30,8 @@ function ProfitStats() {
       { price: "180,000", name: "package_subscription" },
     ],
     ["since_six_months"]: [
-      { price: "800,000", name: "platinum_wallet"},
-      { price: "1,000,000", name: "package_subscription"},
+      { price: "800,000", name: "platinum_wallet" },
+      { price: "1,000,000", name: "package_subscription" },
     ],
     ["this_year"]: [
       { price: "1,500,000", name: "diamond_wallet" },
@@ -65,7 +65,15 @@ function ProfitStats() {
 
   return (
     <Box>
-      <Typography sx={{ color: "#114F80", fontSize: "40px", fontWeight: "600", mb: "30px", animation: `${fadeIn} 1s ease-out` }}>
+      <Typography
+        sx={{
+          color: "#114F80",
+          fontSize: "40px",
+          fontWeight: "600",
+          mb: "30px",
+          animation: `${fadeIn} 1s ease-out`,
+        }}
+      >
         {t("app_profit_stats")}
       </Typography>
 
@@ -108,42 +116,48 @@ function ProfitStats() {
 
       <Grid2 container spacing={4} sx={{ my: "30px" }} justifyContent="center">
         {filteredCards.map((card) => (
-          <Grid2
-            key={`${activeFilter}-${card.name}`}  // استخدام key متغير يعتمد على الفلتر واسم الكرت
-            sx={{
-              width: { xs: "100%", md: "220px" },
-              height: "281px",
-              backgroundColor: "#fff",
-              display: "flex",
-              justifyContent: "center",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: "10px",
-              borderRadius: "15px",
-              animation: `${cardAnimation} 0.8s ease-out`,
-            }}
+          <Box
+          component={motion.div}
+            key={`${activeFilter}-${card.name}`} 
+            whileHover={{scale:1.2}}
           >
-            <Box
+            <Grid2
               sx={{
-                width: "174px",
-                height: "169px",
-                borderRadius: "15px",
-                background: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-                color: "#fff",
+                width: { xs: "100%", md: "220px" },
+                height: "281px",
+                backgroundColor: "#fff",
                 display: "flex",
-                flexDirection: "column",
                 justifyContent: "center",
+                flexDirection: "column",
                 alignItems: "center",
-                textAlign: "center",
+                gap: "10px",
+                borderRadius: "15px",
+                animation: `${cardAnimation} 0.8s ease-out`,
               }}
             >
-              <Typography sx={{ fontSize: "30px" }}>{card.price}</Typography>
-              <Typography sx={{ fontSize: "30px" }}>{t('sar')}</Typography>
-            </Box>
-            <Typography sx={{ fontSize: "30px", color: "#114F80" }}>
-              {t(card.name)}
-            </Typography>
-          </Grid2>
+              <Box
+                sx={{
+                  width: "174px",
+                  height: "169px",
+                  borderRadius: "15px",
+                  background:
+                    "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+                  color: "#fff",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  textAlign: "center",
+                }}
+              >
+                <Typography sx={{ fontSize: "30px" }}>{card.price}</Typography>
+                <Typography sx={{ fontSize: "30px" }}>{t("sar")}</Typography>
+              </Box>
+              <Typography sx={{ fontSize: "30px", color: "#114F80" }}>
+                {t(card.name)}
+              </Typography>
+            </Grid2>
+          </Box>
         ))}
       </Grid2>
     </Box>

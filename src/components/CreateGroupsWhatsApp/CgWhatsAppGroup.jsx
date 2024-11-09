@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
 
-function CgWhatAppCategory() {
+function CgWhatsAppGroup() {
   let navigate = useNavigate();
   let { t } = useTranslation();
   let [whatsApp] = useState([
@@ -61,12 +61,11 @@ function CgWhatAppCategory() {
             ? "مجموعات اليمن"
             : ""} */}
 
-
-            {t('saudi_groups')}
+          {t("country_groups")}
         </Typography>
       </Box>
       <Typography sx={{ my: "30px", fontWeight: "600" }}>
-        {t("whatsApp")} {`(${whatsApp.length * 2})`}
+        {t("WhatsApp")} {`(${whatsApp.length * 2})`}
       </Typography>
       <Grid2 container spacing={2} justifyContent="center">
         <Grid2 size={{ xs: 12, md: 5 }}>
@@ -96,7 +95,7 @@ function CgWhatAppCategory() {
                     cursor: "pointer",
                   }}
                   onClick={() => {
-                    navigate("numbers");
+                    navigate("/spesific_whats_group");
                   }}
                 >
                   <Typography
@@ -154,7 +153,7 @@ function CgWhatAppCategory() {
                     cursor: "pointer",
                   }}
                   onClick={() => {
-                    navigate("/all-numbers");
+                    navigate("/spesific-telegram-group");
                   }}
                 >
                   <Typography
@@ -190,4 +189,4 @@ function CgWhatAppCategory() {
   );
 }
 
-export default CgWhatAppCategory;
+export default CgWhatsAppGroup;

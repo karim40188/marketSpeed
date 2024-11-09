@@ -1,8 +1,9 @@
 import { Box, Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
-function SaudiNumber2() {
+function SaudiNumbersWhatsApp() {
   let navigate = useNavigate();
   let { t } = useTranslation();
 
@@ -16,10 +17,10 @@ function SaudiNumber2() {
             fontWeight: "600",
           }}
         >
-          {t("country_groups")}
+          {t("All_numbers_of_the_Kingdom_of_Saudi_Arabia_groups")}
         </Typography>
 
-        <Typography>{t("all_groups")} (36)</Typography>
+        <Typography>{t("all_numbers")} (36)</Typography>
       </Box>
 
       <Box
@@ -34,6 +35,8 @@ function SaudiNumber2() {
         }}
       >
         <Button
+          component={motion.button}
+          whileHover={{ scale: 1.2 }}
           sx={{
             width: { xs: "100%", md: "auto" },
             height: "auto",
@@ -50,6 +53,8 @@ function SaudiNumber2() {
           {t("attach_link")}
         </Button>
         <Button
+          component={motion.button}
+          whileHover={{ scale: 1.2 }}
           sx={{
             width: { xs: "100%", md: "auto" },
             height: "auto",
@@ -96,6 +101,8 @@ function SaudiNumber2() {
         </Box>
 
         <Button
+          component={motion.button}
+          whileHover={{ scale: 1.2 }}
           sx={{
             width: { xs: "100%", md: "auto" },
             height: "auto",
@@ -119,4 +126,4 @@ function SaudiNumber2() {
   );
 }
 
-export default SaudiNumber2;
+export default SaudiNumbersWhatsApp;

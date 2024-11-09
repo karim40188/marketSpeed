@@ -42,7 +42,7 @@ function SpesificTelegramGroup() {
           textAlign: { xs: "center", md: "right" },
         }}
       >
-        {t('All_numbers_of_the_Kingdom_of_Saudi_Arabia_groups')}
+        {t('All_numbers_of_channels_the_Kingdom_of_Saudi_Arabia_groups')}
       </Typography>
 
       <Box sx={{ p: { xs: "10px", md: "25px" }, mt: { xs: "20px", md: "50px" } }}>
