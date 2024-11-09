@@ -187,7 +187,7 @@ function TelegramGroups() {
                     fontFamily: "inter",
                   }}
                 >
-                  {t("Number_of_Saudi_Arabia_groups")}
+                  {t("channel_numbers_saudi")}
                 </Typography>
                 <Typography>1026 {t("channels")} </Typography>
               </Box>
@@ -248,7 +248,7 @@ function TelegramGroups() {
                     fontFamily: "inter",
                   }}
                 >
-                  {t("Number_of_Saudi_Arabia_groups")}
+                  {t("channel_numbers_saudi")}
                 </Typography>
                 <Typography>1026 {t("channels")}</Typography>
               </Box>
