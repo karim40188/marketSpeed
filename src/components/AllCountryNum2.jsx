@@ -18,7 +18,7 @@ function AllCountryNum2() {
           {t("Country_chennels")}
         </Typography>
 
-        <Typography>{t("all_numbers")} (36)</Typography>
+        <Typography>{t("all_channels")} (36)</Typography>
       </Box>
 
       <Box
