@@ -88,7 +88,7 @@ function Sidebar() {
           }}
           to='/home'
         >
-          الرئيسيه
+         {t('Home')}
         </Link>
       </Box>
       {/* التطبيق */}
@@ -394,7 +394,7 @@ function Sidebar() {
             }}
           >
             <Link
-              to="/categories"
+              to="/create_group_categories"
               className="link"
               onClick={(e) => {
                 if (activeLink) {
@@ -540,7 +540,7 @@ function Sidebar() {
               {t("عرض ملف المسؤل")}
             </Link>
             <Link
-              to="/show-supervisor"
+              to="/show-admins"
               onClick={(e) => {
                 if (activeLink) {
                   activeLink.classList.remove("active");

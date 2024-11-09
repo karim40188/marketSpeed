@@ -1,10 +1,16 @@
 import { Box, Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function SendLogo() {
-  let navigate = useNavigate();
-  let { t } = useTranslation();
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+  const [activeButton, setActiveButton] = useState(""); // Track active button
+
+  const handleButtonClick = (button) => {
+    setActiveButton(button);
+  };
 
   return (
     <Box>
@@ -28,36 +34,20 @@ function SendLogo() {
         }}
       >
         <Box sx={{ width: "100%", display: "flex", gap: "10px" }}>
-          <Button
-            sx={{
-              backgroundColor: "#114F80",
-              color: "#fff",
-              borderRadius: "6px",
-              width: "auto",
-            }}
-          >
-            {t("subscriber")}
-          </Button>
-          <Button
-            sx={{
-              backgroundColor: "#fff",
-              color: "#114F80",
-              borderRadius: "6px",
-              width: "auto",
-            }}
-          >
-            {t("user")}
-          </Button>
-          <Button
-            sx={{
-              backgroundColor: "#fff",
-              color: "#114F80",
-              borderRadius: "6px",
-              width: "auto",
-            }}
-          >
-            {t("all")}
-          </Button>
+          {["subscriber", "user", "all"].map((type) => (
+            <Button
+              key={type}
+              sx={{
+                backgroundColor: activeButton === type ? "#114F80" : "#fff",
+                color: activeButton === type ? "#fff" : "#114F80",
+                borderRadius: "6px",
+                width: "auto",
+              }}
+              onClick={() => handleButtonClick(type)}
+            >
+              {t(type)}
+            </Button>
+          ))}
         </Box>
       </Box>
 
@@ -66,10 +56,10 @@ function SendLogo() {
           display: "flex",
           alignItems: "center",
           gap: "20px",
-          justifyContent: { xs: "start", md: "end" }, // Adjust alignment based on screen size
+          justifyContent: { xs: "start", md: "end" },
           width: "100%",
-          flexWrap: "wrap", // Allow wrapping on smaller screens
-          p: { xs: "0 10px", md: "0" }, // Adjust padding for smaller screens
+          flexWrap: "wrap",
+          p: { xs: "0 10px", md: "0" },
         }}
       >
         <Button
@@ -83,7 +73,7 @@ function SendLogo() {
             fontSize: { xs: "16px", xl: "20px" },
             fontWeight: "600",
             textTransform: "capitalize",
-            mb: { xs: "10px", md: "0" }, // Add margin bottom for small screens
+            mb: { xs: "10px", md: "0" },
           }}
         >
           {t("attach_link")}
@@ -99,7 +89,7 @@ function SendLogo() {
             fontFamily: "Sora",
             fontSize: { xs: "16px", xl: "20px" },
             fontWeight: "600",
-            mb: { xs: "10px", md: "0" }, // Add margin bottom for small screens
+            mb: { xs: "10px", md: "0" },
           }}
         >
           {t("attach_image_or_video")}
@@ -116,13 +106,13 @@ function SendLogo() {
         <Box
           sx={{
             width: { xs: "100%", sm: "100%", md: "855px" },
-            p: { xs: "20px", sm: "40px", md: "100px" }, // Responsive padding
+            p: { xs: "20px", sm: "40px", md: "100px" },
             backgroundColor: "#fff",
-            mx:'auto',
+            mx: "auto",
             mt: "50px",
             mr: "30px",
-            borderRadius: "10px", // Optional: add some rounding to corners
-            overflow: "hidden", // Ensure content doesn't overflow
+            borderRadius: "10px",
+            overflow: "hidden",
           }}
         >
           <Typography sx={{ fontWeight: "600", overflowWrap: "break-word" }}>
@@ -151,7 +141,7 @@ function SendLogo() {
             fontFamily: "Sora",
             fontSize: { xs: "16px", md: "20px" },
             fontWeight: "600",
-            textTransform:"capitalize",
+            textTransform: "capitalize",
             mt: "30px",
             mr: "auto",
           }}
@@ -159,7 +149,7 @@ function SendLogo() {
             navigate("/saudi-groups");
           }}
         >
-        {t('send')}
+          {t("send")}
         </Button>
       </Box>
     </Box>

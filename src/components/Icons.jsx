@@ -1,26 +1,28 @@
-import { Box, Grid2, Typography } from "@mui/material";
+import { Box, Button, Grid2, Typography } from "@mui/material";
 import { useState } from "react";
 import { motion } from "framer-motion"; // استيراد motion من framer-motion
-
-import whatsapp from "../assets/whatsapp.png";
-import telegram from "../assets/telegram.png";
-import tiktok from "../assets/tiktok.png";
-import facebook from "../assets/facebook.png";
-import twitter from "../assets/twitter.png";
-import instagram from "../assets/instagram.png";
-import sms from "../assets/sms.png";
-import email from "../assets/email.png";
-
+import whatsApp from "../assets/video_icons/whatsapp.png";
+import telegram from "../assets/video_icons/telegram.png";
+import instagram from "../assets/video_icons/instagram.png";
+import tiktok from "../assets/video_icons/tiktok.png";
+import twitter from "../assets/video_icons/x.png";
+import facebook from "../assets/video_icons/facebook.png";
+import sms from "../assets/video_icons/sms.png";
+import email from "../assets/video_icons/email.png";
+import { useTranslation } from "react-i18next";
 function Icons() {
+
+  let {t}=useTranslation()
   let [icons] = useState([
-    whatsapp,
-    telegram,
-    instagram,
-    tiktok,
-    twitter,
-    facebook,
-    sms,
-    email,
+    { name: "WhatsApp",img:  whatsApp },
+    { name: "Telegram",img:  telegram },
+    { name: "Instagram",img:  instagram },
+    { name: "TikTok",img:  tiktok },
+    { name: "X",img:  twitter },
+    { name: "Facebook",img:  facebook },
+    { name: "SMS",img:  sms },
+    { name: "facebook",img:  facebook },
+    { name: "Email", img: email },
   ]);
 
   return (
@@ -45,11 +47,32 @@ function Icons() {
                   whileInView={{ opacity: 1, scale: 1 }} // كيف تظهر العناصر
                   transition={{ duration: 0.3 }} // مدة الانتقال
                 >
-                  <Box
-                    component="img"
-                    src={icon}
-                    sx={{ width: "100%", height: "100%" }}
-                  />
+                  <Box sx={{ width: "350px" }}>
+                    <Box
+                      sx={{ display: "flex", justifyContent: "space-between" }}
+                    >
+                      <Typography>{t(icon.name)}</Typography>
+                      <Button
+                        sx={{
+                          background:
+                            "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+                          color: "#fff",
+                          borderRadius: "6px",
+                          fontSize: "25px",
+                          width: "150px",
+                          height: "32px",
+                          fontFamily: "Tanseek Modern Pro Arabic",
+                        }}
+                      >
+                       {t('add_new_video')}
+                      </Button>
+                    </Box>
+                    <Box
+                      sx={{ width: "339px", height: "116px" }}
+                      component="img"
+                      src={icon.img}
+                    />
+                  </Box>
                 </motion.div>
               </Grid2>
             );

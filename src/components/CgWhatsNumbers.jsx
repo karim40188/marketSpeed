@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-function AllNumbersOfGroups() {
+function CgWhatsNumbers() {
   const navigate = useNavigate();
   const [checkedInput, setCheckedInput] = useState(false); 
   const [checkedItems, setCheckedItems] = useState([]); 
@@ -97,7 +97,7 @@ function AllNumbersOfGroups() {
                   fontWeight: "600",
                   mt: { xs: 2, md: 0 },
                 }}
-                onClick={() => navigate("/saudi-numbers")}
+                onClick={() => navigate("country_number")}
               >
               {t('next')}
               </Button>
@@ -176,4 +176,4 @@ function AllNumbersOfGroups() {
   );
 }
 
-export default AllNumbersOfGroups;
+export default CgWhatsNumbers;

@@ -132,7 +132,7 @@ function AddLinks() {
               </Typography>
               <Button
                 sx={{
-                  width: "205px",
+                  width: "auto",
                   height: "70px",
                   fontSize: "30px",
                   fontFamily: "Tanseek Modern Pro Arabic",
@@ -145,7 +145,7 @@ function AddLinks() {
                     "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
                 }}
               >
-                قم بتحميل الملف csv
+               {t('download_csv')}
               </Button>
             </Box>
           </Box>

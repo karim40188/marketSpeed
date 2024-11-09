@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-function Categories() {
+function CreateGroupCategories() {
   const navigate = useNavigate();
   let {t}=useTranslation()
 
@@ -83,7 +83,7 @@ function Categories() {
               borderRadius: "15px",
               boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
             }}
-            onClick={() => navigate("/whatsapp-groups")}
+            onClick={() => navigate("/create_group/whats")}
             initial={{ scale: 1 }}
             whileHover={{
               scale: 1.1,
@@ -110,8 +110,8 @@ function Categories() {
               borderRadius: "15px",
               boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
             }}
-            onClick={() => navigate("/createGroup-telegram")}
-            initial={{ scale: 1 }}
+            onClick={() => navigate("/create_group/telegram")}
+            initial={{ scale: 1 }} 
             whileHover={{
               scale: 1.1,
               backgroundColor: "#0077b5",
@@ -126,4 +126,4 @@ function Categories() {
   );
 }
 
-export default Categories;
+export default CreateGroupCategories;

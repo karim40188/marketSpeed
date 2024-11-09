@@ -205,6 +205,9 @@ function Marketers() {
                     fontFamily: "Tanseek Modern Pro Arabic",
                     borderRadius: "6px",
                   }}
+                  onClick={()=>{
+                    navigate('/edit-marketer')
+                  }}
                 >
                   {t("edit")}
                 </Button>

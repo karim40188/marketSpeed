@@ -5,23 +5,24 @@ import profile_img from "../assets/profile_img.png";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-function ShowAdmins() {
+function ShowSupervisor() {
 
 
   let {t}=useTranslation()
-  let [supervisors] = useState([
+  let [ShowSupervisor] = useState([
     { name: "ahmed_mohamed" },
     { name: "ahmed_mohamed" },
     { name: "ahmed_mohamed" },
     { name: "ahmed_mohamed" },
     { name: "ahmed_mohamed" },
- 
+    { name: "ahmed_mohamed" },
+
   ]);
 
 
   let navigate= useNavigate()
   return (
-    <Box sx={{ width: "95%" }}>
+    <Box sx={{ width: "95%",mx:'auto' }}>
    
 
       <Box
@@ -30,7 +31,7 @@ function ShowAdmins() {
         <Typography
           sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80",fontWeight:'600' }}
         >
-       {t('view_supervisor')}
+        {t("view_admins")}
         </Typography>
         <Box sx={{ position: "relative" }}>
           <TextField
@@ -59,7 +60,7 @@ function ShowAdmins() {
       </Box>
 
       <Box sx={{ display: "flex", flexWrap: "wrap", gap: "40px", p: "25px" }}>
-        {supervisors.map((supervisor, index) => {
+        {ShowSupervisor.map((supervisor, index) => {
           return (
             <Box
               key={index}
@@ -78,7 +79,7 @@ function ShowAdmins() {
                 cursor: "pointer",
               }}
               onClick={()=>{
-                navigate('/supervisor-profile')
+                navigate('/show-admin-file')
               }}
             >
               <Box sx={{ width: "108px", height: "108px" }}>
@@ -99,11 +100,11 @@ function ShowAdmins() {
                   fontSize: "20px",
                 }}
               >
-                {t("supervisor")}
+                {t("admin")}
               </Typography>
               <Typography sx={{ fontSize: "20px", color: "#114F80" }}>
-              {t('location')} <br />
-               {t('team_work_20_marketer')}
+               {t('location')}   <br />
+                {t("team_work_20_marketer")}
               </Typography>
             </Box>
           );
@@ -113,4 +114,4 @@ function ShowAdmins() {
   );
 }
 
-export default ShowAdmins;
+export default ShowSupervisor;

@@ -1,63 +1,129 @@
-import { Box,  Typography } from "@mui/material";
+import { Box, Button, Grid2, Typography } from "@mui/material";
 import { useState } from "react";
-import whatsapp from "../assets/whatsapp_off.png";
-import telegram from "../assets/telegram_on.png";
-import tiktok from "../assets/tiktok_off.png";
-import facebook from "../assets/facebook_off.png";
-import twitter from "../assets/twitter_off.png";
-import instagram from "../assets/instagram_on.png";
-import sms from "../assets/sms_off.png";
-import email from "../assets/email_off.png";
-
+import { motion } from "framer-motion"; // استيراد motion من framer-motion
+import whatsApp from "../assets/video_icons/whatsapp.png";
+import telegram from "../assets/video_icons/telegram.png";
+import instagram from "../assets/video_icons/instagram.png";
+import tiktok from "../assets/video_icons/tiktok.png";
+import twitter from "../assets/video_icons/x.png";
+import facebook from "../assets/video_icons/facebook.png";
+import sms from "../assets/video_icons/sms.png";
+import email from "../assets/video_icons/email.png";
+import { useTranslation } from "react-i18next";
 function Platforms() {
+  let { t } = useTranslation();
   let [icons] = useState([
-    whatsapp,
-    telegram,
-    instagram,
-    tiktok,
-    twitter,
-    facebook,
-    sms,
-    email,
+    { name: "WhatsApp", img: whatsApp, status: "turn_on", bgBtn: "CC0000" },
+
+    {
+      name: "Telegram",
+      img: telegram,
+      status: "turn_off",
+      // bgBtn: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+    },
+    {
+      name: "Instagram",
+      img: instagram,
+      status: "turn_on",
+      bgBtn: "CC0000",
+    },
+    {
+      name: "TikTok",
+      img: tiktok,
+      status: "turn_off",
+      // bgBtn: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+    },
+    { name: "X", img: twitter, status: "turn_on", bgBtn: "CC0000" },
+    {
+      name: "SMS",
+      img: sms,
+      status: "turn_off",
+      // bgBtn: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+    },
+    { name: "facebook", img: facebook, status: "turn_on", bgBtn: "CC0000" },
+    {
+      name: "Email",
+      img: email,
+      status: "turn_off",
+      // bgBtn: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+    },
   ]);
 
   return (
     <Box>
-      <Typography sx={{ fontSize: "40px", color: "#114F80" ,fontWeight:'600'}}>
-        المنصات
+      <Typography
+        sx={{
+          fontSize: { xs: "30px", md: "40px" },
+          color: "#114F80",
+          fontWeight: "600",
+        }}
+      >
+        {t("platforms")}
       </Typography>
-      <Box sx={{ p: "40px", display: "flex", flexDirection: "column" }}>
+      <Box sx={{ p: "60px", display: "flex", flexDirection: "column" }}>
         <Typography
-        className="text-gradient"
+          className="text-gradient"
           sx={{
             mb: "30px",
             display: "flex",
           }}
         >
-          جميع المنصات
+          {t("all_platforms")}
         </Typography>
 
-        <Box sx={{ width: "100%",  }}>
-          <Box sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
+        <Box sx={{ width: "100%", mx: "auto" }}>
+          <Grid2
+            container
+            spacing={5}
+            sx={{ display: "flex", flexWrap: "wrap" }}
+          >
             {icons.map((icon, index) => {
               return (
-                <Box
+                <Grid2
                   key={index}
-                  sx={{
-                    maxWidth: "388px",
-                    maxHeight: "160px",
-                    cursor: "pointer",
-                  }}
+                  sx={{ maxWidth: "375px", maxHeight: "160px" }}
                 >
-                  <Box
-                    component="img"
-                    src={icon}
-                    sx={{ width: "100%", height: "100%" }}
-                  />
-                </Box>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }} // الإعدادات الأولية
+                    whileInView={{ opacity: 1, scale: 1 }} // كيف تظهر العناصر
+                    transition={{ duration: 0.3 }} // مدة الانتقال
+                  >
+                    <Box sx={{ width: "350px" }}>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <Typography>{t(icon.name)}</Typography>
+                        <Button
+                          sx={{
+                            background:
+                              icon.status == "turn_on"
+                                ? "#CC0000"
+                                : "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+                            color: "#fff",
+                            borderRadius: "6px",
+                            fontSize: "25px",
+                            width: "150px",
+                            height: "32px",
+                            fontFamily: "Tanseek Modern Pro Arabic",
+                          }}
+                        >
+                          {t(icon.status)}
+                        </Button>
+                      </Box>
+                      <Box
+                        sx={{ width: "339px", height: "116px" }}
+                        component="img"
+                        src={icon.img}
+                      />
+                    </Box>
+                  </motion.div>
+                </Grid2>
               );
             })}
-          </Box>
+          </Grid2>
         </Box>
       </Box>
     </Box>

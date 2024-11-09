@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
 
-function Groups() {
+function CgWhatAppCategory() {
   let navigate = useNavigate();
   let { t } = useTranslation();
   let [whatsApp] = useState([
@@ -96,7 +96,7 @@ function Groups() {
                     cursor: "pointer",
                   }}
                   onClick={() => {
-                    navigate("/all-numbers");
+                    navigate("numbers");
                   }}
                 >
                   <Typography
@@ -190,4 +190,4 @@ function Groups() {
   );
 }
 
-export default Groups;
+export default CgWhatAppCategory;
