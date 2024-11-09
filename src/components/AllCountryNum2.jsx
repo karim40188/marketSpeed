@@ -15,10 +15,10 @@ function AllCountryNum2() {
             fontWeight: "600",
           }}
         >
-          {t("country_numbers")}
+          {t("Country_chennels")}
         </Typography>
 
-        <Typography>{t("numbers")} (36)</Typography>
+        <Typography>{t("all_numbers")} (36)</Typography>
       </Box>
 
       <Box
