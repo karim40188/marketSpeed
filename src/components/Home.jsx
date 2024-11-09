@@ -1,11 +1,5 @@
 import { Box, CircularProgress, Grid2, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
-import ceos from "../assets/some_stats/ceos.png";
-import subscribers from "../assets/some_stats/subscribers.png";
-import users from "../assets/some_stats/users.png";
-import monthly_sub from "../assets/some_stats/monthly_sub.png";
-import yearly_sub from "../assets/some_stats/yearly_sub.png";
-import discounts from "../assets/some_stats/discount.png";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import border from "../assets/border.png";
@@ -68,6 +62,9 @@ function Home() {
       {someStats.map((stats)=>{
         return (
           <Box
+
+          component={motion.div}
+          whileHover={{scale:1.2}}
           key={stats}
           sx={{
             width: "220px",
@@ -80,6 +77,7 @@ function Home() {
             py: "20px",
             flexDirection: "column",
           }}
+          
         >
           <Box
             sx={{

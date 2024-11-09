@@ -7,6 +7,8 @@ import Icons from "./Icons";
 
 function Banners() {
   const { t } = useTranslation();
+
+
   let [cards] = useState([
     { visitorKey: "first_banner", uploadKey: "upload_new_image", img: cardImg },
     {
@@ -33,6 +35,8 @@ function Banners() {
       >
         {t("home_page")}
       </Typography>
+
+      <Typography>البنارات الطول 16 والعرض 32</Typography>
 
       <Box sx={{ p: "40px" }}>
         <Typography
@@ -86,8 +90,6 @@ function Banners() {
         </Grid2>
       </Box>
       <Box sx={{ p: "40px" }}>
-
-        
         <Typography
           className="text-gradient"
           sx={{ fontSize: "30px", mb: "30px" }}

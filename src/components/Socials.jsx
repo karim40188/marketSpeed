@@ -26,6 +26,10 @@ function Socials() {
       >
         {t("marketing_speed_account_page")}
       </Typography>
+
+      <Typography className="text-gradient">
+         {t("Marketing_Spead_accounts")}
+        </Typography>
       <Box sx={{ p: "40px" }}>
         <Typography
           className="text-gradient"
@@ -95,10 +99,8 @@ function Socials() {
           })}
           <Box></Box>
         </Grid2>
-        <Typography>
-         {t("Marketing_Spead_accounts")}
-        </Typography>
-        <Typography sx={{ textAlign: "center",my:'20px'}}>{t("social_account")}</Typography>
+      
+        <Typography className="text-gradient" sx={{ textAlign: "center",my:'20px'}}>{t("social_account")}</Typography>
         <Grid2 container spacing={4}>
           <Grid2 size={{ xs: 12, md: 6 }}>
             <Box

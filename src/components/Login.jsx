@@ -224,15 +224,16 @@ function Login() {
 
         <Box
           sx={{
-            width: { xs: "200px", md: "260px" },
+            width: { xs: "200px", md: "460px" },
             height: { xs: "250px", xl: "331px" },
             mx: "auto",
+          transform:'translateX(30px)'
           }}
         >
           <Box
             component="img"
             src={logo}
-            sx={{ width: "100%", height: "100%" }}
+            sx={{ width: "100%" }}
           />
         </Box>
         <Typography
@@ -241,7 +242,8 @@ function Login() {
             background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
-            mb: { xs: "100px", md: "0" },
+            // mb: { xs: "100px", md: "0" },
+            mt:'100px'
           }}
         >
           سرعة التسويق

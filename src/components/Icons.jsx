@@ -10,6 +10,8 @@ import facebook from "../assets/video_icons/facebook.png";
 import sms from "../assets/video_icons/sms.png";
 import email from "../assets/video_icons/email.png";
 import { useTranslation } from "react-i18next";
+
+import share from "../assets/video_icons/share.png"
 function Icons() {
 
   let {t}=useTranslation()
@@ -21,8 +23,8 @@ function Icons() {
     { name: "X",img:  twitter },
     { name: "Facebook",img:  facebook },
     { name: "SMS",img:  sms },
-    { name: "facebook",img:  facebook },
     { name: "Email", img: email },
+    { name: "Share_with_firends", img: share },
   ]);
 
   return (
