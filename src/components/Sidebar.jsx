@@ -421,7 +421,7 @@ function Sidebar() {
             </Link>
 
             <Link
-              to="/all-numbers-whatsapp"
+              to="/all-numbers"
               className="link"
               onClick={(e) => {
                 if (activeLink) {

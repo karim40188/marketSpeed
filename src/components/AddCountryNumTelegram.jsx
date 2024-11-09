@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-function AddCountryNum() {
+function AddCountryNumTelegram() {
 
   let { t } = useTranslation();
   let [whatsApp] = useState([
@@ -37,7 +37,7 @@ function AddCountryNum() {
           fontWeight: "600",
         }}
       >
-        {t("country_numbers")}
+        {t("Country_chennels")}
       </Typography>
 
       <Box
@@ -86,7 +86,7 @@ function AddCountryNum() {
                 fontWeight: "600",
                 mt: { xs: 2, md: 0 },
               }}
-              onClick={() => navigate("/all-country-num")}
+              onClick={() => navigate("/all-country-num-telegram")}
             >
               {t("next")}
             </Button>
@@ -122,7 +122,7 @@ function AddCountryNum() {
         </Box>
       </Box>
 
-      <Typography sx={{ mb: 1 }}>{t("WhatsApp")}</Typography>
+      <Typography sx={{ mb: 1 }}>{t("telegram")}</Typography>
 
       <Box
         sx={{
@@ -190,10 +190,10 @@ function AddCountryNum() {
                   }}
                 >
                   {t(
-                    "Number of groups in Saudi Arabia"
+                    "channel_numbers_saudi"
                   )}
                 </Typography>
-                <Typography>1026 رقم</Typography>
+                <Typography>1026 {t('channels')}</Typography>
               </Box>
             </Box>
           ))}
@@ -252,9 +252,9 @@ function AddCountryNum() {
                     fontFamily: "inter",
                   }}
                 >
-                  {t("Number of groups in Saudi Arabia")}
+                  {t("channel_numbers_saudi")}
                 </Typography>
-                <Typography>1026 رقم</Typography>
+                <Typography>1026 {t("channels")}</Typography>
               </Box>
             </Box>
           ))}
@@ -264,4 +264,4 @@ function AddCountryNum() {
   );
 }
 
-export default AddCountryNum;
+export default AddCountryNumTelegram;

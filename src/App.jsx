@@ -29,7 +29,7 @@ import AddSupervisor from "./components/AddSupervisor";
 import CreateGroups from "./components/CreateGroups";
 import AddGroup from "./components/AddGroup";
 import AddLinks from "./components/AddLinks";
-import AddCountryNum from "./components/AddCountryNum";
+import AddCountryNum from "./components/AddCountryNumWhatsApp";
 import Marketers from "./components/Marketers";
 import AddAdminFile from "./components/AddAdminFile";
 import ShowAdminFile from "./components/ShowAdminFile";
@@ -55,8 +55,6 @@ import TelegramGroups from "./components/TelegramGroups";
 import SendToGroups from "./components/SendToGroups";
 import SendLogo from "./components/SendLogo";
 import AllnumberWhatsApp from "./components/AllnumberWhatsApp";
-import AllNumbers2 from "./components/AllNumbers2";
-import AllCountryNum2 from "./components/AllCountryNum2";
 import AllNumbers3 from "./components/AllNumber3";
 // import i18next from "./i18next";
 import SendToGroupWhatsApp from "./components/SendToGroupWhatsApp";
@@ -77,39 +75,48 @@ import CgWhatsAppCategory from "./components/CreateGroupsWhatsApp/CgWhatsAppCate
 import CgWhatsAppGroup from "./components/CreateGroupsWhatsApp/CgWhatsAppGroup";
 import SpesificWhatsAppGroup from "./components/CreateGroupsWhatsApp/SpesificWhatsAppGroup";
 import SaudiNumbersWhatsApp from "./components/CreateGroupsWhatsApp/SaudiNumbersWhatsApp";
+import AllCountryNumTelegram from "./components/AllCountryNumTelegram";
+import AllCountryNumWhatsApp from "./components/AllCountryNumWhatsApp";
+import AddCountryNumWhatsApp from "./components/AddCountryNumWhatsApp";
+import AddCountryNumTelegram from "./components/AddCountryNumTelegram";
 
 function App() {
   let router = createBrowserRouter([
-    // Done
     { index: true, element: <Login /> },
     {
       path: "/",
       element: <Layout />,
       children: [
-        // Done
+        // first link
         { path: "/home", element: <Home /> },
-
+        // 2 link
         { path: "/banners", element: <Banners /> },
         { path: "/videos", element: <Videos /> },
-        { path: "/profitstats", element: <ProfitStats /> },
-        { path: "/userstats", element: <UserStats /> },
         { path: "/socials", element: <Socials /> },
         { path: "/platforms", element: <Platforms /> },
         { path: "/welcome", element: <Welcome /> },
         { path: "/policy", element: <Policy /> },
+
+        // 3 link
+        { path: "/profitstats", element: <ProfitStats /> },
+        { path: "/userstats", element: <UserStats /> },
+
+        //  4 link
+
         { path: "/packages", element: <Packages /> },
-        { path: "/SendToGroupWhatsApp", element: <SendToGroupWhatsApp /> },
-
-        // ------------------
-
         { path: "/edit-package", element: <EditPackage /> },
-        { path: "/saudi-number2", element: <SaudiNumber2 /> },
         { path: "/diwallet", element: <DiWallet /> },
-        { path: "/edit-wallet", element: <EditWallet /> },
         { path: "/add-wallet", element: <AddWallet /> },
+        { path: "/edit-wallet", element: <EditWallet /> },
         { path: "/discount", element: <Discounts /> },
-        { path: "/edit-discount", element: <EditDiscount /> },
         { path: "/add-discount", element: <AddDiscount /> },
+        { path: "/edit-discount", element: <EditDiscount /> },
+
+
+
+
+        { path: "/SendToGroupWhatsApp", element: <SendToGroupWhatsApp /> },
+        { path: "/saudi-number2", element: <SaudiNumber2 /> },
         { path: "/techsupport", element: <TechSupport /> },
         { path: "/support-session", element: <SupportSession /> },
         { path: "/suggestion", element: <Suggestion /> },
@@ -118,9 +125,9 @@ function App() {
         { path: "/supervisors", element: <Supervisors /> },
         { path: "/show-supervisor", element: <ShowSupervisor /> },
         { path: "/supervisor-profile", element: <SupervisorProfile /> },
-        { path: "/add-supervisor", element: <AddSupervisor /> },
         { path: "/createGroup-telegram", element: <CreateGroupsTelegram /> },
         { path: "/add-group", element: <AddGroup /> },
+        { path: "/add-supervisor", element: <AddSupervisor /> },
         { path: "/add-links", element: <AddLinks /> },
         { path: "/edit-supervisor", element: <EditSupervisor /> },
         // Desktop 42
@@ -150,22 +157,31 @@ function App() {
         // Done
         // Destop 61
         { path: "/send-to-groups", element: <SendToGroups /> },
-        { path: "/all-country-num", element: <AllCountryNum2 /> },
+        {
+          path: "/all-country-num-telegram",
+          element: <AllCountryNumTelegram />,
+        },
+        {
+          path: "/all-country-num-whatsapp",
+          element: <AllCountryNumWhatsApp />,
+        },
         { path: "/all-numbers-3", element: <AllNumbers3 /> },
-        { path: "/all-numbers-whatsapp", element: <AllnumberWhatsApp /> },
+        { path: "/all-numbers", element: <AllnumberWhatsApp /> },
         // Done
         // Done
         { path: "/create-groups", element: <CreateGroups /> },
         { path: "/telegram-groups", element: <TelegramGroups /> },
 
+        { path: "/create_group/telegram", element: <CgTelegramCategory /> },
         // Destop 58
         { path: "/telegram-group", element: <TelegramGroup /> },
 
         // Done
-        { path: "/create_group/telegram", element: <CgTelegramCategory /> },
         // Destop 59
         { path: "/saudi-numbers", element: <SaudiNumbers /> },
         { path: "/saudi-telegram-numbers", element: <SaudiNumberTelegram /> },
+        { path: "/add-countryNum-whatsapp", element: <AddCountryNumWhatsApp /> },
+        { path: "/add-countryNum-telegram", element: <AddCountryNumTelegram /> },
         { path: "/create_whats_category", element: <CgWhatsAppCategory /> },
         { path: "/create_whats_group", element: <CgWhatsAppGroup /> },
         { path: "/spesific_whats_group", element: <SpesificWhatsAppGroup /> },
@@ -179,7 +195,6 @@ function App() {
         { path: "/show-users", element: <ShowUsers /> },
         { path: "/show-subscribers", element: <ShowSubscribers /> },
         { path: "/all-users", element: <AllUsers /> },
-        { path: "/all-number2", element: <AllNumbers2 /> },
         // Done
         { path: "/show-user-file", element: <ShowUserFile /> },
         // Done

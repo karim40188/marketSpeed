@@ -2,7 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-function AllCountryNum2() {
+function AllCountryNumWhatsApp() {
   let navigate = useNavigate();
   let { t } = useTranslation();
   return (
@@ -119,4 +119,4 @@ function AllCountryNum2() {
   );
 }
 
-export default AllCountryNum2;
+export default AllCountryNumWhatsApp;

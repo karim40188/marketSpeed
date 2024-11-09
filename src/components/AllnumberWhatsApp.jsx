@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-function AllnumberWhatsApp() {
+function Allnumbers() {
   const navigate = useNavigate();
   let {t}=useTranslation()
   
@@ -38,7 +38,7 @@ function AllnumberWhatsApp() {
             borderRadius: "10px",
             boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
           }}
-          onClick={() => navigate("/add-country-numbers")}
+          onClick={() => navigate("/add-countryNum-whatsapp")}
           initial={{ scale: 1 }}
           whileHover={{ scale: 1.1, backgroundColor: "#0d7a61", transition: { duration: 0.3 } }}
         >
@@ -61,7 +61,7 @@ function AllnumberWhatsApp() {
             borderRadius: "10px",
             boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
           }}
-          onClick={() => navigate("/add-country-numbers")}
+          onClick={() => navigate("/add-countryNum-telegram")}
           initial={{ scale: 1 }}
           whileHover={{ scale: 1.1, backgroundColor: "#1b8db7", transition: { duration: 0.3 } }}
         >
@@ -72,4 +72,4 @@ function AllnumberWhatsApp() {
   );
 }
 
-export default AllnumberWhatsApp;
+export default Allnumbers;
