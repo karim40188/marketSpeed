@@ -189,7 +189,7 @@ function TelegramGroups() {
                 >
                   {t("Number_of_Saudi_Arabia_groups")}
                 </Typography>
-                <Typography>1026 {t("groups")} </Typography>
+                <Typography>1026 {t("channels")} </Typography>
               </Box>
             </Box>
           ))}
@@ -250,7 +250,7 @@ function TelegramGroups() {
                 >
                   {t("Number_of_Saudi_Arabia_groups")}
                 </Typography>
-                <Typography>1026 {t("groups")}</Typography>
+                <Typography>1026 {t("channels")}</Typography>
               </Box>
             </Box>
           ))}
