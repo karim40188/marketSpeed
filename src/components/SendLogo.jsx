@@ -2,6 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 function SendLogo() {
   const navigate = useNavigate();
@@ -75,6 +76,8 @@ function SendLogo() {
             textTransform: "capitalize",
             mb: { xs: "10px", md: "0" },
           }}
+          component={motion.div}
+          whileHover={{scale:1.1}}
         >
           {t("attach_link")}
         </Button>
@@ -91,6 +94,8 @@ function SendLogo() {
             fontWeight: "600",
             mb: { xs: "10px", md: "0" },
           }}
+          component={motion.div}
+          whileHover={{scale:1.1}}
         >
           {t("attach_image_or_video")}
         </Button>
@@ -145,6 +150,8 @@ function SendLogo() {
             mt: "30px",
             mr: "auto",
           }}
+          component={motion.div}
+          whileHover={{scale:1.1}}
           onClick={() => {
             navigate("/saudi-groups");
           }}
