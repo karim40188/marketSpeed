@@ -68,7 +68,7 @@
   "marketer": "مسوق",
   "discount_code": "كود الخصم",
   "Marketing_Spead_accounts": "حسابات سرعة التسويق",
-  "referrals_count": "عدد الإ",
+  "referrals_count": "عدد الاحالات",
   "team_work": "فريق العمل",
   "platforms": "المنصات",
   "welcome_screen": "الشاشة الترحيب",
@@ -128,6 +128,7 @@
   "app_subscribers_count": "عدد المشتركين التطبيق",
   "sar": "س.ر",
   "discount_link": "رابط الخصم",
+  "renew":"تجديد",
   "Share_with_firends":"شارك واربح من الاصدقاء",
   "app_admins_count": "عدد المسؤلين التطبيق",
   "discount_codes_count": "عدد اكواد الخصم",
@@ -172,6 +173,7 @@
   "marketer_link": "رابط المسوقين",
   "view_user_file": "عرض ملف المستخدم",
   "view_admin_file": "عرض ملف المسؤل",
+  "view_supervisor_file": "عرض ملف المشرف",
   "days_since_subscription": "عدد الأيام منذ الاشتراك",
   "days": "أيام",
   "balance": "الرصيد",
@@ -268,6 +270,7 @@
   "app_control": "التحكم في التطبيق",
   "edit_admin_file": "تعديل ملف المسؤل",
   "groups_control": "التحكم في المجموعات",
+  "team_work_20_marketers":"فريق العمل 20 مسوق",
   "Control_of_Groups_in_the_Kingdom_of_Saudi_Arabia": "التحكم فى مجموعات المملكه العربيه السعوديه",
   "Control_of_Groups_in_the_UAE": "التحكم فى مجموعات الامارات"
 }

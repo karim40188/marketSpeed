@@ -1,4 +1,4 @@
-import { Box, Button, Typography ,Grid2} from "@mui/material";
+import { Box, Button, Typography, Grid2 } from "@mui/material";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "./Context";
@@ -23,7 +23,15 @@ function Packages() {
 
   return (
     <Box>
-      <Grid2 container justifyContent="space-between" sx={{ mb: 2 }} component={motion.div} initial="hidden" animate="visible" variants={fadeIn}>
+      <Grid2
+        container
+        justifyContent="space-between"
+        sx={{ mb: 2 }}
+        component={motion.div}
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+      >
         <Grid2>
           <Typography
             sx={{
@@ -74,7 +82,9 @@ function Packages() {
         <Grid2 size={{ xs: 12 }}>
           <Grid2 container justifyContent="space-between" sx={{ mb: "20px" }}>
             <Grid2>
-              <Typography sx={{ fontWeight: "600" }}>{t('benefits_of_the_package')}</Typography>
+              <Typography sx={{ fontWeight: "600" }}>
+                {t("benefits_of_the_package")}
+              </Typography>
             </Grid2>
             <Grid2>
               <Box sx={{ display: "flex", gap: "20px" }}>
@@ -99,7 +109,7 @@ function Packages() {
                     navigate("/edit-package");
                   }}
                 >
-                  {t('edit')}
+                  {t("edit")}
                 </Button>
                 <Button
                   component={motion.button}
@@ -119,7 +129,7 @@ function Packages() {
                     alignItems: "center",
                   }}
                 >
-                  {t('delete')}
+                  {t("delete")}
                 </Button>
               </Box>
             </Grid2>
@@ -135,7 +145,8 @@ function Packages() {
             sx={{
               width: "100%",
               height: "auto",
-              background: "linear-gradient(78.11deg, #F9D053 0.15%, #937B31 99.85%)",
+              background:
+                "linear-gradient(78.11deg, #F9D053 0.15%, #937B31 99.85%)",
               borderRadius: "15px",
               padding: { xs: "30px", md: "60px" },
               display: "flex",
@@ -150,15 +161,33 @@ function Packages() {
                 margin: 0,
               }}
             >
-              <li><Typography>{t('15_free_diamonds')}</Typography></li>
-              <li><Typography>{t('whatsapp_logo_available_4_weeks')}</Typography></li>
-              <li><Typography>{t('telegram_logo_available_4_weeks')}</Typography></li>
-              <li><Typography>{t('instagram_logo_available_4_weeks')}</Typography></li>
-              <li><Typography>{t('x_logo_available_4_weeks')}</Typography></li>
-              <li><Typography>{t('facebook_logo_available_4_weeks')}</Typography></li>
-              <li><Typography>{t('tiktok_logo_available_4_weeks')}</Typography></li>
-              <li><Typography>{t("sms_logo_available_4_weeks")}</Typography></li>
-              <li><Typography>{t("email_logo_available_4_weeks")}</Typography></li>
+              <li>
+                <Typography>{t("15_free_diamonds")}</Typography>
+              </li>
+              <li>
+                <Typography>{t("whatsapp_logo_available_4_weeks")}</Typography>
+              </li>
+              <li>
+                <Typography>{t("telegram_logo_available_4_weeks")}</Typography>
+              </li>
+              <li>
+                <Typography>{t("instagram_logo_available_4_weeks")}</Typography>
+              </li>
+              <li>
+                <Typography>{t("x_logo_available_4_weeks")}</Typography>
+              </li>
+              <li>
+                <Typography>{t("facebook_logo_available_4_weeks")}</Typography>
+              </li>
+              <li>
+                <Typography>{t("tiktok_logo_available_4_weeks")}</Typography>
+              </li>
+              <li>
+                <Typography>{t("sms_logo_available_4_weeks")}</Typography>
+              </li>
+              <li>
+                <Typography>{t("email_logo_available_4_weeks")}</Typography>
+              </li>
             </ul>
           </Box>
         </Grid2>
@@ -172,7 +201,7 @@ function Packages() {
           variants={fadeIn}
         >
           <Typography sx={{ fontSize: "30px", fontWeight: "600" }}>
-            {t('price')}
+            {t("price")}
           </Typography>
           <Typography
             sx={{
@@ -183,12 +212,12 @@ function Packages() {
               borderRadius: "5px",
               display: "flex",
               justifyContent: "center",
-              padding:"10px",
+              padding: "10px",
               alignItems: "center",
               fontWeight: "600",
             }}
           >
-            {t('30_riyals')}
+            {t("30_riyals")}
           </Typography>
           <Typography
             sx={{
@@ -196,7 +225,7 @@ function Packages() {
               border: "2px solid black",
               maxWidth: "174px",
               height: "auto",
-              padding:'10px',
+              padding: "10px",
               borderRadius: "5px",
               display: "flex",
               justifyContent: "center",
@@ -205,7 +234,7 @@ function Packages() {
               fontWeight: "600",
             }}
           >
-            {t('7_5_dollars')}
+            {t("7_5_dollars")}
           </Typography>
         </Grid2>
       </Grid2>

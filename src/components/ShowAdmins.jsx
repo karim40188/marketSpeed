@@ -4,6 +4,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import profile_img from "../assets/profile_img.png";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 function ShowSupervisor() {
   let { t } = useTranslation();
@@ -34,7 +35,7 @@ function ShowSupervisor() {
         <Box sx={{ position: "relative" }}>
           <TextField
             placeholder={"بحث بالاسم"}
-            sx={{ maxWidth: "597px", backgroundColor: "#fff" }}
+            sx={{ width: { xs: "100%", md: "597px" }, backgroundColor: "#fff" }}
           />
           <Box
             sx={{
@@ -61,6 +62,8 @@ function ShowSupervisor() {
         {ShowSupervisor.map((supervisor, index) => {
           return (
             <Box
+            component={motion.div}
+            whileHover={{scale:1.1}}
               key={index}
               sx={{
                 maxWidth: "247px",

@@ -71,7 +71,7 @@ function Navbar() {
               navigate("/supervisor-profile");
             }}
           >
-            {t('view_profile')}
+            {t('view_supervisor_file')}
           </Typography>
         </Box>
 

@@ -41,7 +41,11 @@ function Socials() {
         <Grid2 container spacing={4}>
           {socials.map((social) => {
             return (
-              <Grid2 key={social} size={{ xs: 12, md: 6 }}>
+              <Grid2 key={social} size={{ xs: 12, md: 6 }}
+              component={motion.div}
+              whileHover={{scale:1.1}}
+              >
+                
                 <Box
                   sx={{
                     display: "flex",

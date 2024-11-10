@@ -2,12 +2,17 @@ import { Box, Button, Typography } from "@mui/material";
 import addImg from "../assets/addimg.png";
 import { useTranslation } from "react-i18next";
 function AddMarketer() {
-
-  let {t} = useTranslation()
+  let { t } = useTranslation();
   return (
     <Box>
-      <Box sx={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-        <Box sx={{ textAlign: "center", }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <Box sx={{ textAlign: "center" }}>
           <Typography
             sx={{
               fontSize: { xs: "30px", md: "40px" },
@@ -15,9 +20,7 @@ function AddMarketer() {
               fontWeight: "600",
             }}
           >
-
-
-            {t('ahmed_mohamed')}
+            {t("ahmed_mohamed")}
           </Typography>
 
           <Typography
@@ -27,7 +30,7 @@ function AddMarketer() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            {t('supervisor')}
+            {t("supervisor")}
           </Typography>
         </Box>
 
@@ -37,12 +40,12 @@ function AddMarketer() {
             height: "42px",
             background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
 
-            borderRadius:'5px',
-            color:"#000",
-            fontWeight:'600'
+            borderRadius: "5px",
+            color: "#000",
+            fontWeight: "600",
           }}
         >
-         {t('add_marketer')}
+          {t("add_marketer")}
         </Button>
       </Box>
 
@@ -54,9 +57,9 @@ function AddMarketer() {
             p: "20px",
           }}
         >
-          <Box sx={{width:'45%'}}>
+          <Box sx={{ width: "45%" }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-             {t('full_name')}
+              {t("full_name")}
             </Typography>
             <Box
               sx={{
@@ -71,7 +74,7 @@ function AddMarketer() {
                 borderRadius: "15px",
               }}
             >
-              {t('ahmed_mohamed')}
+              {t("ahmed_mohamed")}
             </Box>
           </Box>
 
@@ -81,14 +84,14 @@ function AddMarketer() {
               display: "flex",
               gap: "20px",
               justifyContent: "space-between",
-              flexWrap:'wrap',
-              mt: "20px", 
+              flexWrap: "wrap",
+              mt: "20px",
             }}
           >
             {/* حقل الدولة */}
             <Box sx={{ width: "45%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                {t('country')}
+                {t("country")}
               </Typography>
               <Box
                 sx={{
@@ -103,7 +106,7 @@ function AddMarketer() {
                   borderRadius: "15px",
                 }}
               >
-                {t('kingdom_of_saudi_arabia')}
+                {t("kingdom_of_saudi_arabia")}
               </Box>
             </Box>
 
@@ -125,14 +128,14 @@ function AddMarketer() {
                   borderRadius: "15px",
                 }}
               >
-                {t('riyadah')}
+                {t("riyadah")}
               </Box>
             </Box>
           </Box>
 
           <Box sx={{ mt: "20px", width: "100%" }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              {t('phone_number')}
+              {t("phone_number")}
             </Typography>
             <Box
               sx={{
@@ -161,7 +164,7 @@ function AddMarketer() {
           >
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                {t('bank_name')}
+                {t("bank_name")}
               </Typography>
               <Box
                 sx={{
@@ -176,12 +179,12 @@ function AddMarketer() {
                   borderRadius: "15px",
                 }}
               >
-                {t('alraghy')}
+                {t("alraghy")}
               </Box>
             </Box>
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-               {t('bank_account_number')}
+                {t("bank_account_number")}
               </Typography>
               <Box
                 sx={{
@@ -205,13 +208,13 @@ function AddMarketer() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                flexWrap:'wrap',
-                gap:'20px'
+                flexWrap: "wrap",
+                gap: "20px",
               }}
             >
               <Box>
                 <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                {t('discount_percentage')}
+                  {t("discount_percentage")}
                 </Typography>
 
                 <Box
@@ -234,33 +237,42 @@ function AddMarketer() {
                 </Box>
               </Box>
 
-              <Box sx={{ display: "flex", flexDirection: "column" ,width:'230px'}}>
-            <Typography sx={{alignSelf:'end'}}>{t('add_new_img')}</Typography>
-            <Button
-              sx={{
-                width: "205px",
-                height: "70px",
-                mt: "10px",
-                fontSize: "30px",
-                fontFamily: "Tanseek Modern Pro Arabic",
-                borderRadius: "15px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                color: "#000",
-                textTransform: "capitalize",
-                background: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-              }}
-            >
-              {t("download_img")}
-            </Button> 
-          </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  width: "230px",
+                }}
+              >
+                <Typography sx={{ alignSelf: "end" }}>
+                  {t("add_new_img")}
+                </Typography>
+                <Button
+                  sx={{
+                    width: "205px",
+                    height: "70px",
+                    mt: "10px",
+                    fontSize: "30px",
+                    fontFamily: "Tanseek Modern Pro Arabic",
+                    borderRadius: "15px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    color: "#000",
+                    textTransform: "capitalize",
+                    background:
+                      "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+                  }}
+                >
+                  {t("download_img")}
+                </Button>
+              </Box>
             </Box>
           </Box>
 
           <Box sx={{ my: "30px" }}>
             <Typography sx={{ fontSize: "40px", color: "#114F80", mb: "20px" }}>
-             {t('discount_type')}
+              {t("discount_type")}
             </Typography>
 
             <Box
@@ -282,7 +294,7 @@ function AddMarketer() {
 
                 <Box>
                   <Typography sx={{ fontSize: "30px" }}>
-                  {t('subscription_packages')}
+                    {t("subscription_packages")}
                   </Typography>
                 </Box>
               </Box>

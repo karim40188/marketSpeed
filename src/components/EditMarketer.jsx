@@ -3,13 +3,18 @@ import addImg from "../assets/addimg.png";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 function EditMarketer() {
-
-  let {t} = useTranslation()
-  let navigate = useNavigate()
+  let { t } = useTranslation();
+  let navigate = useNavigate();
   return (
     <Box>
-      <Box sx={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-        <Box sx={{ textAlign: "center", }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <Box sx={{ textAlign: "center" }}>
           <Typography
             sx={{
               fontSize: { xs: "30px", md: "40px" },
@@ -17,9 +22,7 @@ function EditMarketer() {
               fontWeight: "600",
             }}
           >
-
-
-            {t('ahmed_mohamed')}
+            {t("ahmed_mohamed")}
           </Typography>
 
           <Typography
@@ -29,25 +32,25 @@ function EditMarketer() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            {t('marketer')}
+            {t("marketer")}
           </Typography>
         </Box>
 
         <Button
           sx={{
             width: "136px",
-            height: "42px",
-            background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
-
-            borderRadius:'5px',
-            color:"#000",
-            fontWeight:'600'
+            height: "32px",
+            backgroundColor: "#128C7F",
+            fontSize: "20px",
+            borderRadius: "5px",
+            color: "#fff",
+            fontWeight: "600",
           }}
-          onClick={()=>{
-            navigate('/add-marketer')
+          onClick={() => {
+            navigate("/add-marketer");
           }}
         >
-         {t('add_marketer')}
+          {t("save")}
         </Button>
       </Box>
 
@@ -61,7 +64,7 @@ function EditMarketer() {
         >
           <Box>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-             {t('full_name')}
+              {t("full_name")}
             </Typography>
             <Box
               sx={{
@@ -76,7 +79,7 @@ function EditMarketer() {
                 borderRadius: "15px",
               }}
             >
-              {t('ahmed_mohamed')}
+              {t("ahmed_mohamed")}
             </Box>
           </Box>
 
@@ -86,13 +89,13 @@ function EditMarketer() {
               display: "flex",
               gap: "20px",
               justifyContent: "space-between",
-              mt: "20px", 
+              mt: "20px",
             }}
           >
             {/* حقل الدولة */}
             <Box sx={{ width: "49%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                {t('country')}
+                {t("country")}
               </Typography>
               <Box
                 sx={{
@@ -107,7 +110,7 @@ function EditMarketer() {
                   borderRadius: "15px",
                 }}
               >
-                {t('kingdom_of_saudi_arabia')}
+                {t("kingdom_of_saudi_arabia")}
               </Box>
             </Box>
 
@@ -129,7 +132,7 @@ function EditMarketer() {
                   borderRadius: "15px",
                 }}
               >
-                {t('riyadah')}
+                {t("riyadah")}
               </Box>
             </Box>
           </Box>
@@ -139,7 +142,7 @@ function EditMarketer() {
           {/* رقم الجوال في صف منفصل */}
           <Box sx={{ mt: "20px", width: "100%" }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              {t('phone_number')}
+              {t("phone_number")}
             </Typography>
             <Box
               sx={{
@@ -168,7 +171,7 @@ function EditMarketer() {
           >
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                {t('bank_name')}
+                {t("bank_name")}
               </Typography>
               <Box
                 sx={{
@@ -183,12 +186,12 @@ function EditMarketer() {
                   borderRadius: "15px",
                 }}
               >
-                {t('alraghy')}
+                {t("alraghy")}
               </Box>
             </Box>
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-               {t('bank_account_number')}
+                {t("bank_account_number")}
               </Typography>
               <Box
                 sx={{
@@ -212,12 +215,12 @@ function EditMarketer() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                gap:'20px'
+                gap: "20px",
               }}
             >
               <Box>
                 <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                {t('discount_percentage')}
+                  {t("discount_percentage")}
                 </Typography>
 
                 <Box
@@ -240,33 +243,42 @@ function EditMarketer() {
                 </Box>
               </Box>
 
-              <Box sx={{ display: "flex", flexDirection: "column" ,width:'230px'}}>
-            <Typography sx={{alignSelf:'end'}}>{t('add_new_img')}</Typography>
-            <Button
-              sx={{
-                width: "205px",
-                height: "70px",
-                mt: "10px",
-                fontSize: "30px",
-                fontFamily: "Tanseek Modern Pro Arabic",
-                borderRadius: "15px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                color: "#000",
-                textTransform: "capitalize",
-                background: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
-              }}
-            >
-              {t("download_img")}
-            </Button> 
-          </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  width: "230px",
+                }}
+              >
+                <Typography sx={{ alignSelf: "end" }}>
+                  {t("add_new_img")}
+                </Typography>
+                <Button
+                  sx={{
+                    width: "205px",
+                    height: "70px",
+                    mt: "10px",
+                    fontSize: "30px",
+                    fontFamily: "Tanseek Modern Pro Arabic",
+                    borderRadius: "15px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    color: "#000",
+                    textTransform: "capitalize",
+                    background:
+                      "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+                  }}
+                >
+                  {t("download_img")}
+                </Button>
+              </Box>
             </Box>
           </Box>
 
           <Box sx={{ my: "30px" }}>
             <Typography sx={{ fontSize: "40px", color: "#114F80", mb: "20px" }}>
-             {t('discount_type')}
+              {t("discount_type")}
             </Typography>
 
             <Box
@@ -288,7 +300,7 @@ function EditMarketer() {
 
                 <Box>
                   <Typography sx={{ fontSize: "30px" }}>
-                   {t('subscription_packages')}
+                    {t("subscription_packages")}
                   </Typography>
                 </Box>
               </Box>
@@ -303,7 +315,7 @@ function EditMarketer() {
 
                 <Box>
                   <Typography sx={{ fontSize: "30px" }}>
-                    {t('diamond_wallet')}
+                    {t("diamond_wallet")}
                   </Typography>
                 </Box>
               </Box>

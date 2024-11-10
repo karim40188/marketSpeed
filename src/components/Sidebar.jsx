@@ -653,7 +653,7 @@ function Sidebar() {
             >
               {t("view_moderators")}
             </Link>
-            <Typography
+            {/* <Typography
               sx={{ px: "20px", cursor: "pointer", fontSize: "24px" }}
               to=""
               onClick={(e) => {
@@ -666,7 +666,7 @@ function Sidebar() {
               }}
             >
               {t("view_marketers")}
-            </Typography>
+            </Typography> */}
           </Box>
         )}
       </Box>

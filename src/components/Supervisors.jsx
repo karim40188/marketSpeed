@@ -5,6 +5,7 @@ import profile_img from "../assets/profile_img.png";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
+import { motion } from "framer-motion";
 
 function Supervisors() {
 
@@ -67,6 +68,9 @@ useEffect(()=>{
         {supervisors.map((supervisor, index) => {
           return (
             <Box
+
+            component={motion.div}
+            whileHover={{scale:1.1}}
               key={index}
               sx={{
                 width: "247px",
@@ -83,7 +87,8 @@ useEffect(()=>{
                 cursor: "pointer",
               }}
               onClick={()=>{
-                navigate('/supervisor-profile')
+                // navigate('/supervisor-profile')
+                navigate('/marketers')
               }}
             >
               <Box sx={{ width: "108px", height: "108px" }}>
@@ -108,7 +113,7 @@ useEffect(()=>{
               </Typography>
               <Typography sx={{ fontSize: "20px", color: "#114F80" }}>
               {t('location')} <br />
-               {t('team_work_20_marketer')}
+               {t('team_work_20_marketers')}
               </Typography>
             </Box>
           );
