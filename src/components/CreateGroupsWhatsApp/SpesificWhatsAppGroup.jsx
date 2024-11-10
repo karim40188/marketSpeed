@@ -98,6 +98,8 @@ function SpesificWhatsAppGroup() {
                   fontWeight: "600",
                   mt: { xs: 2, md: 0 },
                 }}
+                component={motion.div}
+                whileHover={{scale:1.1}}
                 onClick={() => navigate("/saudi_numbers_whats")}
               >
               {t('next')}

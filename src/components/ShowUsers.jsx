@@ -78,7 +78,7 @@ function ShowUsers() {
         <Box
           sx={{
             position: "relative",
-            width: { xs: "100%", sm: "auto" },
+            width: { xs: "100%", sm: "512px" },
             mt: { xs: "20px", sm: "0" },
           }}
         >

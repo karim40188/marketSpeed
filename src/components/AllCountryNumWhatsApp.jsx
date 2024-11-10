@@ -116,6 +116,8 @@ function AllCountryNumWhatsApp() {
           onClick={() => {
             navigate("/saudi-groups");
           }}
+          component={motion.div}
+          whileHover={{scale:1.1}}
         >
           {t('send')}
         </Button>

@@ -115,7 +115,9 @@ function Sidebar() {
             fontWeight: "400",
             cursor:'pointer'
           }}
-          to="/home"
+        onClick={()=>{
+          navigate('/home')
+        }}
         >
           {t("Home")}
         </Typography>
@@ -563,7 +565,7 @@ function Sidebar() {
               {t("add_admin")}
             </Link>
 
-            <Link
+            {/* <Link
               to="/show-admin-file"
               onClick={(e) => {
                 if (activeLink) {
@@ -574,7 +576,7 @@ function Sidebar() {
               }}
             >
               {t("view_admin_file")}
-            </Link>
+            </Link> */}
             <Link
               to="/show-admins"
               onClick={(e) => {

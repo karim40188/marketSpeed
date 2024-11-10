@@ -113,6 +113,8 @@ function SaudiNumberTelegram() {
             my: "30px",
             mr: "auto",
           }}
+          component={motion.div}
+          whileHover={{scale:1.1}}
           onClick={() => {
             // navigate("/saudi-groups");
           }}

@@ -6,32 +6,30 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 function ShowSupervisor() {
-
-
-  let {t}=useTranslation()
+  let { t } = useTranslation();
   let [ShowSupervisor] = useState([
-    { name: "ahmed_mohamed" },
-    { name: "ahmed_mohamed" },
-    { name: "ahmed_mohamed" },
-    { name: "ahmed_mohamed" },
-    { name: "ahmed_mohamed" },
-    { name: "ahmed_mohamed" },
-
+    { name: "ahmed_mohamed", role: "التحكم فى الاسعار" },
+    { name: "محمود احمد", role: "احصائيات مكاسب التطبيق" },
+    { name: "ساره على ", role: "التحكم فى المنصات" },
+    { name: "ايمن نبيل ", role: "اضافه دول" },
+    { name: " مصطفى ايمن", role: "التحكم فى التطبيق" },
+    { name: "ahmed_mohamed", role: "التحكم فى المجموعات" },
   ]);
 
-
-  let navigate= useNavigate()
+  let navigate = useNavigate();
   return (
-    <Box sx={{ width: "95%",mx:'auto' }}>
-   
-
+    <Box sx={{ width: "95%", mx: "auto" }}>
       <Box
         sx={{ display: "flex", justifyContent: "space-between", my: "30px" }}
       >
         <Typography
-          sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80",fontWeight:'600' }}
+          sx={{
+            fontSize: { xs: "30px", md: "40px" },
+            color: "#114F80",
+            fontWeight: "600",
+          }}
         >
-        {t("view_admins")}
+          {t("view_admins")}
         </Typography>
         <Box sx={{ position: "relative" }}>
           <TextField
@@ -75,11 +73,11 @@ function ShowSupervisor() {
                 flexDirection: "column",
                 p: "20px",
                 textAlign: "center",
-                gap: "10px",
+                gap: "5px",
                 cursor: "pointer",
               }}
-              onClick={()=>{
-                navigate('/show-admin-file')
+              onClick={() => {
+                navigate("/show-admin-file");
               }}
             >
               <Box sx={{ width: "108px", height: "108px" }}>
@@ -90,7 +88,10 @@ function ShowSupervisor() {
                 />
               </Box>
 
-              <Typography>{t(supervisor.name)}</Typography>
+              <Typography>
+                {" "}
+                {t("team_work")}: {t(supervisor.name)}
+              </Typography>
               <Typography
                 sx={{
                   background:
@@ -102,9 +103,13 @@ function ShowSupervisor() {
               >
                 {t("admin")}
               </Typography>
+
+              <Typography sx={{ color: "gray" }}>
+                {t(supervisor.role)}
+              </Typography>
+
               <Typography sx={{ fontSize: "20px", color: "#114F80" }}>
-               {t('location')}   <br />
-                {t("team_work_20_marketer")}
+                {t("location")} <br />
               </Typography>
             </Box>
           );

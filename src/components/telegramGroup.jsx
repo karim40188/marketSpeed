@@ -62,11 +62,11 @@ function TelegramGroup() {
             ? "مجموعات اليمن"
             : ""} */}
 
-          {t("Country_chennels")}
+          {t("saudi_arabia_channels")}
         </Typography>
       </Box>
       <Typography sx={{ my: "30px", fontWeight: "600" }}>
-        {t("telegram")} {`(${whatsApp.length * 2})`}
+        {t("Telegram")} {`(${whatsApp.length * 2})`}
       </Typography>
       <Grid2 container spacing={2} justifyContent="center">
         <Grid2 size={{ xs: 12, md: 5 }}>

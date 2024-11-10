@@ -61,7 +61,7 @@ function CgWhatsAppGroup() {
             ? "مجموعات اليمن"
             : ""} */}
 
-          {t("country_groups")}
+          {t("saudi_groups")}
         </Typography>
       </Box>
       <Typography sx={{ my: "30px", fontWeight: "600" }}>

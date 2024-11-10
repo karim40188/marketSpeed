@@ -51,7 +51,7 @@ function CgTelegramCategory() {
       >
       </Box>
 
-      <Typography sx={{ mb: 1 }}>Telegram</Typography>
+      <Typography sx={{ mb: 1 }}>{t("Telegram")}</Typography>
 
       <Box
         sx={{
