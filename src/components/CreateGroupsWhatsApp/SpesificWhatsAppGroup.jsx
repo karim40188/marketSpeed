@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -129,6 +130,8 @@ function SpesificWhatsAppGroup() {
         <Box sx={{ display: "flex", flexDirection: "column", gap: "20px", mt: "30px" }}>
           {numbers.map((number, index) => (
             <Box
+            component={motion.div}
+            whileHover={{ scale: 1.1 }}
               key={index}
               sx={{
                 width: { xs: "100%", md: "821px" },

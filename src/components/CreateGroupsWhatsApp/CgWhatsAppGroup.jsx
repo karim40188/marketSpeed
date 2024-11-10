@@ -2,7 +2,7 @@ import { Box, Button, Typography, Grid2 } from "@mui/material";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
-
+import { motion } from "framer-motion";
 function CgWhatsAppGroup() {
   let navigate = useNavigate();
   let { t } = useTranslation();
@@ -80,6 +80,8 @@ function CgWhatsAppGroup() {
             >
               {whatsApp.map((item, index) => (
                 <Box
+                  component={motion.div}
+                  whileHover={{ scale: 1.1 }}
                   key={index}
                   sx={{
                     width: { xs: "90%", sm: "97px" },
@@ -138,6 +140,8 @@ function CgWhatsAppGroup() {
             >
               {whatsApp.map((item, index) => (
                 <Box
+                component={motion.div}
+                whileHover={{ scale: 1.1 }}
                   key={index}
                   sx={{
                     width: { xs: "90%", sm: "97px" },

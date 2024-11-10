@@ -43,7 +43,7 @@ function ClientsGroups() {
             }}
           >
             <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <Typography sx={{ fontWeight: "600" }}>{t('channel_link')} </Typography>
+              <Typography sx={{ fontWeight: "600" }}>{t('group_link')} </Typography>
               <Typography>https://market-speed.vercel.app/</Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>

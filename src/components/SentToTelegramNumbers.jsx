@@ -1,10 +1,8 @@
 import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
-function SaudiNumberTelegram() {
-  let navigate = useNavigate();
+function SendToTelegramNumbers() {
   let { t } = useTranslation();
 
   return (
@@ -17,10 +15,10 @@ function SaudiNumberTelegram() {
             fontWeight: "600",
           }}
         >
-          {t("All_numbers_of_channels_the_Kingdom_of_Saudi_Arabia_groups")}
+          {t("Country_chennels")}
         </Typography>
 
-        <Typography>{t("all_numbers")} (36)</Typography>
+        <Typography>{t("all_channels")} (36)</Typography>
       </Box>
 
       <Box
@@ -72,7 +70,7 @@ function SaudiNumberTelegram() {
         </Button>
       </Box>
 
-      <Box  
+      <Box
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -116,6 +114,8 @@ function SaudiNumberTelegram() {
           onClick={() => {
             // navigate("/saudi-groups");
           }}
+          component={motion.div}
+          whileHover={{ scale: 1.1 }}
         >
           {t("send")}
         </Button>
@@ -124,4 +124,4 @@ function SaudiNumberTelegram() {
   );
 }
 
-export default SaudiNumberTelegram;
+export default SendToTelegramNumbers;

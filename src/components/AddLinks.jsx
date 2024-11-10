@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { FaArrowDown } from "react-icons/fa";
 
@@ -144,6 +145,8 @@ function AddLinks() {
                   background:
                     "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
                 }}
+                component={motion.div}
+                whileHover={{ scale: 1.1 }}
               >
                {t('download_csv')}
               </Button>
@@ -173,18 +176,18 @@ function AddLinks() {
                 p: "10px",
                 height: "70px",
                 position: "relative",
-                fontSize: "24px",
+                fontSize: "28px",
               }}
             >
               <option
             
               >
-               {t('whatsApp')}
+               {t('WhatsApp')}
               </option>
               <option
             
               >
-                {t('telegram')}
+                {t('Telegram')}
               </option>
 
               <FaArrowDown

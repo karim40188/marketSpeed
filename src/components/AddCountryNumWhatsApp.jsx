@@ -4,6 +4,7 @@ import qatarImg from "../assets/qatar.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 function AddCountryNumWhatsApp() {
 
@@ -86,6 +87,8 @@ function AddCountryNumWhatsApp() {
                 fontWeight: "600",
                 mt: { xs: 2, md: 0 },
               }}
+              component={motion.div}
+              whileHover={{ scale: 1.1 }}
               onClick={() => navigate("/all-country-num-whatsapp")}
             >
               {t("next")}
@@ -95,7 +98,7 @@ function AddCountryNumWhatsApp() {
 
         <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
           <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-            {t("Choose_the_groups_to_which_it_will_be_sent")}
+            {t("choose_country_send_to_all_numbers")}
           </Typography>
           <select
             onChange={(e) => {
@@ -147,6 +150,8 @@ function AddCountryNumWhatsApp() {
         >
           {whatsApp.map((country, index) => (
             <Box
+            component={motion.div}
+            whileHover={{ scale: 1.1 }}
               className={`${activeOption ? "active-option" : ""}`}
               key={index}
               onClick={(e) => {
@@ -210,6 +215,8 @@ function AddCountryNumWhatsApp() {
         >
           {whatsApp.map((country, index) => (
             <Box
+            component={motion.div}
+            whileHover={{ scale: 1.1 }}
               className={`${activeOption ? "active-option" : ""}`}
               key={index}
               onClick={(e) => {

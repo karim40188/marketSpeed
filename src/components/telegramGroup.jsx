@@ -1,4 +1,5 @@
 import { Box, Button, Typography, Grid2 } from "@mui/material";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
@@ -80,6 +81,8 @@ function TelegramGroup() {
             >
               {whatsApp.map((item, index) => (
                 <Box
+                component={motion.div}
+                whileHover={{ scale: 1.1 }}
                   key={index}
                   sx={{
                     width: { xs: "90%", sm: "97px" },
@@ -138,6 +141,8 @@ function TelegramGroup() {
             >
               {whatsApp.map((item, index) => (
                 <Box
+                component={motion.div}
+                whileHover={{ scale: 1.1 }}
                   key={index}
                   sx={{
                     width: { xs: "90%", sm: "97px" },

@@ -17,10 +17,13 @@ function Sidebar() {
     }
   }, [setSidebarOpen]);
 
-  
   useEffect(() => {
     function clickOutside(e) {
-      if (sidebarRef.current && !sidebarRef.current.contains(e.target) && window.innerWidth < 600) {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(e.target) &&
+        window.innerWidth < 600
+      ) {
         setSidebarOpen(false);
       }
     }
@@ -28,13 +31,12 @@ function Sidebar() {
     return () => window.removeEventListener("mousedown", clickOutside);
   }, [setSidebarOpen]);
 
-  
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth >= 600) {
-        setSidebarOpen(true); 
+        setSidebarOpen(true);
       } else {
-        setSidebarOpen(false); 
+        setSidebarOpen(false);
       }
     }
     window.addEventListener("resize", handleResize);
@@ -93,7 +95,7 @@ function Sidebar() {
     >
       <Box
         sx={{
-          width: { xs: "110px", md: "150px", xl: "260px" },
+          width: { xs: "110px", md: "300px", xl: "260px" },
           height: "auto",
           cursor: "pointer",
         }}
@@ -101,28 +103,27 @@ function Sidebar() {
           navigate("/home");
         }}
       >
-        <Box
-          sx={{ width: "100%", height: "100%" }}
-          component="img"
-          src={logo}
-        />
+        <Box sx={{ width: "100%" }} component="img" src={logo} />
       </Box>
       <Box>
-        <Link
+        <Typography
+          className="hover-link"
           style={{
             color: "#fff",
             fontFamily: "Tanseek Modern Pro Arabic",
             fontSize: "25px",
             fontWeight: "400",
+            cursor:'pointer'
           }}
           to="/home"
         >
           {t("Home")}
-        </Link>
+        </Typography>
       </Box>
       {/* التطبيق */}
       <Box>
         <Typography
+          className="hover-link"
           sx={{
             color: "#fff",
             textAlign: "center",
@@ -176,6 +177,7 @@ function Sidebar() {
       {/* الاحصائيات */}
       <Box>
         <Typography
+          className="hover-link"
           sx={{
             color: "#fff",
             textAlign: "center",
@@ -238,6 +240,7 @@ function Sidebar() {
       {/* الاسعار */}
       <Box>
         <Typography
+          className="hover-link"
           sx={{
             color: "#fff",
             textAlign: "center",
@@ -312,6 +315,7 @@ function Sidebar() {
       <Box>
         <Link to="/show-users">
           <Typography
+            className="hover-link"
             sx={{
               color: "#fff",
               textAlign: "center",
@@ -331,6 +335,7 @@ function Sidebar() {
 
       <Box>
         <Typography
+          className="hover-link"
           sx={{
             color: "#fff",
             textAlign: "center",
@@ -392,6 +397,7 @@ function Sidebar() {
       {/* المجموعات */}
       <Box>
         <Typography
+          className="hover-link"
           sx={{
             color: "#fff",
             textAlign: "center",
@@ -512,6 +518,7 @@ function Sidebar() {
       {/* المسؤلين */}
       <Box>
         <Typography
+          className="hover-link"
           sx={{
             color: "#fff",
             textAlign: "center",
@@ -588,6 +595,7 @@ function Sidebar() {
 
       <Box>
         <Typography
+          className="hover-link"
           sx={{
             color: "#fff",
             textAlign: "center",
@@ -644,7 +652,7 @@ function Sidebar() {
               {t("view_moderators")}
             </Link>
             <Typography
-              sx={{ px: "20px", cursor: "pointer",fontSize:'24px' }}
+              sx={{ px: "20px", cursor: "pointer", fontSize: "24px" }}
               to=""
               onClick={(e) => {
                 if (activeLink) {
@@ -714,7 +722,7 @@ function Sidebar() {
               color: "#fff",
             }}
           >
-            {t('join')}
+            {t("join")}
           </Button>
         </DialogContent>
       </Dialog>

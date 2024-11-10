@@ -58,6 +58,17 @@ a {
   font-family: Tanseek Modern Pro Arabic;
 }
 
+.hover-link:hover {
+  transform: scale(1.2);
+  background: linear-gradient(90deg, #f9d053 0%, #937b31 100%);
+  width:200px;
+  height:40px;
+  text-align: center;
+  padding-inline:20px;
+  border-radius: 10px;
+  transition:400ms all;
+  
+}
 @media only screen and (max-width: 600px) {
   a {
     font-size: 18px;

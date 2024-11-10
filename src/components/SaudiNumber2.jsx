@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
@@ -46,6 +47,8 @@ function SaudiNumber2() {
             textTransform: "capitalize",
             mb: { xs: "10px", md: "0" },
           }}
+          component={motion.div}
+          whileHover={{ scale: 1.1 }}
         >
           {t("attach_link")}
         </Button>
@@ -62,6 +65,8 @@ function SaudiNumber2() {
             textTransform: "capitalize",
             mb: { xs: "10px", md: "0" },
           }}
+          component={motion.div}
+          whileHover={{ scale: 1.1 }}
         >
           {t("attach_image_or_video")}
         </Button>

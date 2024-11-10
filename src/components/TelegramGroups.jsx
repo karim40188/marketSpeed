@@ -4,6 +4,7 @@ import qatarImg from "../assets/qatar.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 function TelegramGroups() {
   let [whatsApp] = useState([
@@ -84,7 +85,9 @@ function TelegramGroups() {
                 fontWeight: "600",
                 mt: { xs: 2, md: 0 },
               }}
-              onClick={() => navigate("/all-country-num")}
+              component={motion.div}
+              whileHover={{ scale: 1.1 }}
+              onClick={() => navigate("/send-telegram-numbers")}
             >
               {t("next")}
             </Button>
@@ -120,7 +123,7 @@ function TelegramGroups() {
         </Box>
       </Box>
 
-      <Typography sx={{ mb: 1 }}>{t("telegram")}</Typography>
+      <Typography sx={{ mb: 1 }}>{t("Telegram")}</Typography>
 
       <Box
         sx={{
@@ -145,6 +148,9 @@ function TelegramGroups() {
         >
           {whatsApp.map((country, index) => (
             <Box
+
+            component={motion.div}
+            whileHover={{ scale: 1.1 }}
               className={`${activeOption ? "active-option" : ""}`}
               key={index}
               onClick={(e) => {
@@ -206,6 +212,8 @@ function TelegramGroups() {
         >
           {whatsApp.map((country, index) => (
             <Box
+            component={motion.div}
+            whileHover={{ scale: 1.1 }}
               className={`${activeOption ? "active-option" : ""}`}
               key={index}
               onClick={(e) => {

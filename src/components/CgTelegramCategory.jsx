@@ -4,6 +4,7 @@ import qatarImg from "../assets/qatar.png";
 import {  useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 function CgTelegramCategory() {
   let [whatsApp] = useState([
@@ -75,6 +76,8 @@ function CgTelegramCategory() {
         >
           {whatsApp.map((country, index) => (
             <Box
+            component={motion.div}
+            whileHover={{ scale: 1.1 }}
               className={`${activeOption ? "active-option" : ""}`}
               key={index}
               onClick={(e) => {
@@ -136,6 +139,8 @@ function CgTelegramCategory() {
         >
           {whatsApp.map((country, index) => (
             <Box
+            component={motion.div}
+            whileHover={{ scale: 1.1 }}
               className={`${activeOption ? "active-option" : ""}`}
               key={index}
               onClick={(e) => {

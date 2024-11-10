@@ -79,6 +79,7 @@ import AllCountryNumTelegram from "./components/AllCountryNumTelegram";
 import AllCountryNumWhatsApp from "./components/AllCountryNumWhatsApp";
 import AddCountryNumWhatsApp from "./components/AddCountryNumWhatsApp";
 import AddCountryNumTelegram from "./components/AddCountryNumTelegram";
+import SendToTelegramNumbers from "./components/SentToTelegramNumbers";
 
 function App() {
   let router = createBrowserRouter([
@@ -187,6 +188,7 @@ function App() {
         { path: "/create_whats_group", element: <CgWhatsAppGroup /> },
         { path: "/spesific_whats_group", element: <SpesificWhatsAppGroup /> },
         { path: "/saudi_numbers_whats", element: <SaudiNumbersWhatsApp /> },
+        { path: "/send-telegram-numbers", element: <SendToTelegramNumbers /> },
         {
           path: "/Spesific-Telegram-Group",
           element: <SpesificTelegramGroup />,

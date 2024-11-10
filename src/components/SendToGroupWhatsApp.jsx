@@ -4,6 +4,7 @@ import qatarImg from "../assets/qatar.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 function SendToGroupWhatsApp() {
   let { t } = useTranslation();
@@ -80,6 +81,8 @@ function SendToGroupWhatsApp() {
                 fontWeight: "600",
                 mt: { xs: 2, md: 0 },
               }}
+              component={motion.div}
+              whileHover={{ scale: 1.1 }}
               onClick={() => {
                 navigate("/saudi-number2");
               }}
@@ -118,7 +121,7 @@ function SendToGroupWhatsApp() {
         </Box>
       </Box>
 
-      <Typography sx={{  mb: 1 }}>{t('whatsApp')}</Typography>
+      <Typography sx={{  mb: 1 }}>{t('WhatsApp')}</Typography>
 
       <Box
         sx={{
@@ -143,6 +146,8 @@ function SendToGroupWhatsApp() {
         >
           {whatsApp.map((country, index) => (
             <Box
+            component={motion.div}
+            whileHover={{ scale: 1.1 }}
               className={`${activeOption ? "active-option" : ""}`}
               key={index}
               onClick={(e) => {
@@ -205,6 +210,8 @@ function SendToGroupWhatsApp() {
         >
           {whatsApp.map((country, index) => (
             <Box
+            component={motion.div}
+            whileHover={{ scale: 1.1 }}
               className={`${activeOption ? "active-option" : ""}`}
               key={index}
               onClick={(e) => {

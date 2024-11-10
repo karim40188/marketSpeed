@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
@@ -15,10 +16,10 @@ function AllCountryNumTelegram() {
             fontWeight: "600",
           }}
         >
-          {t("Country_chennels")}
+          {t("country_numbers")}
         </Typography>
 
-        <Typography>{t("all_channels")} (36)</Typography>
+        <Typography>{t("numbers")} (36)</Typography>
       </Box>
 
       <Box
@@ -45,6 +46,8 @@ function AllCountryNumTelegram() {
             textTransform:'capitalize',
             mb: { xs: "10px", md: "0" }, // Add margin bottom for small screens
           }}
+          component={motion.div}
+          whileHover={{ scale: 1.1 }}
         >
           {t("attach_link")}
         </Button>
@@ -61,6 +64,8 @@ function AllCountryNumTelegram() {
             textTransform:'capitalize',
             mb: { xs: "10px", md: "0" }, // Add margin bottom for small screens
           }}
+          component={motion.div}
+          whileHover={{ scale: 1.1 }}
         >
           {t("attach_image_or_video")}
         </Button>
@@ -111,6 +116,8 @@ function AllCountryNumTelegram() {
           onClick={() => {
             navigate("/saudi-groups");
           }}
+          component={motion.div}
+          whileHover={{ scale: 1.1 }}
         >
           {t('send')}
         </Button>
