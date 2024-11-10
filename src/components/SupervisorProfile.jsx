@@ -2,9 +2,12 @@ import { Box, Button, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 function SupervisorProfile() {
-  let {t}= useTranslation()
+  let { t } = useTranslation();
+
+  let navigate = useNavigate();
   let [field] = useState([
     { name: "full_name", value: "ahmed_mohamed" },
     { name: "Referrals", value: "40,000,0000" },
@@ -18,11 +21,15 @@ function SupervisorProfile() {
   return (
     <Box>
       <Typography
-        sx={{ fontSize: { xs: "30px", md: "40px" }, color: "#114F80" ,fontWeight:'600'}}
+        sx={{
+          fontSize: { xs: "30px", md: "40px" },
+          color: "#114F80",
+          fontWeight: "600",
+        }}
       >
-        {t('view_profile')}
+        {t("view_profile")}
       </Typography>
-      <Box sx={{  width:{xs: "100%",xl:'60%'} }}>
+      <Box sx={{ width: { xs: "100%", xl: "60%" } }}>
         <Box
           sx={{
             display: "flex",
@@ -54,9 +61,11 @@ function SupervisorProfile() {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-              to='/edit-supervisor'
+              onClick={() => {
+                navigate("/edit-supervisor");
+              }}
             >
-              {t('edit')}
+              {t("edit")}
             </Button>
             <Button
               sx={{
@@ -74,7 +83,7 @@ function SupervisorProfile() {
                 alignItems: "center",
               }}
             >
-              {t('delete')}
+              {t("delete")}
             </Button>
           </Box>
         </Box>
@@ -100,7 +109,7 @@ function SupervisorProfile() {
                   <Box key={field.name} sx={{ width: "100%" }}>
                     <Box
                       key={field.name}
-                      sx={{width:'412px'}} // عرض 100% لجعل الحقل يظهر في صف منفصل
+                      sx={{ width: {xs:"auto",md:"412px"} ,backgroundColor:'red'}} // عرض 100% لجعل الحقل يظهر في صف منفصل
                     >
                       <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
                         {t(field.name)}

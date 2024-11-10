@@ -1,9 +1,11 @@
 import { Box, Button, Typography } from "@mui/material";
 import addImg from "../assets/addimg.png";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 function EditMarketer() {
 
   let {t} = useTranslation()
+  let navigate = useNavigate()
   return (
     <Box>
       <Box sx={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
@@ -40,6 +42,9 @@ function EditMarketer() {
             borderRadius:'5px',
             color:"#000",
             fontWeight:'600'
+          }}
+          onClick={()=>{
+            navigate('/add-marketer')
           }}
         >
          {t('add_marketer')}
@@ -235,13 +240,27 @@ function EditMarketer() {
                 </Box>
               </Box>
 
-              <Box sx={{ width: "292px", height: "123px" }}>
-                <Box
-                  component="img"
-                  src={addImg}
-                  sx={{ width: "100%", height: "100%" }}
-                />
-              </Box>
+              <Box sx={{ display: "flex", flexDirection: "column" ,width:'230px'}}>
+            <Typography sx={{alignSelf:'end'}}>{t('add_new_img')}</Typography>
+            <Button
+              sx={{
+                width: "205px",
+                height: "70px",
+                mt: "10px",
+                fontSize: "30px",
+                fontFamily: "Tanseek Modern Pro Arabic",
+                borderRadius: "15px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "#000",
+                textTransform: "capitalize",
+                background: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+              }}
+            >
+              {t("download_img")}
+            </Button> 
+          </Box>
             </Box>
           </Box>
 
@@ -269,7 +288,7 @@ function EditMarketer() {
 
                 <Box>
                   <Typography sx={{ fontSize: "30px" }}>
-                    باقات الاشتراك
+                   {t('subscription_packages')}
                   </Typography>
                 </Box>
               </Box>
@@ -284,7 +303,7 @@ function EditMarketer() {
 
                 <Box>
                   <Typography sx={{ fontSize: "30px" }}>
-                    المحفظة الماسيه
+                    {t('diamond_wallet')}
                   </Typography>
                 </Box>
               </Box>

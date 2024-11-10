@@ -12,7 +12,7 @@ function EditSupervisor() {
           fontWeight: "600",
         }}
       >
-        {t("add_supervisor")}
+        {t("edit_supervisor")}
       </Typography>
       <Box sx={{ p: "20px", width: { xs: "100%", xl: "60%" } }}>
         <Box
@@ -22,13 +22,13 @@ function EditSupervisor() {
             p: "20px",
           }}
         >
-          <Box>
+          <Box sx={{width:'49%'}}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
              {t('full_name')}
             </Typography>
             <Box
               sx={{
-                width: "412px",
+                width: "100%",
                 height: "70px",
                 p: "20px",
                 fontSize: "30px",
@@ -97,13 +97,13 @@ function EditSupervisor() {
           {/* البريد الالكتروني  */}
 
           {/* رقم الجوال في صف منفصل */}
-          <Box sx={{ mt: "20px", width: "100%" }}>
+          <Box sx={{ mt: "20px", width: "49%" }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
               {t('phone_number')}
             </Typography>
             <Box
               sx={{
-                width: "412px",
+                width: "100%",
                 height: "70px",
                 p: "20px",
                 fontSize: "30px",
@@ -126,13 +126,13 @@ function EditSupervisor() {
               justifyContent: "space-between",
             }}
           >
-            <Box>
+            <Box sx={{width:'49%'}}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
                {t('bank_name')}
               </Typography>
               <Box
                 sx={{
-                  width: "412px",
+                  width: "100%",
                   height: "70px",
                   p: "20px",
                   fontSize: "30px",
@@ -146,13 +146,13 @@ function EditSupervisor() {
                 {t('alraghy')}
               </Box>
             </Box>
-            <Box sx={{ display: "flex", flexDirection: "column" }}>
+            <Box sx={{ display: "flex", flexDirection: "column",width:'48%' }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
                {t('bank_account_number')}
               </Typography>
               <Box
                 sx={{
-                  width: "412px",
+                  width: "100%",
                   height: "70px",
                   p: "20px",
                   fontSize: "30px",
@@ -168,19 +168,26 @@ function EditSupervisor() {
             </Box>
           </Box>
 
-          <Box
-            sx={{
-              width: "292px",
-              height: "123px",
-              alignSelf: "end",
-              mt: "10px",
-            }}
-          >
-            <Box
-              component="img"
-              src={addimg}
-              sx={{ width: "100%", height: "100%" }}
-            />
+          <Box sx={{ display: "flex", flexDirection: "column" ,width:'230px'}}>
+            <Typography sx={{alignSelf:'end'}}>{t('add_new_img')}</Typography>
+            <Button
+              sx={{
+                width: "205px",
+                height: "70px",
+                mt: "10px",
+                fontSize: "30px",
+                fontFamily: "Tanseek Modern Pro Arabic",
+                borderRadius: "15px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "#000",
+                textTransform: "capitalize",
+                background: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+              }}
+            >
+              {t("download_img")}
+            </Button> 
           </Box>
 
           <Box
@@ -214,12 +221,12 @@ function EditSupervisor() {
 
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                {t('اضافه كلمه السر ')}
+                {t('add_password')}
               </Typography>
               <Box
                 sx={{
                   width: "412px",
-                  height: "70pxح",
+                  height: "70px",
                   p: "20px",
                   fontSize: "30px",
                   backgroundColor: "#fff",

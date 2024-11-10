@@ -188,7 +188,7 @@ function AddSupervisor() {
               }}
             >
               {t("download_img")}
-            </Button>
+            </Button> 
           </Box>
 
           <Box

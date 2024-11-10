@@ -54,13 +54,13 @@ function AddMarketer() {
             p: "20px",
           }}
         >
-          <Box>
+          <Box sx={{width:'45%'}}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
              {t('full_name')}
             </Typography>
             <Box
               sx={{
-                width: "412px",
+                width: "100%",
                 height: "70px",
                 p: "20px",
                 fontSize: "30px",
@@ -86,7 +86,7 @@ function AddMarketer() {
             }}
           >
             {/* حقل الدولة */}
-            <Box sx={{ width: "49%" }}>
+            <Box sx={{ width: "45%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
                 {t('country')}
               </Typography>
@@ -108,7 +108,7 @@ function AddMarketer() {
             </Box>
 
             {/* حقل المدينة */}
-            <Box sx={{ width: "49%" }}>
+            <Box sx={{ width: "45%" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
                 {t("city")}
               </Typography>
@@ -130,9 +130,6 @@ function AddMarketer() {
             </Box>
           </Box>
 
-          {/* البريد الالكتروني  */}
-
-          {/* رقم الجوال في صف منفصل */}
           <Box sx={{ mt: "20px", width: "100%" }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
               {t('phone_number')}
@@ -237,13 +234,27 @@ function AddMarketer() {
                 </Box>
               </Box>
 
-              <Box sx={{ width: "292px", height: "123px" }}>
-                <Box
-                  component="img"
-                  src={addImg}
-                  sx={{ width: "100%", height: "100%" }}
-                />
-              </Box>
+              <Box sx={{ display: "flex", flexDirection: "column" ,width:'230px'}}>
+            <Typography sx={{alignSelf:'end'}}>{t('add_new_img')}</Typography>
+            <Button
+              sx={{
+                width: "205px",
+                height: "70px",
+                mt: "10px",
+                fontSize: "30px",
+                fontFamily: "Tanseek Modern Pro Arabic",
+                borderRadius: "15px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "#000",
+                textTransform: "capitalize",
+                background: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+              }}
+            >
+              {t("download_img")}
+            </Button> 
+          </Box>
             </Box>
           </Box>
 
@@ -271,7 +282,7 @@ function AddMarketer() {
 
                 <Box>
                   <Typography sx={{ fontSize: "30px" }}>
-                    باقات الاشتراك
+                  {t('subscription_packages')}
                   </Typography>
                 </Box>
               </Box>
@@ -286,7 +297,7 @@ function AddMarketer() {
 
                 <Box>
                   <Typography sx={{ fontSize: "30px" }}>
-                    المحفظة الماسيه
+                    {t("diamond_wallet")}
                   </Typography>
                 </Box>
               </Box>

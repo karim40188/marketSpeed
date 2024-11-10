@@ -68,7 +68,7 @@ function TelegramGroups() {
               type="checkbox"
             />
             <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-              تحديد الكل (10000)
+            {t('select_all')} (10000)
             </Typography>
           </Box>
 
@@ -86,14 +86,14 @@ function TelegramGroups() {
               }}
               onClick={() => navigate("/all-country-num")}
             >
-              التالى
+              {t("next")}
             </Button>
           </Box>
         </Box>
 
         <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
           <Typography sx={{ fontFamily: "Sora", fontWeight: "600" }}>
-            اختر قنوات التى يتم الارسال عليها
+           {t('choose_channel')}
           </Typography>
           <select
             // onChange={(e) => {
@@ -110,12 +110,12 @@ function TelegramGroups() {
               fontSize: "20px",
             }}
           >
-            <option value="1">المملكه العربيه السعوديه</option>
-            <option value="2">قطر</option>
-            <option value="3">البحرين</option>
-            <option value="4">اليمن</option>
-            <option value="5">المغرب</option>
-            <option value="6">الكل</option>
+            <option value="1">{t("kingdom_of_saudi_arabia")}  </option>
+            <option value="2">{t("qatar")}</option>
+            <option value="3">{t("qatar")}</option>
+            <option value="4">{t("yemen")}</option>
+            <option value="5">{t("morocco")}</option>
+            <option value="6">{t('all')}</option>
           </select>
         </Box>
       </Box>

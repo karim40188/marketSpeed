@@ -157,6 +157,7 @@ function App() {
         // Done
         // Destop 61
         { path: "/send-to-groups", element: <SendToGroups /> },
+        { path: "/add-marketer", element: <AddMarketer /> },
         {
           path: "/all-country-num-telegram",
           element: <AllCountryNumTelegram />,

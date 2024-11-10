@@ -12,17 +12,15 @@ function Sidebar() {
   let { sidebarOpen, setSidebarOpen } = useContext(Context);
 
   useEffect(() => {
-    if (window.innerWidth <= 600) {
+    if (window.innerWidth < 600) {
       setSidebarOpen(false);
     }
-  },[setSidebarOpen]);
+  }, [setSidebarOpen]);
+
+  
   useEffect(() => {
     function clickOutside(e) {
-      if (
-        sidebarRef.current &&
-        !sidebarRef.current.contains(e.target) &&
-        window.innerWidth <= 600
-      ) {
+      if (sidebarRef.current && !sidebarRef.current.contains(e.target) && window.innerWidth < 600) {
         setSidebarOpen(false);
       }
     }
@@ -30,10 +28,18 @@ function Sidebar() {
     return () => window.removeEventListener("mousedown", clickOutside);
   }, [setSidebarOpen]);
 
-
-
-
-
+  
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth >= 600) {
+        setSidebarOpen(true); 
+      } else {
+        setSidebarOpen(false); 
+      }
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [setSidebarOpen]);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -637,8 +643,8 @@ function Sidebar() {
             >
               {t("view_moderators")}
             </Link>
-            <Link
-              style={{ pr: "20px", cursor: "pointer" }}
+            <Typography
+              sx={{ px: "20px", cursor: "pointer",fontSize:'24px' }}
               to=""
               onClick={(e) => {
                 if (activeLink) {
@@ -650,7 +656,7 @@ function Sidebar() {
               }}
             >
               {t("view_marketers")}
-            </Link>
+            </Typography>
           </Box>
         )}
       </Box>
@@ -672,14 +678,14 @@ function Sidebar() {
           }}
         >
           <TextField
-            label="اسم المستخدم"
+            label={t("user_name")}
             variant="outlined"
             fullWidth
             margin="dense"
             style={{ backgroundColor: "#fff", borderRadius: "15px" }}
           />
           <TextField
-            label="كلمة المرور"
+            label={t("password")}
             type="password"
             variant="outlined"
             fullWidth
@@ -708,7 +714,7 @@ function Sidebar() {
               color: "#fff",
             }}
           >
-            دخول
+            {t('join')}
           </Button>
         </DialogContent>
       </Dialog>
