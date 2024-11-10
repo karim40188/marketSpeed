@@ -72,6 +72,7 @@ function CgWhatsAppCategory() {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
+            flexWrap:"wrap",
           }}
         >
           {whatsApp.map((country, index) => (
@@ -90,7 +91,7 @@ function CgWhatsAppCategory() {
                 navigate("/create_whats_group");
               }}
               sx={{
-                width: { xs: "100%", md: "336px" },
+                maxWidth: { xs: "100%", md: "336px" },
                 height: "77px",
                 border: "3px solid #114F80",
                 borderRadius: "15px",
@@ -153,8 +154,8 @@ function CgWhatsAppCategory() {
                 navigate("/create_whats_group");
               }}
               sx={{
-                width: { xs: "100%", md: "336px" },
-                height: "77px",
+                maxWidth: { xs: "100%", md: "336px" },
+                maxHeight: "77px",
                 border: "3px solid #114F80",
                 borderRadius: "15px",
                 display: "flex",

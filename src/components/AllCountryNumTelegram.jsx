@@ -70,12 +70,12 @@ function AllCountryNumTelegram() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          width: { xs: "100%", sm: "90%", md: "890px" },
+          maxWidth: { xs: "100%", sm: "90%", md: "890px" },
         }}
       >
         <Box
           sx={{
-            width: { xs: "100%", sm: "100%", md: "855px" },
+            maxWidth: { xs: "100%", sm: "100%", md: "855px" },
             p: { xs: "20px", sm: "40px", md: "100px" }, // Responsive padding
             backgroundColor: "#fff",
             mt: "50px",

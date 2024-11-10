@@ -1,11 +1,11 @@
 import { Box, Button, Typography } from "@mui/material";
 import share_logo from "../assets/share-logo.png";
 import { FaShareAlt } from "react-icons/fa";
-
+import { motion } from "framer-motion";
 import { t } from "i18next";
 import { useTranslation } from "react-i18next";
 import addlogo from "../assets/addlogo.png";
-import share from "../assets/share.png";
+import share from "../assets/video_icons/share.png";
 
 function ShareWithFriends() {
   let { t } = useTranslation();
@@ -85,24 +85,43 @@ function ShareWithFriends() {
             flexWrap: "wrap",
           }}
         >
-          <Box
-            sx={{
-              width: "339px",
-              height: "auto",
-              p: "20px",
-              borderRadius: "15px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "30px",
-              cursor: "pointer",
-            }}
-          >
-            <Box
-              component="img"
-              src={share}
-              sx={{ width: "100%", height: "100%" }}
-            />
+          <Box sx={{ maxWidth: "375px", maxHeight: "160px" }}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 }}
+              whileHover={{ scale: 1.1 }}
+            >
+              <Box sx={{ width: "350px" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Typography>{t("share")}</Typography>
+                  <Button
+                    sx={{
+                      background:
+                        "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+                      color: "#fff",
+                      borderRadius: "6px",
+                      fontSize: "25px",
+                      width: "150px",
+                      height: "32px",
+                      fontFamily: "Tanseek Modern Pro Arabic",
+                    }}
+                  >
+                    {t("add_new_video")}
+                  </Button>
+                </Box>
+                <Box
+                  sx={{ width: "339px", height: "116px" }}
+                  component="img"
+                  src={share}
+                />
+              </Box>
+            </motion.div>
           </Box>
 
           <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
@@ -176,13 +195,38 @@ function ShareWithFriends() {
               </Button>
             </Box>
           </Box>
-
-        <Box sx={{ width: "500px", height: "auto", mt: "100px" }}>
+          <Box sx={{width:'293px'}}>
             <Box
-              component="img"
-              src={share_logo}
-              sx={{ width: "100%", height: "100%", backgroundSize: "cover" }}
-            />
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                
+              }}
+            >
+              <Typography>{t("logo")}</Typography>
+              <Button
+                sx={{
+                  background:
+                    "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+                  color: "#fff",
+                  borderRadius: "6px",
+                  fontSize: "25px",
+                  width: "150px",
+                  height: "32px",
+                  fontFamily: "Tanseek Modern Pro Arabic",
+                  
+                }}
+              >
+                {t("add_logo")}
+              </Button>
+            </Box>
+            <Box sx={{ width: "135px", height: "auto", mt: "20px",cursor:'pointer', }}>
+              <Box
+                component="img"
+                src={share_logo}
+                sx={{ width: "100%", height: "100%", backgroundSize: "cover" }}
+              />
+            </Box>
           </Box>
         </Box>
 

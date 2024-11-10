@@ -37,11 +37,11 @@ function AddDiscount() {
             style={{ display: "flex", flexDirection: "column", gap: "30px", alignItems: "start", width: { xs: "100%", md: "auto" }}}
           >
             <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-              <Typography sx={{ width: { xs: "auto", md: "121px" }, fontWeight: '600' }}>{t('code')}</Typography>
+              <Typography sx={{ width: { xs: "auto", md: "auto" }, fontWeight: '600' }}>{t('code')}</Typography>
               <TextField
                 sx={{
-                  width: { xs: "100%", md: "189px" },
-                  height: "62px",
+                  width: { xs: "100%", md: "auto" },
+                  height: "auto",
                   fontSize: "30px",
                   '&:focus': {
                     borderColor: '#114F80',
@@ -52,13 +52,13 @@ function AddDiscount() {
               />
             </Box>
             <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-              <Typography sx={{ width: { xs: "auto", md: "121px" }, fontWeight: '600' }}>{t('discount_percentage')} </Typography>
+              <Typography sx={{ width: { xs: "auto", md: "auto" }, fontWeight: '600' }}>{t('discount_percentage')} </Typography>
               <TextField
 
               value={"20    %"}
                 sx={{
-                  width: { xs: "100%", md: "174px" },
-                  height: "62px",
+                  width: { xs: "100%", md: "auto" },
+                  height: "auto",
                   fontSize: "30px",
                   '&:focus': {
                     borderColor: '#114F80',
@@ -82,7 +82,7 @@ function AddDiscount() {
               sx={{
                 fontSize: "25px",
                 fontFamily: "Tanseek Modern Pro Arabic",
-                width: "156px",
+                width: "auto",
                 height: "32px",
                 backgroundColor: "#128C7F",
                 borderRadius: "6px",
@@ -106,7 +106,7 @@ function AddDiscount() {
               sx={{
                 fontSize: "25px",
                 fontFamily: "Tanseek Modern Pro Arabic",
-                width: "156px",
+                width: "auto",
                 height: "32px",
                 backgroundColor: "#CC0000",
                 borderRadius: "6px",

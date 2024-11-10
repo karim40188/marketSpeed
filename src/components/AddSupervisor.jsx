@@ -2,7 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import addimg from "../assets/addimg.png";
 import { useTranslation } from "react-i18next";
 function AddSupervisor() {
-  let {t}= useTranslation()
+  let { t } = useTranslation();
   return (
     <Box>
       <Typography
@@ -24,11 +24,11 @@ function AddSupervisor() {
         >
           <Box>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-             {t('full_name')}
+              {t("full_name")}
             </Typography>
             <Box
               sx={{
-                width: "412px",
+                width: "auto",
                 height: "70px",
                 p: "20px",
                 fontSize: "30px",
@@ -39,7 +39,7 @@ function AddSupervisor() {
                 borderRadius: "15px",
               }}
             >
-             {t("ahmed_mohamed")}
+              {t("ahmed_mohamed")}
             </Box>
           </Box>
 
@@ -48,17 +48,18 @@ function AddSupervisor() {
               display: "flex",
               gap: "20px",
               justifyContent: "space-between",
+              flexWrap: "wrap",
               mt: "20px",
             }}
           >
-            <Box sx={{ width: "49%" }}>
+            <Box sx={{ width: {xs:'100%',md:"45%"} }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                {t('country')}
+                {t("country")}
               </Typography>
               <Box
                 sx={{
                   width: "100%",
-                  height: "70px",
+                  height: "auto",
                   p: "20px",
                   fontSize: "30px",
                   backgroundColor: "#fff",
@@ -68,13 +69,13 @@ function AddSupervisor() {
                   borderRadius: "15px",
                 }}
               >
-             {t('kingdom_of_saudi_arabia')}
+                {t("kingdom_of_saudi_arabia")}
               </Box>
             </Box>
 
-            <Box sx={{ width: "49%" }}>
+            <Box sx={{ width: {xs:'100%',md:"45%" }}}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                {t('city')}
+                {t("city")}
               </Typography>
               <Box
                 sx={{
@@ -89,7 +90,7 @@ function AddSupervisor() {
                   borderRadius: "15px",
                 }}
               >
-                         {t('riyadah')}
+                {t("riyadh")}
               </Box>
             </Box>
           </Box>
@@ -99,11 +100,11 @@ function AddSupervisor() {
           {/* رقم الجوال في صف منفصل */}
           <Box sx={{ mt: "20px", width: "100%" }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-              {t('phone_number')}
+              {t("phone_number")}
             </Typography>
             <Box
               sx={{
-                width: "412px",
+                width: "100%",
                 height: "70px",
                 p: "20px",
                 fontSize: "30px",
@@ -126,13 +127,13 @@ function AddSupervisor() {
               justifyContent: "space-between",
             }}
           >
-            <Box>
+            <Box sx={{width:{xs:"100%",md:"45%"}}}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-               {t('bank_name')}
+                {t("bank_name")}
               </Typography>
               <Box
                 sx={{
-                  width: "412px",
+                  width: "100%",
                   height: "70px",
                   p: "20px",
                   fontSize: "30px",
@@ -143,16 +144,16 @@ function AddSupervisor() {
                   borderRadius: "15px",
                 }}
               >
-                {t('alraghy')}
+                {t("alraghy")}
               </Box>
             </Box>
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-               {t('bank_account_number')}
+                {t("bank_account_number")}
               </Typography>
               <Box
                 sx={{
-                  width: "412px",
+                  width: "auto",
                   height: "70px",
                   p: "20px",
                   fontSize: "30px",
@@ -168,19 +169,26 @@ function AddSupervisor() {
             </Box>
           </Box>
 
-          <Box
-            sx={{
-              width: "292px",
-              height: "123px",
-              alignSelf: "end",
-              mt: "10px",
-            }}
-          >
-            <Box
-              component="img"
-              src={addimg}
-              sx={{ width: "100%", height: "100%" }}
-            />
+          <Box sx={{ display: "flex", flexDirection: "column" ,width:'230px'}}>
+            <Typography sx={{alignSelf:'end'}}>{t('add_new_img')}</Typography>
+            <Button
+              sx={{
+                width: "205px",
+                height: "70px",
+                mt: "10px",
+                fontSize: "30px",
+                fontFamily: "Tanseek Modern Pro Arabic",
+                borderRadius: "15px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "#000",
+                textTransform: "capitalize",
+                background: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+              }}
+            >
+              {t("download_img")}
+            </Button>
           </Box>
 
           <Box
@@ -188,16 +196,17 @@ function AddSupervisor() {
               display: "flex",
               gap: "20px",
               justifyContent: "space-between",
+              flexWrap: "wrap",
               mt: "20px",
             }}
           >
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                {t('email')}
+                {t("email")}
               </Typography>
               <Box
                 sx={{
-                  width: "412px",
+                  width: {xs:'100%',md:"412px"},
                   height: "70px",
                   p: "20px",
                   fontSize: "30px",
@@ -214,12 +223,12 @@ function AddSupervisor() {
 
             <Box>
               <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                {t('اضافه كلمه السر ')}
+                {t("add_password")}
               </Typography>
               <Box
                 sx={{
-                  width: "412px",
-                  height: "70pxح",
+                  width: {xs:'100%',md:"412px"},
+                  height: "70px",
                   p: "20px",
                   fontSize: "30px",
                   backgroundColor: "#fff",
@@ -240,10 +249,10 @@ function AddSupervisor() {
               height: "32px",
               backgroundColor: "#114F80",
               color: "#fff",
-              borderRadius:'6px'
+              borderRadius: "6px",
             }}
           >
-            {t('save')}
+            {t("save")}
           </Button>
         </Box>
       </Box>

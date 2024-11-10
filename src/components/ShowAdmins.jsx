@@ -36,7 +36,7 @@ function ShowSupervisor() {
         <Box sx={{ position: "relative" }}>
           <TextField
             placeholder={"بحث بالاسم"}
-            sx={{ width: "597px", backgroundColor: "#fff" }}
+            sx={{ maxWidth: "597px", backgroundColor: "#fff" }}
           />
           <Box
             sx={{
@@ -65,7 +65,7 @@ function ShowSupervisor() {
             <Box
               key={index}
               sx={{
-                width: "247px",
+                maxWidth: "247px",
                 height: "331px",
                 backgroundColor: "#FFFFFF",
                 borderRadius: "15px",

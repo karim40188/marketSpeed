@@ -46,6 +46,7 @@ function Suggestion() {
                 borderRadius: "5px",
                 display: "flex",
                 justifyContent: "space-between",
+                gap:'80px',
                 alignItems: "center",
                 cursor: "pointer",
                 transition: "background-color 0.3s", 

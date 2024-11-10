@@ -60,6 +60,7 @@ function CreateGroupCategories() {
           sx={{
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
+            flexWrap:'wrap',
             alignItems: "center",
             justifyContent: "space-around",
             gap: "20px",

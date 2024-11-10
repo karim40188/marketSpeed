@@ -155,7 +155,7 @@ function SendToGroupWhatsApp() {
                 // navigate("/saudi-groups");
               }}
               sx={{
-                width: { xs: "100%", md: "336px" },
+                maxWidth: { xs: "100%", md: "336px" },
                 height: "77px",
                 border: "3px solid #114F80",
                 borderRadius: "15px",
@@ -217,7 +217,7 @@ function SendToGroupWhatsApp() {
                 // navigate("/saudi-groups");
               }}
               sx={{
-                width: { xs: "100%", md: "336px" },
+                maxWidth: { xs: "100%", md: "336px" },
                 height: "77px",
                 border: "3px solid #114F80",
                 borderRadius: "15px",

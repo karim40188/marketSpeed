@@ -36,7 +36,7 @@ function Banners() {
         {t("home_page")}
       </Typography>
 
-      <Typography>البنارات الطول 16 والعرض 32</Typography>
+      <Typography>{t("banner_width_height")}</Typography>
 
       <Box sx={{ p: "40px" }}>
         <Typography

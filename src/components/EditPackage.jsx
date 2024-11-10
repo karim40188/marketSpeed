@@ -1,4 +1,4 @@
-import { Box, Button, Typography ,Grid2} from "@mui/material";
+import { Box, Button, Typography, Grid2 } from "@mui/material";
 import { useContext } from "react";
 import { Context } from "./Context";
 import { useTranslation } from "react-i18next";
@@ -21,7 +21,13 @@ function EditPackage() {
 
   return (
     <Box sx={{ width: "100%", p: { xs: 2, md: 1 }, mx: "auto" }}>
-      <Box component={motion.div} variants={fadeIn} initial="hidden" animate="visible" sx={{ display: "flex", justifyContent: "space-between", mb: 0 }}>
+      <Box
+        component={motion.div}
+        variants={fadeIn}
+        initial="hidden"
+        animate="visible"
+        sx={{ display: "flex", justifyContent: "space-between", mb: 0 }}
+      >
         <Typography
           sx={{
             fontSize: { xs: "24px", md: "40px" },
@@ -29,7 +35,7 @@ function EditPackage() {
             fontWeight: "600",
           }}
         >
-          {t('edit_package')}
+          {t("edit_package")}
         </Typography>
       </Box>
 
@@ -40,7 +46,7 @@ function EditPackage() {
         animate="visible"
         sx={{
           p: "20px",
-          width: sidebarOpen ? { xs: "100%", md: "672px" } : "100%",
+          width: sidebarOpen ? { xs: "100%", md: "auto" } : "100%",
           mx: sidebarOpen ? { xs: "", md: "" } : "auto",
         }}
       >
@@ -53,7 +59,9 @@ function EditPackage() {
             alignItems: { xs: "center", md: "flex-start" },
           }}
         >
-          <Typography sx={{ mb: { xs: 2, md: 0 } }}>{t('benefits_of_the_package')}</Typography>
+          <Typography sx={{ mb: { xs: 2, md: 0 } }}>
+            {t("benefits_of_the_package")}
+          </Typography>
 
           <Box sx={{ display: "flex", gap: 2 }}>
             <Button
@@ -73,7 +81,7 @@ function EditPackage() {
                 py: 1,
               }}
             >
-              {t('save')}
+              {t("save")}
             </Button>
             <Button
               component={motion.button}
@@ -92,7 +100,7 @@ function EditPackage() {
                 py: 1,
               }}
             >
-              {t('delete')}
+              {t("delete")}
             </Button>
           </Box>
         </Box>
@@ -121,15 +129,33 @@ function EditPackage() {
                 margin: 0,
               }}
             >
-              <li><Typography>{t('15_free_diamonds')}</Typography></li>
-              <li><Typography>{t('whatsapp_logo_available_4_weeks')}</Typography></li>
-              <li><Typography>{t('telegram_logo_available_4_weeks')}</Typography></li>
-              <li><Typography>{t('instagram_logo_available_4_weeks')}</Typography></li>
-              <li><Typography>{t('x_logo_available_4_weeks')}</Typography></li>
-              <li><Typography>{t('facebook_logo_available_4_weeks')}</Typography></li>
-              <li><Typography>{t('tiktok_logo_available_4_weeks')}</Typography></li>
-              <li><Typography>{t("sms_logo_available_4_weeks")}</Typography></li>
-              <li><Typography>{t("email_logo_available_4_weeks")}</Typography></li>
+              <li>
+                <Typography>{t("15_free_diamonds")}</Typography>
+              </li>
+              <li>
+                <Typography>{t("whatsapp_logo_available_4_weeks")}</Typography>
+              </li>
+              <li>
+                <Typography>{t("telegram_logo_available_4_weeks")}</Typography>
+              </li>
+              <li>
+                <Typography>{t("instagram_logo_available_4_weeks")}</Typography>
+              </li>
+              <li>
+                <Typography>{t("x_logo_available_4_weeks")}</Typography>
+              </li>
+              <li>
+                <Typography>{t("facebook_logo_available_4_weeks")}</Typography>
+              </li>
+              <li>
+                <Typography>{t("tiktok_logo_available_4_weeks")}</Typography>
+              </li>
+              <li>
+                <Typography>{t("sms_logo_available_4_weeks")}</Typography>
+              </li>
+              <li>
+                <Typography>{t("email_logo_available_4_weeks")}</Typography>
+              </li>
             </ul>
           </Box>
         </Grid2>
@@ -153,7 +179,7 @@ function EditPackage() {
           <Typography
             sx={{
               fontSize: "30px",
-              border: "1px solid black",
+              border: "2px solid black",
               width: "174px",
               height: "62px",
               borderRadius: "5px",
@@ -163,12 +189,12 @@ function EditPackage() {
               fontWeight: "600",
             }}
           >
-            {t('30_riyals')}
+            {t("30_riyals")}
           </Typography>
           <Typography
             sx={{
               fontSize: "30px",
-              border: "1px solid black",
+              border: "2px solid black",
               width: "174px",
               height: "62px",
               borderRadius: "5px",
@@ -179,7 +205,7 @@ function EditPackage() {
               fontWeight: "600",
             }}
           >
-            {t('7_5_dollars')}
+            {t("7_5_dollars")}
           </Typography>
         </Box>
       </Box>

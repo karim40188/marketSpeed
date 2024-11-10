@@ -84,7 +84,7 @@ function Marketers() {
         <Box sx={{ position: "relative" }}>
           <TextField
             placeholder={t("search_by_name")}
-            sx={{ width: "597px", backgroundColor: "#fff" }}
+            sx={{ maxWidth: "597px", backgroundColor: "#fff" }}
           />
           <Box
             sx={{

@@ -7,7 +7,7 @@ function AddMarketer() {
   return (
     <Box>
       <Box sx={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-        <Box sx={{ textAlign: "center", width: "12%" }}>
+        <Box sx={{ textAlign: "center", }}>
           <Typography
             sx={{
               fontSize: { xs: "30px", md: "40px" },
@@ -81,6 +81,7 @@ function AddMarketer() {
               display: "flex",
               gap: "20px",
               justifyContent: "space-between",
+              flexWrap:'wrap',
               mt: "20px", 
             }}
           >
@@ -207,6 +208,7 @@ function AddMarketer() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
+                flexWrap:'wrap',
                 gap:'20px'
               }}
             >

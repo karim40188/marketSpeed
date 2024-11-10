@@ -17,9 +17,10 @@ function AddAdminFile() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          flexWrap:"wrap",
         }}
       >
-        <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
+        <Box sx={{ display: "flex", gap: "20px", alignItems: "center" , flexWrap:"wrap",}}>
           <Box sx={{ width: "108px", height: "108px" }}>
             <Box
               sx={{ width: "100%", height: "100%" }}
@@ -181,6 +182,7 @@ function AddAdminFile() {
               display: "flex",
               gap: "20px",
               justifyContent: "space-between",
+              flexWrap:"wrap",
               mt: "20px",
             }}
           >
@@ -217,6 +219,7 @@ function AddAdminFile() {
                   fontSize: "30px",
                   backgroundColor: "#fff",
                   display: "flex",
+                  flexWrap:"wrap",
                   alignItems: "center",
                   mt: "10px",
                   borderRadius: "15px",
@@ -245,6 +248,7 @@ function AddAdminFile() {
                   fontSize: "30px",
                   backgroundColor: "#fff",
                   display: "flex",
+                  flexWrap:"wrap",
                   alignItems: "center",
                   mt: "10px",
                   borderRadius: "15px",
@@ -265,6 +269,7 @@ function AddAdminFile() {
                   fontSize: "30px",
                   backgroundColor: "#fff",
                   display: "flex",
+                  flexWrap:"wrap",
                   alignItems: "center",
                   mt: "10px",
                   borderRadius: "15px",
@@ -291,7 +296,7 @@ function AddAdminFile() {
             </Typography>
 
             <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" ,px:'30px'}}>
-              <Box sx={{ display: "flex",gap:'20px',alignItems:"center" }}>
+              <Box sx={{ display: "flex",gap:'20px',alignItems:"center", flexWrap:"wrap", }}>
                 <Box
                   sx={{
                     width: "37px",
@@ -307,7 +312,7 @@ function AddAdminFile() {
                
                 </Box>
               </Box>
-              <Box sx={{ display: "flex",gap:'20px',alignItems:"center" }}>
+              <Box sx={{ display: "flex",gap:'20px',alignItems:"center", flexWrap:"wrap", }}>
                 <Box
                   sx={{
                     width: "37px",
@@ -323,7 +328,7 @@ function AddAdminFile() {
                
                 </Box>
               </Box>
-              <Box sx={{ display: "flex",gap:'20px',alignItems:"center" }}>
+              <Box sx={{ display: "flex",gap:'20px',alignItems:"center", flexWrap:"wrap", }}>
                 <Box
                   sx={{
                     width: "37px",
@@ -339,7 +344,7 @@ function AddAdminFile() {
                
                 </Box>
               </Box>
-              <Box sx={{ display: "flex",gap:'20px',alignItems:"center" }}>
+              <Box sx={{ display: "flex",gap:'20px',alignItems:"center", flexWrap:"wrap", }}>
                 <Box
                   sx={{
                     width: "37px",
@@ -355,7 +360,7 @@ function AddAdminFile() {
                
                 </Box>
               </Box>
-              <Box sx={{ display: "flex",gap:'20px',alignItems:"center" }}>
+              <Box sx={{ display: "flex",gap:'20px',alignItems:"center" , flexWrap:"wrap",}}>
                 <Box
                   sx={{
                     width: "37px",
@@ -371,7 +376,7 @@ function AddAdminFile() {
                
                 </Box>
               </Box>
-              <Box sx={{ display: "flex",gap:'20px',alignItems:"center" }}>
+              <Box sx={{ display: "flex",gap:'20px',alignItems:"center", flexWrap:"wrap", }}>
                 <Box
                   sx={{
                     width: "37px",
@@ -387,7 +392,7 @@ function AddAdminFile() {
                
                 </Box>
               </Box>
-              <Box sx={{ display: "flex",gap:'20px',alignItems:"center" }}>
+              <Box sx={{ display: "flex",gap:'20px',alignItems:"center", flexWrap:"wrap", }}>
                 <Box
                   sx={{
                     width: "37px",
@@ -403,7 +408,7 @@ function AddAdminFile() {
                
                 </Box>
               </Box>
-              <Box sx={{ display: "flex",gap:'20px',alignItems:"center" }}>
+              <Box sx={{ display: "flex",gap:'20px',alignItems:"center", flexWrap:"wrap", }}>
                 <Box
                   sx={{
                     width: "37px",
@@ -419,7 +424,7 @@ function AddAdminFile() {
                
                 </Box>
               </Box>
-              <Box sx={{ display: "flex",gap:'20px',alignItems:"center" }}>
+              <Box sx={{ display: "flex",gap:'20px',alignItems:"center", flexWrap:"wrap", }}>
                 <Box
                   sx={{
                     width: "37px",
@@ -435,7 +440,7 @@ function AddAdminFile() {
                
                 </Box>
               </Box>
-              <Box sx={{ display: "flex",gap:'20px',alignItems:"center" }}>
+              <Box sx={{ display: "flex",gap:'20px',alignItems:"center", flexWrap:"wrap", }}>
                 <Box
                   sx={{
                     width: "37px",

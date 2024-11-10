@@ -1,6 +1,6 @@
 import { Box, Button, Grid2, Typography } from "@mui/material";
 import { useState } from "react";
-import { motion } from "framer-motion"; // استيراد motion من framer-motion
+import { motion } from "framer-motion"; 
 import whatsApp from "../assets/video_icons/whatsapp.png";
 import telegram from "../assets/video_icons/telegram.png";
 import instagram from "../assets/video_icons/instagram.png";
@@ -19,7 +19,7 @@ function Platforms() {
       name: "Telegram",
       img: telegram,
       status: "turn_off",
-      // bgBtn: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+      
     },
     {
       name: "Instagram",
@@ -31,21 +31,21 @@ function Platforms() {
       name: "TikTok",
       img: tiktok,
       status: "turn_off",
-      // bgBtn: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+      
     },
     { name: "X", img: twitter, status: "turn_on", bgBtn: "CC0000" },
     {
       name: "SMS",
       img: sms,
       status: "turn_off",
-      // bgBtn: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+      
     },
     { name: "facebook", img: facebook, status: "turn_on", bgBtn: "CC0000" },
     {
       name: "Email",
       img: email,
       status: "turn_off",
-      // bgBtn: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
+      
     },
   ]);
 
@@ -76,6 +76,7 @@ function Platforms() {
             container
             spacing={5}
             sx={{ display: "flex", flexWrap: "wrap" }}
+            justifyContent={"center"}
           >
             {icons.map((icon, index) => {
               return (
@@ -84,9 +85,10 @@ function Platforms() {
                   sx={{ maxWidth: "375px", maxHeight: "160px" }}
                 >
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }} // الإعدادات الأولية
-                    whileInView={{ opacity: 1, scale: 1 }} // كيف تظهر العناصر
-                    transition={{ duration: 0.3 }} // مدة الانتقال
+                    initial={{ opacity: 0, scale: 0.8 }} 
+                    whileInView={{ opacity: 1, scale: 1 }} 
+                    transition={{ duration: 0.3 }} 
+                    whileHover={{scale:1.1}}
                   >
                     <Box sx={{ width: "350px" }}>
                       <Box

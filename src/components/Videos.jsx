@@ -1,6 +1,6 @@
 import { Box, Button, Grid2, Typography } from "@mui/material";
 import { useState } from "react";
-import { motion } from "framer-motion"; // استيراد motion من framer-motion
+import { motion } from "framer-motion";
 import whatsApp from "../assets/video_icons/whatsapp.png";
 import telegram from "../assets/video_icons/telegram.png";
 import instagram from "../assets/video_icons/instagram.png";
@@ -10,7 +10,7 @@ import facebook from "../assets/video_icons/facebook.png";
 import sms from "../assets/video_icons/sms.png";
 import email from "../assets/video_icons/email.png";
 import { useTranslation } from "react-i18next";
-import share from "../assets/video_icons/share.png"
+import share from "../assets/video_icons/share.png";
 
 function Videos() {
   let { t } = useTranslation();
@@ -61,9 +61,10 @@ function Videos() {
                   sx={{ maxWidth: "375px", maxHeight: "160px" }}
                 >
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }} // الإعدادات الأولية
-                    whileInView={{ opacity: 1, scale: 1 }} // كيف تظهر العناصر
-                    transition={{ duration: 0.3 }} // مدة الانتقال
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                    whileHover={{scale:1.1}}
                   >
                     <Box sx={{ width: "350px" }}>
                       <Box
@@ -85,7 +86,7 @@ function Videos() {
                             fontFamily: "Tanseek Modern Pro Arabic",
                           }}
                         >
-                         {t('add_new_video')}
+                          {t("add_new_video")}
                         </Button>
                       </Box>
                       <Box
@@ -123,9 +124,10 @@ function Videos() {
                   sx={{ maxWidth: "375px", maxHeight: "160px" }}
                 >
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }} // الإعدادات الأولية
-                    whileInView={{ opacity: 1, scale: 1 }} // كيف تظهر العناصر
-                    transition={{ duration: 0.3 }} // مدة الانتقال
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                    whileHover={{scale:1.1}}
                   >
                     <Box sx={{ width: "350px" }}>
                       <Box
@@ -147,7 +149,7 @@ function Videos() {
                             fontFamily: "Tanseek Modern Pro Arabic",
                           }}
                         >
-                         {t('add_new_video')}
+                          {t("add_new_video")}
                         </Button>
                       </Box>
                       <Box
@@ -162,8 +164,6 @@ function Videos() {
             })}
           </Grid2>
         </Box>
-
-      
       </Box>
     </Box>
   );

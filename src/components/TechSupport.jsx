@@ -54,6 +54,7 @@ function TechSupport() {
                 justifyContent: "space-between",
                 alignItems: "center",
                 cursor: "pointer",
+                gap:'100px',
                 transition: "background-color 0.3s",
                 "&:hover": {
                   backgroundColor: "#C0C0C0",

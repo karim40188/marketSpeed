@@ -41,7 +41,7 @@ function ShowUsers() {
   };
 
   return (
-    <Box sx={{ width: "100%", m: "0 auto" }}>
+    <Box sx={{ width: "100%", mx: "auto" }}>
       <Button
         sx={{
           width: { xs: "100%", sm: "156px" },
@@ -78,7 +78,7 @@ function ShowUsers() {
         <Box
           sx={{
             position: "relative",
-            width: { xs: "100%", sm: "597px" },
+            width: { xs: "100%", sm: "auto" },
             mt: { xs: "20px", sm: "0" },
           }}
         >
@@ -184,6 +184,7 @@ function ShowUsers() {
           gap: "30px",
           p: "25px",
           justifyContent: "center",
+
         }}
       >
         {filteredUsers.map((user, index) => (

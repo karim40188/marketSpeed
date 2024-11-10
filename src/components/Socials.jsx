@@ -30,7 +30,7 @@ function Socials() {
       <Typography className="text-gradient">
          {t("Marketing_Spead_accounts")}
         </Typography>
-      <Box sx={{ p: "40px" }}>
+      <Box sx={{ p: "20px" }}>
         <Typography
           className="text-gradient"
           sx={{
@@ -72,7 +72,7 @@ function Socials() {
                   <Box
                     sx={{
                       width: "auto",
-                      height: "110px",
+                      height: "auto",
                       my: "10px",
                       border: "3px solid #114F80",
                       borderRadius: "15px",
@@ -85,12 +85,12 @@ function Socials() {
                   >
                     <Link
                       style={{
-                        fontSize: "25px",
+                        fontSize: "20px",
                         fontFamily: "Tanseek Modern Pro Arabic",
                       }}
                     >
                       https://www.figma.com/design/
-                      epS6m7H0obCBxgPOrgZdlc/Untitl.................
+                      epS6m7H0obCBxgPOrgZdlc/Untitl.
                     </Link>
                   </Box>
                 </motion.div>
@@ -101,7 +101,7 @@ function Socials() {
         </Grid2>
       
         <Typography className="text-gradient" sx={{ textAlign: "center",my:'20px'}}>{t("social_account")}</Typography>
-        <Grid2 container spacing={4}>
+        <Grid2 container spacing={4} alignItems="center">
           <Grid2 size={{ xs: 12, md: 6 }}>
             <Box
               sx={{
@@ -110,7 +110,7 @@ function Socials() {
                 alignItems: "center",
               }}
             >
-              <Typography> {t("mobile")}</Typography>
+              <Typography sx={{width:'100%'}}> {t("mobile")}</Typography>
               <Button
                 sx={{
                   width: "156px",
@@ -133,7 +133,7 @@ function Socials() {
               <Box
                 sx={{
                   width: "auto",
-                  height: "110px",
+                  height: "auto",
                   my: "10px",
                   border: "3px solid #114F80",
                   borderRadius: "15px",
@@ -146,12 +146,12 @@ function Socials() {
               >
                 <Link
                   style={{
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontFamily: "Tanseek Modern Pro Arabic",
                   }}
                 >
                   https://www.figma.com/design/
-                  epS6m7H0obCBxgPOrgZdlc/Untitl.................
+                  epS6m7H0obCBxgPOrgZdlc/Untitl.
                 </Link>
               </Box>
             </motion.div>
@@ -187,7 +187,7 @@ function Socials() {
               <Box
                 sx={{
                   width: "auto",
-                  height: "110px",
+                  height: "auto",
                   my: "10px",
                   border: "3px solid #114F80",
                   borderRadius: "15px",
@@ -200,12 +200,12 @@ function Socials() {
               >
                 <Link
                   style={{
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontFamily: "Tanseek Modern Pro Arabic",
                   }}
                 >
                   https://www.figma.com/design/
-                  epS6m7H0obCBxgPOrgZdlc/Untitl.................
+                  epS6m7H0obCBxgPOrgZdlc/Untitl.
                 </Link>
               </Box>
             </motion.div>

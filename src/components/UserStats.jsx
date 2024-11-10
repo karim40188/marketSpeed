@@ -106,7 +106,7 @@ function UserStats() {
           >
             <Box
               sx={{
-                width: { xs: "100%", md: "659px" },
+                width: { xs: "100%", md: "auto" },
                 height: "281px",
                 backgroundColor: "#fff",
                 display: "flex",
@@ -121,7 +121,7 @@ function UserStats() {
             >
               <Box
                 sx={{
-                  width: { xs: "100%", md: "521.21px" },
+                  maxWidth: { xs: "100%", md: "521.21px" },
                   height: "169px",
                   borderRadius: "15px",
                   background:
@@ -132,6 +132,7 @@ function UserStats() {
                   justifyContent: "center",
                   alignItems: "center",
                   textAlign: "center",
+                  padding:'30px'
                 }}
               >
                 <Typography sx={{ fontSize: { xs: "24px", md: "30px" } }}>

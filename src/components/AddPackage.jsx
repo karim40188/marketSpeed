@@ -40,7 +40,7 @@ function AddPackage() {
         animate="visible"
         sx={{
           p: "20px",
-          width: sidebarOpen ? { xs: "100%", md: "672px" } : "100%",
+          width: sidebarOpen ? { xs: "100%", md: "auto" } : "100%",
           mx: sidebarOpen ? { xs: "", md: "" } : "auto",
         }}
       >

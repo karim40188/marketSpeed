@@ -100,12 +100,12 @@ function SendLogo() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          width: { xs: "100%", sm: "90%", md: "890px" },
+          width: { xs: "100%", sm: "90%", md: "auto" },
         }}
       >
         <Box
           sx={{
-            width: { xs: "100%", sm: "100%", md: "855px" },
+            width: { xs: "100%", sm: "100%", md: "auto" },
             p: { xs: "20px", sm: "40px", md: "100px" },
             backgroundColor: "#fff",
             mx: "auto",

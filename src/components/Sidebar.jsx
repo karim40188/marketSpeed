@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import logo from "../assets/logo.svg";
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Dialog, DialogContent, TextField, Button } from "@mui/material";
 import { Context } from "./Context";
@@ -8,6 +8,31 @@ import { useTranslation } from "react-i18next";
 
 function Sidebar() {
   const [open, setOpen] = useState(false);
+  let sidebarRef = useRef();
+  let { sidebarOpen, setSidebarOpen } = useContext(Context);
+
+  useEffect(() => {
+    if (window.innerWidth <= 600) {
+      setSidebarOpen(false);
+    }
+  },[setSidebarOpen]);
+  useEffect(() => {
+    function clickOutside(e) {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(e.target) &&
+        window.innerWidth <= 600
+      ) {
+        setSidebarOpen(false);
+      }
+    }
+    window.addEventListener("mousedown", clickOutside);
+    return () => window.removeEventListener("mousedown", clickOutside);
+  }, [setSidebarOpen]);
+
+
+
+
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -17,7 +42,6 @@ function Sidebar() {
     setOpen(false);
   };
 
-  let { sidebarOpen } = useContext(Context);
   let [activeLink, setActiveLink] = useState(false);
   let [appDropDown, setAppDropDown] = useState(false);
   let [statsDropDown, setStatsDropDown] = useState(false);
@@ -39,7 +63,6 @@ function Sidebar() {
   ]);
 
   let navigate = useNavigate();
-  let sidebarRef = useRef(null);
 
   let { t } = useTranslation();
 
@@ -48,10 +71,10 @@ function Sidebar() {
       sx={{
         backgroundColor: "#114F80",
         width: sidebarOpen ? { xs: "200px", md: "30%" } : "0",
-        position: sidebarOpen ? { xs: "fixed", md: "sticky" } : "",
+        position: sidebarOpen ? { xs: "fixed", sm: "sticky" } : "",
         top: "0",
         bottom: "0",
-        height: "auto",
+        minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -86,9 +109,9 @@ function Sidebar() {
             fontSize: "25px",
             fontWeight: "400",
           }}
-          to='/home'
+          to="/home"
         >
-         {t('Home')}
+          {t("Home")}
         </Link>
       </Box>
       {/* التطبيق */}
@@ -524,7 +547,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              {t("اضافه مسؤل")}
+              {t("add_admin")}
             </Link>
 
             <Link
@@ -537,7 +560,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              {t("عرض ملف المسؤل")}
+              {t("view_admin_file")}
             </Link>
             <Link
               to="/show-admins"
@@ -549,7 +572,7 @@ function Sidebar() {
                 setActiveLink(e.target);
               }}
             >
-              {t("عرض المسؤلين ")}
+              {t("view_admins")}
             </Link>
           </Box>
         )}
@@ -614,8 +637,8 @@ function Sidebar() {
             >
               {t("view_moderators")}
             </Link>
-            <Typography
-              sx={{ pr: "20px", cursor: "pointer" }}
+            <Link
+              style={{ pr: "20px", cursor: "pointer" }}
               to=""
               onClick={(e) => {
                 if (activeLink) {
@@ -627,7 +650,7 @@ function Sidebar() {
               }}
             >
               {t("view_marketers")}
-            </Typography>
+            </Link>
           </Box>
         )}
       </Box>

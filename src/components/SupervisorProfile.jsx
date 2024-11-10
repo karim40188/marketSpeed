@@ -22,7 +22,7 @@ function SupervisorProfile() {
       >
         {t('view_profile')}
       </Typography>
-      <Box sx={{ p: "20px", width:{xs: "100%",xl:'60%'} }}>
+      <Box sx={{  width:{xs: "100%",xl:'60%'} }}>
         <Box
           sx={{
             display: "flex",
@@ -83,7 +83,7 @@ function SupervisorProfile() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            p: "20px",
+            // p: "20px",
           }}
         >
           <Box
@@ -96,7 +96,6 @@ function SupervisorProfile() {
           >
             {field.map((field) => {
               if (field.name === "رقم الجوال") {
-                // هذا الشرط يجعل "المدينة" في صف منفصل
                 return (
                   <Box key={field.name} sx={{ width: "100%" }}>
                     <Box
@@ -112,7 +111,6 @@ function SupervisorProfile() {
                           height: "70px",
                           p: "20px",
                           fontSize: "30px",
-                          backgroundColor: "#fff",
                           display: "flex",
                           alignItems: "center",
                           mt: "10px",

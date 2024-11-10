@@ -110,7 +110,7 @@ function EditAdminFile() {
               display: "flex",
               gap: "20px",
               justifyContent: "space-between",
-              mt: "20px", // إضافة مسافة بين الصفوف
+              mt: "20px", 
             }}
           >
             {/* حقل الدولة */}
@@ -187,7 +187,8 @@ function EditAdminFile() {
               display: "flex",
               gap: "20px",
               justifyContent: "space-between",
-              mt: "20px", // إضافة مسافة بين الصفوف
+              flexWrap:"wrap",
+              mt: "20px", 
             }}
           >
             <Box>

@@ -24,6 +24,7 @@ function Navbar() {
         backgroundColor: "#fff",
         height: "auto",
         display: "flex",
+        flexWrap:"wrap",
         justifyContent: "space-between",
         alignItems: "center",
         pl: { xs: "10px", md: "20px" },
@@ -116,14 +117,14 @@ function Navbar() {
               value={language}
             >
               <option
-                style={{ backgroundColor: "#114F80", color: "#fff" }}
+                style={{ backgroundColor: "#fff", color: "#000" }}
                 value="ar"
               >
                 {" "}
                 {t("arabic")}
               </option>
               <option
-                style={{ backgroundColor: "#114F80", color: "#fff" }}
+                style={{backgroundColor: "#fff", color: "#000" }}
                 value="en"
               >
                 {" "}

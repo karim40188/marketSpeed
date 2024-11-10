@@ -67,7 +67,7 @@ function Packages() {
         spacing={2}
         sx={{
           p: "20px",
-          width: sidebarOpen ? { xs: "100%", md: "672px" } : "100%",
+          width: sidebarOpen ? { xs: "100%", md: "auto" } : "100%",
           mx: sidebarOpen ? "" : { md: "auto" },
         }}
       >
@@ -177,12 +177,13 @@ function Packages() {
           <Typography
             sx={{
               fontSize: "30px",
-              border: "1px solid black",
-              width: "174px",
-              height: "62px",
+              border: "2px solid black",
+              maxWidth: "174px",
+              height: "auto",
               borderRadius: "5px",
               display: "flex",
               justifyContent: "center",
+              padding:"10px",
               alignItems: "center",
               fontWeight: "600",
             }}
@@ -192,9 +193,10 @@ function Packages() {
           <Typography
             sx={{
               fontSize: "30px",
-              border: "1px solid black",
-              width: "174px",
-              height: "62px",
+              border: "2px solid black",
+              maxWidth: "174px",
+              height: "auto",
+              padding:'10px',
               borderRadius: "5px",
               display: "flex",
               justifyContent: "center",

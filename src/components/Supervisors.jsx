@@ -1,9 +1,10 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import profile_img from "../assets/profile_img.png";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 function Supervisors() {
 
@@ -19,9 +20,13 @@ function Supervisors() {
   ]);
 
 
+  let lang= i18next.language
+useEffect(()=>{
+  console.log(i18next.language)
+})
   let navigate= useNavigate()
   return (
-    <Box sx={{ width: "95%" }}>
+    <Box sx={{ maxWidth: "100%" }}>
    
 
       <Box
@@ -34,15 +39,15 @@ function Supervisors() {
         </Typography>
         <Box sx={{ position: "relative" }}>
           <TextField
-            placeholder={"بحث بالاسم"}
-            sx={{ width: "597px", backgroundColor: "#fff" }}
+            placeholder={t('search_by_name')}
+            sx={{ width: {xs:'auto',lg:"597px"}, backgroundColor: "#fff" }}
           />
           <Box
             sx={{
               position: "absolute",
               top: "50%",
               transform: "translateY(-50%)",
-              left: "10px",
+              left: lang === "en" ?'90%' :"5%",
               width: "33.6px",
               height: "34.8px",
             }}

@@ -17,6 +17,7 @@ function SendToGroups() {
         minHeight: "100vh",
         gap: "50px",
         backgroundColor: "#f4f6f8",
+        
         px: 2,
       }}
     >
@@ -36,6 +37,7 @@ function SendToGroups() {
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
+          flexWrap:'wrap',
           alignItems: "center",
           justifyContent: "space-around",
           gap: "20px",

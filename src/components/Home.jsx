@@ -53,7 +53,7 @@ function Home() {
         container
         sx={{
           p: "20px",
-          width: { xs: "90%", sm: "80%" },
+          width: {  },
           mx: "auto",
           justifyContent: "center",
         }}
