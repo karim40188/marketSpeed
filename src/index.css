@@ -59,15 +59,14 @@ a {
 }
 
 .hover-link:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
   background: linear-gradient(90deg, #f9d053 0%, #937b31 100%);
-  width:200px;
-  height:40px;
+  width: 200px;
+  margin: 10px auto;
+  height: 40px;
   text-align: center;
-  padding-inline:20px;
   border-radius: 10px;
-  transition:400ms all;
-  
+  transition: 400ms all;
 }
 @media only screen and (max-width: 600px) {
   a {

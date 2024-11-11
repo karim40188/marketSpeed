@@ -3,24 +3,32 @@ import profile_img from "../assets/profile_img.png";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function SupervisorProfile() {
   let { t } = useTranslation();
-
   let navigate = useNavigate();
   let [field] = useState([
     { name: "full_name", value: "ahmed_mohamed" },
     { name: "Referrals", value: "40,000,0000" },
     { name: "country", value: "kingdom_of_saudi_arabia" },
-    { name: "city", value: "riyadah" }, // هذا هو الحقل الذي سيظهر في صف منفصل
+    { name: "city", value: "riyadah" },
     { name: "phone_number", value: "966 5552512" },
     { name: "bank_name", value: "alraghy" },
     { name: "bank_account_number", value: "56145612515615614154145" },
   ]);
 
   return (
-    <Box>
+    <motion.Box
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <Typography
+        component={motion.div}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
         sx={{
           fontSize: { xs: "30px", md: "40px" },
           color: "#114F80",
@@ -31,6 +39,10 @@ function SupervisorProfile() {
       </Typography>
       <Box sx={{ width: { xs: "100%", xl: "60%" } }}>
         <Box
+          component={motion.div}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
           sx={{
             display: "flex",
             justifyContent: "space-between",
@@ -61,6 +73,8 @@ function SupervisorProfile() {
                 justifyContent: "center",
                 alignItems: "center",
               }}
+              component={motion.div}
+              whileHover={{ scale: 1.15 }}
               onClick={() => {
                 navigate("/edit-supervisor");
               }}
@@ -82,19 +96,15 @@ function SupervisorProfile() {
                 justifyContent: "center",
                 alignItems: "center",
               }}
+              component={motion.div}
+              whileHover={{ scale: 1.15 }}
             >
               {t("delete")}
             </Button>
           </Box>
         </Box>
 
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            // p: "20px",
-          }}
-        >
+        <Box sx={{ display: "flex", flexDirection: "column" }}>
           <Box
             sx={{
               display: "flex",
@@ -103,63 +113,39 @@ function SupervisorProfile() {
               justifyContent: "space-between",
             }}
           >
-            {field.map((field) => {
-              if (field.name === "رقم الجوال") {
-                return (
-                  <Box key={field.name} sx={{ width: "100%" }}>
-                    <Box
-                      key={field.name}
-                      sx={{ width: {xs:"auto",md:"412px"} ,backgroundColor:'red'}} // عرض 100% لجعل الحقل يظهر في صف منفصل
-                    >
-                      <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                        {t(field.name)}
-                      </Typography>
-                      <Box
-                        sx={{
-                          width: "100%",
-                          height: "70px",
-                          p: "20px",
-                          fontSize: "30px",
-                          display: "flex",
-                          alignItems: "center",
-                          mt: "10px",
-                          borderRadius: "15px",
-                        }}
-                      >
-                        {t(field.value)}
-                      </Box>
-                    </Box>
+            {field.map((field, index) => (
+              <motion.div
+                key={field.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 * index, duration: 0.4 }}
+              >
+                <Box sx={{ width: field.name === "رقم الجوال" ? "100%" : "auto" }}>
+                  <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
+                    {t(field.name)}
+                  </Typography>
+                  <Box
+                    sx={{
+                      width: { xs: "auto", md: "412px" },
+                      height: "70px",
+                      p: "20px",
+                      fontSize: "30px",
+                      backgroundColor: "#fff",
+                      display: "flex",
+                      alignItems: "center",
+                      mt: "10px",
+                      borderRadius: "15px",
+                    }}
+                  >
+                    {t(field.value)}
                   </Box>
-                );
-              } else {
-                return (
-                  <Box key={field.name}>
-                    <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
-                      {t(field.name)}
-                    </Typography>
-                    <Box
-                      sx={{
-                        width: "412px",
-                        height: "70px",
-                        p: "20px",
-                        fontSize: "30px",
-                        backgroundColor: "#fff",
-                        display: "flex",
-                        alignItems: "center",
-                        mt: "10px",
-                        borderRadius: "15px",
-                      }}
-                    >
-                      {t(field.value)}
-                    </Box>
-                  </Box>
-                );
-              }
-            })}
+                </Box>
+              </motion.div>
+            ))}
           </Box>
         </Box>
       </Box>
-    </Box>
+    </motion.Box>
   );
 }
 

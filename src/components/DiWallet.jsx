@@ -51,6 +51,7 @@ function DiWallet() {
         <Button
           component={motion.button}
           variants={scaleIn}
+          whileHover={{scale:1.15}}
           initial="hidden"
           animate="visible"
           sx={{
@@ -160,6 +161,7 @@ function DiWallet() {
                     variants={scaleIn}
                     initial="hidden"
                     animate="visible"
+                    whileHover={{scale:1.15}}
                     sx={{
                       fontSize: { xs: "18px", md: "25px" },
                       fontFamily: "Tanseek Modern Pro Arabic",
@@ -178,6 +180,9 @@ function DiWallet() {
                     {t("edit")}
                   </Button>
                   <Button
+                   component={motion.div}
+                   whileHover={{scale:1.15}}
+
                     sx={{
                       fontSize: { xs: "18px", md: "25px" },
                       fontFamily: "Tanseek Modern Pro Arabic",

@@ -1,4 +1,4 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button,Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
 import send_btn from "../assets/send_btn.png";
 import { FaPlus } from "react-icons/fa";
@@ -10,7 +10,11 @@ function SuggestionSession() {
   let { t } = useTranslation();
   return (
     <Box
-      sx={{ width: { xs: "100%", md: "100%" }, px: { xs: "10px", md: "0" },mx:'auto' }}
+      sx={{
+        width: { xs: "100%", md: "100%" },
+        px: { xs: "10px", md: "0" },
+        mx: "auto",
+      }}
     >
       <Box
         sx={{
@@ -186,27 +190,28 @@ function SuggestionSession() {
             width: "100%",
             height: "100px",
             backgroundColor: "#114F80",
-            borderRadius:'20px',
+            borderRadius: "20px",
             display: "flex",
             alignItems: "center",
-            justifyContent:'space-around',
+            justifyContent: "space-around",
             p: "20px",
             gap: "10px",
           }}
         >
           <Box
             sx={{
-              width: "61px",
-              height: "51px",
+              width: "50px",
+              height: "50px",
               borderRadius: "50%",
               backgroundColor: "#fff",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              cursor: "pointer",
             }}
           >
             <Box
-              sx={{ width: "36.51px", height: "31.5px" }}
+              sx={{ width: "20px", height: "20px" }}
               component="img"
               src={send_btn}
             />
@@ -222,6 +227,7 @@ function SuggestionSession() {
               height: "60px",
               fontSize: "20px",
               borderRadius: "15px",
+              padding: "10px",
             }}
             value={value}
           />
@@ -230,6 +236,7 @@ function SuggestionSession() {
               fontSize: "50px",
               color: "#EFC750",
               fontFamily: "Titillium Web",
+              cursor: "pointer",
             }}
           >
             <FaPlus />

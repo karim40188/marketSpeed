@@ -1,7 +1,7 @@
 import { Box, Button, Typography, Grid } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion"; // استيراد Framer Motion
+import { motion } from "framer-motion";
 
 function Discounts() {
   let navigate = useNavigate();
@@ -10,9 +10,9 @@ function Discounts() {
   return (
     <Box>
       <motion.div
-        initial={{ opacity: 0 }}  // بداية الشفافية 0
-        animate={{ opacity: 1 }}   // تصبح الشفافية 1 عند التفاعل
-        transition={{ duration: 1 }} // مدة الحركة 1 ثانية
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
       >
         <Box
           sx={{
@@ -28,7 +28,7 @@ function Discounts() {
               fontWeight: "600",
             }}
           >
-            {t('discount_codes')}
+            {t("discount_codes")}
           </Typography>
           <Button
             sx={{
@@ -48,17 +48,19 @@ function Discounts() {
             onClick={() => {
               navigate("/add-discount");
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
           >
-            {t('add_new_discount_code')}
+            {t("add_new_discount_code")}
           </Button>
         </Box>
       </motion.div>
 
       <Box sx={{ p: { xs: "20px", md: "40px" } }}>
         <motion.div
-          initial={{ opacity: 0 }}  // بداية الشفافية 0
-          animate={{ opacity: 1 }}   // تصبح الشفافية 1 عند التفاعل
-          transition={{ duration: 1, delay: 0.5 }} // تأخير الحركة
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
         >
           <Typography
             sx={{
@@ -69,16 +71,16 @@ function Discounts() {
               mb: "30px",
             }}
           >
-            {t('all_codes')}
+            {t("all_codes")}
           </Typography>
         </motion.div>
 
         {[...Array(3)].map((_, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0 }}  // بداية الشفافية 0
-            animate={{ opacity: 1 }}   // تصبح الشفافية 1 عند التفاعل
-            transition={{ duration: 1, delay: 1 * index }} // تأخير متزايد لكل مكون
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 * index }}
           >
             <Box sx={{ mb: 4 }}>
               <Grid container alignItems="start" justifyContent="space-between">
@@ -91,7 +93,7 @@ function Discounts() {
                           fontWeight: "600",
                         }}
                       >
-                        {t('code')}
+                        {t("code")}
                       </Typography>
                       <Typography
                         sx={{
@@ -117,7 +119,7 @@ function Discounts() {
                           fontWeight: "600",
                         }}
                       >
-                        {t('discount_percentage')}
+                        {t("discount_percentage")}
                       </Typography>
                       <Typography
                         sx={{
@@ -145,6 +147,8 @@ function Discounts() {
                     sx={{ gap: { md: "10px" }, mt: { xs: "10px" } }}
                   >
                     <Button
+                      component={motion.div}
+                      whileHover={{ scale: 1.15 }}
                       sx={{
                         fontSize: "25px",
                         fontFamily: "Tanseek Modern Pro Arabic",
@@ -163,9 +167,11 @@ function Discounts() {
                         navigate("/edit-discount");
                       }}
                     >
-                      {t('edit')}
+                      {t("edit")}
                     </Button>
                     <Button
+                      component={motion.div}
+                      whileHover={{ scale: 1.15 }}
                       sx={{
                         fontSize: "25px",
                         fontFamily: "Tanseek Modern Pro Arabic",
@@ -181,7 +187,7 @@ function Discounts() {
                         alignItems: "center",
                       }}
                     >
-                      {t('delete')}
+                      {t("delete")}
                     </Button>
                   </Box>
                 </Grid>

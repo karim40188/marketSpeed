@@ -1,14 +1,14 @@
 import { Box, Button, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
 import { useNavigate } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
-import { keyframes } from '@mui/system';
+import { useTranslation } from "react-i18next";
+import { keyframes } from "@mui/system";
+import { motion } from "framer-motion";
 
 function ShowUserFile() {
   let navigate = useNavigate();
   const { t } = useTranslation();
 
-  
   const fadeIn = keyframes`
     from {
       opacity: 0;
@@ -29,44 +29,51 @@ function ShowUserFile() {
           mb: "20px",
         }}
       >
-        {t('view_user_file')}
+        {t("view_user_file")}
       </Typography>
 
-      <Box sx={{ display: 'flex', justifyContent: "center", alignItems: 'center', mb: '30px', flexDirection: { xs: 'column', md: 'row' } }}>
-  {/* النص "عدد الأيام منذ الاشتراك" */}
-  <Typography 
-    sx={{
-      fontSize: { xs: '20px', md: '24px' },
-      fontWeight: '500',
-      color: "#333", 
-      mb: { xs: '15px', md: '0' }, 
-      textAlign: "center",
-    }}
-  >
-    {t('days_since_subscription')}
-  </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          mb: "30px",
+          flexDirection: { xs: "column", md: "row" },
+        }}
+      >
+        {/* النص "عدد الأيام منذ الاشتراك" */}
+        <Typography
+          sx={{
+            fontSize: { xs: "20px", md: "24px" },
+            fontWeight: "500",
+            color: "#333",
+            mb: { xs: "15px", md: "0" },
+            textAlign: "center",
+          }}
+        >
+          {t("days_since_subscription")}
+        </Typography>
 
-  {/* مربع الأيام مع تحسينات */}
-  <Box 
-    sx={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#f1f1f1', 
-      borderRadius: '20px', 
-      border: '2px solid #114F80', 
-      padding: '15px 25px', 
-      marginLeft: { xs: '0', md: '20px' },
-      fontSize: '22px',
-      fontWeight: 'bold',
-      color: '#114F80', 
-      boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', 
-    }}
-  >
-    3 {t('days')}
-  </Box>
-</Box>
-
+        {/* مربع الأيام مع تحسينات */}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "#f1f1f1",
+            borderRadius: "20px",
+            border: "2px solid #114F80",
+            padding: "15px 25px",
+            marginLeft: { xs: "0", md: "20px" },
+            fontSize: "22px",
+            fontWeight: "bold",
+            color: "#114F80",
+            boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+          }}
+        >
+          3 {t("days")}
+        </Box>
+      </Box>
 
       <Box
         sx={{
@@ -77,9 +84,20 @@ function ShowUserFile() {
           gap: { xs: "20px", md: "40px" },
         }}
       >
-        <Box sx={{ display: "flex", gap: "20px", alignItems: "center", mb: { xs: "20px", md: 0 } }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: "20px",
+            alignItems: "center",
+            mb: { xs: "20px", md: 0 },
+          }}
+        >
           <Box sx={{ width: "108px", height: "108px" }}>
-            <Box sx={{ width: "100%", height: "100%" }} component="img" src={profile_img} />
+            <Box
+              sx={{ width: "100%", height: "100%" }}
+              component="img"
+              src={profile_img}
+            />
           </Box>
         </Box>
 
@@ -96,8 +114,10 @@ function ShowUserFile() {
             onClick={() => {
               navigate("/edit-user-file");
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
           >
-            {t('edit')}
+            {t("edit")}
           </Button>
           <Button
             sx={{
@@ -109,12 +129,14 @@ function ShowUserFile() {
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
           >
-            {t('delete')}
+            {t("delete")}
           </Button>
         </Box>
       </Box>
 
-      <Box sx={{ p: "20px", width: { xs: "100%", xl: "60%" }, margin: "0 auto" }}>
+      <Box
+        sx={{ p: "20px", width: { xs: "100%", xl: "60%" }, margin: "0 auto" }}
+      >
         <Box
           sx={{
             display: "flex",
@@ -122,11 +144,11 @@ function ShowUserFile() {
             justifyContent: "space-between",
             flexDirection: { xs: "column", md: "row" },
             mb: "20px",
-            gap: '10px',
+            gap: "10px",
           }}
         >
           <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Typography>{t('balance')}</Typography>
+            <Typography>{t("balance")}</Typography>
             <Box
               sx={{
                 width: "174px",
@@ -137,11 +159,11 @@ function ShowUserFile() {
                 alignItems: "center",
               }}
             >
-              <Typography>40 {t('diamond')}</Typography>
+              <Typography>40 {t("diamond")}</Typography>
             </Box>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Typography>{t('current_package')}</Typography>
+            <Typography>{t("current_package")}</Typography>
             <Box
               sx={{
                 width: "174px",
@@ -152,7 +174,7 @@ function ShowUserFile() {
                 alignItems: "center",
               }}
             >
-              <Typography>{t('not_subscribed')}</Typography>
+              <Typography>{t("not_subscribed")}</Typography>
             </Box>
           </Box>
         </Box>
@@ -167,8 +189,13 @@ function ShowUserFile() {
             }}
           >
             <Box sx={{ width: "100%" }}>
-              <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", sm: "25px", md: "30px" } }}>
-                {t('full_name')}
+              <Typography
+                sx={{
+                  color: "#5E5E5E",
+                  fontSize: { xs: "20px", sm: "25px", md: "30px" },
+                }}
+              >
+                {t("full_name")}
               </Typography>
               <Box
                 sx={{
@@ -184,13 +211,18 @@ function ShowUserFile() {
                   borderRadius: "15px",
                 }}
               >
-               {t('ahmed_mohamed')}
+                {t("ahmed_mohamed")}
               </Box>
             </Box>
 
             <Box sx={{ width: "100%" }}>
-              <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", sm: "25px", md: "30px" } }}>
-                {t('email')}
+              <Typography
+                sx={{
+                  color: "#5E5E5E",
+                  fontSize: { xs: "20px", sm: "25px", md: "30px" },
+                }}
+              >
+                {t("email")}
               </Typography>
               <Box
                 sx={{
@@ -211,10 +243,22 @@ function ShowUserFile() {
             </Box>
           </Box>
 
-          <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, mt: "20px",     gap: { xs: "20px", md: "40px" }, }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              mt: "20px",
+              gap: { xs: "20px", md: "40px" },
+            }}
+          >
             <Box sx={{ width: "100%" }}>
-              <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", sm: "25px", md: "30px" } }}>
-                {t('country')}
+              <Typography
+                sx={{
+                  color: "#5E5E5E",
+                  fontSize: { xs: "20px", sm: "25px", md: "30px" },
+                }}
+              >
+                {t("country")}
               </Typography>
               <Box
                 sx={{
@@ -230,13 +274,18 @@ function ShowUserFile() {
                   borderRadius: "15px",
                 }}
               >
-                {t('kingdom_of_saudi_arabia')}
+                {t("kingdom_of_saudi_arabia")}
               </Box>
             </Box>
 
             <Box sx={{ width: "100%" }}>
-              <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", sm: "25px", md: "30px" } }}>
-                {t('city')}
+              <Typography
+                sx={{
+                  color: "#5E5E5E",
+                  fontSize: { xs: "20px", sm: "25px", md: "30px" },
+                }}
+              >
+                {t("city")}
               </Typography>
               <Box
                 sx={{
@@ -252,14 +301,19 @@ function ShowUserFile() {
                   borderRadius: "15px",
                 }}
               >
-                {t('riyadh')}
+                {t("riyadh")}
               </Box>
             </Box>
           </Box>
 
           <Box sx={{ mt: "20px", width: "100%" }}>
-            <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", sm: "25px", md: "30px" } }}>
-              {t('mobile_number')}
+            <Typography
+              sx={{
+                color: "#5E5E5E",
+                fontSize: { xs: "20px", sm: "25px", md: "30px" },
+              }}
+            >
+              {t("mobile_number")}
             </Typography>
             <Box
               sx={{

@@ -1,9 +1,10 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
 import send_btn from "../assets/send_btn.png";
 import { FaPlus } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 function SupportSession() {
   let [value, setValue] = useState("");
@@ -44,7 +45,10 @@ function SupportSession() {
             justifyContent: "center",
             alignItems: "center",
           }}
+          component={motion.div}
+          whileHover={{scale:1.15}}
         >
+      
           {t("delete")}
         </Button>
       </Box>
@@ -196,17 +200,18 @@ function SupportSession() {
         >
           <Box
             sx={{
-              width: "61px",
-              height: "51px",
+              width: "50px",
+              height: "50px",
               borderRadius: "50%",
               backgroundColor: "#fff",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              cursor:"pointer"
             }}
           >
             <Box
-              sx={{ width: "36.51px", height: "31.5px" }}
+              sx={{ width: "20px", height: "20px" }}
               component="img"
               src={send_btn}
             />
@@ -222,6 +227,7 @@ function SupportSession() {
               height: "60px",
               fontSize: "20px",
               borderRadius: "15px",
+              padding:"10px",
             }}
             value={value}
           />
@@ -230,6 +236,7 @@ function SupportSession() {
               fontSize: "50px",
               color: "#EFC750",
               fontFamily: "Titillium Web",
+              cursor:'pointer'
             }}
           >
             <FaPlus />
