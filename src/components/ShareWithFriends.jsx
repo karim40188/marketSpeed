@@ -1,10 +1,8 @@
 import { Box, Button, Typography } from "@mui/material";
 import share_logo from "../assets/share-logo.png";
-import { FaShareAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { t } from "i18next";
+// import { t } from "i18next";
 import { useTranslation } from "react-i18next";
-import addlogo from "../assets/addlogo.png";
 import share from "../assets/video_icons/share.png";
 
 function ShareWithFriends() {
@@ -46,6 +44,8 @@ function ShareWithFriends() {
               fontSize: "25px",
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
           >
             {t("edit")}
           </Button>
@@ -58,6 +58,8 @@ function ShareWithFriends() {
               fontSize: "25px",
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
           >
             {t("save")}
           </Button>
@@ -111,6 +113,8 @@ function ShareWithFriends() {
                       height: "32px",
                       fontFamily: "Tanseek Modern Pro Arabic",
                     }}
+                    component={motion.div}
+                    whileHover={{ scale: 1.15 }}
                   >
                     {t("add_new_video")}
                   </Button>
@@ -178,6 +182,8 @@ function ShareWithFriends() {
                   fontSize: "25px",
                   fontFamily: "Tanseek Modern Pro Arabic",
                 }}
+                component={motion.div}
+                whileHover={{ scale: 1.15 }}
               >
                 {t("edit")}
               </Button>
@@ -190,17 +196,20 @@ function ShareWithFriends() {
                   fontSize: "25px",
                   fontFamily: "Tanseek Modern Pro Arabic",
                 }}
+                component={motion.div}
+                whileHover={{scale:1.15}}
               >
                 {t("save")}
               </Button>
             </Box>
           </Box>
-          <Box sx={{width:'293px'}}>
+          <Box sx={{ width: "230px" }}>
             <Box
               sx={{
                 display: "flex",
-                justifyContent: "space-between",
-                
+                justifyContent: "center",
+                gap: "10px",
+                mr: "30px",
               }}
             >
               <Typography>{t("logo")}</Typography>
@@ -214,15 +223,24 @@ function ShareWithFriends() {
                   width: "150px",
                   height: "32px",
                   fontFamily: "Tanseek Modern Pro Arabic",
-                  
                 }}
+                component={motion.div}
+                whileHover={{ scale: 1.15 }}
               >
                 {t("add_logo")}
               </Button>
             </Box>
-            <Box sx={{ width: "135px", height: "auto", mt: "20px",cursor:'pointer', }}>
+            <Box
+              sx={{
+                width: "135px",
+                height: "auto",
+                mt: "20px",
+                cursor: "pointer",
+              }}
+            >
               <Box
-                component="img"
+                component={motion.img}
+                whileHover={{ scale: 1.15 }}
                 src={share_logo}
                 sx={{ width: "100%", height: "100%", backgroundSize: "cover" }}
               />
@@ -250,7 +268,16 @@ function ShareWithFriends() {
             flexWrap: "wrap",
           }}
         >
-          <Box sx={{ display: "flex", flexDirection: "column", gap: "3px" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "3px",
+              cursor: "pointer",
+            }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
+          >
             <Typography>{t("apple_link")}</Typography>
 
             <Box
@@ -274,7 +301,16 @@ function ShareWithFriends() {
               </Typography>
             </Box>
           </Box>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: "3px" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "3px",
+              cursor: "pointer",
+            }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
+          >
             <Typography>{t("google_link")} </Typography>
 
             <Box

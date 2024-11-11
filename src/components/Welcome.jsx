@@ -28,6 +28,8 @@ function Welcome() {
         }}
       >
         <Button
+           component={motion.div}
+           whileHover={{scale:1.15}}
           sx={{
             width: "156px",
             height: "32px",

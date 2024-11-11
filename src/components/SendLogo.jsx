@@ -37,6 +37,8 @@ function SendLogo() {
         <Box sx={{ width: "100%", display: "flex", gap: "10px" }}>
           {["subscriber", "user", "all"].map((type) => (
             <Button
+            component={motion.div}
+            whileHover={{scale:1.15}}
               key={type}
               sx={{
                 backgroundColor: activeButton === type ? "#114F80" : "#fff",

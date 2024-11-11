@@ -1,4 +1,4 @@
-import { Box, Button,Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
 import send_btn from "../assets/send_btn.png";
 import { FaPlus } from "react-icons/fa";
@@ -11,11 +11,7 @@ function SuggestionSession() {
   let { t } = useTranslation();
   return (
     <Box
-      sx={{
-        width: { xs: "100%", md: "100%" },
-        px: { xs: "10px", md: "0" },
-        mx: "auto",
-      }}
+      sx={{ width: { xs: "100%", md: "100%" }, px: { xs: "10px", md: "0" },mx:'auto' }}
     >
       <Box
         sx={{
@@ -50,8 +46,9 @@ function SuggestionSession() {
             alignItems: "center",
           }}
           component={motion.div}
-          whileHover={{ scale: 1.15 }}
+          whileHover={{scale:1.15}}
         >
+      
           {t("delete")}
         </Button>
       </Box>
@@ -70,6 +67,8 @@ function SuggestionSession() {
               alignItems: "center",
               cursor: "pointer",
             }}
+            component={motion.div}
+            whileHover={{scale:1.05}}
           >
             <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <Box sx={{ width: "66px", height: "66px" }}>
@@ -103,6 +102,9 @@ function SuggestionSession() {
                 gap: "30px",
                 alignSelf: "flex-end",
               }}
+              component={motion.div}
+              whileHover={{x:100}}
+              transition={{duration:0.5}}
             >
               <Typography
                 sx={{
@@ -151,6 +153,9 @@ function SuggestionSession() {
                 gap: "20px",
                 color: "#fff",
               }}
+              component={motion.div}
+              whileHover={{x:-100}}
+              transition={{duration:0.5}}
             >
               <Typography
                 sx={{
@@ -193,10 +198,10 @@ function SuggestionSession() {
             width: "100%",
             height: "100px",
             backgroundColor: "#114F80",
-            borderRadius: "20px",
+            borderRadius:'20px',
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-around",
+            justifyContent:'space-around',
             p: "20px",
             gap: "10px",
           }}
@@ -210,8 +215,11 @@ function SuggestionSession() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              cursor: "pointer",
+              cursor:"pointer"
             }}
+            component={motion.div}
+            whileHover={{scale:0.9}}
+            transition={{duration:0.5}}
           >
             <Box
               sx={{ width: "20px", height: "20px" }}
@@ -230,7 +238,7 @@ function SuggestionSession() {
               height: "60px",
               fontSize: "20px",
               borderRadius: "15px",
-              padding: "10px",
+              padding:"10px",
             }}
             value={value}
           />
@@ -239,8 +247,11 @@ function SuggestionSession() {
               fontSize: "50px",
               color: "#EFC750",
               fontFamily: "Titillium Web",
-              cursor: "pointer",
+              cursor:'pointer',
             }}
+            component={motion.div}
+            whileHover={{scale:0.9}}
+            transition={{duration:0.5}}
           >
             <FaPlus />
           </Box>

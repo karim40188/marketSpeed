@@ -1,4 +1,4 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import profile_img from "../assets/profile_img.png";

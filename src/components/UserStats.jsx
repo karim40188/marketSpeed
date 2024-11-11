@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Box, Button, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -39,7 +40,7 @@ function UserStats() {
 
   useEffect(() => {
     setActiveFilter(filters[0]);
-  }, []);
+  }, [filters]);
 
   return (
     <Box>

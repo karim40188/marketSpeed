@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
+import { motion } from "framer-motion";
 import { t } from "i18next";
 
 function Policy() {
@@ -18,8 +19,20 @@ function Policy() {
         </Typography>
 
         <Box sx={{ display: "flex", gap: "15px" }}>
-          <Button variant="outlined">{t("save")}</Button>
-          <Button variant="outlined">{t("edit")}</Button>
+          <Button
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
+            variant="outlined"
+          >
+            {t("save")}
+          </Button>
+          <Button
+            variant="outlined"
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
+          >
+            {t("edit")}
+          </Button>
         </Box>
       </Box>
 

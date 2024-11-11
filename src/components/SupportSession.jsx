@@ -11,7 +11,11 @@ function SupportSession() {
   let { t } = useTranslation();
   return (
     <Box
-      sx={{ width: { xs: "100%", md: "100%" }, px: { xs: "10px", md: "0" },mx:'auto' }}
+      sx={{
+        width: { xs: "100%", md: "100%" },
+        px: { xs: "10px", md: "0" },
+        mx: "auto",
+      }}
     >
       <Box
         sx={{
@@ -46,9 +50,8 @@ function SupportSession() {
             alignItems: "center",
           }}
           component={motion.div}
-          whileHover={{scale:1.15}}
+          whileHover={{ scale: 1.15 }}
         >
-      
           {t("delete")}
         </Button>
       </Box>
@@ -67,6 +70,8 @@ function SupportSession() {
               alignItems: "center",
               cursor: "pointer",
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.05 }}
           >
             <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <Box sx={{ width: "66px", height: "66px" }}>
@@ -100,6 +105,9 @@ function SupportSession() {
                 gap: "30px",
                 alignSelf: "flex-end",
               }}
+              component={motion.div}
+              whileHover={{ x: 100 }}
+              transition={{ duration: 0.5 }}
             >
               <Typography
                 sx={{
@@ -148,6 +156,9 @@ function SupportSession() {
                 gap: "20px",
                 color: "#fff",
               }}
+              component={motion.div}
+              whileHover={{ x: -100 }}
+              transition={{ duration: 0.5 }}
             >
               <Typography
                 sx={{
@@ -190,10 +201,10 @@ function SupportSession() {
             width: "100%",
             height: "100px",
             backgroundColor: "#114F80",
-            borderRadius:'20px',
+            borderRadius: "20px",
             display: "flex",
             alignItems: "center",
-            justifyContent:'space-around',
+            justifyContent: "space-around",
             p: "20px",
             gap: "10px",
           }}
@@ -207,8 +218,11 @@ function SupportSession() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              cursor:"pointer"
+              cursor: "pointer",
             }}
+            component={motion.div}
+            whileHover={{ scale: 0.9 }}
+            transition={{ duration: 0.5 }}
           >
             <Box
               sx={{ width: "20px", height: "20px" }}
@@ -227,7 +241,7 @@ function SupportSession() {
               height: "60px",
               fontSize: "20px",
               borderRadius: "15px",
-              padding:"10px",
+              padding: "10px",
             }}
             value={value}
           />
@@ -236,8 +250,11 @@ function SupportSession() {
               fontSize: "50px",
               color: "#EFC750",
               fontFamily: "Titillium Web",
-              cursor:'pointer'
+              cursor: "pointer",
             }}
+            component={motion.div}
+            whileHover={{ scale: 0.9 }}
+            transition={{ duration: 0.5 }}
           >
             <FaPlus />
           </Box>

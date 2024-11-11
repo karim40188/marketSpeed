@@ -162,6 +162,7 @@ function AddWallet() {
                   px: { xs: 2, md: 4 },
                   py: { xs: 1, md: 2 },
                 }}
+                whileHover={{scale:1.15}}
               >
                 {t("save")}
               </Button>
@@ -182,6 +183,7 @@ function AddWallet() {
                   px: { xs: 2, md: 4 },
                   py: { xs: 1, md: 2 },
                 }}
+                whileHover={{scale:1.15}}
               >
                 {t("delete")}
               </Button>

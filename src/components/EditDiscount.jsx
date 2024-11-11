@@ -125,6 +125,8 @@ function EditDiscount() {
                   justifyContent: "center",
                   alignItems: "center",
                 }}
+                component={motion.div}
+                whileHover={{scale:1.15}}
               >
                {t('save')}
               </Button>
@@ -146,6 +148,8 @@ function EditDiscount() {
                   justifyContent: "center",
                   alignItems: "center",
                 }}
+                component={motion.div}
+                whileHover={{scale:1.15}}
               >
                 {t('delete')}
               </Button>

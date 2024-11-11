@@ -1,5 +1,4 @@
 import { Box, Button, Typography } from "@mui/material";
-import addImg from "../assets/addimg.png";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";

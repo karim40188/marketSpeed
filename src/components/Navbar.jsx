@@ -6,6 +6,7 @@ import { IoIosMenu } from "react-icons/io";
 import { Context } from "./Context";
 import { t } from "i18next";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Navbar() {
   let { sidebarOpen, setSidebarOpen } = useContext(Context);
@@ -24,7 +25,7 @@ function Navbar() {
         backgroundColor: "#fff",
         height: "auto",
         display: "flex",
-        flexWrap:"wrap",
+        flexWrap: "wrap",
         justifyContent: "space-between",
         alignItems: "center",
         pl: { xs: "10px", md: "20px" },
@@ -48,32 +49,31 @@ function Navbar() {
         >
           {t("general_manager")}
         </Typography>
-
-
-
-     
       </Box>
 
       <Box
-          sx={{
-            fontSize: { xs: "24px", md: "30px" },
-            color: "#fff",
-            fontWeight: "400",
-            border: "1px solid #114F80",
-            borderRadius: "8px",
-            padding: { xs: "10px 20px", md: "5px 5px" },
-            backgroundColor: "#114F80",
+        sx={{
+          fontSize: { xs: "24px", md: "30px" },
+          color: "#fff",
+          fontWeight: "400",
+          border: "1px solid #114F80",
+          borderRadius: "8px",
+          padding: { xs: "10px 20px", md: "5px 5px" },
+          backgroundColor: "#114F80",
+        }}
+        component={motion.div}
+        whileHover={{ scale: 1.15 }}
+      >
+        <Typography
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            navigate("/supervisor-profile");
           }}
+          component={motion.div}
         >
-          <Typography
-            style={{ cursor: "pointer" }}
-            onClick={() => {
-              navigate("/supervisor-profile");
-            }}
-          >
-            {t('view_supervisor_file')}
-          </Typography>
-        </Box>
+          {t("view_supervisor_file")}
+        </Typography>
+      </Box>
 
       <Box
         sx={{
@@ -94,6 +94,8 @@ function Navbar() {
             alignItems: "center",
             justifyContent: "space-around",
           }}
+          component={motion.div}
+          whileHover={{ scale: 1.15 }}
         >
           <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <Box
@@ -124,7 +126,7 @@ function Navbar() {
                 {t("arabic")}
               </option>
               <option
-                style={{backgroundColor: "#fff", color: "#000" }}
+                style={{ backgroundColor: "#fff", color: "#000" }}
                 value="en"
               >
                 {" "}
@@ -145,6 +147,8 @@ function Navbar() {
             alignItems: "center",
             color: "#F9D053",
           }}
+          component={motion.div}
+          whileHover={{ scale: 1.15 }}
         >
           <IoIosNotifications />
         </Box>

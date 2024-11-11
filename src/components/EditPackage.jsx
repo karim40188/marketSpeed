@@ -67,6 +67,7 @@ function EditPackage() {
             <Button
               component={motion.button}
               variants={slideIn}
+              whileHover={{ scale: 1.15 }}
               initial="hidden"
               animate="visible"
               sx={{
@@ -86,6 +87,7 @@ function EditPackage() {
             <Button
               component={motion.button}
               variants={slideIn}
+              whileHover={{ scale: 1.15 }}
               initial="hidden"
               animate="visible"
               sx={{

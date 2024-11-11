@@ -74,6 +74,7 @@ function AddPackage() {
                 justifyContent: "center",
                 alignItems: "center",
               }}
+              whileHover={{scale:1.15}}
             >
               {t("save")}
             </Button>
@@ -96,6 +97,7 @@ function AddPackage() {
                 justifyContent: "center",
                 alignItems: "center",
               }}
+              whileHover={{scale:1.15}}
             >
               {t('delete')}
             </Button>

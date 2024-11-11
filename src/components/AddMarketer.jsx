@@ -1,5 +1,4 @@
 import { Box, Button, Typography } from "@mui/material";
-import addImg from "../assets/addimg.png";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 function AddMarketer() {
@@ -14,7 +13,7 @@ function AddMarketer() {
         }}
       >
         <Box sx={{ textAlign: "center" }}>
-          <Typography
+          {/* <Typography
             sx={{
               fontSize: { xs: "30px", md: "40px" },
               color: "#114F80",
@@ -22,16 +21,17 @@ function AddMarketer() {
             }}
           >
             {t("ahmed_mohamed")}
-          </Typography>
+          </Typography> */}
 
           <Typography
             sx={{
               background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
+              fontSize:'40px'
             }}
           >
-            {t("supervisor")}
+            {t("add_marketer")}
           </Typography>
         </Box>
 
@@ -39,16 +39,15 @@ function AddMarketer() {
           sx={{
             width: "136px",
             height: "42px",
-            background: "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
-
+            backgroundColor: "#128C7F",
             borderRadius: "5px",
-            color: "#000",
+            color: "#fff",
             fontWeight: "600",
           }}
           component={motion.div}
           whileHover={{ scale: 1.15 }}
         >
-          {t("add_marketer")}
+          {t("save")}
         </Button>
       </Box>
 

@@ -99,6 +99,8 @@ function Platforms() {
                       >
                         <Typography>{t(icon.name)}</Typography>
                         <Button
+                        component={motion.div}
+                        whileHover={{scale:1.15}}
                           sx={{
                             background:
                               icon.status == "turn_on"

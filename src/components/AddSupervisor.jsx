@@ -1,5 +1,4 @@
 import { Box, Button, Typography } from "@mui/material";
-import addimg from "../assets/addimg.png";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 function AddSupervisor() {

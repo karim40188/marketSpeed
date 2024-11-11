@@ -1,6 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
-import { useState } from "react";
 import { useTranslation } from 'react-i18next';
 import { keyframes } from '@mui/system';
 import { motion } from "framer-motion";
@@ -8,7 +7,7 @@ import { motion } from "framer-motion";
 function AddUser() {
   const { t } = useTranslation();
 
-  // أنيميشن التلاشي عند تحميل المكون
+  
   const fadeIn = keyframes`
     from {
       opacity: 0;
@@ -244,7 +243,8 @@ function AddUser() {
             </Box>
           </Box>
 
-          <Box sx={{ mt: "20px", width: "100%" }}>
+          <Box sx={{display:"flex",justifyContent:'space-between',alignItems:'center'}}>
+          <Box sx={{ mt: "20px", width: "45%" }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", md: "30px" } }}>
               {t('mobile_number')}
             </Typography>
@@ -264,6 +264,29 @@ function AddUser() {
               966 5552512
             </Box>
           </Box>
+          <Box sx={{ mt: "20px", width: "45%" }}>
+            <Typography sx={{ color: "#5E5E5E", fontSize: { xs: "20px", md: "30px" } }}>
+              {t('change_password')}
+            </Typography>
+            <Box
+              sx={{
+                width: "100%",
+                height: "70px",
+                p: "20px",
+                fontSize: "30px",
+                backgroundColor: "#fff",
+                display: "flex",
+                alignItems: "center",
+                mt: "10px",
+                borderRadius: "15px",
+              }}
+            >
+              966 5552512
+            </Box>
+          </Box>
+          </Box>
+
+      
         </Box>
       </Box>
     </Box>
