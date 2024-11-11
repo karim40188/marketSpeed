@@ -3,31 +3,29 @@ import { useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import profile_img from "../assets/profile_img.png";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion"; 
-import { useTranslation } from "react-i18next"; 
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 function ShowUsers() {
-
-
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
 
   let [activeLink, setActiveLink] = useState(false);
   const [showUsers] = useState([
-    { name:"ahmed_mohamed", type: "user" },
-    { name:"ahmed_mohamed", type: "subscriber" },
-    { name:"ahmed_mohamed", type: "user" },
-    { name:"ahmed_mohamed", type: "subscriber" },
-    { name:"ahmed_mohamed", type: "user" },
-    { name:"ahmed_mohamed", type: "user" },
-    { name:"ahmed_mohamed", type: "subscriber" },
-    { name:"ahmed_mohamed", type: "user" },
-    { name:"ahmed_mohamed", type: "subscriber" },
-    { name:"ahmed_mohamed", type: "user" },
-    { name:"ahmed_mohamed", type: "user" },
-    { nam:"ahmed_mohamed", type: "subscriber" },
-    { name:"ahmed_mohamed", type: "user" },
-    { name:"ahmed_mohamed", type: "subscriber" },
-    { name:"ahmed_mohamed", type: "user" },
+    { name: "ahmed_mohamed", type: "user" },
+    { name: "ahmed_mohamed", type: "subscriber" },
+    { name: "ahmed_mohamed", type: "user" },
+    { name: "ahmed_mohamed", type: "subscriber" },
+    { name: "ahmed_mohamed", type: "user" },
+    { name: "ahmed_mohamed", type: "user" },
+    { name: "ahmed_mohamed", type: "subscriber" },
+    { name: "ahmed_mohamed", type: "user" },
+    { name: "ahmed_mohamed", type: "subscriber" },
+    { name: "ahmed_mohamed", type: "user" },
+    { name: "ahmed_mohamed", type: "user" },
+    { nam: "ahmed_mohamed", type: "subscriber" },
+    { name: "ahmed_mohamed", type: "user" },
+    { name: "ahmed_mohamed", type: "subscriber" },
+    { name: "ahmed_mohamed", type: "user" },
   ]);
   const [filteredUsers, setFilteredUsers] = useState(showUsers);
   const navigate = useNavigate();
@@ -53,9 +51,11 @@ function ShowUsers() {
           mr: "auto",
           mb: "20px",
         }}
+        component={motion.button}
+        whileHover={{ scale: 1.15 }}
         onClick={() => navigate("/add-user")}
       >
-        {t('add_user')}
+        {t("add_user")}
       </Button>
 
       <Box
@@ -73,7 +73,7 @@ function ShowUsers() {
             fontWeight: "600",
           }}
         >
-          {t('view_users')}
+          {t("view_users")}
         </Typography>
         <Box
           sx={{
@@ -107,6 +107,8 @@ function ShowUsers() {
       {/* أزرار الفلترة */}
       <Box sx={{ display: "flex", gap: "20px", p: "30px", flexWrap: "wrap" }}>
         <Box
+          component={motion.div}
+          whileHover={{ scale: 1.15 }}
           sx={{
             width: "121.65px",
             height: "32px",
@@ -127,9 +129,11 @@ function ShowUsers() {
             filterUsers("user");
           }}
         >
-          <Typography>{t('user')}</Typography>
+          <Typography>{t("user")}</Typography>
         </Box>
         <Box
+          component={motion.div}
+          whileHover={{ scale: 1.15 }}
           sx={{
             width: "121.65px",
             height: "32px",
@@ -150,9 +154,11 @@ function ShowUsers() {
             filterUsers("subscriber");
           }}
         >
-          <Typography>{t('subscriber')}</Typography>
+          <Typography>{t("subscriber")}</Typography>
         </Box>
         <Box
+          component={motion.div}
+          whileHover={{ scale: 1.15 }}
           sx={{
             width: "121.65px",
             height: "32px",
@@ -173,7 +179,7 @@ function ShowUsers() {
             filterUsers("all");
           }}
         >
-          <Typography>{t('all')}</Typography>
+          <Typography>{t("all")}</Typography>
         </Box>
       </Box>
 
@@ -184,23 +190,23 @@ function ShowUsers() {
           gap: "30px",
           p: "25px",
           justifyContent: "center",
-
         }}
       >
         {filteredUsers.map((user, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }}  
-            // transition={{ duration: 0.5, delay: 0.2 * index }} 
-            whileHover={{scale:1.1}}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            // transition={{ duration: 0.5, delay: 0.2 * index }}
+            whileHover={{ scale: 1.1 }}
           >
             <Box
               onClick={() => navigate("/show-user-file")}
               sx={{
                 width: { xs: "100%", sm: "247px" },
                 height: "331px",
-                backgroundColor: user.type === "subscriber" ? "#114F80" : "#fff",
+                backgroundColor:
+                  user.type === "subscriber" ? "#114F80" : "#fff",
                 color: user.type === "subscriber" ? "#fff" : "#000",
                 borderRadius: "15px",
                 display: "flex",
@@ -234,7 +240,8 @@ function ShowUsers() {
                   color: user.type === "subscriber" ? "#fff" : "#114F80",
                 }}
               >
-                {t('location')}<br />
+                {t("location")}
+                <br />
               </Typography>
             </Box>
           </motion.div>

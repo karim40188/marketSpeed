@@ -68,6 +68,14 @@ a {
   border-radius: 10px;
   transition: 400ms all;
 }
+
+
+a:hover{
+  background-color:#114F80;
+  color:#fff;
+  border-radius: 10px;
+  transition:400ms all;
+}
 @media only screen and (max-width: 600px) {
   a {
     font-size: 18px;

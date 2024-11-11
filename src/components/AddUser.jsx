@@ -3,6 +3,7 @@ import profile_img from "../assets/profile_img.png";
 import { useState } from "react";
 import { useTranslation } from 'react-i18next';
 import { keyframes } from '@mui/system';
+import { motion } from "framer-motion";
 
 function AddUser() {
   const { t } = useTranslation();
@@ -57,6 +58,8 @@ function AddUser() {
               fontSize: { xs: "20px", md: "25px" },
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
           >
             {t('upload_new_image')}
           </Button>
@@ -80,6 +83,8 @@ function AddUser() {
               fontSize: { xs: "20px", md: "25px" },
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
           >
             {t('save')}
           </Button>
@@ -92,6 +97,8 @@ function AddUser() {
               fontSize: { xs: "20px", md: "25px" },
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
           >
             {t('delete')}
           </Button>

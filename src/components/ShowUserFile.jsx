@@ -128,6 +128,8 @@ function ShowUserFile() {
               fontSize: "25px",
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
+            component={motion.button}
+            whileHover={{ scale: 1.15 }}
           >
             {t("delete")}
           </Button>
@@ -306,7 +308,9 @@ function ShowUserFile() {
             </Box>
           </Box>
 
-          <Box sx={{ mt: "20px", width: "100%" }}>
+          <Box sx={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap'}}>
+
+          <Box sx={{ mt: "20px", width: "45%" }}>
             <Typography
               sx={{
                 color: "#5E5E5E",
@@ -332,6 +336,35 @@ function ShowUserFile() {
               966 5552512
             </Box>
           </Box>
+          <Box sx={{ mt: "20px", width: "47%" }}>
+            <Typography
+              sx={{
+                color: "#5E5E5E",
+                fontSize: { xs: "20px", sm: "25px", md: "30px" },
+              }}
+            >
+              {t("password")}
+            </Typography>
+            <Box
+              sx={{
+                width: "100%",
+                maxWidth: "412px",
+                height: "70px",
+                p: "20px",
+                fontSize: { xs: "20px", sm: "25px", md: "30px" },
+                backgroundColor: "#fff",
+                display: "flex",
+                alignItems: "center",
+                mt: "10px",
+                borderRadius: "15px",
+              }}
+            >
+              966 5552512
+            </Box>
+          </Box>
+
+
+        </Box>
         </Box>
       </Box>
     </Box>

@@ -2,6 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import addImg from "../assets/addimg.png";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 function EditMarketer() {
   let { t } = useTranslation();
   let navigate = useNavigate();
@@ -49,6 +50,8 @@ function EditMarketer() {
           onClick={() => {
             navigate("/add-marketer");
           }}
+          component={motion.div}
+          whileHover={{ scale: 1.15 }}
         >
           {t("save")}
         </Button>
@@ -269,6 +272,8 @@ function EditMarketer() {
                     background:
                       "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
                   }}
+                  component={motion.div}
+                  whileHover={{ scale: 1.15 }}
                 >
                   {t("download_img")}
                 </Button>

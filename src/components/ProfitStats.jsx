@@ -89,6 +89,8 @@ function ProfitStats() {
       >
         {filters?.map((filter) => (
           <Button
+          component={motion.button}
+          whileHover={{scale:1.15}}
             sx={{
               width: { xs: "100%", md: "156px" },
               height: "57px",

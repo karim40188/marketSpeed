@@ -218,6 +218,8 @@ function AddLinks() {
             py: "20px",
             borderRadius: "6px",
           }}
+          component={motion.div}
+          whileHover={{ scale: 1.15 }}
         >
           {t('save')}
         </Button>

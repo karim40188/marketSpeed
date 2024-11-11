@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import addimg from "../assets/addimg.png";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 function AddSupervisor() {
   let { t } = useTranslation();
   return (
@@ -186,6 +187,8 @@ function AddSupervisor() {
                 textTransform: "capitalize",
                 background: "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
               }}
+              component={motion.div}
+              whileHover={{ scale: 1.15 }}
             >
               {t("download_img")}
             </Button> 
@@ -251,6 +254,8 @@ function AddSupervisor() {
               color: "#fff",
               borderRadius: "6px",
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
           >
             {t("save")}
           </Button>

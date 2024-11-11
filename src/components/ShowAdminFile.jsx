@@ -2,6 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 function ShowAdminFile() {
   let navigate = useNavigate();
@@ -55,6 +56,8 @@ function ShowAdminFile() {
             onClick={() => {
               navigate("/edit-admin-file");
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
           >
             {t("edit")}
           </Button>
@@ -73,6 +76,8 @@ function ShowAdminFile() {
               justifyContent: "center",
               alignItems: "center",
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
           >
             {t("delete")}
           </Button>

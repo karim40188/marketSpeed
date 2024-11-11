@@ -3,6 +3,7 @@ import saudiImg from "../assets/saudi.png";
 import { useContext } from "react";
 import { Context } from "./Context";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 function ClientsChannels() {
   let {t}=useTranslation()
   let { sidebarOpen } = useContext(Context);
@@ -96,6 +97,8 @@ function ClientsChannels() {
                 color: "#fff",
                 textAlign: "center",
               }}
+              component={motion.div}
+              whileHover={{ scale: 1.15 }}
             >
               {t("accept")}
             </Button>
@@ -108,6 +111,8 @@ function ClientsChannels() {
                 color: "#fff",
                 textAlign: "center",
               }}
+              component={motion.div}
+              whileHover={{ scale: 1.15 }}
             >
              {t('reject')}
             </Button>

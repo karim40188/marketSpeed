@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import profile_img from "../assets/profile_img.png";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 function EditAdminFile() {
   let {t}=useTranslation()
@@ -42,6 +43,8 @@ function EditAdminFile() {
               fontSize: "25px",
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
           >
            {t('upload_new_image')}
           </Button>
@@ -57,6 +60,8 @@ function EditAdminFile() {
               fontSize: "25px",
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
           >
             {t("save")}
           </Button>
@@ -69,6 +74,8 @@ function EditAdminFile() {
               fontSize: "25px",
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
           >
             {t('delete')}
           </Button>

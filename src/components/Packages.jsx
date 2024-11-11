@@ -46,6 +46,7 @@ function Packages() {
         <Grid2>
           <Button
             component={motion.button}
+            whileHover={{scale:1.15}}
             variants={slideIn}
             sx={{
               fontSize: "25px",
@@ -64,6 +65,7 @@ function Packages() {
             onClick={() => {
               navigate("/add-new-package");
             }}
+            
           >
             {t("add_new_package")}
           </Button>
@@ -91,6 +93,7 @@ function Packages() {
                 <Button
                   component={motion.button}
                   variants={fadeIn}
+                  whileHover={{scale:1.15}}
                   sx={{
                     fontSize: "25px",
                     fontFamily: "Tanseek Modern Pro Arabic",
@@ -113,6 +116,7 @@ function Packages() {
                 </Button>
                 <Button
                   component={motion.button}
+                  whileHover={{scale:1.15}}
                   variants={fadeIn}
                   sx={{
                     fontSize: "25px",
@@ -142,6 +146,7 @@ function Packages() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5 }}
+            whileHover={{scale:1.05}}
             sx={{
               width: "100%",
               height: "auto",
@@ -152,6 +157,7 @@ function Packages() {
               display: "flex",
               alignItems: "center",
             }}
+            
           >
             <ul
               style={{

@@ -4,6 +4,7 @@ import send_btn from "../assets/send_btn.png";
 import { FaPlus } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 function SuggestionSession() {
   let [value, setValue] = useState("");
@@ -48,6 +49,8 @@ function SuggestionSession() {
             justifyContent: "center",
             alignItems: "center",
           }}
+          component={motion.div}
+          whileHover={{ scale: 1.15 }}
         >
           {t("delete")}
         </Button>

@@ -1,6 +1,5 @@
 import { Box, Button, Grid2, Typography } from "@mui/material";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
@@ -63,6 +62,8 @@ function Socials() {
                       color: "#fff",
                       borderRadius: "6px",
                     }}
+                    component={motion.button}
+                    whileHover={{scale:1.15}}
                   >
                     {t("save")}
                   </Button>
@@ -76,7 +77,7 @@ function Socials() {
                   <Box
                     sx={{
                       width: "auto",
-                      height: "auto",
+                      height: "80px",
                       my: "10px",
                       border: "3px solid #114F80",
                       borderRadius: "15px",
@@ -85,9 +86,10 @@ function Socials() {
                       py: "5px",
                       display: "flex",
                       alignItems: "center",
+                      cursor:"pointer"
                     }}
                   >
-                    <Link
+                    <Typography
                       style={{
                         fontSize: "20px",
                         fontFamily: "Tanseek Modern Pro Arabic",
@@ -95,7 +97,7 @@ function Socials() {
                     >
                       https://www.figma.com/design/
                       epS6m7H0obCBxgPOrgZdlc/Untitl.
-                    </Link>
+                    </Typography>
                   </Box>
                 </motion.div>
               </Grid2>
@@ -124,6 +126,8 @@ function Socials() {
                   color: "#fff",
                   borderRadius: "6px",
                 }}
+                component={motion.button}
+                whileHover={{scale:1.15}}
               >
                 {t("save")}
               </Button>
@@ -148,7 +152,7 @@ function Socials() {
                   alignItems: "center",
                 }}
               >
-                <Link
+                <Typography
                   style={{
                     fontSize: "20px",
                     fontFamily: "Tanseek Modern Pro Arabic",
@@ -156,7 +160,7 @@ function Socials() {
                 >
                   https://www.figma.com/design/
                   epS6m7H0obCBxgPOrgZdlc/Untitl.
-                </Link>
+                </Typography>
               </Box>
             </motion.div>
           </Grid2>
@@ -178,6 +182,8 @@ function Socials() {
                   color: "#fff",
                   borderRadius: "6px",
                 }}
+                component={motion.button}
+                whileHover={{scale:1.15}}
               >
                 {t("save")}
               </Button>
@@ -202,7 +208,7 @@ function Socials() {
                   alignItems: "center",
                 }}
               >
-                <Link
+                <Typography
                   style={{
                     fontSize: "20px",
                     fontFamily: "Tanseek Modern Pro Arabic",
@@ -210,7 +216,7 @@ function Socials() {
                 >
                   https://www.figma.com/design/
                   epS6m7H0obCBxgPOrgZdlc/Untitl.
-                </Link>
+                </Typography>
               </Box>
             </motion.div>
           </Grid2>

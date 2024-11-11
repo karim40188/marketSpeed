@@ -85,6 +85,8 @@ function Videos() {
                             height: "32px",
                             fontFamily: "Tanseek Modern Pro Arabic",
                           }}
+                          component={motion.button}
+                          whileHover={{scale:1.15}}
                         >
                           {t("add_new_video")}
                         </Button>
@@ -148,6 +150,8 @@ function Videos() {
                             height: "32px",
                             fontFamily: "Tanseek Modern Pro Arabic",
                           }}
+                          component={motion.button}
+                          whileHover={{scale:1.15}}
                         >
                           {t("add_new_video")}
                         </Button>

@@ -3,6 +3,7 @@ import profile_img from "../assets/profile_img.png";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { keyframes } from "@mui/system";
+import { motion } from "framer-motion";
 
 function EditUserFile() {
   const { t } = useTranslation();
@@ -56,6 +57,8 @@ function EditUserFile() {
               fontSize: "25px",
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
           >
             {t("upload_new_image")}
           </Button>
@@ -78,6 +81,8 @@ function EditUserFile() {
               fontSize: "25px",
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
           >
             {t("save")}
           </Button>
@@ -90,6 +95,8 @@ function EditUserFile() {
               fontSize: "25px",
               fontFamily: "Tanseek Modern Pro Arabic",
             }}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
           >
             {t("delete")}
           </Button>
@@ -253,7 +260,7 @@ function EditUserFile() {
               </Box>
             </Box>
           </Box>
-
+          <Box sx={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap'}}>
           <Box sx={{ mt: "20px", width: { xs: "100%", md: "412px" } }}>
             <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
               {t("mobile_number")}
@@ -274,6 +281,30 @@ function EditUserFile() {
               966 5552512
             </Box>
           </Box>
+          <Box sx={{ mt: "20px", width: { xs: "100%", md: "412px" } }}>
+            <Typography sx={{ color: "#5E5E5E", fontSize: "30px" }}>
+              {t("change_password")}
+            </Typography>
+            <Box
+              sx={{
+                width: "100%",
+                height: "70px",
+                p: "20px",
+                fontSize: "30px",
+                backgroundColor: "#fff",
+                display: "flex",
+                alignItems: "center",
+                mt: "10px",
+                borderRadius: "15px",
+              }}
+            >
+              966 5552512
+            </Box>
+          </Box>
+
+          </Box>
+
+
         </Box>
       </Box>
     </Box>

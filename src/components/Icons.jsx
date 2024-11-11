@@ -1,6 +1,6 @@
 import { Box, Button, Grid2, Typography } from "@mui/material";
 import { useState } from "react";
-import { motion } from "framer-motion"; // استيراد motion من framer-motion
+import { motion } from "framer-motion"; 
 import whatsApp from "../assets/video_icons/whatsapp.png";
 import telegram from "../assets/video_icons/telegram.png";
 import instagram from "../assets/video_icons/instagram.png";
@@ -45,9 +45,11 @@ function Icons() {
             return (
               <Grid2 key={index} sx={{ maxWidth: "375px", maxHeight: "160px" }}>
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }} // الإعدادات الأولية
-                  whileInView={{ opacity: 1, scale: 1 }} // كيف تظهر العناصر
-                  transition={{ duration: 0.3 }} // مدة الانتقال
+                  initial={{ opacity: 0, scale: 0.8 }} 
+                  whileInView={{ opacity: 1, scale: 1 }} 
+                  transition={{ duration: 0.3 }} 
+                  whileHover={{scale:1.15}}
+
                 >
                   <Box sx={{ width: "350px" }}>
                     <Box
@@ -65,6 +67,8 @@ function Icons() {
                           height: "32px",
                           fontFamily: "Tanseek Modern Pro Arabic",
                         }}
+                        component={motion.button}
+                        whileHover={{scale:1.15}}
                       >
                        {t('add_new_video')}
                       </Button>

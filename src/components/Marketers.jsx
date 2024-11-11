@@ -4,6 +4,7 @@ import profile_img from "../assets/profile_img.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 function Marketers() {
   const { t } = useTranslation(); // Import t function for translations
@@ -63,6 +64,8 @@ function Marketers() {
         onClick={() => {
           navigate("/add-marketer");
         }}
+        component={motion.div}
+        whileHover={{ scale: 1.15 }}
       >
         {t("add_marketer")}
       </Button>
@@ -192,6 +195,8 @@ function Marketers() {
                     fontFamily: "Tanseek Modern Pro Arabic",
                     borderRadius: "6px",
                   }}
+                  component={motion.div}
+                  whileHover={{ scale: 1.15 }}
                 >
                   {t("renew")}
                 </Button>
@@ -208,6 +213,8 @@ function Marketers() {
                   onClick={()=>{
                     navigate('/edit-marketer')
                   }}
+                  component={motion.div}
+                  whileHover={{ scale: 1.15 }}
                 >
                   {t("edit")}
                 </Button>
@@ -221,6 +228,8 @@ function Marketers() {
                     fontFamily: "Tanseek Modern Pro Arabic",
                     borderRadius: "6px",
                   }}
+                  component={motion.div}
+                  whileHover={{ scale: 1.15 }}
                 >
                   {t("delete")}
                 </Button>
@@ -234,6 +243,8 @@ function Marketers() {
                     fontFamily: "Tanseek Modern Pro Arabic",
                     borderRadius: "6px",
                   }}
+                  component={motion.div}
+                  whileHover={{ scale: 1.15 }}
                 >
                   {t("discount_link")}
                 </Button>
@@ -249,6 +260,8 @@ function Marketers() {
                       "linear-gradient(90deg, #F9D053 0%, #937B31 100%)",
                     borderRadius: "6px",
                   }}
+                  component={motion.div}
+                  whileHover={{ scale: 1.15 }}
                   onClick={() => {
                     navigate("/marketer-link");
                   }}

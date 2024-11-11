@@ -113,11 +113,11 @@ function Sidebar() {
             fontFamily: "Tanseek Modern Pro Arabic",
             fontSize: "25px",
             fontWeight: "400",
-            cursor:'pointer'
+            cursor: "pointer",
           }}
-        onClick={()=>{
-          navigate('/home')
-        }}
+          onClick={() => {
+            navigate("/home");
+          }}
         >
           {t("Home")}
         </Typography>
@@ -315,22 +315,23 @@ function Sidebar() {
       </Box>
       {/* المستخدمين  */}
       <Box>
-        <Link to="/show-users">
-          <Typography
-            className="hover-link"
-            sx={{
-              color: "#fff",
-              textAlign: "center",
-              fontFamily: "Tanseek Modern Pro Arabic",
-              fontSize: "25px",
-              fontWeight: "400",
-              cursor: "pointer",
-              mb: "5px",
-            }}
-          >
-            {t("users")}
-          </Typography>
-        </Link>
+        <Typography
+          className="hover-link"
+          sx={{
+            color: "#fff",
+            textAlign: "center",
+            fontFamily: "Tanseek Modern Pro Arabic",
+            fontSize: "25px",
+            fontWeight: "400",
+            cursor: "pointer",
+            mb: "5px",
+          }}
+          onClick={() => {
+            navigate("/show-users");
+          }}
+        >
+          {t("users")}
+        </Typography>
       </Box>
 
       {/* الدعم الفني */}

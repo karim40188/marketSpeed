@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import addImg from "../assets/addimg.png";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 function AddMarketer() {
   let { t } = useTranslation();
   return (
@@ -44,6 +45,8 @@ function AddMarketer() {
             color: "#000",
             fontWeight: "600",
           }}
+          component={motion.div}
+          whileHover={{ scale: 1.15 }}
         >
           {t("add_marketer")}
         </Button>
@@ -263,6 +266,8 @@ function AddMarketer() {
                     background:
                       "linear-gradient(180deg, #F9D053 0%, #937B31 100%)",
                   }}
+                  component={motion.div}
+                  whileHover={{ scale: 1.15 }}
                 >
                   {t("download_img")}
                 </Button>
